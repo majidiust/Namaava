@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Webinar.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Webinar_WebReference_Send" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://87.107.121.52/post/send.asmx</Value>
+    </Setting>
+    <Setting Name="Webinar_HivaLogger_RemoteLoggerService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:7070/Service1.svc</Value>
+    </Setting>
+    <Setting Name="Webinar_Zarinpal_WebServices" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.zarinpal.com/WebserviceGateway/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

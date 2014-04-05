@@ -1,0 +1,468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="FA" lang="FA" dir="rtl">
+<head profile="http://gmpg.org/xfn/11">
+<title>سامانه سمینار - نما آوای زندگی</title>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no" />
+<link rel="stylesheet" href="styles/layout.css" type="text/css" />
+    <link href="css/video-js.css" rel="stylesheet">
+
+<!-- Homepage Specific Elements -->
+    <script type="text/javascript" src="Scripts/jquery-1.8.2.min.js">
+    </script>
+<script type="text/javascript" src="scripts/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.tabs.setup.js"></script>
+    <script type="text/javascript" src="Scripts/Calendars/jalali.js">
+    </script>
+    <script type="text/javascript" src="Scripts/Info.js">
+    </script>
+    <script type="text/javascript" src="Scripts/video.js">
+    </script>
+
+    <script type="text/javascript" src="Scripts/tooltip.js">
+    </script>
+    <script type="text/javascript" src="Scripts/utility.js">
+    </script>
+        <script type="text/javascript" src="Scripts/BrowserDetect.js">
+    </script>
+        <script type='text/javascript' src='Scripts/jquery.simplemodal.js'>
+    </script>
+    <script type="text/javascript" src="Scripts/Login.js">
+    </script>
+<!-- End Homepage Specific Elements -->
+<script type="text/javascript">
+      $(document).ready(function () {
+        $.modal.close();
+LoadPageComponents();
+			
+        DetectLoggedInUser();
+        var _date = GetCurrentPersianDayString() + ", " + GetCurrentPersianDayOfMonth() + "  " + GetCurrentPersianMonthString() + " ماه  " + "1392";
+        $("#date").html(_date);
+        if (BrowserDetect.browser.indexOf("Explorer") != -1 ) {
+          alert ("مرورگر شما Internet Explorer است. لطفا برای استفاده از امکانات سایت از یکی از مرورگر های Firefox، Chrome و یا Opera استفاده نمایید.");
+        }
+var qs = getQueryStrings();
+		var webinarID = qs["WebinarID"]; 
+		if(webinarID == "" || webinarID == undefined)
+		{
+			window.location="index.htm";
+		}
+		else
+		{
+			GetSeminarInfo(webinarID);
+		}
+		
+			walk(document.body, replaceNumbers);
+
+      }
+                       );
+      
+    </script>
+    
+</head>
+<body id="top">
+<div class="wrapper row1">
+  <div id="header" class="clear">
+    <div class="fl_left">
+      <img src="images/nama ava-01.png" style="width:200px;height:100px;" />
+    </div>
+    <div class="fl_right">
+     
+      <div id="info" style="font-family:Tahoma, Geneva, sans-serif;direction:rtl;float:left;border:0;">
+      <p id="date" style="text-align:center;">
+      </p>
+<br/>
+          <div id="info" style="font-family:Tahoma, Geneva, sans-serif;direction:rtl;float:left;">
+            <ul id="UserInfo" style="display:none;color:#FF9;  font-size:14px;">
+              <li id="UserName">
+                پست الکترونیکی: sadeghi@rayanhiva.ir
+              </li>
+              <li onclick="GoToPanel();" style="cursor:pointer;color:#FF9; font-size:14px; ">
+                ورود به محیط کاربری 
+              </li>
+              <li onclick="LogOut();" style="cursor:pointer;color:#FF9; font-size:14px; ">
+                خروج
+              </li>
+            </ul>
+              <ul id="Login" style="border:0;">
+              <li style="border:0;">
+                <input type="submit" name="go" class="cupid-blue" value="ورود" onclick="$('#LoginModal').modal();"
+                style="width:100px;font-family:Tahoma, Geneva, sans-serif;"/>
+              </li>
+              <li style="border:0;">
+                <input type="submit" name="go" class="cupid-blue" value="عضویت"
+                onclick="ClearRegisterForm(); $('tr[name=RegisterForHide]').show();$('#RegisterBox').modal();"
+                style="width:100px;font-family:Tahoma, Geneva, sans-serif;"/>
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+      
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper row2">
+  <div class="rnd">
+    <!-- ###### -->
+    <div id="topnav">
+      <ul>
+        <li><a href="index.htm">صفحه نخست</a></li>
+        <li><a href="Seminars.htm">سمینارهای جدید</a></li>
+        <li><a href="Seminars.htm">سمینارهای برگزارشده</a></li>
+        <li><a href="NextSeminars.htm">سمینارهای آینده</a></li>
+        <li><a href="Features.htm">راهنمای استفاده</a></li>
+        <li><a href="http://www.namaava.com/" target="_blank">نماوای زندگی</a></li>
+        <li><a href="portfolio.html">پشتیبانی و تماس</a></li>
+      </ul>
+    </div>
+    <!-- ###### -->
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div id="details-wrapper" class="wrapper row4" style="display:none;">
+<table style="width:100%; direction:rtl;">
+<tr>
+
+                  <td style="width:70%;">
+                  <!-- 8 -->
+                  <!-- 8 -->
+                  <div class="7u title">
+                  	<span style="font-size:14px;font-weight:bold;color:rgb(102,102,102);" id="seminar_title">عنوان سمینار</span>
+                    <hr/>
+                    
+                    <table class="3u" style="direction:rtl;width:100%;">
+                    	<tr>
+                        	<td style="width:40%;text-align:right;font-size:14px;color:rgb(51,51,51);">
+                            زمان سمینار
+                            </td>
+                            <td style="width:60%;text-align:right;font-size:14px;color:rgb(51,51,51);" id="seminar_time">
+                            17 فروردین سال 92
+                            </td>
+                        </tr>
+                    	<tr>
+                        	<td style="width:40%;text-align:right;font-size:14px;color:rgb(51,51,51);">
+                            ارائه دهنده
+                            </td>
+                            <td style="width:60%;text-align:right;font-size:14px;color:rgb(51,51,51);" id="seminar_presenter">
+                            مجید صادقی علویجه
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td style="width:40%;text-align:right;font-size:14px;color:rgb(51,51,51);">
+                            مدت سمینار
+                            </td>
+                            <td style="width:60%;text-align:right;font-size:14px;color:rgb(51,51,51);" id="seminar_duration">
+                            12 ساعت
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td style="width:40%;text-align:right;font-size:14px;color:rgb(51,51,51);">
+                            ظرفیت باقی مانده
+                            </td>
+                            <td style="width:60%;text-align:right;font-size:14px;color:rgb(51,51,51);" id="seminar_capacity">
+                            25
+                            </td>
+                        </tr>
+                         <tr>
+                        	<td style="width:40%;text-align:right;font-size:14px;color:rgb(51,51,51);">
+							وضعیت	
+                            </td>
+                            <td style="width:60%;text-align:right;font-size:14px;color:rgb(51,51,51);" id="seminar_status">
+                            در حال برگزاری
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td style="width:40%;text-align:right;font-size:14px;color:rgb(51,51,51);">
+							هزینه شرکت	
+                            </td>
+                            <td style="width:60%;text-align:right;font-size:14px;color:rgb(51,51,51);" id="seminar_fee">
+                            رایگان
+                            </td>
+                        </tr>
+                    </table>
+                    <hr/>
+                    <span style="font-size:14px;font-weight:bold;color:rgb(102,102,102);">توضیحات</span>
+                    <div id="seminar_explain" style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;">
+                    </div>
+                    <hr/>
+                    <span style="font-size:14px;font-weight:bold;color:rgb(102,102,102);">دلایل شرکت در سمینار</span>
+                    <div id="seminar_why" style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;">
+                     
+                    </div>
+                     <hr/>
+                     <span style="font-size:14px;font-weight:bold;color:rgb(102,102,102);">مخاطبان سمینار</span>
+                    <div id="seminar_for" style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;">
+                     
+                    </div>
+                    <hr/>
+                    <center>
+                    <div id="seminar_action">
+                  
+                     </div>
+                    </center>
+                  </div>
+                  <!-- 8 -->  
+                  </td>
+                  <td style="width:30%;">
+                  <!-- 8 -->
+                  <div id="seminar_media">
+                   <div class="customBoxBorder" style="width:80%;">
+                   	<img style="width:100%;height:100%" id="seminar_pic" src="images/sample.jpg"/>
+                   </div>
+                   <br/>
+                   <div class="customBoxBorder" style="width:80%;">
+                   	<img style="width:100%;height:100%" id="seminar_presentor_pic" src="images/Seminar1.png"/>
+                   </div>
+                   <br/>
+                    <div class="customBoxBorder" style="width:80%;">
+                   	   <video id="videoPlayer" class="video-js vjs-default-skin" controls preload="auto"
+                       style="width:100%;height:100%" 
+      data-setup='{"example_option":true}'>  
+     <source id = "mp4Src" src="http://94.232.174.204:7700/214.mp4" />  
+     <source id = "oggSrc" src="http://94.232.174.204:7700/210.ogg" />  
+          <source id = "webMSrc" src="http://94.232.174.204:7700/210.webm" />  
+    </video>
+
+                   </div>
+                  </div>
+                  </td>
+                  </tr>
+                  </table>
+    </div>
+<!-- ######################################################################################## -->
+ <!-- ####################################################################################################### -->
+  <div id="pagefooter">
+ 
+  </div>
+  <!-- ######################################################################################## -->
+  <!-- Modal Dialog -->
+  <div id="openModal" class="modalDialog">
+    <div>
+      <div id="openModal_Close" title="Close" class="close" onClick="CloseModalWindow();" >
+        X
+      </div>
+      <center>
+        <h2 id="openModel_Title" style="font-family:tahoma;font-size:16px;margin-bottom:20px;margin-top:10px; letter-spacing:1px;">
+          توجه
+          </h2>
+          <hr/>
+      </center>
+      <center>
+        <div style="font-family:tahoma;font-size:14px;direction:rtl;margin-bottom:10px;">
+          <p id="openModal_Message">
+          </p>
+          </div>
+      </center>
+  </div>
+  </div>
+  <!-- End Of Modal -->
+  
+  
+  <!-- LOGIIIIIIIIIIIIIIIIIIIIIIIN -->
+  <div id="DialogContainer">
+  <div class="basic-modal-content" id="LoginModal">
+      <div id="openModal_Close" title="Close" class="close2" onClick="$.modal.close();" >
+        X
+      </div>
+      <section id="login-form">
+		<form id="login-forms">
+          <h1 style="font-family:tahoma;margin-bottom:43px;">
+            ورود کاربران
+          </h1>
+          
+          <div>
+            <input type="text" placeholder="نام کاربری" required id="usernameUp" onKeyDown=LoginKeyDownUp(event);/>
+          </div>
+          <div>
+            <input type="password" placeholder="کلمه عبور" required id="passwordUp" onKeyDown=LoginKeyDownUp(event);/>
+          </div>
+          <div id="LoginMessageUp" style="direction:rtl;display:none;">
+            در حال ورود به سامانه ، لطفا منتظر بمانید.
+          </div>
+          <div>
+            <input type="button"  class="cupid-blue" value="ورود به سامانه" style="float:right;" onclick="LoginToAccountUp();" />
+            <input type="button"  class="cupid-blue" value="فراموش کردن کلمه عبور" style="float:left;" onClick="  $.modal.close();$('#ForgotPasswordModal').modal();" style="font-size:12px;" />
+
+          </div>
+         </form>
+      </section>
+  </div>
+  
+  
+  <div class="basic-modal-content" id="ForgotPasswordModal"  style="direction:rtl;display:none">
+   <div id="openModal_Close" title="Close" class="close2" onClick="$.modal.close();" >
+        X
+      </div>
+    <section id="forgotpassword-form">
+      <form id="forgotpassword-forms">
+        <h2 style="font-family:tahoma;">
+          فراموش کردن کلمه عبور
+        </h2>
+        <div style="font-size:12px;direction:rtl;line-height:18px;text-align:justify">
+ در صورت فراموش کردن رمز عبور پست الکترونیک یا ایمیل خود را بدون دبلیو در کادر زیر وارد و ارسال نمایید و به ایمیل خود مراجعه و رمز عبور جدید را دریافت نمایید.          <br/>
+          <br/>
+        </div>
+        <div>
+          <input type="email" placeholder="پست الکترونیکی" id="forgot_password_email" name="forgot_password_email" required/>
+        </div>
+        <div>
+          <input type="submit"  class="cupid-blue" value="بازیابی کلمه عبور" onclick="var email = $('#forgot_password_email').val(); $.modal.close();ForgotPassword(email);"/>
+        </div>
+      </form>
+	</section>
+  </div>
+  
+  
+  <div id="RegisterBox" class="basic-modal-content customBoxBorder" style="direction:rtl;display:none;width:500px;" >
+   <div id="openModal_Close" title="Close" class="close2" onClick="$.modal.close();" >
+        X
+      </div>
+    <h2 id="HeaderRequest" style="text-align:center; font-family:Tahoma, Geneva, sans-serif; text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
+    text-transform: uppercase;
+    text-align: center;
+    color: #666;
+    margin: 0 0 30px 0;
+    letter-spacing: 1px;
+    font: normal 26px/1 Verdana, Helvetica;
+    position: relative;">
+      عضویت
+    </h2>
+    <hr/>
+    <p id="MsgForRequest" style="display:none;">
+      برای درخواست ابتدا بایستی عضو سامانه شوید. پس از ورود دکمه ی درخواست را کلیک نمایید. 
+    </p>
+	<div id="ExplainRegister">
+	<p style="font-family:tahoma;text-align:justify;border:1px;text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.65);">
+	توجه:لطفا این قسمت را مطالعه و سپس عضو شوید
+    </p>
+    <p style="font-size:12px;font-family:tahoma;text-align:justify;border:1px;text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.65);">
+
+نام کاربری شما می تواند نام یا نام خانوادگی به صورت فارسی ویا لاتین باشد و یا نام های دیگر.
+
+لطفا در ثبت، نام کاربری خودتان به نکات زیر دقت فرمایید:
+
+در هنگام مشاهده سمینارهای زنده فقط نام کاربری شما به سایر شرکت کنندگان در سمینار و استاد مربوطه  نشان داده می شود،پس ترجیحا نام کاربری انتخابی شما نام و نام خانوادگی شما باشد و از کلمات نامناسب استفاده نفرمایید، در غیر اینصورت عضویت شما لغو می گردد.
+
+در قسمت ثبت پست الکترونیکی یا ایمیل حتما بدون دبلیو ایمیلتان را ثبت نمایید.
+
+در قسمت کلمه عبور می توانید ترکیبی از حرف و عدد دلخواه خود را وارد نمایید،
+و سپس همان کلمه عبور را تکرار نمایید.
+
+اگر نام کاربری یا رمز عبورمورد نظر شما قبلا در سیستم توسط فرد دیگری یا خودتان ثبت شده
+ باشد،سیستم به شما اعلام مینماید نام کاربری و کلمه عبور شما قبلا ثبت شده و شما با کمی تغییر در نام کاربری و رمز عبور خود ثبت نام را ادامه دهید.
+
+پس از تکمیل ثبت نام اطلاعاتی از طرف موسسه به آدرس ایمیل شما ارسال می شود با مراحعه به ایمیلتان در قسمت این باکس یا احتمالا اسپم یا هرزنامه با کلیک بر روی قسمت مربوطه عضو می شوید وسپس میتوانید با مراجعه به این وب سایت و وارد کردن نام کاربری و رمز عبور خود، وارد پنل مدیریت و مشاهده سمینارها شوید.
+ حتما نام کاربری و کلمه عبور خود را در جایی یاد داشت یا به خاطر بسپارید که در مراجعات بعدی به آسانی وارد سیستم شوید.)
+	</p>
+    <table style="border:0">
+    <tr style="border:0">
+              <td style="border:none;">
+            <hr/>
+
+            <input type="submit" name="go" class="customButton1" value="متوجه شدم" onclick="$('#ExplainRegister').hide();$('#RegisterFields').show();"
+            style="font-family:Tahoma, Geneva, sans-serif;"/>
+                  <input type="submit" name="go" class="customButton1" value="بازگشت" onclick="$.modal.close();"
+            style="font-family:Tahoma, Geneva, sans-serif;"/>
+            
+            
+          </td>
+          </tr>
+          </table>
+    </div>
+    <div id="RegisterFields" style="display:none;">
+    <table style="direction:rtl;text-align:justify;border:none;">
+      <tbody style="direction:rtl;text-align:justify;border:none;">
+        <tr name="RegisterForHide" style="border:none;">
+          <td width="40%" style="border:none;">
+            <label for="fname2">
+              نام کاربری
+            </label>
+          </td>
+          <td width="60%" style="border:none;">
+            <div class="input-container">
+              <input  class="inputscenter" name="fname" id="uname" type="text"/>
+              
+              <div id="RegisterMessageUserName"
+              style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr name="RegisterForHide" style="border:none;">
+          <td style="border:none;">
+            <label for="lname">
+              پست الکترونیکی
+            </label>
+          </td>
+          <td style="border:none;">
+            <div class="input-container">
+              <input class="inputscenter"  name="lname" id="email" type="text" onfocus="ShowRegisterationError(1);"
+              style=" text-align:left ; direction:ltr;"/>
+              
+              <div id="RegisterMessageEmail"
+              style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr name="RegisterForHide" style="border:none;">
+          <td style="border:none;">
+            <label for="email">
+              کلمه عبور
+            </label>
+          </td>
+          <td style="border:none;">
+            <div class="input-container">
+              <input  class="inputscenter" name="email" id="pass" type="password" onfocus="ShowRegisterationError(2);"/>
+              
+              <div id="RegisterMessagePass"
+              style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr name="RegisterForHide" style="border:none;">
+          <td style="border:none;">
+            <label for="pass">
+              تکرار کلمه عبور
+            </label>
+          </td>
+          <td style="border:none;">
+            <div class="input-container">
+              <input  class="inputscenter" name="pass" id="passConfirm" type="password" onfocus="ShowRegisterationError(3);"/>
+              
+              <div id="RegisterMessageRepeatPass"
+              style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr style="border:none;">
+          <td style="border:none;">
+          </td>
+          <td style="border:none;">
+            <div id="RegisterMessage"
+            style="text-align:justify; font-family:Tahoma, Geneva, sans-serif;font-size:x-small; color:#9F6;">
+            </div>
+          </td>
+        </tr>
+        <tr name="RegisterForHide" style="border:none;">
+          <td style="border:none;">&nbsp;
+          </td>
+          <td style="border:none;">
+            <hr/>
+            <input type="submit" name="go" class="customButton1" value="ثبت نام" onclick="RegisterToServer();"
+            style="font-family:Tahoma, Geneva, sans-serif;"/>
+            <input type="submit" name="go" class="customButton1" value="بازگشت" onclick="$.modal.close();"
+            style="font-family:Tahoma, Geneva, sans-serif;"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </div>
+  </body>
+</html>

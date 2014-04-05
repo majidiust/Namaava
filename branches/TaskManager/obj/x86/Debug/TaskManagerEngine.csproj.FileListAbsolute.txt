@@ -1,0 +1,6 @@
+D:\WebinarTaskManager\trunk\bin\Debug\TaskManagerEngine.exe.config
+D:\WebinarTaskManager\trunk\bin\Debug\TaskManagerEngine.exe
+D:\WebinarTaskManager\trunk\bin\Debug\TaskManagerEngine.pdb
+D:\WebinarTaskManager\trunk\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\WebinarTaskManager\trunk\obj\x86\Debug\TaskManagerEngine.exe
+D:\WebinarTaskManager\trunk\obj\x86\Debug\TaskManagerEngine.pdb

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:WebServices" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:WebServices">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PaymentRequestRequest">
+    <wsdl:part name="merchantID" type="xsd:string" />
+    <wsdl:part name="amount" type="xsd:int" />
+    <wsdl:part name="redirectUrl" type="xsd:string" />
+    <wsdl:part name="desc" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="PaymentRequestResponse">
+    <wsdl:part name="au" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="PaymentDetailsRequest">
+    <wsdl:part name="merchantID" type="xsd:string" />
+    <wsdl:part name="au" type="xsd:string" />
+    <wsdl:part name="customerEmail" type="xsd:string" />
+    <wsdl:part name="customerTel" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="PaymentDetailsResponse">
+    <wsdl:part name="status" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="PaymentVerificationRequest">
+    <wsdl:part name="merchantID" type="xsd:string" />
+    <wsdl:part name="au" type="xsd:string" />
+    <wsdl:part name="amount" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="PaymentVerificationResponse">
+    <wsdl:part name="status" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:portType name="WebServicesPortType">
+    <wsdl:operation name="PaymentRequest">
+      <documentation>Payment Request Session Creation</documentation>
+      <wsdl:input message="tns:PaymentRequestRequest" />
+      <wsdl:output message="tns:PaymentRequestResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentDetails">
+      <documentation>Payment Details for the Created Session</documentation>
+      <wsdl:input message="tns:PaymentDetailsRequest" />
+      <wsdl:output message="tns:PaymentDetailsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentVerification">
+      <documentation>Payment Verification Method</documentation>
+      <wsdl:input message="tns:PaymentVerificationRequest" />
+      <wsdl:output message="tns:PaymentVerificationResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServicesBinding" type="tns:WebServicesPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="PaymentRequest">
+      <soap:operation soapAction="urn:WebServices#PaymentRequest" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentDetails">
+      <soap:operation soapAction="urn:WebServices#PaymentDetails" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentVerification">
+      <soap:operation soapAction="urn:WebServices#PaymentVerification" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServices">
+    <wsdl:port name="WebServicesPort" binding="tns:WebServicesBinding">
+      <soap:address location="http://www.zarinpal.com/WebserviceGateway/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Namaava" Class="DataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=79.175.165.203\SQLEXPRESS,9095;Initial Catalog=Namaava;User ID=Hiva" SettingsObjectName="TaskManagerEngine.Properties.Settings" SettingsPropertyName="sampleConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Task" Member="Tasks">
+    <Type Name="Task">
+      <Column Name="TaskId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaskTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaskStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaskInitDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TaskPriority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskRunTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Task_TaskParam" Member="TaskParams" ThisKey="TaskId" OtherKey="TaskID" Type="TaskParam" />
+      <Association Name="TaskType_Task" Member="TaskType" ThisKey="TaskTypeId" OtherKey="TaskTypeID" Type="TaskType" IsForeignKey="true" />
+      <Association Name="TaskStatus_Task" Member="TaskStatus1" ThisKey="TaskStatus" OtherKey="TaskStatusID" Type="TaskStatus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskType" Member="TaskTypes">
+    <Type Name="TaskType">
+      <Column Name="TaskTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaskTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TaskType_Task" Member="Tasks" ThisKey="TaskTypeID" OtherKey="TaskTypeId" Type="Task" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskParams" Member="TaskParams">
+    <Type Name="TaskParam">
+      <Column Name="TaskParamID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaskParamName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TaskParamValue" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TaskID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Task_TaskParam" Member="Task" ThisKey="TaskID" OtherKey="TaskId" Type="Task" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskStatus" Member="TaskStatus">
+    <Type Name="TaskStatus">
+      <Column Name="TaskStatusID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaskStatusName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TaskStatus_Task" Member="Tasks" ThisKey="TaskStatusID" OtherKey="TaskStatus" Type="Task" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ApplicationSettings" Member="ApplicationSettings">
+    <Type Name="ApplicationSetting">
+      <Column Name="SettingName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SettingsId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="ApplicationSetting_SettingsProperty" Member="SettingsProperties" ThisKey="SettingsId" OtherKey="SettingsId" Type="SettingsProperty" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SettingsProperty" Member="SettingsProperties">
+    <Type Name="SettingsProperty">
+      <Column Name="PropertyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PropertyValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SettingsId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="propertyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="ApplicationSetting_SettingsProperty" Member="ApplicationSetting" ThisKey="SettingsId" OtherKey="SettingsId" Type="ApplicationSetting" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Session" Member="Sessions">
+    <Type Name="Session">
+      <Column Name="SessionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PresentorId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SessionName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SessionType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MasterKey" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BeginTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Capacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fee" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Wallpaper" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Keywords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SessionAdmin" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ReminderHourBefore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SMSSend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PrimaryContentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FeeForEach" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Why" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Level]" Member="Level" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Learner" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="WebinarDateTime_Session" Member="WebinarDateTime" ThisKey="BeginTime" OtherKey="id" Type="WebinarDateTime" IsForeignKey="true" />
+      <Association Name="WebinarDateTime_Session1" Member="WebinarDateTime1" ThisKey="EndTime" OtherKey="id" Type="WebinarDateTime" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WebinarDateTime" Member="WebinarDateTimes">
+    <Type Name="WebinarDateTime">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="WebinarDateTime_Session" Member="Sessions" ThisKey="id" OtherKey="BeginTime" Type="Session" />
+      <Association Name="WebinarDateTime_Session1" Member="Sessions1" ThisKey="id" OtherKey="EndTime" Type="Session" />
+    </Type>
+  </Table>
+</Database>

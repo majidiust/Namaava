@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BankTransition" Class="BankDataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=5.200.78.10\MSSQLSERVER,1433;Initial Catalog=BankTransition;User ID=hiva" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BankTransitionConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Application" Member="Applications">
+    <Type Name="Application">
+      <Column Name="ApplicationCode" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ApplicationName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReturnUrl" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Application_Payment" Member="Payments" ThisKey="ApplicationCode" OtherKey="ApplicationCode" Type="Payment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment" Member="Payments">
+    <Type Name="Payment">
+      <Column Name="PaymentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BankId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DiscountCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ApplicationCode" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Payment_BankResponse" Member="BankResponses" ThisKey="PaymentId" OtherKey="PaymentId" Type="BankResponse" />
+      <Association Name="Application_Payment" Member="Application" ThisKey="ApplicationCode" OtherKey="ApplicationCode" Type="Application" IsForeignKey="true" />
+      <Association Name="BankInfo_Payment" Member="BankInfo" ThisKey="BankId" OtherKey="BankId" Type="BankInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BankInfo" Member="BankInfos">
+    <Type Name="BankInfo">
+      <Column Name="BankId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BankUrlPayment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MerchantId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BankInfo_Payment" Member="Payments" ThisKey="BankId" OtherKey="BankId" Type="Payment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BankResponse" Member="BankResponses">
+    <Type Name="BankResponse">
+      <Column Name="TransId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ResponseCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResponseSubCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResponseReasonCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResponseReasonText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MerchantId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FpSequence" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrencyCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SignatureHash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BankResponseId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PaymentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Payment_BankResponse" Member="Payment" ThisKey="PaymentId" OtherKey="PaymentId" Type="Payment" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaymentInformation" Member="PaymentInformations">
+    <Type Name="PaymentInformation">
+      <Column Name="PaymentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResponseCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

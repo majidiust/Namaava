@@ -1,0 +1,75 @@
+c:\documents and settings\mania\my documents\visual studio 2010\Projects\Webinar\Webinar\bin\Webinar.dll
+c:\documents and settings\mania\my documents\visual studio 2010\Projects\Webinar\Webinar\bin\Webinar.pdb
+c:\documents and settings\mania\my documents\visual studio 2010\Projects\Webinar\Webinar\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\mania\my documents\visual studio 2010\Projects\Webinar\Webinar\obj\Debug\Webinar.dll
+c:\documents and settings\mania\my documents\visual studio 2010\Projects\Webinar\Webinar\obj\Debug\Webinar.pdb
+C:\Documents and Settings\mania\My Documents\WebinarSite\trunk\Webinar\Webinar\bin\Webinar.dll
+C:\Documents and Settings\mania\My Documents\WebinarSite\trunk\Webinar\Webinar\bin\Webinar.pdb
+C:\Documents and Settings\mania\My Documents\WebinarSite\trunk\Webinar\Webinar\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\mania\My Documents\WebinarSite\trunk\Webinar\Webinar\obj\Debug\Webinar.dll
+C:\Documents and Settings\mania\My Documents\WebinarSite\trunk\Webinar\Webinar\obj\Debug\Webinar.pdb
+C:\inetpub\wwwroot\WebinarSite\trunk\Webinar\Webinar\bin\Webinar.dll
+C:\inetpub\wwwroot\WebinarSite\trunk\Webinar\Webinar\bin\Webinar.pdb
+C:\inetpub\wwwroot\WebinarSite\trunk\Webinar\Webinar\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\WebinarSite\trunk\Webinar\Webinar\obj\Debug\Webinar.dll
+C:\inetpub\wwwroot\WebinarSite\trunk\Webinar\Webinar\obj\Debug\Webinar.pdb
+C:\inetpub\wwwroot\Webinar\bin\Webinar.dll
+C:\inetpub\wwwroot\Webinar\bin\Webinar.pdb
+C:\inetpub\wwwroot\Webinar\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Webinar\obj\Debug\Webinar.dll
+C:\inetpub\wwwroot\Webinar\obj\Debug\Webinar.pdb
+C:\inetpub\wwwroot\Webinar\Webinar\bin\Webinar.dll
+C:\inetpub\wwwroot\Webinar\Webinar\bin\Webinar.pdb
+C:\inetpub\wwwroot\Webinar\Webinar\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Webinar\Webinar\obj\Debug\Webinar.dll
+C:\inetpub\wwwroot\Webinar\Webinar\obj\Debug\Webinar.pdb
+C:\inetpub\wwwroot\Webinar\Webinar2\trunk\Webinar\Webinar\bin\Webinar.dll
+C:\inetpub\wwwroot\Webinar\Webinar2\trunk\Webinar\Webinar\bin\Webinar.pdb
+C:\inetpub\wwwroot\Webinar\Webinar2\trunk\Webinar\Webinar\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Webinar\Webinar2\trunk\Webinar\Webinar\obj\Debug\Webinar.dll
+C:\inetpub\wwwroot\Webinar\Webinar2\trunk\Webinar\Webinar\obj\Debug\Webinar.pdb
+C:\inetpub\wwwroot\Webinar\trunk\Webinar\Webinar\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Webinar\trunk\Webinar\Webinar\bin\Webinar.dll
+C:\inetpub\wwwroot\Webinar\trunk\Webinar\Webinar\bin\Webinar.pdb
+C:\inetpub\wwwroot\Webinar\trunk\Webinar\Webinar\obj\Debug\Webinar.dll
+C:\inetpub\wwwroot\Webinar\trunk\Webinar\Webinar\obj\Debug\Webinar.pdb
+C:\inetpub\wwwroot\iwebinar\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\iwebinar\obj\Debug\Webinar.dll
+C:\inetpub\wwwroot\iwebinar\bin\Webinar.dll
+C:\inetpub\wwwroot\iwebinar\bin\Webinar.pdb
+C:\inetpub\wwwroot\iwebinar\obj\Debug\Webinar.pdb
+C:\inetpub\wwwroot\iWebinarPortal\bin\Webinar.dll
+C:\inetpub\wwwroot\iWebinarPortal\bin\Webinar.pdb
+C:\inetpub\wwwroot\iWebinarPortal\obj\Debug\Webinar.dll
+C:\inetpub\wwwroot\iWebinarPortal\obj\Debug\Webinar.pdb
+C:\inetpub\wwwroot\iWebinarPortal\obj\Debug\Webinar.csprojResolveAssemblyReference.cache
+G:\Khatibi\trunk\ServerSide\bin\Webinar.dll
+G:\Khatibi\trunk\ServerSide\bin\Webinar.pdb
+G:\Khatibi\trunk\ServerSide\obj\Debug\Webinar.csprojResolveAssemblyReference.cache
+G:\Khatibi\trunk\ServerSide\obj\Debug\Webinar.dll
+G:\Khatibi\trunk\ServerSide\obj\Debug\Webinar.pdb
+C:\Users\majid\Desktop\Khatibi\trunk\ServerSide\bin\Webinar.dll
+C:\Users\majid\Desktop\Khatibi\trunk\ServerSide\bin\Webinar.pdb
+C:\Users\majid\Desktop\Khatibi\trunk\ServerSide\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\majid\Desktop\Khatibi\trunk\ServerSide\obj\Debug\Webinar.dll
+C:\Users\majid\Desktop\Khatibi\trunk\ServerSide\obj\Debug\Webinar.pdb
+C:\Projects\Khatibi\trunk\ServerSide\bin\Webinar.dll
+C:\Projects\Khatibi\trunk\ServerSide\bin\Webinar.pdb
+C:\Projects\Khatibi\trunk\ServerSide\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\Khatibi\trunk\ServerSide\obj\Debug\Webinar.dll
+C:\Projects\Khatibi\trunk\ServerSide\obj\Debug\Webinar.pdb
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\Webinar.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\Webinar.pdb
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\obj\Debug\Webinar.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\obj\Debug\Webinar.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\obj\Debug\Webinar.pdb
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\System.Web.Abstractions.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\System.Web.ApplicationServices.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\System.Web.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\System.Web.DynamicData.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\System.Web.Entity.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\System.Web.Extensions.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\System.Web.Mvc.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\System.Web.Routing.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\System.Web.Services.dll
+C:\inetpub\wwwroot\Khatibi\trunk\ServerSide\bin\System.Web.Mvc.xml
