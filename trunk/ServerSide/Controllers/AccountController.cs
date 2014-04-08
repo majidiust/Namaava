@@ -27,7 +27,7 @@ namespace Webinar.Controllers
         public IMembershipService MembershipService { get; set; }
         private Logger m_logger;
         private DataBaseDataContext m_model = new DataBaseDataContext();
-        public static string m_serverAddress = "http://79.175.165.203:6060";
+        public static string m_serverAddress = "http://www.iwebinar.ir:6060";
         
 
         protected override void Initialize(RequestContext requestContext)
