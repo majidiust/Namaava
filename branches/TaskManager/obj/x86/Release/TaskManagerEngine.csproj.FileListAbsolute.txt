@@ -27,3 +27,11 @@ C:\inetpub\wwwroot\Khatibi\branches\TaskManager\bin\Release\TaskManagerEngine.pd
 C:\inetpub\wwwroot\Khatibi\branches\TaskManager\bin\Release\Renci.SshNet.pdb
 C:\inetpub\wwwroot\Khatibi\branches\TaskManager\bin\Release\Renci.SshNet.xml
 C:\inetpub\wwwroot\Khatibi\branches\TaskManager\obj\x86\Release\TaskManagerEngine.csprojResolveAssemblyReference.cache
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\TaskManagerEngine.exe.config
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\obj\x86\Release\TaskManagerEngine.exe
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\obj\x86\Release\TaskManagerEngine.pdb
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\TaskManagerEngine.exe
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\TaskManagerEngine.pdb
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\Renci.SshNet.pdb
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\Renci.SshNet.xml
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\obj\x86\Release\TaskManagerEngine.csprojResolveAssemblyReference.cache

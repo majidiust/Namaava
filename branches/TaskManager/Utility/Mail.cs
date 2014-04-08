@@ -71,7 +71,7 @@ namespace TaskManagerEngine.Utility
         {
             var fromAddress = new MailAddress("namaava.zendegi@gmail.com", "نماآوای زندکی");
             var toAddress = new MailAddress(To, "Seminar");
-            const string fromPassword = "729183456258456";
+            const string fromPassword = "majiddijamP@ssw0rd";
             string subject = Subject;
             string body = Message;
 
@@ -102,7 +102,6 @@ namespace TaskManagerEngine.Utility
             const string fromPassword = "P@ssw0rd";
             string subject = Subject;
             string body = Message;
-
             var smtp = new SmtpClient
             {
                 Host = "smtp.chmail.ir",
