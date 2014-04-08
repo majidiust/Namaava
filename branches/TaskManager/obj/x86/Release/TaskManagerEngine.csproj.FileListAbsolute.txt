@@ -35,3 +35,13 @@ D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\br
 D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\Renci.SshNet.pdb
 D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\Renci.SshNet.xml
 D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\obj\x86\Release\TaskManagerEngine.csprojResolveAssemblyReference.cache
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\System.Data.DataSetExtensions.dll
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\System.Data.dll
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\System.Data.Linq.dll
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\System.dll
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\System.Net.dll
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\System.Runtime.Serialization.dll
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\System.ServiceModel.dll
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\System.Web.dll
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\System.Xml.dll
+D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\branches\TaskManager\bin\Release\System.Xml.Linq.dll
