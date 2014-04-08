@@ -44,15 +44,18 @@
         }
 		
 		var qs = getQueryStrings();
-		guid = qs["guid"]; 
+		var guid = qs["guid"]; 
 		
 		var type = qs["type"];
+		console.log("type is:" + type);
 		if(type == 2)
 		{
 			$('#forgetPassword').show();
+			console.log("Forgot password");
 			
 		}
 		else{
+			console.log("GUID code is : " + guid);
 			$("#GUIDCode").html(guid);
 			$('#membershipConfirmation').show();
 			$.getJSON(ServerURL + "Account/Confirm",
