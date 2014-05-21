@@ -88,3 +88,18 @@ D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\tr
 D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\trunk\ServerSide\obj\Debug\Webinar.csprojResolveAssemblyReference.cache
 D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\trunk\ServerSide\obj\Debug\Webinar.dll
 D:\Users\Administrator\Downloads\CygwinPortable\App\Cygwin\home\root\Namaava2\trunk\ServerSide\obj\Debug\Webinar.pdb
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\Webinar.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\Webinar.pdb
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.Abstractions.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.ApplicationServices.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.DynamicData.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.Entity.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.Extensions.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.Mvc.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.Routing.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.Services.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.Mvc.xml
+D:\navid aghapour\Namaava\trunk\ServerSide\obj\Debug\Webinar.csprojResolveAssemblyReference.cache
+D:\navid aghapour\Namaava\trunk\ServerSide\obj\Debug\Webinar.dll
+D:\navid aghapour\Namaava\trunk\ServerSide\obj\Debug\Webinar.pdb

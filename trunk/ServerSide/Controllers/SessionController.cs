@@ -1909,6 +1909,83 @@ namespace Webinar.Controllers
 
 
         [HttpGet]
+        public ActionResult AllNewSearchSession(int index, int pageSize)
+        {
+            // m_logger.Log("SearchUsercp0");
+            try
+            {
+                if (index < 0)
+                {
+                    index = 1;
+                }
+                Hashtable hashtable = new Hashtable();
+
+                var justForCapacity = (from p in m_model.Sessions
+                                       where p.SessionType == 1 && p.StateId == 2
+                                       select new
+                                       {
+                                           id = p.SessionId,
+                                           capacity = p.Capacity
+                                       });
+
+
+                foreach (var x in justForCapacity)
+                {
+                    hashtable[x.id] = x.capacity - SpaceLeft(x.id);
+                }
+
+                int curMonth = 1;
+                int curday = 2;
+
+                var baseSearch = (from p in m_model.Sessions
+
+                                  where p.SessionType == 1 && p.StateId == 2
+                                  select new
+                                  {
+                                      id = p.SessionId,
+                                      name = p.SessionName,
+                                      //presentorUserName = p.aspnet_User.UserName,
+                                      presentorUserName = p.aspnet_User.Profile != null ? p.aspnet_User.Profile.FirstName + " " + p.aspnet_User.Profile.LastName : p.aspnet_User.UserName,
+                                      //adminUserName = p.aspnet_User1.UserName,
+                                      adminUserName = p.aspnet_User1.Profile.FirstName + " " + p.aspnet_User1.Profile.LastName,
+                                      remained = hashtable[p.SessionId],
+                                      admin = p.aspnet_User1.Profile.FirstName + " " + p.aspnet_User.Profile.LastName,
+                                      beginTime = DateToString(p.WebinarDateTime),
+                                      duration = p.WebinarDateTime1.Time.Value.Hours - p.WebinarDateTime.Time.Value.Hours,
+                                      status = p.SessionState.State,
+                                      fee = UserPeymentSession(p.SessionId),
+                                      poster = p.Wallpaper,
+                                      presentor = p.aspnet_User.UserName,
+                                      desc = p.Description
+                                  }).OrderByDescending(p => p.id).ToList();
+
+                var searchResult = baseSearch.Skip((index - 1) * pageSize).Take(pageSize);
+
+                int count = baseSearch.Count;
+
+                if (searchResult.Count() == 0)
+                {
+                    return Json(new { Status = false, Message = "There Is Not Any Record" }, JsonRequestBehavior.AllowGet);
+                }
+
+                var Result = new
+                {
+                    SearchResult = searchResult,
+                    CurrentCount = searchResult.Count(),
+                    TotalCount = count
+                };
+
+
+                return Json(new { Status = true, Message = "Search Is Ok", Result }, JsonRequestBehavior.AllowGet);
+                //       return Json(new {Status = true, Username= username, Email = membership.ToString();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Status = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpGet]
         public ActionResult AllLastSearchSession(int index, int pageSize)
         {
             // m_logger.Log("SearchUsercp0");
