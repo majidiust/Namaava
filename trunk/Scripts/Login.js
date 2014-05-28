@@ -1328,7 +1328,7 @@ function CreateRow(a, b, c){
 
 function LoadPastSeminars(topEventsCount) {
   //$('.PleaseWait').show();
-    $.getJSON(ServerURL + "Session/AllSearchSession",
+    $.getJSON(ServerURL + "Session/AllLastSearchSession",
         {
             index:-1,
             pageSize:topEventsCount
@@ -1635,7 +1635,7 @@ function LoadPastSeminarsB(topEventsCount) {
 function LoadNextSeminarsB(topEventsCount) {
   //$('.PleaseWait').show();
   	$("#seminars").html("");
-    $.getJSON(ServerURL + "Session/AllSearchSession",
+  	$.getJSON(ServerURL + "Session/AllNewSearchSession",
         {
             index:-1,
             pageSize:topEventsCount

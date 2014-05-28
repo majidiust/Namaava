@@ -20,5 +20,36 @@ namespace Webinar.Utility
             }
             return new string(buffer);
         }
+
+        public static string TwoDigitString(string digit)
+        {
+            if (digit.Length < 2)
+            {
+                digit = "0" + digit;
+            }
+            return digit;
+        }
+
+        public static string JalaliNowDate(string type)
+        {
+            System.Globalization.PersianCalendar pc = new System.Globalization.PersianCalendar();
+            int jYearNow, jMonthNow, jDayNow, jTimeNow;
+            jYearNow = pc.GetYear(DateTime.Now);
+            jMonthNow = pc.GetMonth(DateTime.Now);
+            jDayNow = pc.GetDayOfMonth(DateTime.Now);
+
+            string jNow = "";
+
+            if (type == "without/")
+            {
+                jNow = jYearNow.ToString() + TwoDigitString(jMonthNow.ToString()) + TwoDigitString(jDayNow.ToString());
+            }
+            else if (type == "with/")
+            {
+                jNow = jYearNow.ToString() + "/" + TwoDigitString(jMonthNow.ToString()) + "/" + TwoDigitString(jDayNow.ToString());
+            }
+
+            return jNow;
+        }
     }
 }
