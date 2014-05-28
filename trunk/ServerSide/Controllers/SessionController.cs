@@ -1921,7 +1921,7 @@ namespace Webinar.Controllers
                 Hashtable hashtable = new Hashtable();
 
                 var justForCapacity = (from p in m_model.Sessions
-                                       join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + Tools.TwoDigitString(wdt.Month.ToString()) + Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0)
+                                       join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0)
                                        on p.BeginTime equals w.id
                                        where p.SessionType == 1 //&& p.StateId == 2
                                        select new
@@ -1940,7 +1940,7 @@ namespace Webinar.Controllers
                 int curday = 2;
 
                 var baseSearch = (from p in m_model.Sessions
-                                  join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + Tools.TwoDigitString(wdt.Month.ToString()) + Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0)
+                                  join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0)
                                   on p.BeginTime equals w.id
                                   where p.SessionType == 1 //&& p.StateId == 2
                                   select new
@@ -2001,7 +2001,7 @@ namespace Webinar.Controllers
                 Hashtable hashtable = new Hashtable();
 
                 var justForCapacity = (from p in m_model.Sessions
-                                       join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + Tools.TwoDigitString(wdt.Month.ToString()) + Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0)
+                                       join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0)
                                        on p.EndTime equals w.id
                                        where p.SessionType == 1 //&& p.StateId == 3
                                        select new
@@ -2017,7 +2017,7 @@ namespace Webinar.Controllers
                 }
 
                 var baseSearch = (from p in m_model.Sessions
-                                  join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + Tools.TwoDigitString(wdt.Month.ToString()) + Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0)
+                                  join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0)
                                   on p.EndTime equals w.id
                                   where p.SessionType == 1 //&& p.StateId == 3
                                   select new
