@@ -102,4 +102,3 @@ D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.Services.dll
 D:\navid aghapour\Namaava\trunk\ServerSide\bin\System.Web.Mvc.xml
 D:\navid aghapour\Namaava\trunk\ServerSide\obj\Debug\Webinar.dll
 D:\navid aghapour\Namaava\trunk\ServerSide\obj\Debug\Webinar.pdb
-D:\navid aghapour\Namaava\trunk\ServerSide\obj\Debug\Webinar.csprojResolveAssemblyReference.cache
