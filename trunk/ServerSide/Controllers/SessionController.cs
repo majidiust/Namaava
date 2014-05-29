@@ -1921,20 +1921,20 @@ namespace Webinar.Controllers
                 Hashtable hashtable = new Hashtable();
 
                 var justForCapacity = (from p in m_model.Sessions
-                                       where p.SessionType == 1 &&
+                                       where p.SessionType == 1 && (p.StateId != 3 || p.StateId == 2)
                                        //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0 &&
-                                       p.WebinarDateTime.id == p.BeginTime
+                                       //p.WebinarDateTime.id == p.BeginTime
                                        select new
                                        {
                                            id = p.SessionId,
                                            capacity = p.Capacity, 
-                                           bTime = p.BeginTime ,
-                                           eTime = p.EndTime, 
-                                           year = p.WebinarDateTime.Year,
-                                           month = p.WebinarDateTime.Month,
-                                           day = p.WebinarDateTime.Day
+                                           //bTime = p.BeginTime ,
+                                           //eTime = p.EndTime, 
+                                           //year = p.WebinarDateTime.Year,
+                                           //month = p.WebinarDateTime.Month,
+                                           //day = p.WebinarDateTime.Day
 
-                                       }).ToList();
+                                       });
 
 
                 //foreach (var itm in justForCapacity)
@@ -1955,9 +1955,9 @@ namespace Webinar.Controllers
 
 
                 var baseSearch = (from p in m_model.Sessions
-                                  where p.SessionType == 1 &&
+                                  where p.SessionType == 1 && (p.StateId == 2 || p.StateId != 3)
                                        //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0 &&
-                                       p.WebinarDateTime.id == p.BeginTime
+                                       //p.WebinarDateTime.id == p.BeginTime
                                       //join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0)
                                   //on p.BeginTime equals w.id
                                   //where p.SessionType == 1 //&& p.StateId == 2
@@ -1978,9 +1978,9 @@ namespace Webinar.Controllers
                                       poster = p.Wallpaper,
                                       presentor = p.aspnet_User.UserName,
                                       desc = p.Description,
-                                      year = p.WebinarDateTime.Year,
-                                      month = p.WebinarDateTime.Month,
-                                      day = p.WebinarDateTime.Day
+                                      //year = p.WebinarDateTime.Year,
+                                      //month = p.WebinarDateTime.Month,
+                                      //day = p.WebinarDateTime.Day
                                   }).OrderByDescending(p => p.id).ToList();
 
                 //foreach (var itm in baseSearch)
@@ -2031,9 +2031,9 @@ namespace Webinar.Controllers
 
 
                 var justForCapacity = (from p in m_model.Sessions
-                                       where p.SessionType == 1 &&
+                                       where p.SessionType == 1 && p.StateId == 3
                                            //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0 &&
-                                           p.EndTime == p.WebinarDateTime.id
+                                           //p.EndTime == p.WebinarDateTime.id
                                        //join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0)
                                        //on p.EndTime equals w.id
                                        //where p.SessionType == 1 //&& p.StateId == 3
@@ -2041,10 +2041,10 @@ namespace Webinar.Controllers
                                        {
                                            id = p.SessionId,
                                            capacity = p.Capacity , 
-                                           year = p.WebinarDateTime.Year,
-                                           month = p.WebinarDateTime.Month,
-                                           day = p.WebinarDateTime.Day
-                                       }).ToList();
+                                           //year = p.WebinarDateTime.Year,
+                                           //month = p.WebinarDateTime.Month,
+                                           //day = p.WebinarDateTime.Day
+                                       });
 
                 //foreach (var itm in justForCapacity)
                 //{
@@ -2060,9 +2060,9 @@ namespace Webinar.Controllers
                 }
 
                 var baseSearch = (from p in m_model.Sessions
-                                  where p.SessionType == 1 &&
+                                  where p.SessionType == 1 && p.StateId == 3
                                        //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0 &&
-                                       p.EndTime == p.WebinarDateTime.id
+                                       //p.EndTime == p.WebinarDateTime.id
                                   //join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0)
                                   //on p.EndTime equals w.id
                                   //where p.SessionType == 1 //&& p.StateId == 3
@@ -2082,10 +2082,10 @@ namespace Webinar.Controllers
                                       fee = UserPeymentSession(p.SessionId),
                                       poster = p.Wallpaper,
                                       presentor = p.aspnet_User.UserName,
-                                      desc = p.Description , 
-                                      year = p.WebinarDateTime.Year ,
-                                      month = p.WebinarDateTime.Month ,
-                                      day = p.WebinarDateTime.Day
+                                      desc = p.Description  
+                                      //year = p.WebinarDateTime.Year ,
+                                      //month = p.WebinarDateTime.Month ,
+                                      //day = p.WebinarDateTime.Day
                                   }).OrderByDescending(p => p.id).ToList();
 
                 //foreach (var itm in baseSearch)
