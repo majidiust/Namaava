@@ -69,11 +69,11 @@ namespace Webinar.Controllers
                         if (begin.Time != null && x.WebinarDateTime.Time != null && end.Time != null && x.WebinarDateTime1.Time != null)
                         {
                             if (begin.Time < x.WebinarDateTime.Time && end.Time >= x.WebinarDateTime.Time)
-                                return Json(new { Status = false, Message = "Sever is busy in this time. Try another time for your webinar" }, JsonRequestBehavior.AllowGet);
+                                return Json(new { Status = false, Message = "Sever is busy in this time. Try another time for your Seminar" }, JsonRequestBehavior.AllowGet);
                             if (begin.Time >= x.WebinarDateTime.Time && end.Time <= x.WebinarDateTime1.Time)
-                                return Json(new { Status = false, Message = "Sever is busy in this time. Try another time for your webinar" }, JsonRequestBehavior.AllowGet);
+                                return Json(new { Status = false, Message = "Sever is busy in this time. Try another time for your Seminar" }, JsonRequestBehavior.AllowGet);
                             if (begin.Time <= x.WebinarDateTime1.Time && end.Time >= x.WebinarDateTime1.Time)
-                                return Json(new { Status = false, Message = "Sever is busy in this time. Try another time for your webinar" }, JsonRequestBehavior.AllowGet);
+                                return Json(new { Status = false, Message = "Sever is busy in this time. Try another time for your Seminar" }, JsonRequestBehavior.AllowGet);
                         }
                     }
                 }
@@ -179,7 +179,7 @@ namespace Webinar.Controllers
                     }
                     else
                     {
-                        return Json(new { Status = false, Message = "This Status can not go inside the webinar" }, JsonRequestBehavior.AllowGet);
+                        return Json(new { Status = false, Message = "This Status can not go inside the Seminar" }, JsonRequestBehavior.AllowGet);
                     }
                 }
                 else
@@ -595,7 +595,7 @@ namespace Webinar.Controllers
                     else
                     {
                         isBilled = false;
-                        return Json(new { Status = false, Message = "There is not enough balance for make payment and create webinar" }, JsonRequestBehavior.AllowGet);
+                        return Json(new { Status = false, Message = "There is not enough balance for make payment and create Seminar" }, JsonRequestBehavior.AllowGet);
                     }
                 }
                 else
@@ -605,7 +605,7 @@ namespace Webinar.Controllers
                     userProfile.Balance = 0;
                     userProfile.UserId = user.UserId;
                     m_model.Profiles.InsertOnSubmit(userProfile);
-                    return Json(new { Status = false, Message = "There is not enough balance for make payment and create webinar" }, JsonRequestBehavior.AllowGet);
+                    return Json(new { Status = false, Message = "There is not enough balance for make payment and create Seminar" }, JsonRequestBehavior.AllowGet);
                 }
 
                 m_model.SubmitChanges();
@@ -643,7 +643,7 @@ namespace Webinar.Controllers
                 {
                     //Return Back To Server If Bill Does Not Exist
                     //Todo : Created Date should be delete
-                    return Json(new { Status = false, Message = "Bill the Webinar inorder to schedule it" }, JsonRequestBehavior.AllowGet);
+                    return Json(new { Status = false, Message = "Bill the Seminar inorder to schedule it" }, JsonRequestBehavior.AllowGet);
                 }
                 else // satisfy if bill has been done
                 {
@@ -1937,13 +1937,13 @@ namespace Webinar.Controllers
                                        }).ToList();
 
 
-                foreach (var itm in justForCapacity)
-                {
-                    if (!((itm.year.ToString() + Tools.TwoDigitString(itm.month.ToString()) + Tools.TwoDigitString(itm.day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0))
-                    {
-                        justForCapacity.Remove(itm);
-                    }
-                }
+                //foreach (var itm in justForCapacity)
+                //{
+                //    if (!((itm.year.ToString() + Tools.TwoDigitString(itm.month.ToString()) + Tools.TwoDigitString(itm.day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0))
+                //    {
+                //        justForCapacity.Remove(itm);
+                //    }
+                //}
 
                 foreach (var x in justForCapacity)
                 {
@@ -1983,13 +1983,13 @@ namespace Webinar.Controllers
                                       day = p.WebinarDateTime.Day
                                   }).OrderByDescending(p => p.id).ToList();
 
-                foreach (var itm in baseSearch)
-                {
-                    if (!((itm.year.ToString() + Tools.TwoDigitString(itm.month.ToString()) + Tools.TwoDigitString(itm.day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0))
-                    {
-                        baseSearch.Remove(itm);
-                    }
-                }
+                //foreach (var itm in baseSearch)
+                //{
+                //    if (!((itm.year.ToString() + Tools.TwoDigitString(itm.month.ToString()) + Tools.TwoDigitString(itm.day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0))
+                //    {
+                //        baseSearch.Remove(itm);
+                //    }
+                //}
 
                 var searchResult = baseSearch.Skip((index - 1) * pageSize).Take(pageSize);
 
@@ -2046,13 +2046,13 @@ namespace Webinar.Controllers
                                            day = p.WebinarDateTime.Day
                                        }).ToList();
 
-                foreach (var itm in justForCapacity)
-                {
-                    if (!((itm.year.ToString() + Tools.TwoDigitString(itm.month.ToString()) + Tools.TwoDigitString(itm.day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0))
-                    {
-                        justForCapacity.Remove(itm);
-                    }
-                }
+                //foreach (var itm in justForCapacity)
+                //{
+                //    if (!((itm.year.ToString() + Tools.TwoDigitString(itm.month.ToString()) + Tools.TwoDigitString(itm.day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0))
+                //    {
+                //        justForCapacity.Remove(itm);
+                //    }
+                //}
 
                 foreach (var x in justForCapacity)
                 {
@@ -2088,13 +2088,13 @@ namespace Webinar.Controllers
                                       day = p.WebinarDateTime.Day
                                   }).OrderByDescending(p => p.id).ToList();
 
-                foreach (var itm in baseSearch)
-                {
-                    if (!((itm.year.ToString() + Tools.TwoDigitString(itm.month.ToString()) + Tools.TwoDigitString(itm.day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0 ))
-                    {
-                        baseSearch.Remove(itm);
-                    }
-                }
+                //foreach (var itm in baseSearch)
+                //{
+                //    if (!((itm.year.ToString() + Tools.TwoDigitString(itm.month.ToString()) + Tools.TwoDigitString(itm.day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0 ))
+                //    {
+                //        baseSearch.Remove(itm);
+                //    }
+                //}
 
                 var searchResult = baseSearch.Skip((index - 1) * pageSize).Take(pageSize);
 
