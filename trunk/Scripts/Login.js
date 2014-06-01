@@ -1011,65 +1011,71 @@ function DetectLoggedInUserNew() {
 function GetSeminarInfo(sessionId)
 {
     ShowModalWindow("توجه", "در حال دریافت اطلاعات سمینار از سرور ...");
-    $.getJSON(ServerURL + "Session/SessionSearchById", {sessionId:sessionId},function(result){
-		$('#PleaseWait').hide();
-		if(result.Status == true)
-		{
-			$("#seminar_title").html(result.Result.name);
-			$("#seminar_time").html(GetPrsianDate(result.Result.beginTime));
-			//$("#WebinarHolder").html(result.Result.admin);
-			$("#seminar_presenter").html(result.Result.presentor);
-			$("#seminar_capacity").html(result.Result.remained);
-			$("#seminar_explain").html(result.Result.description);
-			var status = "";
-			var st = 0 ;
-			  if (result.Result.status.indexOf("Scheduled") != -1) {
-				  st = 1;
-                            status = "زمانبندی شده" ;
-                        } else if (result.Result.status.indexOf("Close") != -1) {
-							st = 2;
-                            status = "تمام شده است" ;
-                        } else if (result.Result.status.indexOf("Open") != -1) {
-							st = 3;
-                            status = "در حال برگزاری" ;
-                        }
-			$("#seminar_status").html(status);
-			$("#seminar_duration").html(result.Result.duration + '  ساعت  ');
-			var fee = (result.Result.fee == -1 || result.Result.fee == 0) ? 'رایگان' : (result.Result.fee + ' ریال ');
-			$("#seminar_fee").html(fee);
-			//$("#WebinarPresentorDetails").html(result.Result.presentor);
-			$("#seminar_presentor_pic").prop('src','ServerSide/Pics/Users/Originals/' + result.Result.presentorUserName + '.png');
-		//	$("#WebinarHolderPic").prop('src','http://iwebinar.ir/Pics/Users/Originals/' + result.Result.adminUserName + '.png');
-			//$("#WebinarHolderDetails").html(result.Result.admin);
-			$("#seminar_why").html(result.Result.why);
-			$("#seminar_for").html(result.Result.forWho);
-			//$("#WebinarLevel").html(result.Result.level);
-			$("#seminar_pic").prop('src','ServerSide/' + result.Result.poster);
-			
-			$("#details-wrapper").show();
-			
-			if(st == 1){
-				   $("#seminar_action").html('<input type="button" name="go"  class="customButton1" value="درخواست برای شرکت" onclick="RequestForSeminar(' + sessionId + ', false);" style="font-family:Tahoma, Geneva, sans-serif;"/>');
-			}else if(st == 2){
-				 $("#seminar_action").html('<input type="button" name="go"  class="customButton1" value="درخواست برای فیلم سمینار" onclick="RequestForSeminar(' + sessionId + ', true);" style="font-family:Tahoma, Geneva, sans-serif;"/>');
-			}
-			
-			 var src = result.Result.advertise;
-			 console.log(src);
-			 
-			 $('#videoPlayer source').attr('src', src);
-$("#videoPlayer")[0].load();
-				   
-			CloseModalWindow();
-		}
-		else{
-			ShowModalWindow("خطا" , result.Message);
-			            ShowModalCloseButton();
+    $.getJSON(ServerURL + "Session/SessionSearchById", { sessionId: sessionId }, function (result) {
+        $('#PleaseWait').hide();
+        if (result.Status == true) {
+            $("#seminar_title").html(result.Result.name);
+            $("#seminar_time").html(GetPrsianDate(result.Result.beginTime));
+            //$("#WebinarHolder").html(result.Result.admin);
+            $("#seminar_presenter").html(result.Result.presentor);
+            if (result.Result.remained == 0) {
+                $("#seminar_capacity").html("ظرفیت تکمیل شده است");
+            }
+            else {
+                $("#seminar_capacity").html("ظرفیت برای ثبت نام وجود دارد");
+            }
+            //$("#seminar_capacity").html(result.Result.remained);
 
-		}
-		
-			walk(document.body, replaceNumbers);
-		});
+            $("#seminar_explain").html(result.Result.description);
+            var status = "";
+            var st = 0;
+            if (result.Result.status.indexOf("Scheduled") != -1) {
+                st = 1;
+                status = "زمانبندی شده";
+            } else if (result.Result.status.indexOf("Close") != -1) {
+                st = 2;
+                status = "تمام شده است";
+            } else if (result.Result.status.indexOf("Open") != -1) {
+                st = 3;
+                status = "در حال برگزاری";
+            }
+            //			$("#seminar_status").html(status); // بنابر درخواست کارفرما در تاریخ 11/3/93 حذف گردید
+            $("#seminar_duration").html(result.Result.duration + '  ساعت  ');
+            var fee = (result.Result.fee == -1 || result.Result.fee == 0) ? 'رایگان' : (result.Result.fee + ' ریال ');
+            $("#seminar_fee").html(fee);
+            //$("#WebinarPresentorDetails").html(result.Result.presentor);
+            $("#seminar_presentor_pic").prop('src', 'ServerSide/Pics/Users/Originals/' + result.Result.presentorUserName + '.png');
+            //	$("#WebinarHolderPic").prop('src','http://iwebinar.ir/Pics/Users/Originals/' + result.Result.adminUserName + '.png');
+            //$("#WebinarHolderDetails").html(result.Result.admin);
+            $("#seminar_why").html(result.Result.why);
+            $("#seminar_for").html(result.Result.forWho);
+            //$("#WebinarLevel").html(result.Result.level);
+            $("#seminar_pic").prop('src', 'ServerSide/' + result.Result.poster);
+
+            $("#details-wrapper").show();
+
+            if (st == 1) {
+                $("#seminar_action").html('<input type="button" name="go"  class="customButton1" value="درخواست برای شرکت" onclick="RequestForSeminar(' + sessionId + ', false);" style="font-family:Tahoma, Geneva, sans-serif;"/>');
+            } else if (st == 2) {
+                $("#seminar_action").html('<input type="button" name="go"  class="customButton1" value="درخواست برای فیلم سمینار" onclick="RequestForSeminar(' + sessionId + ', true);" style="font-family:Tahoma, Geneva, sans-serif;"/>');
+            }
+
+            var src = result.Result.advertise;
+            console.log(src);
+
+            $('#videoPlayer source').attr('src', src);
+            $("#videoPlayer")[0].load();
+
+            CloseModalWindow();
+        }
+        else {
+            ShowModalWindow("خطا", result.Message);
+            ShowModalCloseButton();
+
+        }
+
+        walk(document.body, replaceNumbers);
+    });
 }
 
 function getQueryStrings() { 
@@ -1137,7 +1143,7 @@ function GetPrsianDate(currentDate)
 			_month =  "اسفند";
 			break;
 	}
-	var _msg = "ساعت " + _splitedDate[3] + " ، " + _splitedDate[2] + "  " + _month  + "  ماه سال" +  _splitedDate[0];
+	var _msg = _splitedDate[2] + "  " + _month + "  ماه سال" + _splitedDate[0] + " ، " + "ساعت " + _splitedDate[3];
 	return _msg;
 }
 
@@ -1154,7 +1160,7 @@ function RequestForSeminar(seminarID, offline) {
 				var mobile = result.mobile;
                 loggedIn = true;
 				_email = email;
-                 ShowModalWindow("توجه" , 'اطلاعات کاربری صحیح می باشد. در حال بررسی اطلاعات وبینار ....');
+                 ShowModalWindow("توجه" , 'اطلاعات کاربری صحیح می باشد. در حال بررسی اطلاعات سمینار ....');
 
 				$.ajax({
         			type:'GET',

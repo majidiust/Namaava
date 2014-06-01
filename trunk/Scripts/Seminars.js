@@ -108,7 +108,7 @@ function LoadSeminars() {
                       //  newRecord += '<td colspan="2" style="border:none;"></td>';
                         newRecord += '</tr>';
                         newRecord += '<tr>';
-                        newRecord += '<td  style="float:right;width:100px;border:none;text-align:justify">وضعیت وبینار</td>';
+                        newRecord += '<td  style="float:right;width:100px;border:none;text-align:justify">وضعیت سمینار</td>';
                         if (result.Result.SearchResult[i].status.indexOf("Scheduled") != -1) {
                             newRecord += '<td  style="float:right;border:none;text-align:justify" id="SeminarStatus">' + "برنامه‌ریزی شده" + '</td>';
                         } else if (result.Result.SearchResult[i].status.indexOf("Close") != -1) {
@@ -119,7 +119,7 @@ function LoadSeminars() {
                         newRecord += '<td style="border:none;"></td>';
                         newRecord += '</tr>';
                         newRecord += '<tr>';
-                        newRecord += '<td  style="float:right;width:100px;border:none;text-align:justify">مدت وبینار</td>';
+                        newRecord += '<td  style="float:right;width:100px;border:none;text-align:justify">مدت سمینار</td>';
                         newRecord += '<td style="float:right;border:none;text-align:justify" id="SeminarDuration">' + result.Result.SearchResult[i].duration + 'ساعت</td>';
                         newRecord += '<td style="float:right;border:none;text-align:justify"></td>';
                         newRecord += '</tr>';
@@ -136,9 +136,9 @@ function LoadSeminars() {
                         newRecord += '<td  colspan="3" style="width:100px;border:none;text-align:justify">';
                         newRecord += '<center>';
                         if (result.Result.SearchResult[i].status == 'Closed')
-                            newRecord += '<input type="submit"  class="gobutton"   value="درخواست فیلم وبینار" onclick="ReuestForSeminar(' + result.Result.SearchResult[i].id + ',true);" style="font-family:Tahoma, Geneva, sans-serif; margin-bottom:5px;"/>';
+                            newRecord += '<input type="submit"  class="gobutton"   value="درخواست فیلم سمینار" onclick="ReuestForSeminar(' + result.Result.SearchResult[i].id + ',true);" style="font-family:Tahoma, Geneva, sans-serif; margin-bottom:5px;"/>';
                         else
-                            newRecord += '<input type="submit"   class="gobutton"  value="درخواست شرکت در وبینار" onclick="ReuestForSeminar(' + result.Result.SearchResult[i].id + ',false);" style="font-family:Tahoma, Geneva, sans-serif; margin-bottom:5px;"/>';
+                            newRecord += '<input type="submit"   class="gobutton"  value="درخواست شرکت در سمینار" onclick="ReuestForSeminar(' + result.Result.SearchResult[i].id + ',false);" style="font-family:Tahoma, Geneva, sans-serif; margin-bottom:5px;"/>';
 
                         newRecord += '</center>';
                         newRecord += '</td>';
@@ -261,7 +261,7 @@ function SendRequestForSeminar() {
                     $("#RequestMessage").show();
                     var _message = "ثبت درخواست با خطا روبرو شده است. لصفا دقایقی دیگر تلاش نمایید.";
                     if (result.Message.indexOf("Exist") != -1);
-                    _message = "شما قبلا برای این وبینار درخواست داده اید و در حال بررسی است.";
+                    _message = "شما قبلا برای این سمینار درخواست داده اید و در حال بررسی است.";
                     $("#RequestMessageText").html(result.Message);
                     $("#EndOfRequest").show();
                 }
@@ -308,7 +308,7 @@ function SendRequestForSeminar() {
                         $("#RequestMessage").show();
                         var _message = "ثبت درخواست با خطا روبرو شده است. لصفا دقایقی دیگر تلاش نمایید.";
                         if (result.Message.indexOf("Exist") != -1);
-                        _message = "شما قبلا برای این وبینار درخواست داده اید و در حال بررسی است.";
+                        _message = "شما قبلا برای این سمینار درخواست داده اید و در حال بررسی است.";
                         $("#RequestMessageText").html(result.Message);
                         $("#EndOfRequest").show();
                     }
