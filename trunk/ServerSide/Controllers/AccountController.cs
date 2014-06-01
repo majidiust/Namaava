@@ -230,9 +230,9 @@ namespace Webinar.Controllers
                         if (bool.Parse(smsSend))
                         {
                             SMS sms = new SMS();
-                            sms.SendSmsEvent(new string[] { membership.MobilePIN }, "عضویت شما در سامانه ی وبینار تایید شد. به این سامانه خوش آمدید");
+                            sms.SendSmsEvent(new string[] { membership.MobilePIN }, "عضویت شما در سامانه ی سمینار تایید شد. به این سامانه خوش آمدید");
                         }
-                        service.SendMail(membership.Email, "عضویت در سامانه", "عضویت شما در سامانه ی وبینار تایید شد. به این سامانه خوش آمدید");
+                        service.SendMail(membership.Email, "عضویت در سامانه", "عضویت شما در سامانه ی سمینار تایید شد. به این سامانه خوش آمدید");
                         return Json(new { Status = true, Message = "Member Approved Successfully" }, JsonRequestBehavior.AllowGet);
                     }
                     else
@@ -240,9 +240,9 @@ namespace Webinar.Controllers
                         if (bool.Parse(smsSend))
                         {
                             SMS sms = new SMS();
-                            sms.SendSmsEvent(new string[] { membership.MobilePIN }, "عضویت شما در سامانه ی وبینار تایید نشده است. برای حل مشکل با مدیر سیستم تماس بگیرید");
+                            sms.SendSmsEvent(new string[] { membership.MobilePIN }, "عضویت شما در سامانه ی سمینار تایید نشده است. برای حل مشکل با مدیر سیستم تماس بگیرید");
                         }
-                        service.SendMail(membership.Email, "عدم عضویت در سامانه", "عضویت شما در سامانه ی وبینار تایید نشده است. برای حل مشکل با مدیر سیستم تماس بگیرید");
+                        service.SendMail(membership.Email, "عدم عضویت در سامانه", "عضویت شما در سامانه ی سمینار تایید نشده است. برای حل مشکل با مدیر سیستم تماس بگیرید");
                         return Json(new { Status = true, Message = "Member Denied Successfully" }, JsonRequestBehavior.AllowGet);
                     }
                 }

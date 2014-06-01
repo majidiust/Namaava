@@ -356,7 +356,7 @@ function GetListOfSessionFilesForSeminarInfo(sessionID)
 						newRow += '<td style="text-align:center;" class="center" id="SeminarContentButton' + result.Result[i].fileId + '">';
 						if(SeminarPrimaryContent != -1 && SeminarPrimaryContent == result.Result[i].fileId)
 						{
-							newRow += '<span class="label label-success">اسلاید وبینار</span>';
+							newRow += '<span class="label label-success">اسلاید سمینار</span>';
 						}
 						else{
 							newRow += '<button  class="btn btn-inverse" style="font-family:tahoma;" onclick="SetAsSeminarContent(' + result.Result[i].fileId + "," + sessionID + ');"><i class="icon-trash icon-white"></i>به عنوان اسلاید</button>';
@@ -494,7 +494,7 @@ $.getJSON(ServerURL + "Session/GetCurrentContent",
 				function(response)
 				{
 					if(response.Status == true){
-						$("#SeminarContentButton" + fileID).html('<span class="label label-success">اسلاید وبینار</span>');
+						$("#SeminarContentButton" + fileID).html('<span class="label label-success">اسلاید سمینار</span>');
 						$("#SeminarContentButton" + currentContent).html('<button  class="btn btn-inverse" style="font-family:tahoma;" onclick="SetAsSeminarContent(' + currentContent + "," + sessionID + ');"><i class="icon-trash icon-white"></i>به عنوان اسلاید</button>');
 						//TODO : Remove Current Powerpoint Lable
 					}
@@ -548,14 +548,14 @@ function SeminarWizard(step, isNext)
     			dataType: 'json',
     			success: function(result) {
 					if(result.Status == true){
-			alert("شما برای ایجاد این وبینار به اعتبار " + result.Result + "احتیاج دارید. درصورت ساخت این هزینه از حساب شما برداشته خواهد شد.");
+			alert("شما برای ایجاد این سمینار به اعتبار " + result.Result + "احتیاج دارید. درصورت ساخت این هزینه از حساب شما برداشته خواهد شد.");
 			fee = result.Result;
 			
 			
 		}
 		else if(result.Message.indexOf("charge")!= -1)
 		{
-			alert("شما برای ایجاد این وبینار به اعتبار " + result.Result + "احتیاج دارید. لطفا حساب خود را شارژ کرده و دوباره تلاش نمایید.");
+			alert("شما برای ایجاد این سمینار به اعتبار " + result.Result + "احتیاج دارید. لطفا حساب خود را شارژ کرده و دوباره تلاش نمایید.");
 			fee = result.Result;
 			_hasError= true;
 			
@@ -1605,8 +1605,8 @@ function GetMyRequests()
 					//MySeminars.push(_session);
 				// Table : OwnedSeminarsTable
 				//<tr>
-				//	<th>شماره وبینار</th>
-				//	<th>نام وبینار</th>
+				//	<th>شماره سمینار</th>
+				//	<th>نام سمینار</th>
 				//	<th>مدیر</th>
 				//	<th>ارائه دهنده</th>
 				//	<th>تاریخ برگزاری</th>
@@ -1666,10 +1666,10 @@ function GetMyRequests()
 				  
 				
 				if(_session.m_seminarStatus.indexOf('Open') != -1 && _session.m_requestResult.indexOf('Accepted') != -1){
-					newRow += '<td style="width:100px;"><center>' + '<div  title="برای ورورد به وبینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به وبینار</div>' + '</center></td>';
+					newRow += '<td style="width:100px;"><center>' + '<div  title="برای ورورد به سمینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به سمینار</div>' + '</center></td>';
 					}
 					else if(_session.m_seminarStatus.indexOf('Close') != -1 && _session.m_requestResult.indexOf('Accepted') != -1){
-					newRow += '<td style="width:100px;"><center>' + '<div  title="برای ورورد به وبینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به وبینار ضبط شده</div>' + '</center></td>';
+					newRow += '<td style="width:100px;"><center>' + '<div  title="برای ورورد به سمینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به سمینار ضبط شده</div>' + '</center></td>';
 					}
 					else{
 						 newRow += "<td></td>";
@@ -1714,8 +1714,8 @@ function GetListOfInvitedSeminars()
 					//MySeminars.push(_session);
 				// Table : OwnedSeminarsTable
 				//<tr>
-				//	<th>شماره وبینار</th>
-				//	<th>نام وبینار</th>
+				//	<th>شماره سمینار</th>
+				//	<th>نام سمینار</th>
 				//	<th>مدیر</th>
 				//	<th>ارائه دهنده</th>
 				//	<th>تاریخ برگزاری</th>
@@ -1738,7 +1738,7 @@ function GetListOfInvitedSeminars()
 				  if(_session.m_seminarStatus.indexOf('Open') != -1)
 				  {
 				  	newRow += '<td><center>' + '<span class="label label-success">در حال اجرا</span>' + '</center></td>';
-    			    newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات وبینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به وبینار</div>' + '</center></td>';
+    			    newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به سمینار</div>' + '</center></td>';
 				  }
 				  if(_session.m_seminarStatus.indexOf('Banned') != -1)
 				{
@@ -1748,7 +1748,7 @@ function GetListOfInvitedSeminars()
 				if(_session.m_seminarStatus.indexOf('Close') != -1)
 				{
 					newRow += '<td><center>' + '<span class="label label-important">بسته شده</span>' + '</center></td>';
-					newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات وبینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GoToSeminar('+ _session.m_seminarID +');"> ورود به وبینار ضبط شده</div>' + '</center></td>';
+					newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GoToSeminar('+ _session.m_seminarID +');"> ورود به سمینار ضبط شده</div>' + '</center></td>';
 					newRow += "<td></td>";
 				}
 				
@@ -1788,8 +1788,8 @@ function GetMySeminars()
 					MySeminars.push(_session);
 				// Table : OwnedSeminarsTable
 				//<tr>
-				//	<th>شماره وبینار</th>
-				//	<th>نام وبینار</th>
+				//	<th>شماره سمینار</th>
+				//	<th>نام سمینار</th>
 				//	<th>مدیر</th>
 				//	<th>ارائه دهنده</th>
 				//	<th>تاریخ برگزاری</th>
@@ -1816,15 +1816,15 @@ function GetMySeminars()
 				   				   newRow += '<td><center>' + '<span class="label label-important">نامشخص</span>' + '</center></td>';
 
 					
-    			  newRow += '<td style="width:100px;"><center>' + '<div  title="برای مشاهده جزئیات وبینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GetMoreSeminarInformation(' + _session.m_seminarID + ');">اطلاعات بیشتر</div>' + '</center></td>';
+    			  newRow += '<td style="width:100px;"><center>' + '<div  title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GetMoreSeminarInformation(' + _session.m_seminarID + ');">اطلاعات بیشتر</div>' + '</center></td>';
 				  
 				  if(_session.m_seminarStatus.indexOf('Open') != -1)
 				  {
-    			    newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات وبینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به وبینار</div>' + '</center></td>';
+    			    newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به سمینار</div>' + '</center></td>';
 				  }
 				  else if(_session.m_seminarStatus.indexOf('Close') != -1)
 				  {
-				  newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات وبینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به وبینار ضبط شده</div>' + '</center></td>';
+				  newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به سمینار ضبط شده</div>' + '</center></td>';
 				  }
 				  else{
 					  	newRow += "<td></td>";
@@ -1858,8 +1858,8 @@ function GetMySeminars()
 					MySeminars.push(_session);
 					// Table : OwnedSeminarsTable
 				//<tr>
-				//	<th>شماره وبینار</th>
-				//	<th>نام وبینار</th>
+				//	<th>شماره سمینار</th>
+				//	<th>نام سمینار</th>
 				//	<th>مدیر</th>
 				//	<th>ارائه دهنده</th>
 				//	<th>تاریخ برگزاری</th>
@@ -1885,15 +1885,15 @@ function GetMySeminars()
 				   else 
 				   				   newRow += '<td><center>' + '<span class="label label-important">نامشخص</span>' + '</center></td>';
 
-    			  newRow += '<td style="width:100px;"><center>' + '<div  title="برای مشاهده جزئیات وبینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GetMoreSeminarInformation(' + _session.m_seminarID + ');">اطلاعات بیشتر</div>' + '</center></td>';
+    			  newRow += '<td style="width:100px;"><center>' + '<div  title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GetMoreSeminarInformation(' + _session.m_seminarID + ');">اطلاعات بیشتر</div>' + '</center></td>';
 				  
 				  if(_session.m_seminarStatus.indexOf('Open') != -1)
 				  {
-    			    newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات وبینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به وبینار</div>' + '</center></td>';
+    			    newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به سمینار</div>' + '</center></td>';
 				  }
 				  else if(_session.m_seminarStatus.indexOf('Close') != -1)
 				  {
-    			    newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات وبینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به وبینار ضبط شده</div>' + '</center></td>';
+    			    newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar('+ _session.m_seminarID +');">ورود به سمینار ضبط شده</div>' + '</center></td>';
 				  }
 				  else{
 					  	newRow += "<td></td>";

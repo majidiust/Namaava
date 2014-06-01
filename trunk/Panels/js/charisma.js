@@ -2481,8 +2481,8 @@ function GetMyRequests() {
                     //MySeminars.push(_session);
                     // Table : OwnedSeminarsTable
                     //<tr>
-                    //	<th>شماره وبینار</th>
-                    //	<th>نام وبینار</th>
+                    //	<th>شماره سمینار</th>
+                    //	<th>نام سمینار</th>
                     //	<th>مدیر</th>
                     //	<th>ارائه دهنده</th>
                     //	<th>تاریخ برگزاری</th>
@@ -2590,8 +2590,8 @@ function GetListOfInvitedSeminars() {
                     //MySeminars.push(_session);
                     // Table : OwnedSeminarsTable
                     //<tr>
-                    //	<th>شماره وبینار</th>
-                    //	<th>نام وبینار</th>
+                    //	<th>شماره سمینار</th>
+                    //	<th>نام سمینار</th>
                     //	<th>مدیر</th>
                     //	<th>ارائه دهنده</th>
                     //	<th>تاریخ برگزاری</th>
@@ -2659,8 +2659,8 @@ function GetMySeminars() {
                     MySeminars.push(_session);
                     // Table : OwnedSeminarsTable
                     //<tr>
-                    //	<th>شماره وبینار</th>
-                    //	<th>نام وبینار</th>
+                    //	<th>شماره سمینار</th>
+                    //	<th>نام سمینار</th>
                     //	<th>مدیر</th>
                     //	<th>ارائه دهنده</th>
                     //	<th>تاریخ برگزاری</th>
@@ -2728,8 +2728,8 @@ function GetMySeminars() {
                             MySeminars.push(_session);
                             // Table : OwnedSeminarsTable
                             //<tr>
-                            //	<th>شماره وبینار</th>
-                            //	<th>نام وبینار</th>
+                            //	<th>شماره سمینار</th>
+                            //	<th>نام سمینار</th>
                             //	<th>مدیر</th>
                             //	<th>ارائه دهنده</th>
                             //	<th>تاریخ برگزاری</th>

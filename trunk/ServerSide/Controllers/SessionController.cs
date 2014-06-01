@@ -1921,7 +1921,7 @@ namespace Webinar.Controllers
                 Hashtable hashtable = new Hashtable();
 
                 var justForCapacity = (from p in m_model.Sessions
-                                       where p.SessionType == 1 && (p.StateId == 2 || p.StateId != 3)
+                                       where p.SessionType == 1 && (p.StateId != 3 || p.StateId == 2)
                                        //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0 &&
                                        //p.WebinarDateTime.id == p.BeginTime
                                        select new
@@ -1929,7 +1929,7 @@ namespace Webinar.Controllers
                                            id = p.SessionId,
                                            capacity = p.Capacity, 
                                            //bTime = p.BeginTime ,
-                                           //eTime = p.EndTime
+                                           //eTime = p.EndTime, 
                                            //year = p.WebinarDateTime.Year,
                                            //month = p.WebinarDateTime.Month,
                                            //day = p.WebinarDateTime.Day
@@ -1955,7 +1955,7 @@ namespace Webinar.Controllers
 
 
                 var baseSearch = (from p in m_model.Sessions
-                                  where p.SessionType == 1 && (p.StateId !=3 || p.StateId ==2 ) 
+                                  where p.SessionType == 1 && (p.StateId == 2 || p.StateId != 3)
                                        //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0 &&
                                        //p.WebinarDateTime.id == p.BeginTime
                                       //join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0)
