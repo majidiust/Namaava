@@ -38,15 +38,14 @@ function LoginToAccountUp() {
                         DetectLoggedInUser();
                         $.modal.close();
                     }, 1000);
-					
-					try
-					{
-											$("#UserDetails").show();
-					$("#loginbox2").hide();
-					}
-					catch(err){
-						console.log(err);
-					}
+
+                    try {
+                        $("#UserDetails").show();
+                        $("#loginbox2").hide();
+                    }
+                    catch (err) {
+                        console.log(err);
+                    }
                 } else {
                     //alert(result.Message);
                     if (result.Message.indexOf("another") != -1) {
@@ -116,9 +115,9 @@ function LoginToAccountCenter() {
                         DetectLoggedInUser();
                         $.modal.close();
                     }, 1000);
-					
-					$("#UserDetails").show();
-					$("#loginbox2").hide();
+
+                    $("#UserDetails").show();
+                    $("#loginbox2").hide();
                 } else {
                     //alert(result.Message);
                     if (result.Message.indexOf("another") != -1) {
@@ -265,10 +264,10 @@ function RegisterToServer() {
         $("#RegisterMessage").html("در حال ثبت نام....");
         $("#RegisterMessage").show();
         $.getJSON(ServerURL + "Account/RegisterToServer", {
-                username: m_uname,
-                password: m_pass,
-                email: m_email
-            },
+            username: m_uname,
+            password: m_pass,
+            email: m_email
+        },
             function (result) {
                 if (result.Status == false) {
                     if (result.Message.indexOf("Username already exists. Please enter a different user name") != -1) {
@@ -320,8 +319,8 @@ function ClearRegisterForm() {
     $("#email").val("");
     $("#pass").val("");
     $("#passConfirm").val("");
-	$("#ExplainRegister").show();
-	$("#RegisterFields").hide();
+    $("#ExplainRegister").show();
+    $("#RegisterFields").hide();
 }
 
 
@@ -413,18 +412,16 @@ function DetectLoggedInUser() {
             $("#UserInfo").show();
             $("#UserName").html(result.user);
             $("#Login").hide();
-			
-			try
-			{
-				GetUserSummery();
-				
-					
-					$("#UserDetails").show();
-					$("#loginbox2").hide();
-			}
-			catch(err)
-			{
-			}
+
+            try {
+                GetUserSummery();
+
+
+                $("#UserDetails").show();
+                $("#loginbox2").hide();
+            }
+            catch (err) {
+            }
         } else {
             $("#login-box").show();
             $("#RegisterBox").hide();
@@ -433,15 +430,13 @@ function DetectLoggedInUser() {
             $("#LogInDetails").hide();
             $("#UserInfo").hide();
             $("#Login").show();
-			try
-			{
-				
-					$("#UserDetails").hide();
-					$("#loginbox2").show();
-			}
-			catch(err)
-			{
-			}
+            try {
+
+                $("#UserDetails").hide();
+                $("#loginbox2").show();
+            }
+            catch (err) {
+            }
         }
     });
 }
@@ -467,14 +462,12 @@ function LogOut() {
         $("#UserInfo").hide();
         $("#UserName").html(result.user);
         $("#Login").show();
-		try
-		{
-			$("#UserDetails").hide();
-			$("#loginbox2").show();
-		}
-		catch(err)
-		{
-		}
+        try {
+            $("#UserDetails").hide();
+            $("#loginbox2").show();
+        }
+        catch (err) {
+        }
     });
 }
 
@@ -487,8 +480,8 @@ function SubscribeToNewspaper() {
         SubscribeMessages("لطفا پست الکترونیکی را صحیح وارد کنید.");
     } else {
         $.getJSON(ServerURL + "Utility/NewspaperSubscribe", {
-                email: email
-            },
+            email: email
+        },
             function (result) {
                 if (result.Status == true) {
                     SubscribeMessages("درخواست شما با موفقیت ثبت گردید");
@@ -535,15 +528,16 @@ function SubmitRequestForAnnounce() {
     } else {
         //		RequestForParticipateInTest
         $.getJSON(ServerURL + "Session/RequestToParticipate", {
-                sessionId: 36,
-                email: email
-            },
+            sessionId: 36,
+            email: email
+        },
             function (result) {
                 if (result.Status == true) {
                     $("#RequestForSeminarError").html("درخواست شما با موفقیت ثبت گردید و شماره پیگیری شما " + result.Result.followUpCode + "می باشد.");
                     $("#RequestForSeminarError").show();
                     setTimeout(function () {
-                        $("#RequestForSeminarError").hide(); { //TODO: CHeck If Is Visible 	
+                        $("#RequestForSeminarError").hide(); 
+                        { //TODO: CHeck If Is Visible 	
                             RequestForSeminarCancel();
                         }
                     }, 10000);
@@ -593,8 +587,8 @@ function ForgetPassword() {
 
 
         $.getJSON(ServerURL + "Account/ForgetPassword", {
-                email: m_email
-            },
+            email: m_email
+        },
             function (result) {
                 if (result.Status == true) {
                     $('#ForgetPassMessage').removeClass("ErrorLink");
@@ -629,7 +623,7 @@ function ForgetPassword() {
 //////////////////////////////////////
 
 function ForgotPassword(email) {
-    var m_email = email;//$("#forgot_password_email").val();
+    var m_email = email; //$("#forgot_password_email").val();
     var m_message = "پست الکترونیکی : " + m_email + "<br/> در حال بازیابی کلمه عبور، لطفا منتظر بمانید ....";
     ShowModalWindow("توجه", m_message);
 
@@ -693,7 +687,7 @@ function CloseModalWindow() {
 
 function DoSelfPageAct(url) {
     window.location = url;
-   // history.pushState('', document.title, window.location.pathname);
+    // history.pushState('', document.title, window.location.pathname);
 }
 
 
@@ -724,20 +718,19 @@ function ShowRegisterForm(state) {
             $("#login-wrapper").slideToggle("slow", function () {
                 $("#banner-wrapper").slideToggle();
             });
-        } else
-		{
-			 if ($("#register-wrapper").is(":visible") == true){
-				  $("#register-wrapper").slideToggle("slow", function () {
+        } else {
+            if ($("#register-wrapper").is(":visible") == true) {
+                $("#register-wrapper").slideToggle("slow", function () {
+                    $("#banner-wrapper").slideToggle();
+                });
+            }
+            else if ($("#banner-wrapper").is(":visible") == false) {
                 $("#banner-wrapper").slideToggle();
-            });
-			 }
-			else if($("#banner-wrapper").is(":visible") == false){
-				   $("#banner-wrapper").slideToggle();
-			}
-		
-			  
-		}
-           
+            }
+
+
+        }
+
     }
 }
 
@@ -837,7 +830,8 @@ function ClearRegisterForm() {
 
 function LoginToAccountNew() {
     var m_userName = $("#username").val();
-    var m_password = $("#password").val(); {
+    var m_password = $("#password").val(); 
+    {
         ShowModalWindow("توجه", 'در حال بررسی نام کاربری و کلمه عبور. لطفا اندکی منتظر بمانید...');
 
         LoginData = {
@@ -906,15 +900,13 @@ function LogOutNew() {
             ShowModalWindow("موفقیت آمیز", "شما با موفقیت از سیستم خارج شدید");
             ShowModalCloseButton();
 
-			try
-			{
-				DetectLoggedInUser();
-					$("#UserDetails").hide();
-					$("#loginbox2").show();
-			}
-			catch(err)
-			{
-			}
+            try {
+                DetectLoggedInUser();
+                $("#UserDetails").hide();
+                $("#loginbox2").show();
+            }
+            catch (err) {
+            }
         },
         error: function () {
             var message = "امکان دسترسی به سرور وجود ندارد، لطفا دقایقی دیگر مجددا تلاش نمایید.";
@@ -1008,8 +1000,7 @@ function DetectLoggedInUserNew() {
     });
 }
 
-function GetSeminarInfo(sessionId)
-{
+function GetSeminarInfo(sessionId) {
     ShowModalWindow("توجه", "در حال دریافت اطلاعات سمینار از سرور ...");
     $.getJSON(ServerURL + "Session/SessionSearchById", { sessionId: sessionId }, function (result) {
         $('#PleaseWait').hide();
@@ -1078,220 +1069,213 @@ function GetSeminarInfo(sessionId)
     });
 }
 
-function getQueryStrings() { 
-  var assoc  = {};
-  var decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); };
-  var queryString = location.search.substring(1); 
-  var keyValues = queryString.split('&'); 
+function getQueryStrings() {
+    var assoc = {};
+    var decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); };
+    var queryString = location.search.substring(1);
+    var keyValues = queryString.split('&');
 
-  for(var i in keyValues) { 
-    var key = keyValues[i].split('=');
-    if (key.length > 1) {
-      assoc[decode(key[0])] = decode(key[1]);
+    for (var i in keyValues) {
+        var key = keyValues[i].split('=');
+        if (key.length > 1) {
+            assoc[decode(key[0])] = decode(key[1]);
+        }
     }
-  } 
 
-  return assoc; 
-} 
-
-function ParseCustomInt(argDate)
-{
-	if(argDate[0] == '0')
-		return argDate[1];
+    return assoc;
 }
 
-function GetPrsianDate(currentDate)
-{
-	var _splitedDate = currentDate.split(":");
-	var _month = _splitedDate[1]; 
-	switch(_month)
-	{
-		case "1":
-			_month = "فروردین";
-			break;
-		case "2":
-			_month =  "اردیبهشت";
-			break;
-		case "3":
-			_month =  "خرداد";
-			break;
-		case "4":
-			_month =  "تیر";
-			break;
-		case "5":
-			_month =  "مرداد";
-			break;
-		case "6":
-			_month =  "شهریور";
-			break;
-		case "7":
-			_month =  "مهر";
-			break;
-		case "8":
-			_month =  "آبان";
-			break;
-		case "9":
-			_month =  "آذر";
-			break;
-		case "10":
-			_month =  "دی";
-			break;
-		case "11":
-			_month =  "بهمن";
-			break;
-		case "12":
-			_month =  "اسفند";
-			break;
-	}
-	var _msg = _splitedDate[2] + "  " + _month + "  ماه سال" + _splitedDate[0] + " ، " + "ساعت " + _splitedDate[3];
-	return _msg;
+function ParseCustomInt(argDate) {
+    if (argDate[0] == '0')
+        return argDate[1];
+}
+
+function GetPrsianDate(currentDate) {
+    var _splitedDate = currentDate.split(":");
+    var _month = _splitedDate[1];
+    switch (_month) {
+        case "1":
+            _month = "فروردین";
+            break;
+        case "2":
+            _month = "اردیبهشت";
+            break;
+        case "3":
+            _month = "خرداد";
+            break;
+        case "4":
+            _month = "تیر";
+            break;
+        case "5":
+            _month = "مرداد";
+            break;
+        case "6":
+            _month = "شهریور";
+            break;
+        case "7":
+            _month = "مهر";
+            break;
+        case "8":
+            _month = "آبان";
+            break;
+        case "9":
+            _month = "آذر";
+            break;
+        case "10":
+            _month = "دی";
+            break;
+        case "11":
+            _month = "بهمن";
+            break;
+        case "12":
+            _month = "اسفند";
+            break;
+    }
+    var _msg = _splitedDate[2] + "  " + _month + "  ماه سال" + _splitedDate[0] + " ، " + "ساعت " + _splitedDate[3];
+    return _msg;
 }
 
 function RequestForSeminar(seminarID, offline) {
-   	ShowModalWindow("توجه" , 'در حال بررسی نام کاربری و کلمه عبور...');
+    ShowModalWindow("توجه", 'در حال بررسی نام کاربری و کلمه عبور...');
     $.ajax({
-        type:'GET',
-        url:ServerURL + "Account/IsLoggedIn",
-        dataType:'json',
-        success:function (result) {
+        type: 'GET',
+        url: ServerURL + "Account/IsLoggedIn",
+        dataType: 'json',
+        success: function (result) {
             if (result.Status == true) {
                 var userName = result.user;
-				var email = result.email;
-				var mobile = result.mobile;
+                var email = result.email;
+                var mobile = result.mobile;
                 loggedIn = true;
-				_email = email;
-                 ShowModalWindow("توجه" , 'اطلاعات کاربری صحیح می باشد. در حال بررسی اطلاعات سمینار ....');
+                _email = email;
+                ShowModalWindow("توجه", 'اطلاعات کاربری صحیح می باشد. در حال بررسی اطلاعات سمینار ....');
 
-				$.ajax({
-        			type:'GET',
-        			url:ServerURL + "Session/RequestToParticipate",
-					data:{
-						sessionId : seminarID,
-						email: result.email,
-						mobile: result.mobile
-						},
-       				dataType:'json',
-        			success:function (result) {
-            			if (result.Status == true) 
-						{
-							
-								hasRequested= true;
-								
-								ShowModalWindow("توجه" , 'در خواست شما برای سمینار  گردید و شماره پیگیری شما ' + result.Result.Code + ' می باشد. ' );
-ShowModalCloseButton();
-							
-							
-															hasRequested = false;
-						
-						}
-						else
-						{
-															ShowModalWindow("توجه" , 
+                $.ajax({
+                    type: 'GET',
+                    url: ServerURL + "Session/RequestToParticipate",
+                    data: {
+                        sessionId: seminarID,
+                        email: result.email,
+                        mobile: result.mobile
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.Status == true) {
+
+                            hasRequested = true;
+
+                            //ShowModalWindow("توجه" , 'در خواست شما برای سمینار  گردید و شماره پیگیری شما ' + result.Result.Code + ' می باشد. ' );
+                            ShowModalWindow("توجه", 'کاربر گرامی درخواست شما با شماره پیگیری  ' + result.Result.Code + ' ثبت گردید و منتظر تایید برگزار کننده می باشد . لطفا به قسمت پنل کاربری وارد شوید و از قسمت مشاهده ی سمینار ، وضعیت سمینار را ملاحظه فرمایید. ');
+                            ShowModalCloseButton();
+
+
+                            hasRequested = false;
+
+                        }
+                        else {
+                            ShowModalWindow("توجه",
 								'شما قبلا برای شرکت در سمینار درخواست داده اید، لطفا برای بررسی وضعیت درخواست خود، به پنل کاربری خود وارد شوید.');
-ShowModalCloseButton();
-							hasRequested = false;
-						
-						}
-					},
-					data:{sessionId : seminarID, email : _email},
-					async: true
-					
-			});
+                            ShowModalCloseButton();
+                            hasRequested = false;
+
+                        }
+                    },
+                    data: { sessionId: seminarID, email: _email },
+                    async: true
+
+                });
             }
             else {
-			//	$("#msg3").show();
-				hasRequested = false;
-ShowModalWindow("توجه" , "برای شرکت در سمینار لطفا با نام کاربری خود وارد سامانه شوید. برای این کار از قسمت بالا استفاده نمایید.");
-							ShowModalCloseButton();
-			}
+                //	$("#msg3").show();
+                hasRequested = false;
+                ShowModalWindow("توجه", "برای شرکت در سمینار لطفا با نام کاربری خود وارد سامانه شوید. برای این کار از قسمت بالا استفاده نمایید.");
+                ShowModalCloseButton();
+            }
         },
-        async:false
+        async: false
     });
 }
 
-function GetMiddleTag(name, presentor, describtion, pic, webinarID, time)
-{
-	var msg = '<div>' ;
-          msg+=      '<center><img src="' + pic +'" alt=""  style="width:90%;height:250px;border-style:solid;border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px; -moz-box-shadow:    inset 0 0 10px #000000;-webkit-box-shadow: inset 0 0 10px #000000;   box-shadow:         inset 0 0 10px #000000;margin-top:10px;margin-bottom:10px;"/></center>' ;
-          msg+=   ' </div>' ;
-		  msg+=  '<hr/>';
-          msg +=   ' <div style="height:400px;">' ;
-          msg +=       '<div style="vertical-align:middle; height:100px;text-align:center;width:100%;text-shadow: 1px 1px 10px #806e80;filter: dropshadow(color=#806e80, offx=1, offy=1);font-size:16px;font-family:tahoma;font-weight:bold;">' ;
-           msg +=        name;
-            msg +=     '</div>';
-            msg +=      '<span class="byline" style="text-align:center;width:100%;text-shadow: 1px 1px 10px #806e80;filter: dropshadow(color=#806e80, offx=1, offy=1);font-size:12px;font-family:tahoma;font-weight:bold;">';
-             msg +=      time ;
-               msg +=   '</span>';
-            
-             msg +=   ' <div style="height:150px;font-size:14px;margin-left:10px;margin-right:10px;"><p>';
-             msg +=   GenerateMinSummery(describtion) ;
-              msg += '  </p></div>' ;
-              msg+=  ' <div class="Animated3DButton" style="vertical-align : bottom;cursor:pointer;" onClick="ShowMoreInfo(' + webinarID + ' );">' ;
-                   msg  +=    '   جزئیات بیشتر...' ;
-                  msg +=   '</div>' ;
-            msg +=  '</div>';
-			 return msg;
+function GetMiddleTag(name, presentor, describtion, pic, webinarID, time) {
+    var msg = '<div>';
+    msg += '<center><img src="' + pic + '" alt=""  style="width:90%;height:250px;border-style:solid;border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px; -moz-box-shadow:    inset 0 0 10px #000000;-webkit-box-shadow: inset 0 0 10px #000000;   box-shadow:         inset 0 0 10px #000000;margin-top:10px;margin-bottom:10px;"/></center>';
+    msg += ' </div>';
+    msg += '<hr/>';
+    msg += ' <div style="height:400px;">';
+    msg += '<div style="vertical-align:middle; height:100px;text-align:center;width:100%;text-shadow: 1px 1px 10px #806e80;filter: dropshadow(color=#806e80, offx=1, offy=1);font-size:16px;font-family:tahoma;font-weight:bold;">';
+    msg += name;
+    msg += '</div>';
+    msg += '<span class="byline" style="text-align:center;width:100%;text-shadow: 1px 1px 10px #806e80;filter: dropshadow(color=#806e80, offx=1, offy=1);font-size:12px;font-family:tahoma;font-weight:bold;">';
+    msg += time;
+    msg += '</span>';
+
+    msg += ' <div style="height:150px;font-size:14px;margin-left:10px;margin-right:10px;"><p>';
+    msg += GenerateMinSummery(describtion);
+    msg += '  </p></div>';
+    msg += ' <div class="Animated3DButton" style="vertical-align : bottom;cursor:pointer;" onClick="ShowMoreInfo(' + webinarID + ' );">';
+    msg += '   جزئیات بیشتر...';
+    msg += '</div>';
+    msg += '</div>';
+    return msg;
 
 }
 
-function GenerateMinSummery(text){
-		var _result = text;
-		var _orig = text;
-		if(_orig.length > 200){
-			var _index = _result.lastIndexOf(' ',200); 
-			if(_index != -1 && _index < _orig.length){
-				_result = _result.substring(0, _index);
-			}else{
-				_result = _result.substring(0, 200);
-			}
-		}
-		_result += ".........." ;
-		console.log(_result);
-		return _result;
-	}
-
-function ShowMoreInfo(webinarID)
-{
-	window.location = "eventInfo.html?WebinarID=" + webinarID;
+function GenerateMinSummery(text) {
+    var _result = text;
+    var _orig = text;
+    if (_orig.length > 200) {
+        var _index = _result.lastIndexOf(' ', 200);
+        if (_index != -1 && _index < _orig.length) {
+            _result = _result.substring(0, _index);
+        } else {
+            _result = _result.substring(0, 200);
+        }
+    }
+    _result += "..........";
+    console.log(_result);
+    return _result;
 }
 
-function ShowMoreInfoB(webinarID)
-{
-	window.location = "eventInfo.htm?WebinarID=" + webinarID;
+function ShowMoreInfo(webinarID) {
+    window.location = "eventInfo.html?WebinarID=" + webinarID;
 }
 
- 
+function ShowMoreInfoB(webinarID) {
+    window.location = "eventInfo.htm?WebinarID=" + webinarID;
+}
+
+
 function LoadSeminars(topEventsCount) {
-  //$('.PleaseWait').show();
+    //$('.PleaseWait').show();
     $.getJSON(ServerURL + "Session/AllSearchSession",
         {
-            index:-1,
-            pageSize:topEventsCount
+            index: -1,
+            pageSize: topEventsCount
         },
         function (result) {
-		// $('.PleaseWait').hide();
+            // $('.PleaseWait').hide();
             if (result.Status == true) {
-                for (var i =0; i < result.Result.CurrentCount ;i++) {
+                for (var i = 0; i < result.Result.CurrentCount; i++) {
 
-						//alert(result.Result.SearchResult[i].poster);
-						var sdf = GetMiddleTag(
-						result.Result.SearchResult[i].name, 
-						result.Result.SearchResult[i].presentorUserName, 
-						result.Result.SearchResult[i].desc, 
-						result.Result.SearchResult[i].poster, 
-						result.Result.SearchResult[i].id, 
+                    //alert(result.Result.SearchResult[i].poster);
+                    var sdf = GetMiddleTag(
+						result.Result.SearchResult[i].name,
+						result.Result.SearchResult[i].presentorUserName,
+						result.Result.SearchResult[i].desc,
+						result.Result.SearchResult[i].poster,
+						result.Result.SearchResult[i].id,
 						GetPrsianDate(result.Result.SearchResult[i].beginTime)
 						);
-						console.log(sdf);
-						if(i == 0)
-							$("#seminar_top_1").html(sdf);
-						if(i == 1)
-							$("#seminar_top_2").html(sdf);
-						if(i == 2)
-							$("#seminar_top_3").html(sdf);
-					
-                    }
-					walk(document.body, replaceNumbers);
+                    console.log(sdf);
+                    if (i == 0)
+                        $("#seminar_top_1").html(sdf);
+                    if (i == 1)
+                        $("#seminar_top_2").html(sdf);
+                    if (i == 2)
+                        $("#seminar_top_3").html(sdf);
+
+                }
+                walk(document.body, replaceNumbers);
             }
             else {
                 alert(result.Message);
@@ -1299,68 +1283,68 @@ function LoadSeminars(topEventsCount) {
         });
 }
 
-function CreateRow(a, b, c){
-	 var row= '<div class="container"><div class="row" style="direction:rtl; ">' ;
-	 if(a){
-      	   row += '<div class="4u">';
-           row += ' <section class="box box-feature">';
-		   row += ' <div>' ;
-		   row += a;
-		   row += ' </div>';
-		   row += '</section>';
-		   row += ' </div>';
-	 }
-		   if(b){
-		   row += '<div class="4u">';
-           row += ' <section class="box box-feature">';
-		   row += ' <div>' ;
-		   row += b;
-		   row += ' </div>';
-		   row += '</section>';
-		   row += ' </div>';
-		   }
-		   if(c){
-		   row += '<div class="4u">';
-           row += ' <section class="box box-feature">';
-		   row += ' <div >' ;
-		   row += c;
-		   row += ' </div>';
-		   row += '</section>';
-		   row += ' </div>';
-		   }
-		   row += ' </div></div>'; 
-		   return row;
+function CreateRow(a, b, c) {
+    var row = '<div class="container"><div class="row" style="direction:rtl; ">';
+    if (a) {
+        row += '<div class="4u">';
+        row += ' <section class="box box-feature">';
+        row += ' <div>';
+        row += a;
+        row += ' </div>';
+        row += '</section>';
+        row += ' </div>';
+    }
+    if (b) {
+        row += '<div class="4u">';
+        row += ' <section class="box box-feature">';
+        row += ' <div>';
+        row += b;
+        row += ' </div>';
+        row += '</section>';
+        row += ' </div>';
+    }
+    if (c) {
+        row += '<div class="4u">';
+        row += ' <section class="box box-feature">';
+        row += ' <div >';
+        row += c;
+        row += ' </div>';
+        row += '</section>';
+        row += ' </div>';
+    }
+    row += ' </div></div>';
+    return row;
 }
 
 function LoadPastSeminars(topEventsCount) {
-  //$('.PleaseWait').show();
+    //$('.PleaseWait').show();
     $.getJSON(ServerURL + "Session/AllLastSearchSession",
         {
-            index:-1,
-            pageSize:topEventsCount
+            index: -1,
+            pageSize: topEventsCount
         },
         function (result) {
-		// $('.PleaseWait').hide();
-			var elements = new Array();
+            // $('.PleaseWait').hide();
+            var elements = new Array();
             if (result.Status == true) {
-                for (var i =0; i < result.Result.CurrentCount ;i++) {
-						//alert(result.Result.SearchResult[i].poster);
-						var element = GetMiddleTag(
-						result.Result.SearchResult[i].name, 
-						result.Result.SearchResult[i].presentorUserName, 
-						result.Result.SearchResult[i].desc, 
-						result.Result.SearchResult[i].poster, 
-						result.Result.SearchResult[i].id, 
+                for (var i = 0; i < result.Result.CurrentCount; i++) {
+                    //alert(result.Result.SearchResult[i].poster);
+                    var element = GetMiddleTag(
+						result.Result.SearchResult[i].name,
+						result.Result.SearchResult[i].presentorUserName,
+						result.Result.SearchResult[i].desc,
+						result.Result.SearchResult[i].poster,
+						result.Result.SearchResult[i].id,
 						GetPrsianDate(result.Result.SearchResult[i].beginTime)
 						);
-						elements[i] = element;
-                    }
-					
-					for(var i = 0; i <  result.Result.CurrentCount; i+=3){
-						$("#seminar_wrapper").append(CreateRow(elements[i], elements[i+1], elements[i+2]));
-					}
-					
-					walk(document.body, replaceNumbers);
+                    elements[i] = element;
+                }
+
+                for (var i = 0; i < result.Result.CurrentCount; i += 3) {
+                    $("#seminar_wrapper").append(CreateRow(elements[i], elements[i + 1], elements[i + 2]));
+                }
+
+                walk(document.body, replaceNumbers);
             }
             else {
                 alert(result.Message);
@@ -1368,268 +1352,260 @@ function LoadPastSeminars(topEventsCount) {
         });
 }
 
-function ShowNewsDetails(){
-	
-}
-
-function LoadTopNews(count){
-	   	ShowModalWindow("توجه" , 'در حال دریافت آخرین اخبار ......');
-		 $.ajax({
-        type:'GET',
-        url:ServerURL + "Account/GetNews",
-        dataType:'json',
-		data: { n : count },
-        success:function (result) {
-			CloseModalWindow();
-			if(result.Status == true){
-				var topNews = "";
-				for(var i = 0 ; i < result.Result.length ; i++){
-					topNews += '<div style="cursor:pointer;" onclick="ShowModalWindow('  + "'" + result.Result[i].Subject + "','" + result.Result[i].Describtion + "'" +  ');			ShowModalCloseButton();">' + result.Result[i].Subject + '</div>';
-				}
-				$("#NewsContainer").html(topNews);
-				console.log(topNews);
-			}
-			else{
-			}
-			},
-		error: function(){
-			ShowModalWindow("توجه" , 'خطا در دریافت اطلاعات از سرور ...');
-			ShowModalCloseButton();
-			},
-		async: true
-		});
+function ShowNewsDetails() {
 
 }
 
-function LoadTopNewsB(count){
-	   	ShowModalWindow("توجه" , 'در حال دریافت آخرین اخبار ......');
-		 $.ajax({
-        type:'GET',
-        url:ServerURL + "Account/GetNews",
-        dataType:'json',
-		data: { n : count },
-        success:function (result) {
-			CloseModalWindow();
-			if(result.Status == true){
-				var topNews = "";
-				for(var i = 0 ; i < result.Result.length ; i++){
-					news[i] = { topic : result.Result[i].Subject, desc : result.Result[i].Describtion, ID : result.Result[i].ID, Pic : result.Result[i].PictureID };
-					var tag = GetNewsMiddleTag(news[i].topic, news[i].desc, news[i].Pic, news[i].ID );
-					$("#NewsContainer").append(tag);
-				}
-				console.log(topNews);
-			}
-			else{
-			}
-			},
-		error: function(){
-			ShowModalWindow("توجه" , 'خطا در دریافت اطلاعات از سرور ...');
-			ShowModalCloseButton();
-			},
-		async: true
-		});
+function LoadTopNews(count) {
+    ShowModalWindow("توجه", 'در حال دریافت آخرین اخبار ......');
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Account/GetNews",
+        dataType: 'json',
+        data: { n: count },
+        success: function (result) {
+            CloseModalWindow();
+            if (result.Status == true) {
+                var topNews = "";
+                for (var i = 0; i < result.Result.length; i++) {
+                    topNews += '<div style="cursor:pointer;" onclick="ShowModalWindow(' + "'" + result.Result[i].Subject + "','" + result.Result[i].Describtion + "'" + ');			ShowModalCloseButton();">' + result.Result[i].Subject + '</div>';
+                }
+                $("#NewsContainer").html(topNews);
+                console.log(topNews);
+            }
+            else {
+            }
+        },
+        error: function () {
+            ShowModalWindow("توجه", 'خطا در دریافت اطلاعات از سرور ...');
+            ShowModalCloseButton();
+        },
+        async: true
+    });
 
 }
 
-function ShowNews(index)
-{
-	$("#openModel_Title").html(news[index].topic);
-	$("#openModal_Message").css("color","#00C");
+function LoadTopNewsB(count) {
+    ShowModalWindow("توجه", 'در حال دریافت آخرین اخبار ......');
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Account/GetNews",
+        dataType: 'json',
+        data: { n: count },
+        success: function (result) {
+            CloseModalWindow();
+            if (result.Status == true) {
+                var topNews = "";
+                for (var i = 0; i < result.Result.length; i++) {
+                    news[i] = { topic: result.Result[i].Subject, desc: result.Result[i].Describtion, ID: result.Result[i].ID, Pic: result.Result[i].PictureID };
+                    var tag = GetNewsMiddleTag(news[i].topic, news[i].desc, news[i].Pic, news[i].ID);
+                    $("#NewsContainer").append(tag);
+                }
+                console.log(topNews);
+            }
+            else {
+            }
+        },
+        error: function () {
+            ShowModalWindow("توجه", 'خطا در دریافت اطلاعات از سرور ...');
+            ShowModalCloseButton();
+        },
+        async: true
+    });
+
+}
+
+function ShowNews(index) {
+    $("#openModel_Title").html(news[index].topic);
+    $("#openModal_Message").css("color", "#00C");
     $("#openModal_Message").html(news[index].desc);
     DoSelfPageAct("#openModal");
     $("html, body").animate({
         scrollTop: 0
     }, "slow");
     $("#openModal_Close").hide();
-	ShowModalCloseButton();
-	
+    ShowModalCloseButton();
+
 }
 function LoadSeminarsB(topEventsCount) {
-	$("#latestSeminars").html("");
-  //$('.PleaseWait').show();
+    $("#latestSeminars").html("");
+    //$('.PleaseWait').show();
     $.getJSON(ServerURL + "Session/AllSearchSession",
         {
-            index:-1,
-            pageSize:topEventsCount
+            index: -1,
+            pageSize: topEventsCount
         },
         function (result) {
-		// $('.PleaseWait').hide();
+            // $('.PleaseWait').hide();
             if (result.Status == true) {
-                for (var i =0; i < result.Result.CurrentCount ;i++) {
+                for (var i = 0; i < result.Result.CurrentCount; i++) {
 
-						//alert(result.Result.SearchResult[i].poster);
-						var sdf = GetMiddleTagB(
-						result.Result.SearchResult[i].name, 
-						result.Result.SearchResult[i].presentorUserName, 
-						result.Result.SearchResult[i].desc, 
-						result.Result.SearchResult[i].poster, 
-						result.Result.SearchResult[i].id, 
+                    //alert(result.Result.SearchResult[i].poster);
+                    var sdf = GetMiddleTagB(
+						result.Result.SearchResult[i].name,
+						result.Result.SearchResult[i].presentorUserName,
+						result.Result.SearchResult[i].desc,
+						result.Result.SearchResult[i].poster,
+						result.Result.SearchResult[i].id,
 						GetPrsianDate(result.Result.SearchResult[i].beginTime)
 						);
-						console.log(sdf);
-						$("#latestSeminars").append(sdf);
-					
-                    }
-					walk(document.body, replaceNumbers);
+                    console.log(sdf);
+                    $("#latestSeminars").append(sdf);
+
+                }
+                walk(document.body, replaceNumbers);
             }
             else {
             }
         });
 }
 
-function GetMiddleTagB(name, presentor, describtion, pic, webinarID, time)
-{
-			  var msg = '<li class="clear">';
-              msg += '<div class="imgl"><img src="ServerSide/' + pic +'" alt="" style="width:125px;height:125px;"/></div>';
-              msg += '<div class="latestnews">';
-              msg += '<p><a style="cursor:pointer;" onClick="ShowMoreInfoB(' + webinarID + ' );">' + name + '</a></p>';
-              msg += '<p>' +  GenerateMinSummery(describtion) + '</p>';
-              msg += '</div>';
-              msg += '</li>';
-			  return msg;
+function GetMiddleTagB(name, presentor, describtion, pic, webinarID, time) {
+    var msg = '<li class="clear">';
+    msg += '<div class="imgl"><img src="ServerSide/' + pic + '" alt="" style="width:125px;height:125px;"/></div>';
+    msg += '<div class="latestnews">';
+    msg += '<p><a style="cursor:pointer;" onClick="ShowMoreInfoB(' + webinarID + ' );">' + name + '</a></p>';
+    msg += '<p>' + GenerateMinSummery(describtion) + '</p>';
+    msg += '</div>';
+    msg += '</li>';
+    return msg;
 }
 
 
-function GetNewsMiddleTag(topic, describtion, pic, NewsID)
-{
-			  var msg = '<li class="clear">';
-              msg += '<div class="imgl"><img src="ServerSide/' + pic +'" alt="" style="width:125px;height:125px;"/></div>';
-              msg += '<div class="latestnews">';
-              msg += '<p><a style="cursor:pointer;" onClick="ShowMoreEvent(' + NewsID + ' );">' + topic + '</a></p>';
-              msg += '<p style="text-align:justify;">' +  GenerateMinSummery(describtion) + '</p>';
-			    msg += '<p><a style="cursor:pointer;" onClick="ShowMoreEvent(' + NewsID + ' );">' + 'ادامه مطلب' + '</a></p>';
-              msg += '</div>';
-			
-              msg += '</li>';
-			  return msg;
+function GetNewsMiddleTag(topic, describtion, pic, NewsID) {
+    var msg = '<li class="clear">';
+    msg += '<div class="imgl"><img src="ServerSide/' + pic + '" alt="" style="width:125px;height:125px;"/></div>';
+    msg += '<div class="latestnews">';
+    msg += '<p><a style="cursor:pointer;" onClick="ShowMoreEvent(' + NewsID + ' );">' + topic + '</a></p>';
+    msg += '<p style="text-align:justify;">' + GenerateMinSummery(describtion) + '</p>';
+    msg += '<p><a style="cursor:pointer;" onClick="ShowMoreEvent(' + NewsID + ' );">' + 'ادامه مطلب' + '</a></p>';
+    msg += '</div>';
+
+    msg += '</li>';
+    return msg;
 }
 
-function GetNewsMiddleTagB(topic, describtion, pic, NewsID)
-{
-			  var msg = '<li class="clear">';
-              msg += '<div class="imgl"><img src="ServerSide/' + pic +'" alt="" style="width:125px;height:125px;"/></div>';
-              msg += '<div class="latestnews">';
-              msg += '<p><a style="cursor:pointer;" onClick="ShowMoreEvent(' + NewsID + ' );">' + topic + '</a></p>';
-              msg += '<p style="text-align:justify;">' +  describtion + '</p>';
-              msg += '</div>';
-              msg += '</li>';
-			  return msg;
+function GetNewsMiddleTagB(topic, describtion, pic, NewsID) {
+    var msg = '<li class="clear">';
+    msg += '<div class="imgl"><img src="ServerSide/' + pic + '" alt="" style="width:125px;height:125px;"/></div>';
+    msg += '<div class="latestnews">';
+    msg += '<p><a style="cursor:pointer;" onClick="ShowMoreEvent(' + NewsID + ' );">' + topic + '</a></p>';
+    msg += '<p style="text-align:justify;">' + describtion + '</p>';
+    msg += '</div>';
+    msg += '</li>';
+    return msg;
 }
 
-function ShowMoreEvent(newsID)
-{
-	window.location = "newsinfo.htm?NewsID=" + newsID;
+function ShowMoreEvent(newsID) {
+    window.location = "newsinfo.htm?NewsID=" + newsID;
 }
 
-function GetEventInfo(newsID)
-{
-	//public ActionResult GetNewsDetails(int newsID)
-		ShowModalWindow("توجه" , 'در حال دریافت آخرین اخبار ......');
-		 $.ajax({
-        type:'GET',
-        url:ServerURL + "Account/GetNewsDetails",
-        dataType:'json',
-		data: { newsID : newsID },
-        success:function (result) {
-			CloseModalWindow();
-			if(result.Status == true){
-				var topNews = "";
-				//for(var i = 0 ; i < result.Result.length ; i++){
-					var news = { topic : result.Result.Subject, desc : result.Result.Describtion, ID : result.Result.ID, Pic : result.Result.PictureID };
-					var tag = GetNewsMiddleTagB(news.topic, news.desc, news.Pic, news.ID );
-					$("#NewsContainer").html(tag);
-				//}
-				console.log(topNews);
-			}
-			else{
-			}
-			},
-		error: function(){
-			ShowModalWindow("توجه" , 'خطا در دریافت اطلاعات از سرور ...');
-			ShowModalCloseButton();
-			},
-		async: true
-		});
+function GetEventInfo(newsID) {
+    //public ActionResult GetNewsDetails(int newsID)
+    ShowModalWindow("توجه", 'در حال دریافت آخرین اخبار ......');
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Account/GetNewsDetails",
+        dataType: 'json',
+        data: { newsID: newsID },
+        success: function (result) {
+            CloseModalWindow();
+            if (result.Status == true) {
+                var topNews = "";
+                //for(var i = 0 ; i < result.Result.length ; i++){
+                var news = { topic: result.Result.Subject, desc: result.Result.Describtion, ID: result.Result.ID, Pic: result.Result.PictureID };
+                var tag = GetNewsMiddleTagB(news.topic, news.desc, news.Pic, news.ID);
+                $("#NewsContainer").html(tag);
+                //}
+                console.log(topNews);
+            }
+            else {
+            }
+        },
+        error: function () {
+            ShowModalWindow("توجه", 'خطا در دریافت اطلاعات از سرور ...');
+            ShowModalCloseButton();
+        },
+        async: true
+    });
 }
 
-function GetMiddleTagC(name, presentor, describtion, pic, webinarID, time, i)
-{
-			  var msg = "";
-			  if( i % 2 == 0 )
-			 	 msg = '<li  class="last">';
-			  else 
-			  	msg = '<li>';
-              msg += '<img src="ServerSide/' + pic +'" alt="" style="width:420px;height:190px;"/>';
-              msg += '<h2>' + name + '</h2>';
-			              msg +=      '<span class="byline" style="text-align:center;width:100%;text-shadow: 1px 1px 10px #806e80;filter: dropshadow(color=#806e80, offx=1, offy=1);font-size:12px;font-family:tahoma;font-weight:bold;">';
-             msg +=      time ;
-               msg +=   '</span>';
-              msg += '<p>' +  GenerateMinSummery(describtion) + '</p>';
-			  msg += '<p class="readmore"><a style="cursor:pointer;" onClick="ShowMoreInfoB(' + webinarID + ' );">جزئیات بیشتر</a></p>';
-              msg += '</li>';
-			  return msg;
+function GetMiddleTagC(name, presentor, describtion, pic, webinarID, time, i) {
+    var msg = "";
+    if (i % 2 == 0)
+        msg = '<li  class="last">';
+    else
+        msg = '<li>';
+    msg += '<img src="ServerSide/' + pic + '" alt="" style="width:420px;height:190px;"/>';
+    msg += '<h2>' + name + '</h2>';
+    msg += '<span class="byline" style="text-align:center;width:100%;text-shadow: 1px 1px 10px #806e80;filter: dropshadow(color=#806e80, offx=1, offy=1);font-size:12px;font-family:tahoma;font-weight:bold;">';
+    msg += time;
+    msg += '</span>';
+    msg += '<p>' + GenerateMinSummery(describtion) + '</p>';
+    msg += '<p class="readmore"><a style="cursor:pointer;" onClick="ShowMoreInfoB(' + webinarID + ' );">جزئیات بیشتر</a></p>';
+    msg += '</li>';
+    return msg;
 }
 
-function GetMiddleTagCNew(name, presentor, describtion, pic, webinarID, time, i)
-{
-  var msg = '<center><table style="-webkit-box-shadow: 3px 3px 13px 0px rgba(50, 50, 50, 0.75);-moz-box-shadow:    3px 3px 13px 0px rgba(50, 50, 50, 0.75);box-shadow:         3px 3px 13px 0px rgba(50, 50, 50, 0.75);width:80%;">';
-	msg += '<tr>';
-    msg += '<td style="border:0;vertical-align:middle;alignment-adjust:central;width:200px;text-align:center;">' +  '<img src="ServerSide/' + pic +'" alt="" style="width:80%; padding: 20px;background: #eeeeee;border: 1px solid #bbbbbb;border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;"/>';
+function GetMiddleTagCNew(name, presentor, describtion, pic, webinarID, time, i) {
+    var msg = '<center><table style="-webkit-box-shadow: 3px 3px 13px 0px rgba(50, 50, 50, 0.75);-moz-box-shadow:    3px 3px 13px 0px rgba(50, 50, 50, 0.75);box-shadow:         3px 3px 13px 0px rgba(50, 50, 50, 0.75);width:80%;">';
+    msg += '<tr>';
+    msg += '<td style="border:0;vertical-align:middle;alignment-adjust:central;width:200px;text-align:center;">' + '<img src="ServerSide/' + pic + '" alt="" style="width:80%; padding: 20px;background: #eeeeee;border: 1px solid #bbbbbb;border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;"/>';
     msg += '</td>';
-	msg +=         '<td style="border:0;">';
-	msg +=        	'<table style="border:0;">';
-	msg +=             	'<tr  style="border:0;">';
-	msg +=                	'<td style="border:0;">' + '<h2>' + name + '</h2>';
-	msg +=                    '</td>';
-	msg +=                '</tr>';
-	msg +=                '<tr  style="border:0;">';
-	msg +=                	'<td style="border:0;">';
-	msg +=      '<span class="byline" style="text-align:center;width:100%;text-shadow: 1px 1px 10px #806e80;filter: dropshadow(color=#806e80, offx=1, offy=1);font-size:12px;font-family:tahoma;font-weight:bold;">';
-    msg +=      time ;
-    msg +=   '</span>';
-	msg +=                    '</td>';
-	msg +=                '</tr>';
-	msg +=                '<tr  style="border:0;">';
-	msg +=                	'<td style="border:0;">' + '<p>' +  GenerateMinSummery(describtion) + '</p>';
-	msg +=                    '</td>';
-	msg +=                 '</tr>';
-	msg +=                '<tr  style="border:0;">';
-	msg +=                	'<td style="border:0;">' + '<p class="readmore"><a style="cursor:pointer;" onClick="ShowMoreInfoB(' + webinarID + ' );">جزئیات بیشتر</a></p>';
-	msg +=                    '</td>';
-	msg +=                 '</tr>';
-	msg +=            '</table>';
-	msg +=        '</td>';
-	msg +=    '</tr>';
-	msg += '</table></center>';
-	return msg;
+    msg += '<td style="border:0;">';
+    msg += '<table style="border:0;">';
+    msg += '<tr  style="border:0;">';
+    msg += '<td style="border:0;">' + '<h2>' + name + '</h2>';
+    msg += '</td>';
+    msg += '</tr>';
+    msg += '<tr  style="border:0;">';
+    msg += '<td style="border:0;">';
+    msg += '<span class="byline" style="text-align:center;width:100%;text-shadow: 1px 1px 10px #806e80;filter: dropshadow(color=#806e80, offx=1, offy=1);font-size:12px;font-family:tahoma;font-weight:bold;">';
+    msg += time;
+    msg += '</span>';
+    msg += '</td>';
+    msg += '</tr>';
+    msg += '<tr  style="border:0;">';
+    msg += '<td style="border:0;">' + '<p>' + GenerateMinSummery(describtion) + '</p>';
+    msg += '</td>';
+    msg += '</tr>';
+    msg += '<tr  style="border:0;">';
+    msg += '<td style="border:0;">' + '<p class="readmore"><a style="cursor:pointer;" onClick="ShowMoreInfoB(' + webinarID + ' );">جزئیات بیشتر</a></p>';
+    msg += '</td>';
+    msg += '</tr>';
+    msg += '</table>';
+    msg += '</td>';
+    msg += '</tr>';
+    msg += '</table></center>';
+    return msg;
 
 }
 
 function LoadPastSeminarsB(topEventsCount) {
-  //$('.PleaseWait').show();
-  	$("#seminars").html("");
+    //$('.PleaseWait').show();
+    $("#seminars").html("");
     $.getJSON(ServerURL + "Session/AllLastSearchSession",
         {
-            index:-1,
-            pageSize:topEventsCount
+            index: -1,
+            pageSize: topEventsCount
         },
         function (result) {
-		// $('.PleaseWait').hide();
-			var elements = new Array();
+            // $('.PleaseWait').hide();
+            var elements = new Array();
             if (result.Status == true) {
-                for (var i =0; i < result.Result.CurrentCount ;i++) {
-						//alert(result.Result.SearchResult[i].poster);
-						var element = GetMiddleTagCNew(
-						result.Result.SearchResult[i].name, 
-						result.Result.SearchResult[i].presentorUserName, 
-						result.Result.SearchResult[i].desc, 
-						result.Result.SearchResult[i].poster, 
-						result.Result.SearchResult[i].id, 
-						GetPrsianDate(result.Result.SearchResult[i].beginTime),i
+                for (var i = 0; i < result.Result.CurrentCount; i++) {
+                    //alert(result.Result.SearchResult[i].poster);
+                    var element = GetMiddleTagCNew(
+						result.Result.SearchResult[i].name,
+						result.Result.SearchResult[i].presentorUserName,
+						result.Result.SearchResult[i].desc,
+						result.Result.SearchResult[i].poster,
+						result.Result.SearchResult[i].id,
+						GetPrsianDate(result.Result.SearchResult[i].beginTime), i
 						);
-						$("#seminars").append(element);
-                    }
-					walk(document.body, replaceNumbers);
+                    $("#seminars").append(element);
+                }
+                walk(document.body, replaceNumbers);
             }
             else {
                 alert(result.Message);
@@ -1639,30 +1615,30 @@ function LoadPastSeminarsB(topEventsCount) {
 
 
 function LoadNextSeminarsB(topEventsCount) {
-  //$('.PleaseWait').show();
-  	$("#seminars").html("");
-  	$.getJSON(ServerURL + "Session/AllNewSearchSession",
+    //$('.PleaseWait').show();
+    $("#seminars").html("");
+    $.getJSON(ServerURL + "Session/AllNewSearchSession",
         {
-            index:-1,
-            pageSize:topEventsCount
+            index: -1,
+            pageSize: topEventsCount
         },
         function (result) {
-		// $('.PleaseWait').hide();
-			var elements = new Array();
+            // $('.PleaseWait').hide();
+            var elements = new Array();
             if (result.Status == true) {
-                for (var i =0; i < result.Result.CurrentCount ;i++) {
-						//alert(result.Result.SearchResult[i].poster);
-						var element = GetMiddleTagCNew(
-						result.Result.SearchResult[i].name, 
-						result.Result.SearchResult[i].presentorUserName, 
-						result.Result.SearchResult[i].desc, 
-						result.Result.SearchResult[i].poster, 
-						result.Result.SearchResult[i].id, 
-						GetPrsianDate(result.Result.SearchResult[i].beginTime),i
+                for (var i = 0; i < result.Result.CurrentCount; i++) {
+                    //alert(result.Result.SearchResult[i].poster);
+                    var element = GetMiddleTagCNew(
+						result.Result.SearchResult[i].name,
+						result.Result.SearchResult[i].presentorUserName,
+						result.Result.SearchResult[i].desc,
+						result.Result.SearchResult[i].poster,
+						result.Result.SearchResult[i].id,
+						GetPrsianDate(result.Result.SearchResult[i].beginTime), i
 						);
-						$("#seminars").append(element);
-                    }
-					walk(document.body, replaceNumbers);
+                    $("#seminars").append(element);
+                }
+                walk(document.body, replaceNumbers);
             }
             else {
                 alert(result.Message);
@@ -1671,92 +1647,88 @@ function LoadNextSeminarsB(topEventsCount) {
 }
 
 
-function LoadPictureGallery(){
-		   	ShowModalWindow("توجه" , 'در حال دریافت گالری تصاویر ......');
-			$.ajax({
-    	type: 'GET',
-		url: ServerURL + "Account/GetListOfGalleryFiles",
-		dataType: 'json',
-		success: function(result) {
-			if(result.Status == true){
-				var html = "";
-				for(var i = 0 ; i < result.Result.length ; i++){
-					var _fileName = result.Result[i].Name.split("/");
-					var fileUrl = "/ServerSide/Pics/Gallery/Originals/" +_fileName[_fileName.length - 1] ;
-					html += '<li><img src="' + fileUrl  + '"style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>';
-				}
-				$("#Gallery").html(html);
-							$('.bxslider').bxSlider({
-  auto: true,
-   adaptiveHeight: true,
-   mode: 'horizontal',
-  useCSS: true,
-  hideControlOnEnd: true,
-  easing: 'easeOutElastic',
-  speed: 2000,
-  pager: false
-});
-				}},
-		error: function(){
-		},
-		async:true
-			});
+function LoadPictureGallery() {
+    ShowModalWindow("توجه", 'در حال دریافت گالری تصاویر ......');
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Account/GetListOfGalleryFiles",
+        dataType: 'json',
+        success: function (result) {
+            if (result.Status == true) {
+                var html = "";
+                for (var i = 0; i < result.Result.length; i++) {
+                    var _fileName = result.Result[i].Name.split("/");
+                    var fileUrl = "/ServerSide/Pics/Gallery/Originals/" + _fileName[_fileName.length - 1];
+                    html += '<li><img src="' + fileUrl + '"style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>';
+                }
+                $("#Gallery").html(html);
+                $('.bxslider').bxSlider({
+                    auto: true,
+                    adaptiveHeight: true,
+                    mode: 'horizontal',
+                    useCSS: true,
+                    hideControlOnEnd: true,
+                    easing: 'easeOutElastic',
+                    speed: 2000,
+                    pager: false
+                });
+            } 
+        },
+        error: function () {
+        },
+        async: true
+    });
 
 }
 
-function LoadAboutUsPage()
-{
-		ShowModalWindow("توجه" , 'در حال دریافت محتویات صفحه  ......');
-			$.ajax({
-    	type: 'GET',
-		url: ServerURL + "Account/GetAboutUsPage",
-		dataType: 'json',
-		success: function(result) {
-			CloseModalWindow();
-			if(result.Status == true){
-				$("#container").html(result.Result);
-				}
-				else
-				{
-					$("#container").html("مطلبی وجود ندارد");
-				}
-				},
-		error: function(){
-			CloseModalWindow();
-			$("#container").html("مطلبی وجود ندارد");
-		},
-		async:true
-			});
+function LoadAboutUsPage() {
+    ShowModalWindow("توجه", 'در حال دریافت محتویات صفحه  ......');
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Account/GetAboutUsPage",
+        dataType: 'json',
+        success: function (result) {
+            CloseModalWindow();
+            if (result.Status == true) {
+                $("#container").html(result.Result);
+            }
+            else {
+                $("#container").html("مطلبی وجود ندارد");
+            }
+        },
+        error: function () {
+            CloseModalWindow();
+            $("#container").html("مطلبی وجود ندارد");
+        },
+        async: true
+    });
 
 }
 
-function LoadGuidePage()
-{
-		ShowModalWindow("توجه" , 'در حال دریافت محتویات صفحه  ......');
-			$.ajax({
-    	type: 'GET',
-		url: ServerURL + "Account/GetGuidePage",
-		dataType: 'json',
-		success: function(result) {
-			CloseModalWindow();
-			if(result.Status == true){
-				$("#container").html(result.Result);
-				}
-				else
-				{
-					$("#container").html("مطلبی وجود ندارد");
-				}
-				},
-		error: function(){
-			CloseModalWindow();
-			$("#container").html("مطلبی وجود ندارد");
-		},
-		async:true
-			});
+function LoadGuidePage() {
+    ShowModalWindow("توجه", 'در حال دریافت محتویات صفحه  ......');
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Account/GetGuidePage",
+        dataType: 'json',
+        success: function (result) {
+            CloseModalWindow();
+            if (result.Status == true) {
+                $("#container").html(result.Result);
+            }
+            else {
+                $("#container").html("مطلبی وجود ندارد");
+            }
+        },
+        error: function () {
+            CloseModalWindow();
+            $("#container").html("مطلبی وجود ندارد");
+        },
+        async: true
+    });
 
 }
 
-function LoadPageComponents()
-{
-	$("#pagefooter").load("footer.htm"); 
+function LoadPageComponents() {
+    $("#pagefooter").load("footer.htm");
 }
