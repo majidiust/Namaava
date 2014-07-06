@@ -73,25 +73,24 @@ Room.Views = {
                 success: function (result) {
                     console.log(result.Message);
                     if (result.Status == true) {
-                        //					  $("#SessionVideo").html("");
-                        //					  console.log(result.Message);
-                        //					  $("#SessionVideo").append("<option value='-1'>" + "انتخاب ویدیو" + "</option>");
-                        //					  
-                        //					  for(var i = 0 ; i < result.Result.length; i++)
-                        //					  {
-                        //							var url = "http://94.232.174.204:7700/Namaava/" + Room.webinarId + "/" + result.Result[i].fileId + ".webm";
-                        //							$("#SessionVideo").append("<option value='" + url + "'>" + result.Result[i].fileId + "</option>");
-                        //							console.log(url);
-                        //					  }
-                        //					  
-                        //					  $("#SessionVideo").change(function(e){
-                        //							var videoUrl = $(this).val();
-                        //							console.log("Video is : " + videoUrl);
-                        //							$("#mediaContainer").jPlayer("setMedia", {
-                        //								ogv: videoUrl // Defines the counterpart ogv url
-                        //						 }).jPlayer("play"); // Attempts to Auto-Play the media
-                        //						 $("#mediaContainer").jPlayer("size", {width: "320"}) ; 
-                        //					  });
+                        $("#SessionVideo").html("");
+                        console.log(result.Message);
+                        $("#SessionVideo").append("<option value='-1'>" + "انتخاب ویدیو" + "</option>");
+
+                        for (var i = 0; i < result.Result.length; i++) {
+                            var url = "http://94.232.174.204:7700/Namaava/" + Room.webinarId + "/" + result.Result[i].fileId + ".webm";
+                            $("#SessionVideo").append("<option value='" + url + "'>" + result.Result[i].fileId + "</option>");
+                            console.log(url);
+                        }
+
+                        $("#SessionVideo").change(function (e) {
+                            var videoUrl = $(this).val();
+                            console.log("Video is : " + videoUrl);
+                            $("#mediaContainer").jPlayer("setMedia", {
+                                ogv: videoUrl // Defines the counterpart ogv url
+                            }).jPlayer("play"); // Attempts to Auto-Play the media
+                            $("#mediaContainer").jPlayer("size", { width: "320" });
+                        });
 
                         var videoUrl = "http://94.232.174.204:7700/Namaava/" + Room.webinarId + "/" + result.Result[0].fileId + ".webm";
                         console.log("Video is : " + videoUrl);
@@ -100,9 +99,9 @@ Room.Views = {
                         }).jPlayer("play"); // Attempts to Auto-Play the media
                         $("#mediaContainer").jPlayer("size", { width: "320" });
                     }
-                    //				  else {
-                    //					    $("#SessionVideo").html("");
-                    //}
+                    else {
+                        $("#SessionVideo").html("");
+                    }
                 },
                 async: false
             });
@@ -414,7 +413,7 @@ Room.Views = {
                             $("#WebinarConnectivityMessage").html('سمینار در حالت آفلاین است.');
                             $("#OfflineLed").show();
                             $("#OnlineLed").hide();
-                            $("#chatList").hide();
+                            $("#chatList").show();
                         }
                     }
                 }
