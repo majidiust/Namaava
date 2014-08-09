@@ -202,6 +202,7 @@ namespace TaskManagerEngine
                                 scp.Connect();
                                 scp.Upload(new FileInfo(source), rdest);
                                 scp.Disconnect();
+                                Console.WriteLine("File uploaded to server successfully");
                             }
 
                             task.TaskStatus = 3;
