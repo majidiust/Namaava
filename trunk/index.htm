@@ -157,9 +157,9 @@
                 </h1>
                 <fieldset id="inputscenter">
                   <center>
-                    <input id="usernamecenter" type="text" placeholder="نام کاربری" autofocus required>
+                    <input id="usernamecenter" type="text" placeholder="نام کاربری" onkeydown="LoginCenterKeyDown(event);"  autofocus required>
                     
-                    <input id="passwordcenter" type="password" placeholder="کلمه عبور" required>
+                    <input id="passwordcenter" type="password" placeholder="کلمه عبور" onkeydown="LoginCenterKeyDown(event);"  required>
                   </center>
                 </fieldset>
                 <div id="LoginMessageUp2" style="direction:rtl;display:none;">
@@ -167,7 +167,7 @@
                 </div>
                 <fieldset id="actionscenter">
                   <center>
-                    <input type="button" onclick="LoginToAccountCenter();"  class="cupid-blue" style="font-family:Tahoma, Geneva, sans-serif; font-size:12px;" value="ورود" onkeydown=LoginCenterKeyDown(event); >
+                    <input type="button" onclick="LoginToAccountCenter();"  class="cupid-blue" style="font-family:Tahoma, Geneva, sans-serif; font-size:12px;" value="ورود" >
                   </center>
                   
                   <ul style="float:right">
@@ -293,10 +293,10 @@ font-size:14px;" onClick="LogOutNew();">
           </h1>
           
           <div>
-            <input type="text" placeholder="نام کاربری" required id="usernameUp" onKeyDown=LoginKeyDownUp(event);/>
+            <input type="text" placeholder="نام کاربری" required id="usernameUp" onKeyDown="LoginKeyDownUp(event);"/>
           </div>
           <div>
-            <input type="password" placeholder="کلمه عبور" required id="passwordUp" onKeyDown=LoginKeyDownUp(event);/>
+            <input type="password" placeholder="کلمه عبور" required id="passwordUp" onKeyDown="LoginKeyDownUp(event);"/>
           </div>
           <div id="LoginMessageUp" style="direction:rtl;display:none;">
             در حال ورود به سامانه ، لطفا منتظر بمانید.
@@ -409,7 +409,7 @@ font-size:14px;" onClick="LogOutNew();">
           </td>
           <td width="60%" style="border:none;">
             <div class="input-container">
-              <input  class="inputscenter" name="fname" id="uname" type="text"/>
+              <input  class="inputscenter" name="fname" id="uname" type="text" onkeydown="RegisterKeyDown(event);"   />
               
               <div id="RegisterMessageUserName"
               style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
@@ -426,7 +426,7 @@ font-size:14px;" onClick="LogOutNew();">
           <td style="border:none;">
             <div class="input-container">
               <input class="inputscenter"  name="lname" id="email" type="text" onfocus="ShowRegisterationError(1);"
-              style=" text-align:left ; direction:ltr;"/>
+              style=" text-align:left ; direction:ltr;" onkeydown="RegisterKeyDown(event);"   />
               
               <div id="RegisterMessageEmail"
               style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
@@ -442,7 +442,7 @@ font-size:14px;" onClick="LogOutNew();">
           </td>
           <td style="border:none;">
             <div class="input-container">
-              <input  class="inputscenter" name="email" id="pass" type="password" onfocus="ShowRegisterationError(2);"/>
+              <input  class="inputscenter" name="email" id="pass" type="password" onfocus="ShowRegisterationError(2);" onkeydown="RegisterKeyDown(event);"   />
               
               <div id="RegisterMessagePass"
               style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
@@ -458,7 +458,7 @@ font-size:14px;" onClick="LogOutNew();">
           </td>
           <td style="border:none;">
             <div class="input-container">
-              <input  class="inputscenter" name="pass" id="passConfirm" type="password" onfocus="ShowRegisterationError(3);"/>
+              <input  class="inputscenter" name="pass" id="passConfirm" type="password" onfocus="ShowRegisterationError(3);" onkeydown="RegisterKeyDown(event);"   />
               
               <div id="RegisterMessageRepeatPass"
               style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
@@ -480,7 +480,7 @@ font-size:14px;" onClick="LogOutNew();">
           </td>
           <td style="border:none;">
             <hr/>
-            <input type="submit" name="go" class="customButton1" value="ثبت نام" onclick="RegisterToServer();" onkeydown=RegisterKeyDown(event)  
+            <input type="submit" name="go" class="customButton1" value="ثبت نام" onclick="RegisterToServer();" 
             style="font-family:Tahoma, Geneva, sans-serif;"/>
             <input type="submit" name="go" class="customButton1" value="بازگشت" onclick="$.modal.close();"
             style="font-family:Tahoma, Geneva, sans-serif;"/>
