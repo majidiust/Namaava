@@ -189,15 +189,15 @@ namespace TaskManagerEngine
                             Console.WriteLine("dd : " + dd);
                             Console.WriteLine("rDest : " + rdest);
 
-                            using (var client = new SshClient("94.232.174.204", "hiva", "R@Y@NH!V@"))
+                            using (var client = new SshClient("94.232.174.206", 3435, "admin", "StreamerP@ssw0rd"))
                             {
                                 client.Connect();
-                                var cmd1 = client.RunCommand("sudo mkdir " + destination);
+                                var cmd1 = client.RunCommand("mkdir " + destination);
                                 var cmd2 = client.RunCommand("sudo chmod 777 " + destination);
                                 client.Disconnect();
                             }
 
-                            using (var scp = new ScpClient("94.232.174.204", "hiva", "R@Y@NH!V@"))
+                            using (var scp = new ScpClient("94.232.174.206", 3435, "admin", "StreamerP@ssw0rd"))
                             {
                                 scp.Connect();
                                 scp.Upload(new FileInfo(source), rdest);
