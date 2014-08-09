@@ -225,6 +225,13 @@ function LoginKeyDown(event) {
     }
 }
 
+function LoginCenterKeyDown(event) {
+    var keyCode = ('which' in event) ? event.which : event.keyCode;
+    if (keyCode == 13) {
+        LoginToAccountCenter();
+    }
+}
+
 function RegisterKeyDown(event) {
     var keyCode = ('which' in event) ? event.which : event.keyCode;
     if (keyCode == 13) {

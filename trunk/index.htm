@@ -167,7 +167,7 @@
                 </div>
                 <fieldset id="actionscenter">
                   <center>
-                    <input type="button" onclick="LoginToAccountCenter();"  class="cupid-blue" style="font-family:Tahoma, Geneva, sans-serif; font-size:12px;" value="ورود">
+                    <input type="button" onclick="LoginToAccountCenter();"  class="cupid-blue" style="font-family:Tahoma, Geneva, sans-serif; font-size:12px;" value="ورود" onkeydown=LoginCenterKeyDown(event); >
                   </center>
                   
                   <ul style="float:right">
@@ -480,7 +480,7 @@ font-size:14px;" onClick="LogOutNew();">
           </td>
           <td style="border:none;">
             <hr/>
-            <input type="submit" name="go" class="customButton1" value="ثبت نام" onclick="RegisterToServer();"
+            <input type="submit" name="go" class="customButton1" value="ثبت نام" onclick="RegisterToServer();" onkeydown=RegisterKeyDown(event)  
             style="font-family:Tahoma, Geneva, sans-serif;"/>
             <input type="submit" name="go" class="customButton1" value="بازگشت" onclick="$.modal.close();"
             style="font-family:Tahoma, Geneva, sans-serif;"/>
