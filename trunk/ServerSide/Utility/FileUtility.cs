@@ -71,7 +71,7 @@ namespace Webinar.Utility
                 TaskParam param2 = new TaskParam();
                 param2.TaskID = newTask.TaskId;
                 param2.TaskParamName = "destination";
-                param2.TaskParamValue = "/home/hiva/Videos/Namaava/" + sessionID;
+                param2.TaskParamValue = "/home/admin/hiva/Videos/Namaava/" + sessionID;
                 m_model.TaskParams.InsertOnSubmit(param2);
                 TaskParam param3 = new TaskParam();
                 param3.TaskID = newTask.TaskId;
@@ -110,7 +110,7 @@ namespace Webinar.Utility
                 TaskParam param2 = new TaskParam();
                 param2.TaskID = newTask.TaskId;
                 param2.TaskParamName = "destination";
-                param2.TaskParamValue = "/home/hiva/Videos/Namaava/Samples";
+                param2.TaskParamValue = "/home/admin/hiva/Videos/Namaava/Samples";
                 m_model.TaskParams.InsertOnSubmit(param2);
                 TaskParam param3 = new TaskParam();
                 param3.TaskID = newTask.TaskId;

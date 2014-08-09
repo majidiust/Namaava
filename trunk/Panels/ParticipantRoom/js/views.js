@@ -78,7 +78,7 @@ Room.Views = {
                         $("#SessionVideo").append("<option value='-1'>" + "انتخاب ویدیو" + "</option>");
 
                         for (var i = 0; i < result.Result.length; i++) {
-                            var url = "http://94.232.174.204:7700/Namaava/" + Room.webinarId + "/" + result.Result[i].fileId + ".webm";
+                            var url = "http://94.232.174.206:7700/Namaava/" + Room.webinarId + "/" + result.Result[i].fileId + ".webm";
                             $("#SessionVideo").append("<option value='" + url + "'>" + result.Result[i].fileId + "</option>");
                             console.log(url);
                         }
@@ -92,7 +92,7 @@ Room.Views = {
                             $("#mediaContainer").jPlayer("size", { width: "320" });
                         });
 
-                        var videoUrl = "http://94.232.174.204:7700/Namaava/" + Room.webinarId + "/" + result.Result[0].fileId + ".webm";
+                        var videoUrl = "http://94.232.174.206:7700/Namaava/" + Room.webinarId + "/" + result.Result[0].fileId + ".webm";
                         console.log("Video is : " + videoUrl);
                         $("#mediaContainer").jPlayer("setMedia", {
                             ogv: videoUrl // Defines the counterpart ogv url
@@ -591,7 +591,7 @@ videoControlsView: Backbone.View.extend({
     },
     setSound: function () {
         this.playerObject.jPlayer("setMedia", {
-            ogv: "http://94.232.174.204:8810"//Room.videoData[0].url // Defines the counterpart ogv url
+            ogv: "http://94.232.174.206:8810"//Room.videoData[0].url // Defines the counterpart ogv url
         }).jPlayer("play"); // Attempts to Auto-Play the media
 
 
