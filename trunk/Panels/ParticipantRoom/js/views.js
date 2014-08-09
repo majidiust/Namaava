@@ -717,7 +717,7 @@ webinarInfoView: Backbone.View.extend({
 listOfPresentView: Backbone.View.extend({
     el: '#ListOfPresent',
     initialize: function () {
-        alert('لطفا دکمه تایید را فشار دهید');
+        //alert('لطفا دکمه تایید را فشار دهید');
         _.bindAll(this, 'render', 'addRow', 'sendMessage', 'Exit');
         this.tableBody = this.$el.find('.modal-body .table tbody');
         this.render();
@@ -729,11 +729,11 @@ listOfPresentView: Backbone.View.extend({
     },
     sendMessage: function (e) {
         var userName = $(e.target).data('fileUrl');
-        alert('sendMessageToUser : ' + e);
+        //alert('sendMessageToUser : ' + e);
     },
     Exit: function (e) {
         var userName = $(e.target).data('fileUrl');
-        alert('ExitUser : ' + userName);
+        //alert('ExitUser : ' + userName);
     },
     addRow: function (userData) {
         this.tableBody.append(this.template(userData));
