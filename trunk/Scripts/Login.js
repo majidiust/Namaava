@@ -332,10 +332,10 @@ function ClearRegisterForm() {
 
 
 function ShowRegisterationError(errorType) {
-    var m_uname = $("#uname2").val();
-    var m_email = $("#email2").val();
-    var m_pass = $("#pass2").val();
-    var m_confirmPass = $("#passConfirm2").val();
+    var m_uname = $("#uname").val();
+    var m_email = $("#email").val();
+    var m_pass = $("#pass").val();
+    var m_confirmPass = $("#passConfirm").val();
     if (errorType == 1) {
         if (m_uname == "") {
             $("#RegisterMessageUserName").html("نام کاربری را وارد کنید.");
