@@ -487,7 +487,7 @@ videoView: Backbone.View.extend({
         var player = $("#mediaContainer").jPlayer({
             solution: "flash, html", // Flash with an HTML5 fallback.
             supplied: "ogv",
-            swfPath: "http://iwebinar.ir:6060/Panels/ParticipantRoom/jPlayer/Jplayer.swf",
+            swfPath: "http://www.iwebinar.ir:6060/Panels/ParticipantRoom/jPlayer/Jplayer.swf",
             size: {
                 width: "100%",
                 height: "100%"
@@ -702,7 +702,7 @@ webinarInfoView: Backbone.View.extend({
             if (imgPath != '') {
                 imgPath = imgPath.substr(imgPath.indexOf('Pics'));
                 imgPath = imgPath.split("\\");
-                var src = 'http://iwebinar.ir:6060/ServerSide/Pics/Users/Originals/' + imgPath[3];
+                var src = 'http://www.iwebinar.ir:6060/ServerSide/Pics/Users/Originals/' + imgPath[3];
                 img.attr('width', 90);
                 img.attr('height', 90);
                 img.attr('src', src);
