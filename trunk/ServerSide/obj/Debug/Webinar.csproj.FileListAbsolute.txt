@@ -1,0 +1,15 @@
+F:\Projects\namava\trunk\ServerSide\bin\Webinar.dll
+F:\Projects\namava\trunk\ServerSide\bin\Webinar.pdb
+F:\Projects\namava\trunk\ServerSide\bin\System.Web.Abstractions.dll
+F:\Projects\namava\trunk\ServerSide\bin\System.Web.ApplicationServices.dll
+F:\Projects\namava\trunk\ServerSide\bin\System.Web.dll
+F:\Projects\namava\trunk\ServerSide\bin\System.Web.DynamicData.dll
+F:\Projects\namava\trunk\ServerSide\bin\System.Web.Entity.dll
+F:\Projects\namava\trunk\ServerSide\bin\System.Web.Extensions.dll
+F:\Projects\namava\trunk\ServerSide\bin\System.Web.Mvc.dll
+F:\Projects\namava\trunk\ServerSide\bin\System.Web.Routing.dll
+F:\Projects\namava\trunk\ServerSide\bin\System.Web.Services.dll
+F:\Projects\namava\trunk\ServerSide\bin\System.Web.Mvc.xml
+F:\Projects\namava\trunk\ServerSide\obj\Debug\Webinar.csprojResolveAssemblyReference.cache
+F:\Projects\namava\trunk\ServerSide\obj\Debug\Webinar.dll
+F:\Projects\namava\trunk\ServerSide\obj\Debug\Webinar.pdb

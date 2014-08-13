@@ -1045,7 +1045,7 @@ namespace Webinar.Controllers
                         msg = reader.ReadToEnd();
                         reader.Close();
                         msg = msg.Replace("{0}", membership[0].Email);
-                        string address = string.Format("http://{0}/confirmation.html?guid={1}&type=2", m_serverAddress,id.ToString());
+                        string address = string.Format("{0}/confirmation.html?guid={1}&type=2", m_serverAddress,id.ToString());
                         msg = msg.Replace("{1}", address);
                        
                         EmailService service = new EmailService();
