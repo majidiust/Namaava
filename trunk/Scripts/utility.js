@@ -35,6 +35,12 @@ function GetCurrentPersianMonth() {
     return d.getJalaliMonth();
 }
 
+function GetCurrentPersianYear() {
+    var d;
+    d = new Date();
+    return d.getJalaliFullYear();
+}
+
 
 function GetCurrentPersianMonthString() {
     var d;

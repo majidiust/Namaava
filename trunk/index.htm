@@ -41,7 +41,7 @@
 
                     LoadPageComponents();
                     DetectLoggedInUser();
-                    var _date = GetCurrentPersianDayString() + ", " + GetCurrentPersianDayOfMonth() + "  " + GetCurrentPersianMonthString() + " ماه  " + "1393";
+                    var _date = GetCurrentPersianDayString() + ", " + GetCurrentPersianDayOfMonth() + "  " + GetCurrentPersianMonthString() + " ماه  " + GetCurrentPersianYear();
                     $("#date").html(_date);
                     if (BrowserDetect.browser.indexOf("Explorer") != -1) {
                         alert("مرورگر شما Internet Explorer است. لطفا برای استفاده از امکانات سایت از یکی از مرورگر های Firefox، Chrome و یا Opera استفاده نمایید.");
