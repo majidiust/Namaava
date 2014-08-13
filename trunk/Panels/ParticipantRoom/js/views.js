@@ -219,6 +219,7 @@ Room.Views = {
                 east__paneSelector: '#layoutEast',
                 center__paneSelector: '#layoutCenter',
                 west__initClosed: true,
+                east__initClosed: true,
                 autoBindCustomButtons: true,
                 west__size: .46,
                 west__maxSize: .50,
