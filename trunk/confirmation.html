@@ -185,119 +185,117 @@
                 <li><a href="portfolio.html">پشتیبانی و تماس</a></li>
             </ul>
         </div>
+    </div>
+</div>
 
-        <div class="wrapper row4">
-                <div id="membershipConfirmation" style="display:none;">
+<div class="wrapper row3">
+    <div id="membershipConfirmation" style="display:none;">
 
-                    <table name="Activating">
-                        <tr>
-                            <td style="border:none;"><h2
-                                    style="direction:rtl;float:right;font-family:Tahoma, Geneva, sans-serif;">تایید
-                                عضویت
-                                شما</h2>
-                            </td>
-                        </tr>
+        <table name="Activating">
+            <tr>
+                <td style="border:none;"><h2
+                        style="direction:rtl;float:right;font-family:Tahoma, Geneva, sans-serif;">تایید
+                    عضویت
+                    شما</h2>
+                </td>
+            </tr>
+            <tr>
+                <td style="border:none;font-size:11px">
+                    <table>
                         <tr>
                             <td style="border:none;font-size:11px">
-                                <table>
-                                    <tr>
-                                        <td style="border:none;font-size:11px">
-                                            کد شما
-                                        </td>
-                                        <td style="border:none;font-size:11px" id="GUIDCode">
-                                        </td>
-                                    </tr>
-                                </table>
+                                کد شما
                             </td>
-                        </tr>
-                        <tr>
-                            <td style="border:none;font-size:11px">
-                                <hr/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="border:none;">
-
-                                <p style="text-align:justify;direction:rtl;float:right;font-family:Tahoma, Geneva, sans-serif;"
-                                   id="Message">
-                                    در حال تایید عضویت لطفا منتظر بمانید
-                                </p>
+                            <td style="border:none;font-size:11px" id="GUIDCode">
                             </td>
                         </tr>
                     </table>
-                    <br/>
-                    <br/>
-                </div>
-                <div id="forgetPassword" style="display:none;">
+                </td>
+            </tr>
+            <tr>
+                <td style="border:none;font-size:11px">
+                    <hr/>
+                </td>
+            </tr>
+            <tr>
+                <td style="border:none;">
 
+                    <p style="text-align:justify;direction:rtl;float:right;font-family:Tahoma, Geneva, sans-serif;"
+                       id="Message">
+                        در حال تایید عضویت لطفا منتظر بمانید
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+    </div>
+    <div id="forgetPassword" style="display:none;">
+
+        <table>
+            <tr>
+                <td style="border:none;">
+                    <h2 style="direction:rtl;float:right;font-family:Tahoma, Geneva, sans-serif;">فراموش
+                        کردن کلمه
+                        عبور</h2>
+                </td>
+            </tr>
+            <tr>
+                <td style="border:none;">
+                    <hr/>
+                </td>
+            </tr>
+            <tr>
+                <td style="border:none;font-size:11px">
                     <table>
                         <tr>
                             <td style="border:none;">
-                                <h2 style="direction:rtl;float:right;font-family:Tahoma, Geneva, sans-serif;">فراموش
-                                    کردن کلمه
-                                    عبور</h2>
+                                <label for="email">کلمه عبور</label>
+                            </td>
+                            <td style="border:none;">
+                                <div class="input-container" style="float:right;">
+                                    <input id="pass" type="password"/>
+
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td style="border:none;">
-                                <hr/>
+                                <label for="pass">تکرار کلمه عبور</label>
                             </td>
-                        </tr>
-                        <tr>
-                            <td style="border:none;font-size:11px">
-                                <table>
-                                    <tr>
-                                        <td style="border:none;">
-                                            <label for="email">کلمه عبور</label>
-                                        </td>
-                                        <td style="border:none;">
-                                            <div class="input-container" style="float:right;">
-                                                <input id="pass" type="password"/>
+                            <td style="border:none;">
+                                <div class="input-container" style="float:right;">
+                                    <input id="passConfirm" type="password"/>
 
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="border:none;">
-                                            <label for="pass">تکرار کلمه عبور</label>
-                                        </td>
-                                        <td style="border:none;">
-                                            <div class="input-container" style="float:right;">
-                                                <input id="passConfirm" type="password"/>
-
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="border:none;font-size:11px">
-                                <hr/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td valign="middle" align="center" style="border:none;">
-                                <input type="submit" name="ForgetPassBtn" class="col2" value="ثبت "
-                                       onclick="ForgetPasswordHandler();"
-                                       style="width:100px; font-family:Tahoma, Geneva, sans-serif;"/>
+                                </div>
                             </td>
                         </tr>
                     </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="border:none;font-size:11px">
+                    <hr/>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle" align="center" style="border:none;">
+                    <input type="submit" name="ForgetPassBtn" class="col2" value="ثبت "
+                           onclick="ForgetPasswordHandler();"
+                           style="width:100px; font-family:Tahoma, Geneva, sans-serif;"/>
+                </td>
+            </tr>
+        </table>
 
-                    <div id="ForgetPassMessage" class="ErrorLink"
-                         style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:11px;">
-                    </div>
-
-                    <br/>
-                    <br/>
-
-                </div>
-                <br class="clear"/>
+        <div id="ForgetPassMessage" class="ErrorLink"
+             style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:11px;">
         </div>
 
-        <!-- ###### -->
+        <br/>
+        <br/>
+
     </div>
+    <br class="clear"/>
 </div>
 <!-- ####################################################################################################### -->
 
