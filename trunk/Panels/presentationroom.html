@@ -1,506 +1,565 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head> 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-	<title>سمینار</title> 
+    <title>سمینار</title>
 
-	<link rel="stylesheet" type="text/css" href="http://layout.jquery-dev.net/lib/css/layout-default-latest.css" />
-	<style type="text/css">
-	/* neutralize pane formatting BEFORE loading UI Theme */
-	.ui-layout-pane ,
-	.ui-layout-content {
-		background:	none;
-		border:		0;
-		padding:	0;
-		overflow:	visible;
-	}
-	</style>
-	<link rel="stylesheet" type="text/css" href="http://layout.jquery-dev.net/lib/css/themes/base/jquery.ui.all.css" />
-	<style type="text/css">
-	p				{ margin:		1em 0; }
+    <link rel="stylesheet" type="text/css" href="http://layout.jquery-dev.net/lib/css/layout-default-latest.css"/>
+    <style type="text/css">
+        /* neutralize pane formatting BEFORE loading UI Theme */
+        .ui-layout-pane,
+        .ui-layout-content {
+            background: none;
+            border: 0;
+            padding: 0;
+            overflow: visible;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://layout.jquery-dev.net/lib/css/themes/base/jquery.ui.all.css"/>
+    <style type="text/css">
+        p {
+            margin: 1em 0;
+        }
 
-	/* use !important to override UI theme styles */
-	.grey			{ background:	#999 !important; }
-	.outline		{ /*border:		1px dashed #F00 !important;*/ }
-	.add-padding	{ padding:		10px !important; }
-	.no-padding		{ padding:		0 !important; }
-	.add-scrollbar	{ overflow:		auto; }
-	.no-scrollbar	{ overflow:		hidden; }
-	.allow-overflow	{ overflow:		visible; }
-	.full-height	{ height:		100%; }
-	button			{ cursor:		pointer; }
+        /* use !important to override UI theme styles */
+        .grey {
+            background: #999 !important;
+        }
 
-	</style>
+        .outline {
+            /*border:		1px dashed #F00 !important;*/
+        }
 
-	<script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/jquery-latest.js"></script> 
-	<script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/jquery-ui-latest.js"></script> 
-	<script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/jquery.layout-latest.js"></script>
+        .add-padding {
+            padding: 10px !important;
+        }
 
-	<!-- load the Tabs & Accordions callbacks so we can use them below-->
-	<script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/jquery.layout.resizeTabLayout-latest.min.js"></script>
-	<script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/jquery.layout.resizePaneAccordions-latest.min.js"></script>
+        .no-padding {
+            padding: 0 !important;
+        }
 
-    <script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/themeswitchertool.js"></script> 
-	<script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/debug.js"></script>
+        .add-scrollbar {
+            overflow: auto;
+        }
+
+        .no-scrollbar {
+            overflow: hidden;
+        }
+
+        .allow-overflow {
+            overflow: visible;
+        }
+
+        .full-height {
+            height: 100%;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+    </style>
+
+    <script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/jquery-ui-latest.js"></script>
+    <script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/jquery.layout-latest.js"></script>
+
+    <!-- load the Tabs & Accordions callbacks so we can use them below-->
+    <script type="text/javascript"
+            src="http://layout.jquery-dev.net/lib/js/jquery.layout.resizeTabLayout-latest.min.js"></script>
+    <script type="text/javascript"
+            src="http://layout.jquery-dev.net/lib/js/jquery.layout.resizePaneAccordions-latest.min.js"></script>
+
+    <script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/themeswitchertool.js"></script>
+    <script type="text/javascript" src="http://layout.jquery-dev.net/lib/js/debug.js"></script>
     <script src="../Scripts/Info.js"></script>
-<script src="js/classcharisma.js"></script>
-	<script type="text/javascript"> 
-	
-	
-
-	$(document).ready(function () {
-
-		// OUTER/PAGE LAYOUT
-		pageLayout = $("body").layout({ // DO NOT use "var pageLayout" here
-			west__size:			.30 
-		,	east__size:			.30 
-		,	south__initClosed:	true
-		,	north__initClosed:	true
-		,	west__onresize:		$.layout.callbacks.resizePaneAccordions // west accordion a child of pane
-		,	east__onresize:		$.layout.callbacks.resizePaneAccordions // east accordion nested inside a tab-panel
-		}); 
-
-		// TABS IN CENTER-PANE
-		// create tabs before wrapper-layout so elems are correct size before creating layout
-		pageLayout.panes.center.tabs({
-			activate:			$.layout.callbacks.resizeTabLayout // tab2-accordion is wrapped in a layout
-		});
-
-		// WRAPPER-LAYOUT FOR TABS/TAB-PANELS, INSIDE OUTER-CENTER PANE
-		pageLayout.panes.center.layout({
-			closable:			false
-		,	resizable:			false
-		,	spacing_open:		0
-		,	center__onresize:	$.layout.callbacks.resizeTabLayout // tabs/panels are wrapped with an inner-layout
-		});
-
-		// LAYOUT TO CONTAIN HEADER+ACCORDION, INSIDE A TAB, INSIDE OUTER-CENTER PANE
-		$("#tab-panel-center-2").layout({
-			center__onresize:	$.layout.callbacks.resizePaneAccordions // accordion is inside center-pane
-		,	resizeWithWindow:	false	// resizing is handled by callbacks to ensure the correct resizing sequence
-		,	triggerEventsOnLoad: true	// force resize of accordion when layout inits - ie, becomes visible 1st time
-		});
-
-		// TABS INSIDE EAST-PANE
-		pageLayout.panes.east.tabs({
-			activate:			$.layout.callbacks.resizePaneAccordions // resize tab2-accordion when tab is activated
-		});
-		pageLayout.sizeContent("east"); // resize pane-content-elements after creating east-tabs
-
-		// INIT ALL ACCORDIONS - EVEN THOSE NOT VISIBLE
-		$("#accordion-west")	.accordion({ heightStyle: "fill" });
-		$("#accordion-center")	.accordion({ heightStyle: "fill" });
-		$("#accordion-east")	.accordion({ heightStyle: "fill" });
+    <script src="js/classcharisma.js"></script>
+    <script type="text/javascript">
 
 
-		// THEME SWITCHER
-		addThemeSwitcher('#east-toolbar',{ top: '12px', right: '5px' });
-		// if a new theme is applied, it could change the height of some content,
-		// so call resizeAll to 'correct' any header/footer heights affected
-		// NOTE: this is only necessary because we are changing CSS *AFTER LOADING* using themeSwitcher
-		setTimeout( pageLayout.resizeAll, 2000 ); /* allow time for browser to re-render with new theme */
-		 GoToSeminar(197);
+        $(document).ready(function () {
 
-	});
+            // OUTER/PAGE LAYOUT
+            pageLayout = $("body").layout({ // DO NOT use "var pageLayout" here
+                west__size: .30, east__size: .30, south__initClosed: true, north__initClosed: true, west__onresize: $.layout.callbacks.resizePaneAccordions // west accordion a child of pane
+                , east__onresize: $.layout.callbacks.resizePaneAccordions // east accordion nested inside a tab-panel
+            });
 
-	</script> 
-    
-</head> 
-<body> 
+            // TABS IN CENTER-PANE
+            // create tabs before wrapper-layout so elems are correct size before creating layout
+            pageLayout.panes.center.tabs({
+                activate: $.layout.callbacks.resizeTabLayout // tab2-accordion is wrapped in a layout
+            });
+
+            // WRAPPER-LAYOUT FOR TABS/TAB-PANELS, INSIDE OUTER-CENTER PANE
+            pageLayout.panes.center.layout({
+                closable: false, resizable: false, spacing_open: 0, center__onresize: $.layout.callbacks.resizeTabLayout // tabs/panels are wrapped with an inner-layout
+            });
+
+            // LAYOUT TO CONTAIN HEADER+ACCORDION, INSIDE A TAB, INSIDE OUTER-CENTER PANE
+            $("#tab-panel-center-2").layout({
+                center__onresize: $.layout.callbacks.resizePaneAccordions // accordion is inside center-pane
+                , resizeWithWindow: false	// resizing is handled by callbacks to ensure the correct resizing sequence
+                , triggerEventsOnLoad: true	// force resize of accordion when layout inits - ie, becomes visible 1st time
+            });
+
+            // TABS INSIDE EAST-PANE
+            pageLayout.panes.east.tabs({
+                activate: $.layout.callbacks.resizePaneAccordions // resize tab2-accordion when tab is activated
+            });
+            pageLayout.sizeContent("east"); // resize pane-content-elements after creating east-tabs
+
+            // INIT ALL ACCORDIONS - EVEN THOSE NOT VISIBLE
+            $("#accordion-west").accordion({ heightStyle: "fill" });
+            $("#accordion-center").accordion({ heightStyle: "fill" });
+            $("#accordion-east").accordion({ heightStyle: "fill" });
+
+
+            // THEME SWITCHER
+            addThemeSwitcher('#east-toolbar', { top: '12px', right: '5px' });
+            // if a new theme is applied, it could change the height of some content,
+            // so call resizeAll to 'correct' any header/footer heights affected
+            // NOTE: this is only necessary because we are changing CSS *AFTER LOADING* using themeSwitcher
+            setTimeout(pageLayout.resizeAll, 2000);
+            /* allow time for browser to re-render with new theme */
+            GoToSeminar(197);
+
+        });
+
+    </script>
+
+</head>
+<body>
 
 
 <div class="ui-layout-north ui-widget-content add-padding">
-<div  class="btn btn-danger" title="برای خروج از سمینار کلیک کنید." data-rel="tooltip" onClick="ExitFromSeminar();">خروج از سمینار</div>
-</div> 
+    <div class="btn btn-danger" title="برای خروج از سمینار کلیک کنید." data-rel="tooltip" onClick="ExitFromSeminar();">
+        خروج از سمینار
+    </div>
+</div>
 <div class="ui-layout-south ui-widget-content add-padding">
-              
-              <table style="float:right;margin-left:0px;margin-right:0px;">
 
-              </tr>
-               <tr style="cursor:pointer;">
-              <td align="right" valign="middle">
-              	<img src="img/Notes.png" style="width:32px;height:32px;"/>
-              </td>
-              <td align="right" valign="middle">
-<strong>   <div>  منابع جلسه</div>
-        	</strong>              
-</td>
-              </tr>
-              <div id="SeminarFilesExplorer">
-                  <table style="width:100%;" id="SeminarFilesExplorerTable" class="table table-bordered table-striped table-condensed" >
-                  <thead>
-                  	<tr >
-                  	<th style="text-align:center">حجم</th>
+    <table style="float:right;margin-left:0px;margin-right:0px;">
+
+        </tr>
+        <tr style="cursor:pointer;">
+            <td align="right" valign="middle">
+                <img src="img/Notes.png" style="width:32px;height:32px;"/>
+            </td>
+            <td align="right" valign="middle">
+                <strong>
+                    <div> منابع جلسه</div>
+                </strong>
+            </td>
+        </tr>
+        <div id="SeminarFilesExplorer">
+            <table style="width:100%;" id="SeminarFilesExplorerTable"
+                   class="table table-bordered table-striped table-condensed">
+                <thead>
+                <tr>
+                    <th style="text-align:center">حجم</th>
                     <th style="text-align:center">لینک دانلود</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                
-                  </tbody>
-                  </table>
-                  </div>
-              </table>
-</div> 
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </table>
+</div>
 
 
 <div class="ui-layout-west no-scrollbar add-padding grey">
-	<div id="accordion-west">
+    <div id="accordion-west">
 
-			<h3 style=" direction:rtl;"><a href="#">اسلایدها</a></h3>
-			<div>
-				    <table style="border:groove;border-width:thin;">
-                      <tr>
-                        <td style="width:640px;height:450px;">
-                          <img id="SeminarMasterContentImage" style="width:640px;height:450px;"/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                         
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
+        <h3 style=" direction:rtl;"><a href="#">اسلایدها</a></h3>
+
+        <div>
+            <table style="border:groove;border-width:thin;">
+                <tr>
+                    <td style="width:640px;height:450px;">
+                        <img id="SeminarMasterContentImage" style="width:640px;height:450px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <center>
-                          <table>
-                            <tr>
-                            <td colspan="3"></td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <img src="../images/navigation_next.png" style="cursor:pointer;" onClick="ShowSlide(CurrentSlidePage+1);"  data-rel="popover" data-content="با زدن این دکمه می توانید به اسلاید بعدی بروید." title="توجه"/>
-                              </td>
-                              <td width="20px;" id="SeminarMasterContentPageNumber">
-                              1/10
-                              </td>
-                              <td>
-                                <img src="../images/navigation_prev.png" style="cursor:pointer;" onClick="ShowSlide(CurrentSlidePage-1);" data-rel="popover" data-content="با زدن این دکمه می توانید به اسلاید قبلی بروید." title="توجه"/>
-                              </td>
-                            </tr>
-                          </table>
-                          </center>
-                        </td>
-                      </tr>
-                    </table>
-			</div>
+                            <table>
+                                <tr>
+                                    <td colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="../images/navigation_next.png" style="cursor:pointer;"
+                                             onClick="ShowSlide(CurrentSlidePage+1);" data-rel="popover"
+                                             data-content="با زدن این دکمه می توانید به اسلاید بعدی بروید."
+                                             title="توجه"/>
+                                    </td>
+                                    <td width="20px;" id="SeminarMasterContentPageNumber">
+                                        1/10
+                                    </td>
+                                    <td>
+                                        <img src="../images/navigation_prev.png" style="cursor:pointer;"
+                                             onClick="ShowSlide(CurrentSlidePage-1);" data-rel="popover"
+                                             data-content="با زدن این دکمه می توانید به اسلاید قبلی بروید."
+                                             title="توجه"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-			
-		
 
-	</div>
+    </div>
 </div>
 
 
 <div id="tabs-center" class="ui-layout-center no-scrollbar add-padding grey">
-	<!-- center Tabs layout -->
-	<ul class="ui-layout-north no-scrollbar allow-overflow">
+    <!-- center Tabs layout -->
+    <ul class="ui-layout-north no-scrollbar allow-overflow">
 
-	</ul>
-	<div class="ui-layout-center ui-widget-content add-scrollbar" style="border-top: 0;">
-		<div id="tab-panel-center-1" class="outline">
-			
-			<video id="SeminarMasterVideoPlayer" class="video-js vjs-default-skin" controls preload="auto"
-                          width="320" height="240" poster="images/1.png"
-                          data-setup='{"example_option":true}'> 
-                          </video>
-                          
-		</div>
-		<div id="tab-panel-center-2" class="no-padding no-scrollbar"
-		style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; display:none;">
-			<!-- center Accordion layout -->
-			<div class="ui-layout-center no-scrollbar add-padding">
-				
-				<div class="ui-layout-content no-scrollbar">
-					<div id="accordion-center">
-			
-						
-						<div>
-                        
-              <div class="control-group">
-                <label class="control-label" style="float:right;">
-                  پهنای باند دریافتی
-                </label>
-                <div class="controls"  style="float:right;">
-                  <label class="radio" >
-                    <input type="radio" name="optionsRadiosBandwidth" id="MasterVideoOptionsRadios64" value="64" checked="true">
-                    پهنای باند 64 کیلوبیت در ثانیه	
-                  </label>
-                  <label class="radio">
-                    <input type="radio" name="optionsRadiosBandwidth" id="MasterVideoOptionsRadios128" value="128">
-                    پهناب باند 128 کیلو بیت در ثانیه	
-                  </label>
-                  <label class="radio">
-                    <input type="radio" name="optionsRadiosBandwidth" id="MasterVideoOptionsRadios256" value="256">
-                    پهنای باند 256 کیلوبیت در ثانیه
-                  </label>
+    </ul>
+    <div class="ui-layout-center ui-widget-content add-scrollbar" style="border-top: 0;">
+        <div id="tab-panel-center-1" class="outline">
+
+            <video id="SeminarMasterVideoPlayer" class="video-js vjs-default-skin" controls preload="auto"
+                   width="320" height="240" poster="images/1.png"
+                   data-setup='{"example_option":true}'>
+            </video>
+
+        </div>
+        <div id="tab-panel-center-2" class="no-padding no-scrollbar"
+             style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; display:none;">
+            <!-- center Accordion layout -->
+            <div class="ui-layout-center no-scrollbar add-padding">
+
+                <div class="ui-layout-content no-scrollbar">
+                    <div id="accordion-center">
+
+
+                        <div>
+
+                            <div class="control-group">
+                                <label class="control-label" style="float:right;">
+                                    پهنای باند دریافتی
+                                </label>
+
+                                <div class="controls" style="float:right;">
+                                    <label class="radio">
+                                        <input type="radio" name="optionsRadiosBandwidth"
+                                               id="MasterVideoOptionsRadios64" value="64" checked="true">
+                                        پهنای باند 64 کیلوبیت در ثانیه
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="optionsRadiosBandwidth"
+                                               id="MasterVideoOptionsRadios128" value="128">
+                                        پهناب باند 128 کیلو بیت در ثانیه
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="optionsRadiosBandwidth"
+                                               id="MasterVideoOptionsRadios256" value="256">
+                                        پهنای باند 256 کیلوبیت در ثانیه
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" style="float:right;">
+                                    کدک دریافتی
+                                </label>
+
+                                <div class="controls" style="float:right;">
+                                    <label class="radio">
+                                        <input type="radio" name="optionsRadiosCodec" id="MasterVideoOptionsRadiosWebM"
+                                               value="WEBM" checked="true">
+                                        WebM
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="optionsRadiosCodec" id="MasterVideoOptionsRadiosOGG"
+                                               value="OGG">
+                                        OGG
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" style="float:right;">
+                                    رسانه دریافتی
+                                </label>
+
+                                <div class="controls" style="float:right;">
+                                    <label class="radio">
+                                        <input type="radio" name="optionsRadiosMedia" id="MasterVideoOptionsRadiosVoice"
+                                               value="Voice" checked="true">
+                                        فقط صدا
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="optionsRadiosMedia"
+                                               id="MasterVideoOptionsRadiosVideoVoice" value="Video">
+                                        صدا و تصویر
+                                    </label>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                        </div>
+
+
+                        <div>
+
+                        </div>
+
+
+                        <div>
+
+                        </div>
+
+                    </div>
                 </div>
-              </div>
-              <div class="control-group">
-                <label class="control-label" style="float:right;">
-                  کدک دریافتی
-                </label>
-                <div class="controls"  style="float:right;">
-                  <label class="radio" >
-                    <input type="radio" name="optionsRadiosCodec" id="MasterVideoOptionsRadiosWebM" value="WEBM" checked="true">
-                    WebM	
-                  </label>
-                  <label class="radio">
-                    <input type="radio" name="optionsRadiosCodec" id="MasterVideoOptionsRadiosOGG" value="OGG">
-                    OGG									
-                  </label>
-                </div>
-              </div>
-              
-              <div class="control-group">
-                <label class="control-label" style="float:right;">
-                  رسانه دریافتی
-                </label>
-                <div class="controls"  style="float:right;">
-                  <label class="radio" >
-                    <input type="radio" name="optionsRadiosMedia" id="MasterVideoOptionsRadiosVoice" value="Voice" checked="true">
-                    فقط صدا	
-                  </label>
-                  <label class="radio">
-                    <input type="radio" name="optionsRadiosMedia" id="MasterVideoOptionsRadiosVideoVoice" value="Video">
-                    صدا و تصویر									
-                  </label>
-                </div>
-              
-              
-              
             </div>
-							
-						</div>
-			
-						
-						<div>
-							
-						</div>
-			
-						
-						<div>
-							
-						</div>
-			
-						
-						<div>
-							
-						</div>
-			
-					</div>
-				</div>
-			</div>
-			<!-- /center Accordion layout -->
-		</div>
-		<div id="tab-panel-center-3" class="outline">
-			
-		</div>
-	</div>
+            <!-- /center Accordion layout -->
+        </div>
+        <div id="tab-panel-center-3" class="outline">
 
-	<!-- /center Tabs layout -->
+        </div>
+    </div>
+
+    <!-- /center Tabs layout -->
 </div>
 
 
 <div id="tabs-east" class="ui-layout-east no-padding no-scrollbar">
 
-	<ul class="allow-overflow" style="font:Tahoma, Geneva, sans-serif;">
-		<li><a href="#tab-panel-east-1">اطلاعات سمینار</a></li>
-		<li><a href="#tab-panel-east-2">گفتگو </a></li>
-		<li><a href="#tab-panel-east-3">شرکت کنندگان</a></li>
-	</ul>
-	<div class="ui-layout-content ui-widget-content no-scrollbar" style="border-top: 0;">
-		<div id="tab-panel-east-1" class="full-height no-padding add-scrollbar">
-			<div class="ui-tabs-panel outline" style="float:right; direction:rtl;">
-				
-				              <legend>
-                مشخصات سمینار
-              </legend>
-              <center>
-                <table style="font-size:small;">
-                  <tr>
-                    <td colspan="4">
-                      <center>
-                        <img style="border:groove;" src="../images/Webinars-Small1.jpg" width="200px" height="200px"/>
-                      </center>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="4">
-                      <hr/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width="91" style="font-weight:bold;">
-                      عنوان سمینار		
-                    </td>
-                    <td colspan="3" class="muted"  id="SeminarInformationName">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="font-weight:bold;">
-                      ارائه دهنده
-                    </td>
-                    <td colspan="3"  class="muted" id="SeminarInformationPresentor">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="font-weight:bold;">
-                      تعداد حاضرین
-                    </td>
-                    <td colspan="3" class="muted"  id="SeminarInformationCapacity">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td  style="font-weight:bold;">
-                      زمان
-                    </td>
-                    <td colspan="3"  class="muted" id="SeminarInformationTime">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="4" style="font-weight:bold;">
-                      توضیحات
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="4" style="text-align:justify;" class="well" id="SeminarInformationDesc">
-                    </td>
-                  </tr>
-                  <tr>
-                  <td colspan="4"><br/></td>
-                  </tr>
-                  <tr>
-                  	<td colspan="4" style="text-align:justify;" >
-                    <center>
-                     	
-                       </center>
-                    </td>
-                  </tr>
-                </table>
-			</div>
-		</div>
-		<div id="tab-panel-east-3" class="full-height no-padding add-scrollbar" style="float:right; direction:rtl;">
-			<div class="ui-tabs-panel outline">
-				<div id="SeminarParticipantsHolder">
-                  <table style="width:100%;" id="SeminarParticipantsHolderTable" class="table table-bordered table-striped table-condensed" >
-                  <thead>
-                  	<tr >
-                  	<th style="text-align:center">نام</th>
-                    <th style="text-align:center">نام خانوادگی</th>
-                    <th style="text-align:center">نام کاربری</th>
-                    <th style="text-align:center">نوع حضور</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                
-                  </tbody>
-                  </table>
-                  </div>
-			</div>
-		</div>
-		<div id="tab-panel-east-2" class="full-height no-padding no-scrollbar" style="float:right; direction:rtl; font-family:Tahoma, Geneva, sans-serif" >
-			<div id="accordion-east" class="full-height">
-		
-					<h3><a href="#">سوال از استاد</a></h3>
-					<div>
-						<legend>سوالات مطرح شده</legend>
-                <div class="box-content" >
-                  <center>
-                    <table>
-                      <tr>
-                        <td>
-                        
-                        <div id="SeminarChatBoard" class="terms">
-						
-						</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <hr/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <table>
-                            <tr>
-                              <td style="width:50px;">
-                                متن 
-                              </td>
-                              <td >
-                                <input  type="text" class="span6 typeahead" id="SeminarChatMessage" onKeyDown="SendMessageViaKeyboard(event);" data-provide="typeahead">
-                              </td>
-                              <td>
-                                <div style="width:80px;" id="SendQuestionButton" class="btn btn-suuccess" data-rel="popover" data-content="سوال شما برای استاد ارسال شده و در صورت و در حین سمینار به آن پاسخ داده خواهده شد." title="توجه" onclick="SendQuestionToMaster();">
-                                 ثبت
-                                </div>
-                                <div style="width:120px;display:none;" id="WaitForMakeQuestion">در حال ارسال</div>
-                                
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      
+    <ul class="allow-overflow" style="font:Tahoma, Geneva, sans-serif;">
+        <li><a href="#tab-panel-east-1">اطلاعات سمینار</a></li>
+        <li><a href="#tab-panel-east-2">گفتگو </a></li>
+        <li><a href="#tab-panel-east-3">شرکت کنندگان</a></li>
+    </ul>
+    <div class="ui-layout-content ui-widget-content no-scrollbar" style="border-top: 0;">
+        <div id="tab-panel-east-1" class="full-height no-padding add-scrollbar">
+            <div class="ui-tabs-panel outline" style="float:right; direction:rtl;">
+
+                <legend>
+                    مشخصات سمینار
+                </legend>
+                <center>
+                    <table style="font-size:small;">
+                        <tr>
+                            <td colspan="4">
+                                <center>
+                                    <img style="border:groove;" src="../images/Webinars-Small1.jpg" width="200px"
+                                         height="200px"/>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <hr/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="91" style="font-weight:bold;">
+                                عنوان سمینار
+                            </td>
+                            <td colspan="3" class="muted" id="SeminarInformationName">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">
+                                ارائه دهنده
+                            </td>
+                            <td colspan="3" class="muted" id="SeminarInformationPresentor">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">
+                                تعداد حاضرین
+                            </td>
+                            <td colspan="3" class="muted" id="SeminarInformationCapacity">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">
+                                زمان
+                            </td>
+                            <td colspan="3" class="muted" id="SeminarInformationTime">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="font-weight:bold;">
+                                توضیحات
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align:justify;" class="well" id="SeminarInformationDesc">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><br/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align:justify;">
+                                <center>
+
+                                </center>
+                            </td>
+                        </tr>
                     </table>
-                  </center>
-                </div>
-					</div>
-		
-					<h3><a href="#">سوال از بخش فنی</a></h3>
-					<div>
-						<legend>سوالات مطرح شده</legend>
-                <div class="box-content">
-                  <center>
-                    <table>
-                      <tr>
-                        <td>
-                        
-                        <div id="SeminarChatBoard" class="terms">
-						
-						</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <hr/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <table>
-                            <tr>
-                              <td style="width:50px;">
-                                متن 
-                              </td>
-                              <td >
-                                <input  type="text" class="span6 typeahead" id="SeminarChatMessage" onKeyDown="SendMessageViaKeyboard(event);" data-provide="typeahead">
-                              </td>
-                              <td>
-                                <div style="width:80px;" id="SendQuestionButton" class="btn btn-suuccess" data-rel="popover" data-content="سوال شما برای استاد ارسال شده و در صورت و در حین سمینار به آن پاسخ داده خواهده شد." title="توجه" onclick="SendQuestionToMaster();">
-                                 ثبت
-                                </div>
-                                <div style="width:120px;display:none;" id="WaitForMakeQuestion">در حال ارسال</div>
-                                
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      
+            </div>
+        </div>
+        <div id="tab-panel-east-3" class="full-height no-padding add-scrollbar" style="float:right; direction:rtl;">
+            <div class="ui-tabs-panel outline">
+                <div id="SeminarParticipantsHolder">
+                    <table style="width:100%;" id="SeminarParticipantsHolderTable"
+                           class="table table-bordered table-striped table-condensed">
+                        <thead>
+                        <tr>
+                            <th style="text-align:center">نام</th>
+                            <th style="text-align:center">نام خانوادگی</th>
+                            <th style="text-align:center">نام کاربری</th>
+                            <th style="text-align:center">نوع حضور</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
                     </table>
-                  </center>
                 </div>
-					</div>
-		
-					
-		
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+        <div id="tab-panel-east-2" class="full-height no-padding no-scrollbar"
+             style="float:right; direction:rtl; font-family:Tahoma, Geneva, sans-serif">
+            <div id="accordion-east" class="full-height">
+
+                <h3><a href="#">سوال از استاد</a></h3>
+
+                <div>
+                    <legend>سوالات مطرح شده</legend>
+                    <div class="box-content">
+                        <center>
+                            <table>
+                                <tr>
+                                    <td>
+
+                                        <div id="SeminarChatBoard" class="terms">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <hr/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="width:50px;">
+                                                    متن
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="span6 typeahead" id="SeminarChatMessage"
+                                                           onKeyDown="SendMessageViaKeyboard(event);"
+                                                           data-provide="typeahead">
+                                                </td>
+                                                <td>
+                                                    <div style="width:80px;" id="SendQuestionButton"
+                                                         class="btn btn-suuccess" data-rel="popover"
+                                                         data-content="سوال شما برای استاد ارسال شده و در صورت و در حین سمینار به آن پاسخ داده خواهده شد."
+                                                         title="توجه" onclick="SendQuestionToMaster();">
+                                                        ثبت
+                                                    </div>
+                                                    <div style="width:120px;display:none;" id="WaitForMakeQuestion">در
+                                                        حال ارسال
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </center>
+                    </div>
+                </div>
+
+                <h3><a href="#">سوال از بخش فنی</a></h3>
+
+                <div>
+                    <legend>سوالات مطرح شده</legend>
+                    <div class="box-content">
+                        <center>
+                            <table>
+                                <tr>
+                                    <td>
+
+                                        <div id="SeminarChatBoard" class="terms">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <hr/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="width:50px;">
+                                                    متن
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="span6 typeahead" id="SeminarChatMessage"
+                                                           onKeyDown="SendMessageViaKeyboard(event);"
+                                                           data-provide="typeahead">
+                                                </td>
+                                                <td>
+                                                    <div style="width:80px;" id="SendQuestionButton"
+                                                         class="btn btn-suuccess" data-rel="popover"
+                                                         data-content="سوال شما برای استاد ارسال شده و در صورت و در حین سمینار به آن پاسخ داده خواهده شد."
+                                                         title="توجه" onclick="SendQuestionToMaster();">
+                                                        ثبت
+                                                    </div>
+                                                    <div style="width:120px;display:none;" id="WaitForMakeQuestion">در
+                                                        حال ارسال
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </center>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 </div>
 
 
-</body> 
+</body>
 </html>

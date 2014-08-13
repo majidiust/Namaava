@@ -1,588 +1,753 @@
 ﻿/* Sticky footer styles
       -------------------------------------------------- */
-      @font-face{
-      font-family:'Zar';
-      font-weight:normal;
-      font-style:normal;
-      src:url('../fonts/BZar.eot?#') format('eot'),    
-            url('../fonts/BZar.woff') format('woff'),
-      url("../fonts/BZAR.TTF") format("truetype")}
+@font-face {
+    font-family: 'Zar';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/BZar.eot?#') format('eot'),
+    url('../fonts/BZar.woff') format('woff'),
+    url("../fonts/BZAR.TTF") format("truetype")
+}
 
-      html,
-      body {
-        height: 100%;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        overflow: auto;
-        font-family:'Zar',Tahoma;
-        /* The html and body elements cannot have any padding or margin. */
-      }
-      .hidden{
-        display: none;
-      }
-      .clr{
-        clear:both;
-      }
-      /* Wrapper for page content to push down footer */
-      #wrap {
-        min-height: 100%;
-        /*max-width: 1440px;*/
-        min-width: 600px;
-        height: auto !important;
-        height: 100%;
-        /* Negative indent footer by it's height */
-        margin: 0 auto -40px;
-      }
-      #videoAlert .close{
-        right: 5px;
-      }
-      .navbar-inner{
-        border-bottom:1px solid #3a6a8a !important;
-      }
-      .navbar-fixed-top{
-        margin-bottom: 0 !important;
-      }
-      .nav-collapse .nav{
-        float: right !important;
-      }
-      #layoutContainer{
-        background: #fff;
-        /*height: 100% !important;*/
-        min-height: 600px;
-        /*height: auto !important;*/
-        margin:   0 auto;
-        width:    100%;
-        margin: 40px auto 40px;
-        /*max-width:  900px;*/
-        min-width:  600px;
-        _width:   600px; /* min-width for IE6 */
-      }
-	   #layoutCenter,#layoutWest,#layoutEest{
-        background: #5092BD;
-		background: rgb(14,14,14); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(14,14,14,1) 0%, rgba(125,126,125,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(14,14,14,1)), color-stop(100%,rgba(125,126,125,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(14,14,14,1) 0%,rgba(125,126,125,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e0e0e', endColorstr='#7d7e7d',GradientType=0 ); /* IE6-9 */
+html,
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    font-family: 'Zar', Tahoma;
+    /* The html and body elements cannot have any padding or margin. */
+}
 
-      }
-      .ui-layout-east{
-        /*background: #F5F5F5;*/
-      }
-      .ui-layout-pane{
-        padding: 0;
-      }
-      .ui-layout-west{
-        padding: 0 0 0 5px;
-        background: #5092BD;
-      }
-      .pane {
-        display:  none; /* will appear when layout inits */
-      }
+.hidden {
+    display: none;
+}
 
-      
+.clr {
+    clear: both;
+}
 
-      
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    /*max-width: 1440px;*/
+    min-width: 600px;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -40px;
+}
 
+#videoAlert .close {
+    right: 5px;
+}
 
+.navbar-inner {
+    border-bottom: 1px solid #3a6a8a !important;
+}
 
-      /* Custom page CSS
+.navbar-fixed-top {
+    margin-bottom: 0 !important;
+}
+
+.nav-collapse .nav {
+    float: right !important;
+}
+
+#layoutContainer {
+    background: #fff;
+    /*height: 100% !important;*/
+    min-height: 600px;
+    /*height: auto !important;*/
+    margin: 0 auto;
+    width: 100%;
+    margin: 40px auto 40px;
+    /*max-width:  900px;*/
+    min-width: 600px;
+    _width: 600px; /* min-width for IE6 */
+}
+
+#layoutCenter, #layoutWest, #layoutEest {
+    background: #5092BD;
+    background: rgb(14, 14, 14); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(14, 14, 14, 1) 0%, rgba(125, 126, 125, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(14, 14, 14, 1)), color-stop(100%, rgba(125, 126, 125, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(14, 14, 14, 1) 0%, rgba(125, 126, 125, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(14, 14, 14, 1) 0%, rgba(125, 126, 125, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(14, 14, 14, 1) 0%, rgba(125, 126, 125, 1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(14, 14, 14, 1) 0%, rgba(125, 126, 125, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0e0e0e', endColorstr='#7d7e7d', GradientType=0); /* IE6-9 */
+
+}
+
+.ui-layout-east {
+    /*background: #F5F5F5;*/
+}
+
+.ui-layout-pane {
+    padding: 0;
+}
+
+.ui-layout-west {
+    padding: 0 0 0 5px;
+    background: #5092BD;
+}
+
+.pane {
+    display: none; /* will appear when layout inits */
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+
+#wrap > .container {
+    padding-top: 60px;
+}
+
+.container .credit {
+    margin: 10px 0;
+}
+
+.brand {
+    background: url(../img/logo.gif) left no-repeat;
+    width: 91px;
+    height: 16px;
+    text-indent: -9999px;
+}
+
+code {
+    font-size: 80%;
+}
+
+.dropdown-menu {
+    right: -87px !important;
+}
+
+.dropdown-menu li {
+    text-align: right;
+}
+
+/* Chat List
       -------------------------------------------------- */
+/* chat slider*/
+/*#chatSlider { overflow:hidden; }
+#chatSlider .viewport { width: 100%; height: 280px; !important; overflow: hidden; position: relative; }
+#chatSlider .buttons { background:url("../img/buttons.png") no-repeat scroll 0 0 transparent; display: block; margin: 0 0 5px 100px; background-position: 0 -74px; text-indent: -999em; width: 39px; height: 37px; overflow: hidden; position: relative; }
+#chatSlider .next { background-position: 0 -112px; margin: 5px auto ;  }
+#chatSlider .disable { visibility: hidden; }
+#chatSlider .overview { list-style: none; position: absolute; width: 100%; left: 0; top: 0; }
+#chatSlider .overview li{  }*/
+#chatSlider {
+    height: 70%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 4px;
+    width: 97%;
+}
 
-      #wrap > .container {
-        padding-top: 60px;
-      }
-      .container .credit {
-        margin: 10px 0;
-      }
+#chatSlider .viewport {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    position: relative;
+}
 
-      .brand{
-        background: url(../img/logo.gif) left no-repeat;
-        width: 91px;
-        height: 16px;
-        text-indent: -9999px;
-      }
-      code {
-        font-size: 80%;
-      }
-      .dropdown-menu{
-        right: -87px !important;
-      }
-      .dropdown-menu li{
-        text-align: right;
-      }
-      /* Chat List
+#chatSlider .buttons {
+    background: url("../img/buttons.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    margin: 0 auto;
+    background-position: 0 -112px;
+    text-indent: -999em;
+    width: 39px;
+    height: 37px;
+    overflow: hidden;
+    position: relative;
+}
+
+#chatSlider .next {
+    background-position: 0 -74px;
+    margin: 5px auto;
+}
+
+#chatSlider .disable {
+    visibility: hidden;
+}
+
+#chatSlider .overview {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+#chatSlider .overview li {
+    float: left;
+    margin: 0 20px 0 0;
+    padding: 1px;
+    width: 100%;
+}
+
+/* chat slider*/
+
+#chatList {
+    max-height: 600px;
+}
+
+#chatList ul {
+    list-style: none;
+    margin: 0;
+}
+
+#chatList ul .item {
+    /*border-bottom: 1px solid #EEEEEE;*/
+    padding: 0;
+    position: relative;
+}
+
+#chatList ul li {
+    direction: rtl;
+}
+
+#chatList ul li .img {
+    float: right;
+}
+
+#chatList ul li .avatar {
+    margin-left: 15px;
+}
+
+#chatList ul li .title {
+    color: #3376A4;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#chatList ul li .text {
+    font-size: 15px;
+    text-align: justify;
+}
+
+#chatList ul li .close {
+    float: left;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.sendChat {
+    position: absolute;
+    bottom: 10px;
+    /*direction: rtl;*/
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.sendChat .btn-group {
+    float: right;
+    margin-left: 5px;
+    padding: 0 5px 0 0;
+    width: 190px;
+}
+
+.sendChat textarea {
+    direction: rtl;
+    width: 250px;
+}
+
+.well {
+    margin-bottom: 5px;
+    padding: 4px;
+}
+
+.media-body {
+    direction: rtl;
+    text-align: right;
+}
+
+.media-body h4 {
+    font-size: 11.5px;
+}
+
+.media-heading {
+    color: #3376A4;
+    margin: 2px 0 0;
+}
+
+#ShowAllChats {
+    float: left;
+}
+
+#ShowAllChats [class^="icon-"], #ShowAllChats [class*=" icon-"] {
+    margin-top: 5px;
+    clear: both;
+}
+
+/* Video Area
             -------------------------------------------------- */
-            /* chat slider*/
-            /*#chatSlider { overflow:hidden; }
-            #chatSlider .viewport { width: 100%; height: 280px; !important; overflow: hidden; position: relative; }
-            #chatSlider .buttons { background:url("../img/buttons.png") no-repeat scroll 0 0 transparent; display: block; margin: 0 0 5px 100px; background-position: 0 -74px; text-indent: -999em; width: 39px; height: 37px; overflow: hidden; position: relative; }
-            #chatSlider .next { background-position: 0 -112px; margin: 5px auto ;  }
-            #chatSlider .disable { visibility: hidden; }
-            #chatSlider .overview { list-style: none; position: absolute; width: 100%; left: 0; top: 0; }
-            #chatSlider .overview li{  }*/
-            #chatSlider { height: 70%; overflow:hidden; padding: 0 ; margin: 0 4px; width: 97%; }
-            #chatSlider .viewport { width: 100%; height: 80%; overflow: hidden; position: relative; }
-            #chatSlider .buttons { background:url("../img/buttons.png") no-repeat scroll 0 0 transparent; display: block; margin: 0 auto; background-position: 0 -112px; text-indent: -999em; width: 39px; height: 37px; overflow: hidden; position: relative; }
-            #chatSlider .next { background-position: 0 -74px; margin: 5px auto;  }
-            #chatSlider .disable { visibility: hidden; }
-            #chatSlider .overview { list-style: none; position: absolute; width: 100%; left: 0; top: 0; }
-            #chatSlider .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; width: 100%;}
-            /* chat slider*/
+.sessionBtn {
+    float: right;
+}
 
-            #chatList{
-              max-height: 600px;
-            }
-            #chatList ul {
-              list-style: none;
-              margin: 0;
-            }
-            #chatList ul .item{
-              /*border-bottom: 1px solid #EEEEEE;*/
-              padding: 0;
-              position: relative;
-            }
-            #chatList ul li{
-              direction: rtl;
-            }
-            #chatList ul li .img{
-              float: right;
-            }
-            #chatList ul li .avatar{
-              margin-left: 15px;
-            }
-            #chatList ul li .title{
-              color: #3376A4;
-              font-weight: bold;
-              font-size: 13px;
-            }
-            #chatList ul li .text{
-              font-size: 15px;
-              text-align: justify;
-            }
-            #chatList ul li .close{
-              float: left;
-              position: absolute;
-              top: 5px;
-              left: 5px;
-            }
-            .sendChat{
-              position: absolute;
-              bottom: 10px;
-              /*direction: rtl;*/
-              padding-right: 10px;
-              padding-left: 10px;
-            }
-            .sendChat .btn-group{
-              float: right;
-              margin-left: 5px;
-              padding: 0 5px 0 0;
-              width: 190px;
-            }
-            .sendChat textarea{
-              direction: rtl;
-              width: 250px;
-            }
-            .well{
-              margin-bottom:5px;
-              padding: 4px;
-            }
-            .media-body{
-              direction: rtl;
-              text-align: right;
-            }
-            .media-body h4{
-              font-size: 11.5px;
-            }
-            .media-heading{
-              color: #3376A4;
-              margin: 2px 0 0 ;
-            }
-            #ShowAllChats{
-              float: left;
-            }
-            #ShowAllChats [class^="icon-"],#ShowAllChats [class*=" icon-"]{
-              margin-top: 5px;
-              clear: both;
-            }
-            
-      /* Video Area
-                  -------------------------------------------------- */
-        .sessionBtn{
-          float: right;
-        }
-        button{
-          font-family: 'Zar';
-          font-size:17px !important;
-        }
-      /* footer */
-      /* Set the fixed height of the footer here */
-      #push,
-      #footer {
-        height: 40px;
-      }
-      #footer {
-        background-color: #f5f5f5;
-      }
-      #footer p{
-        text-align: right;
-        font-size: 13px;
-        direction: rtl;
-      }
-	      #hideAll
-		 {
-		   position: fixed;
-		   left: 0px; 
-		   right: 0px; 
-		   top: 0px; 
-		   bottom: 0px; 
-		   background-color: white;
-		   z-index: 99; /* Higher than anything else in the document */
-		
-		 }
+button {
+    font-family: 'Zar';
+    font-size: 17px !important;
+}
 
-      #videoControls{
-        width: 100%;
-        height: 80px;
-        /* background: #5092BD; */
-        margin-top: 0px;
-        margin-bottom: 0;
-	/*	background-image: linear-gradient(bottom, rgb(24,173,24) 49%, rgb(51,208,51) 75%);
-		background-image: -o-linear-gradient(bottom, rgb(24,173,24) 49%, rgb(51,208,51) 75%);
-		background-image: -moz-linear-gradient(bottom, rgb(24,173,24) 49%, rgb(51,208,51) 75%);
-		background-image: -webkit-linear-gradient(bottom, rgb(24,173,24) 49%, rgb(51,208,51) 75%);
-		background-image: -ms-linear-gradient(bottom, rgb(24,173,24) 49%, rgb(51,208,51) 75%);
-		
-		background-image: -webkit-gradient(
-			linear,
-			left bottom,
-			left top,
-			color-stop(0.49, rgb(24,173,24)),
-			color-stop(0.75, rgb(51,208,51))
-		);*/
-		border-radius:10px;
-		-webkit-border-radius:10px;
-		-moz-border-radius:10px;
-      }
-	  
-	  .VideoStatus{
-		  font-family:Tahoma, Geneva, sans-serif;
-		  font-size:12px;
-		  color:#9F6;
-		  text-align:justify | right;
-		  direction:rtl;
-	  }
-	  
-	  .VideoControllerHelp{
-		  background-image: linear-gradient(bottom, rgb(207,209,207) 49%, rgb(152,179,154) 86%);
-background-image: -o-linear-gradient(bottom, rgb(207,209,207) 49%, rgb(152,179,154) 86%);
-background-image: -moz-linear-gradient(bottom, rgb(207,209,207) 49%, rgb(152,179,154) 86%);
-background-image: -webkit-linear-gradient(bottom, rgb(207,209,207) 49%, rgb(152,179,154) 86%);
-background-image: -ms-linear-gradient(bottom, rgb(207,209,207) 49%, rgb(152,179,154) 86%);
+/* footer */
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+    height: 40px;
+}
 
-background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(0.49, rgb(207,209,207)),
-	color-stop(0.86, rgb(152,179,154))
-);
-	  }
-	  
-      #my_video_1{
-        min-height: 200px;
-		box-shadow: 0px 0px 19px 7px rgba(55, 104, 136, 0.65); 
-		-moz-box-shadow: 0px 0px 19px 7px rgba(55, 104, 136, 0.65); 
-		-webkit-box-shadow: 0px 0px 19px 7px rgba(55, 104, 136, 0.65);
-      }
-      #videoControls #ctrls{
-        width: 340px;
-        margin: 0 auto;
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-      #videoControls .ctrlContainer{
-        width: 55px;
-        height: 54px;
-        background: #fff;
-        margin: 10px 6px 2px 0;
-        padding: 10px;
-        float: left;
-        cursor: pointer;
-        box-sizing: border-box;
-       -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-        display: block;
-        -webkit-border-radius: 45px;
-        -moz-border-radius: 45px;
-        border-radius: 45px;
-        background: #ededed;
-        background: -moz-linear-gradient(top, #ededed 0%, #ffffff 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#ffffff));
-        background: -webkit-linear-gradient(top, #ededed 0%,#ffffff 100%);
-        background: -o-linear-gradient(top, #ededed 0%,#ffffff 100%);
-        background: -ms-linear-gradient(top, #ededed 0%,#ffffff 100%);
-        background: linear-gradient(top, #ededed 0%,#ffffff 100%);
-        -webkit-box-shadow: inset 0px 1px 0px #dfdfdf;
-        -moz-box-shadow: inset 0px 1px 0px #dfdfdf;
-        box-shadow: inset 0px 1px 0px #dfdfdf;
-      },
-      .ctrlContainer img{
-        display: block;
-        width: 68px;
-        height: 68px;
-        padding: 1px;
-        -webkit-border-radius: 35px;
-        -moz-border-radius: 35px;
-        border-radius: 35px;
-        background: #ffffff;
-        background: -moz-linear-gradient(top, #ffffff 0%, #ededed 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ededed));
-        background: -webkit-linear-gradient(top, #ffffff 0%,#ededed 100%);
-        background: -o-linear-gradient(top, #ffffff 0%,#ededed 100%);
-        background: -ms-linear-gradient(top, #ffffff 0%,#ededed 100%);
-        background: linear-gradient(top, #ffffff 0%,#ededed 100%);
-        -webkit-box-shadow: 0px 2px 3px #bbb;
-        -moz-box-shadow: 0px 2px 3px #bbb;
-        box-shadow: 0px 2px 3px #bbb;
-      }
-      .ctrlContainer:hover{
-        background: #DEA82B !important;
-      }
-      /* VideoThumbs */
-      #videoThumbs { height: 20%; width:330px;  overflow:hidden; padding: 0 0 10px;  margin-top: 10px; margin: 0 auto; }
-      #videoThumbs .viewport { float: left; width: 225px; height: 117px; overflow: hidden; position: relative; }
-      #videoThumbs .buttons { background:url("../img/buttons1.png") no-repeat scroll 0 0 transparent; display: block; margin: 40px 10px 0 0; background-position: 0 -38px; text-indent: -999em; float: left; width: 39px; height: 37px; overflow: hidden; position: relative; }
-      #videoThumbs .next { background-position: 0 0; margin: 40px 0 0 10px;  }
-      #videoThumbs .disable { visibility: hidden; }
-      #videoThumbs .overview { list-style: none; position: absolute; padding: 0; margin: 0; width: 240px; left: 0 top: 0; }
-      #videoThumbs .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 113px; border: 1px solid #dcdcdc; width: 221px;}
-      /* VideoThumbs */
-      /* Slide Area
-                  -------------------------------------------------- */
-        .slideWrapper{
-          margin: 0;
-		  background-color:black;
-        }
-        .slideTop{
-          background-color: #222222;
-          background-image: -moz-linear-gradient(center top , #5092BD, #0E71AF);
-          background-repeat: repeat-x;
-          border-radius: 3px 3px 0 0;
-          border-top: 1px solid #DDDDDD;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
-          color: #fff;
-          height: 28px;
-          overflow: visible;
-          padding: 0;
-        }
-        .slideTitle{
-          float: right;
-          margin: 4px 11px 0 0;
-          font-size: 17px;
-          font-weight: bold;
-          direction: rtl;
-        }
-        .slideActions{
-          margin: 4px 0 0 11px;
-          direction: ltr;
-        }
-        .slideActions li{
-          display: inline;
-          position: relative;
-          text-align: right;
-        }
-        .slideActions li a{
-          color: #fff;
-          margin: 2px;
-        }
-        .slidePlayer{
+#footer {
+    background-color: #f5f5f5;
+}
 
-        }
-        .dispaly{
-          /*width: 800px;*/
-          height: 100%;
-		  width: 100%;
-         /* min-height: 200px;*/
-        }
-        #pptSelect{
-          float: left;
-          margin: 2px 4px;
-        }
-        .time{
-          margin: 2px 0 0 11px;
-          float: left;
-          direction: ltr;
-          font-size: 18px;
-        }
-        .icon-time{
-          margin: 7px 0 0 5px;
-        }
-        .toolbar{
-          background-image: linear-gradient(#ECECEC, #A8A8A8);
-          background-image: -o-linear-gradient(top, #ECECEC, #A8A8A8);
-          background-image: -webkit-linear-gradient(top, #ECECEC, #A8A8A8);
-          background-image: -moz-linear-gradient(top, #ECECEC, #A8A8A8);
-          background: -webkit-gradient(linear, 0 0, 0 100%, from(#ECECEC), to(#A8A8A8));
-          border-bottom: 1px solid #888888;
-          border-top: 1px solid #CCCCCC;
-          margin: 0;
-          overflow: hidden;
-          /*padding: 3px 6px;*/
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          height: 30px;
-        }
-        .slideNavActions > a, .slideNav a{
-          background: url("../img/slide-sprite.png") no-repeat scroll 0 0 transparent;
-          float: left;
-          height: 28px;
-          text-indent: -9999em;
-          width: 28px;
-        }
-        .toolbar a.btnFirst{
-          background-position: -90px 2px;
-        }
-        .toolbar a.btnLast{
-          background-position: 1px 2px;
-        }
-        .toolbar a.btnNext{
-          background-position: 0px -32px;
-        }
-        .toolbar a.btnPrevious{
-          background-position: -90px -32px;
-        }
-        .toolbar a.btnFirst:hover{
-          background-position: -61px 2px;
-        }
-        .toolbar a.btnLast:hover{
-          background-position: -29px 2px;
-        }
-        .toolbar a.btnNext:hover{
-          background-position: -31px -32px;
-        }
-        .toolbar a.btnPrevious:hover{
-          background-position: -60px -32px;
-        }
-        .toolbar .slideNav{
-          position: relative;
-          border: 0 none;
-          display: block;
-          font: inherit;
-          margin: 0 auto;
-          padding: 1px 0 0;
-          text-align: center;
-          vertical-align: baseline;
-          width: 114px;
-        }
-        .toolbar a.btnSlideFull{
-          float: right;
-          background-position: -121px 2px;
-        }
-        .toolbar a.btnSlideFull:hover{
-          float: right;
-          background-position: -213px 2px;
-        }
-        .toolbar .slideNavActions a{
-          padding: 6px 0 0;
-        }
-        .toolbar .slideNavActions button{
-          float: right;
-          height: 18px;
-          margin: 6px 2px 0;
-          padding: 2px 2px 1px;
-        }
-        .toolbar label{
-          display: block;
-          float: right;
-          font-family: Arial,Verdana;
-          font-size: 11px;
-          line-height: 1.5;
-          margin: 0;
-          padding: 4px 6px 0 0;
-        }
-        .toolbar label input{
-          width: 26px;
-          height: 10px;
-        }
+#footer p {
+    text-align: right;
+    font-size: 13px;
+    direction: rtl;
+}
 
+#hideAll {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: white;
+    z-index: 99; /* Higher than anything else in the document */
 
-        /***********************
-          SlideShow   
-        ***********************/
+}
+
+#videoControls {
+    width: 100%;
+    height: 80px;
+    /* background: #5092BD; */
+    margin-top: 0px;
+    margin-bottom: 0;
+    /*	background-image: linear-gradient(bottom, rgb(24,173,24) 49%, rgb(51,208,51) 75%);
+        background-image: -o-linear-gradient(bottom, rgb(24,173,24) 49%, rgb(51,208,51) 75%);
+        background-image: -moz-linear-gradient(bottom, rgb(24,173,24) 49%, rgb(51,208,51) 75%);
+        background-image: -webkit-linear-gradient(bottom, rgb(24,173,24) 49%, rgb(51,208,51) 75%);
+        background-image: -ms-linear-gradient(bottom, rgb(24,173,24) 49%, rgb(51,208,51) 75%);
+
+        background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0.49, rgb(24,173,24)),
+            color-stop(0.75, rgb(51,208,51))
+        );*/
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+.VideoStatus {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+    color: #9F6;
+    text-align: justify | right;
+    direction: rtl;
+}
+
+.VideoControllerHelp {
+    background-image: linear-gradient(bottom, rgb(207, 209, 207) 49%, rgb(152, 179, 154) 86%);
+    background-image: -o-linear-gradient(bottom, rgb(207, 209, 207) 49%, rgb(152, 179, 154) 86%);
+    background-image: -moz-linear-gradient(bottom, rgb(207, 209, 207) 49%, rgb(152, 179, 154) 86%);
+    background-image: -webkit-linear-gradient(bottom, rgb(207, 209, 207) 49%, rgb(152, 179, 154) 86%);
+    background-image: -ms-linear-gradient(bottom, rgb(207, 209, 207) 49%, rgb(152, 179, 154) 86%);
+
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0.49, rgb(207, 209, 207)),
+            color-stop(0.86, rgb(152, 179, 154))
+    );
+}
+
+#my_video_1 {
+    min-height: 200px;
+    box-shadow: 0px 0px 19px 7px rgba(55, 104, 136, 0.65);
+    -moz-box-shadow: 0px 0px 19px 7px rgba(55, 104, 136, 0.65);
+    -webkit-box-shadow: 0px 0px 19px 7px rgba(55, 104, 136, 0.65);
+}
+
+#videoControls #ctrls {
+    width: 340px;
+    margin: 0 auto;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+#videoControls .ctrlContainer {
+    width: 55px;
+    height: 54px;
+    background: #fff;
+    margin: 10px 6px 2px 0;
+    padding: 10px;
+    float: left;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: block;
+    -webkit-border-radius: 45px;
+    -moz-border-radius: 45px;
+    border-radius: 45px;
+    background: #ededed;
+    background: -moz-linear-gradient(top, #ededed 0%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ededed), color-stop(100%, #ffffff));
+    background: -webkit-linear-gradient(top, #ededed 0%, #ffffff 100%);
+    background: -o-linear-gradient(top, #ededed 0%, #ffffff 100%);
+    background: -ms-linear-gradient(top, #ededed 0%, #ffffff 100%);
+    background: linear-gradient(top, #ededed 0%, #ffffff 100%);
+    -webkit-box-shadow: inset 0px 1px 0px #dfdfdf;
+    -moz-box-shadow: inset 0px 1px 0px #dfdfdf;
+    box-shadow: inset 0px 1px 0px #dfdfdf;
+}
+
+,
+.ctrlContainer img {
+    display: block;
+    width: 68px;
+    height: 68px;
+    padding: 1px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #ededed 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ededed));
+    background: -webkit-linear-gradient(top, #ffffff 0%, #ededed 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #ededed 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #ededed 100%);
+    background: linear-gradient(top, #ffffff 0%, #ededed 100%);
+    -webkit-box-shadow: 0px 2px 3px #bbb;
+    -moz-box-shadow: 0px 2px 3px #bbb;
+    box-shadow: 0px 2px 3px #bbb;
+}
+
+.ctrlContainer:hover {
+    background: #DEA82B !important;
+}
+
+/* VideoThumbs */
+#videoThumbs {
+    height: 20%;
+    width: 330px;
+    overflow: hidden;
+    padding: 0 0 10px;
+    margin-top: 10px;
+    margin: 0 auto;
+}
+
+#videoThumbs .viewport {
+    float: left;
+    width: 225px;
+    height: 117px;
+    overflow: hidden;
+    position: relative;
+}
+
+#videoThumbs .buttons {
+    background: url("../img/buttons1.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    margin: 40px 10px 0 0;
+    background-position: 0 -38px;
+    text-indent: -999em;
+    float: left;
+    width: 39px;
+    height: 37px;
+    overflow: hidden;
+    position: relative;
+}
+
+#videoThumbs .next {
+    background-position: 0 0;
+    margin: 40px 0 0 10px;
+}
+
+#videoThumbs .disable {
+    visibility: hidden;
+}
+
+#videoThumbs .overview {
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 240px;
+    left: 0 top : 0;
+}
+
+#videoThumbs .overview li {
+    float: left;
+    margin: 0 20px 0 0;
+    padding: 1px;
+    height: 113px;
+    border: 1px solid #dcdcdc;
+    width: 221px;
+}
+
+/* VideoThumbs */
+/* Slide Area
+            -------------------------------------------------- */
+.slideWrapper {
+    margin: 0;
+    background-color: black;
+}
+
+.slideTop {
+    background-color: #222222;
+    background-image: -moz-linear-gradient(center top, #5092BD, #0E71AF);
+    background-repeat: repeat-x;
+    border-radius: 3px 3px 0 0;
+    border-top: 1px solid #DDDDDD;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+    color: #fff;
+    height: 28px;
+    overflow: visible;
+    padding: 0;
+}
+
+.slideTitle {
+    float: right;
+    margin: 4px 11px 0 0;
+    font-size: 17px;
+    font-weight: bold;
+    direction: rtl;
+}
+
+.slideActions {
+    margin: 4px 0 0 11px;
+    direction: ltr;
+}
+
+.slideActions li {
+    display: inline;
+    position: relative;
+    text-align: right;
+}
+
+.slideActions li a {
+    color: #fff;
+    margin: 2px;
+}
+
+.slidePlayer {
+
+}
+
+.dispaly {
+    /*width: 800px;*/
+    height: 100%;
+    width: 100%;
+    /* min-height: 200px;*/
+}
+
+#pptSelect {
+    float: left;
+    margin: 2px 4px;
+}
+
+.time {
+    margin: 2px 0 0 11px;
+    float: left;
+    direction: ltr;
+    font-size: 18px;
+}
+
+.icon-time {
+    margin: 7px 0 0 5px;
+}
+
+.toolbar {
+    background-image: linear-gradient(#ECECEC, #A8A8A8);
+    background-image: -o-linear-gradient(top, #ECECEC, #A8A8A8);
+    background-image: -webkit-linear-gradient(top, #ECECEC, #A8A8A8);
+    background-image: -moz-linear-gradient(top, #ECECEC, #A8A8A8);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ECECEC), to(#A8A8A8));
+    border-bottom: 1px solid #888888;
+    border-top: 1px solid #CCCCCC;
+    margin: 0;
+    overflow: hidden;
+    /*padding: 3px 6px;*/
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+}
+
+.slideNavActions > a, .slideNav a {
+    background: url("../img/slide-sprite.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 28px;
+    text-indent: -9999em;
+    width: 28px;
+}
+
+.toolbar a.btnFirst {
+    background-position: -90px 2px;
+}
+
+.toolbar a.btnLast {
+    background-position: 1px 2px;
+}
+
+.toolbar a.btnNext {
+    background-position: 0px -32px;
+}
+
+.toolbar a.btnPrevious {
+    background-position: -90px -32px;
+}
+
+.toolbar a.btnFirst:hover {
+    background-position: -61px 2px;
+}
+
+.toolbar a.btnLast:hover {
+    background-position: -29px 2px;
+}
+
+.toolbar a.btnNext:hover {
+    background-position: -31px -32px;
+}
+
+.toolbar a.btnPrevious:hover {
+    background-position: -60px -32px;
+}
+
+.toolbar .slideNav {
+    position: relative;
+    border: 0 none;
+    display: block;
+    font: inherit;
+    margin: 0 auto;
+    padding: 1px 0 0;
+    text-align: center;
+    vertical-align: baseline;
+    width: 114px;
+}
+
+.toolbar a.btnSlideFull {
+    float: right;
+    background-position: -121px 2px;
+}
+
+.toolbar a.btnSlideFull:hover {
+    float: right;
+    background-position: -213px 2px;
+}
+
+.toolbar .slideNavActions a {
+    padding: 6px 0 0;
+}
+
+.toolbar .slideNavActions button {
+    float: right;
+    height: 18px;
+    margin: 6px 2px 0;
+    padding: 2px 2px 1px;
+}
+
+.toolbar label {
+    display: block;
+    float: right;
+    font-family: Arial, Verdana;
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 4px 6px 0 0;
+}
+
+.toolbar label input {
+    width: 26px;
+    height: 10px;
+}
+
+/***********************
+  SlideShow
+***********************/
 #images {
-  display:none;
-  /*margin:0 24px;*/
-  float:left; 
-  width:100%;
+    display: none;
+    /*margin:0 24px;*/
+    float: left;
+    width: 100%;
 }
 
 .thumbsPanel {
-  margin: 0;
+    margin: 0;
 }
 
 ul.exposureThumbs {
-  background: #333;
-  border: 3px solid #333;
-  border-right: none;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  height: 85px;
-  box-sizing: border-box;
+    background: #333;
+    border: 3px solid #333;
+    border-right: none;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 85px;
+    box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+
 #right, #left {
-  display: inline;
-  float: left;
-  padding-top: 23px;
+    display: inline;
+    float: left;
+    padding-top: 23px;
 }
+
 #right a img, #left a img {
-  height: 40px;
-  width: 20px;
-  border: none;
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
+    height: 40px;
+    width: 20px;
+    border: none;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
 }
+
 ul.exposureThumbs li {
-  margin:0 0 12px 0;
-  padding:0;
-  text-align:center;
-  display:inline;
-  float: left;
+    margin: 0 0 12px 0;
+    padding: 0;
+    text-align: center;
+    display: inline;
+    float: left;
 }
 
 ul.exposureThumbs li img {
-  cursor:pointer;
+    cursor: pointer;
 }
 
 ul.exposureThumbs li.last {
-  margin:0; 
+    margin: 0;
 }
+
 .exposureImage {
-  margin: 0 auto !important;
+    margin: 0 auto !important;
 }
+
 .exposureTarget {
-  width:100%;
-  height:443px;
-  background-color:#111;  
-  background-image:url(../img/slides/res/loader.gif);
-  background-repeat:no-repeat;
-  background-position:center center;
-  float:left; 
-  padding: 0 5%;
-  margin:0;
-  border:12px solid #111;
-  position:relative;
-  overflow:hidden; 
-  box-sizing: border-box;
+    width: 100%;
+    height: 443px;
+    background-color: #111;
+    background-image: url(../img/slides/res/loader.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: left;
+    padding: 0 5%;
+    margin: 0;
+    border: 12px solid #111;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
@@ -594,189 +759,216 @@ ul.exposureThumbs li.last {
 }*/
 
 .exposureWrapper img {
-  max-width: 600px !important;
-  cursor:pointer;
-  /*position:absolute;*/
-  padding: 0 10px;
-  margin: 0 auto !important;
-  /*top:0;
-  left:0;*/
+    max-width: 600px !important;
+    cursor: pointer;
+    /*position:absolute;*/
+    padding: 0 10px;
+    margin: 0 auto !important;
+    /*top:0;
+    left:0;*/
 }
 
 .exposureLoaded {
-  background-image:none;  
+    background-image: none;
 }
 
 .exposureData {
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:10px;
-  padding:7px;
-  background-image:url(../img/slides/res/veil.png);
-  color:#fff;
-  font-family:Arial,Verdana,Helvetica,sans-serif;
-  font-size:16px;
-  font-weight:bold;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    padding: 7px;
+    background-image: url(../img/slides/res/veil.png);
+    color: #fff;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 /* In this demo we are using thumbs with fixed size */
 ul.exposureThumbs li {
-  width:25%;
-  height:79px;
+    width: 25%;
+    height: 79px;
 }
 
 .exposureSlideshowControls a,
 .exposureControls span,
 .exposureControls a {
-  font-family: 'Zar', Tahoma;
-  font-size:11px;
-  padding:0px !important;
-  /*background-color:#555;*/
-  display:block;
-  float:left;
+    font-family: 'Zar', Tahoma;
+    font-size: 11px;
+    padding: 0px !important;
+    /*background-color:#555;*/
+    display: block;
+    float: left;
 }
 
 .exposureSlideshowControls a {
-  float:right;  
+    float: right;
 }
 
 .exposureSlideshowControls a,
 .exposureControls a {
-  color:#fff;
-  text-decoration:none;
-  outline:none;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
 }
 
 .exposureSlideshowControls a:active,
 .exposureSlideshowControls a:hover,
 .exposureControls a:active,
 .exposureControls a:hover {
-  color:#ddd;
+    color: #ddd;
 }
-#slideshow{
-  padding: 1px;
-  text-indent: 2px;
-  margin-right: 6px;
+
+#slideshow {
+    padding: 1px;
+    text-indent: 2px;
+    margin-right: 6px;
 }
-#slideshow .icon-film{
-  margin-top: 0px;
+
+#slideshow .icon-film {
+    margin-top: 0px;
 }
-#slideshow a{
-  margin-top: -2px;
+
+#slideshow a {
+    margin-top: -2px;
 }
+
 .exposurePaging .active {
-  color:#fff;
-  background-color:#111;  
+    color: #fff;
+    background-color: #111;
 }
 
-        /* File Download */
-        .ltr{
-          direction: ltr;
-        }
-        .pdfIcon{
-          background: url(../img/pdf.png) no-repeat;
-          width: 23px;
-          height: 30px;
-        }
-        .mp4Icon{
-          background: url(../img/mp4.png) no-repeat;
-          width: 32px;
-          height: 32px;
-        }
-        .txtIcon{
-          background: url(../img/txt.png) no-repeat;
-          width: 23px;
-          height: 30px;
-        }
-        .wordIcon{
-          background: url(../img/word.png) no-repeat;
-          width: 30px;
-          height: 30px;
-        }
-        .xlsIcon{
-          background: url(../img/xlsDoc.png) no-repeat;
-          width: 26px;
-          height: 30px;
-        }
-        .pptIcon{
-          background: url(../img/ppt.png) no-repeat;
-          width: 30px;
-          height: 30px;
-        }
+/* File Download */
+.ltr {
+    direction: ltr;
+}
 
-        /* Modals */
-        .close{
-          float: left;
-        }
-        #myModal, #webinarInfo, #layoutModal, #videoStsModal{
-          direction: rtl;
-          text-align: right;
-        }
-        #videoStsModal{
-          width: 380px;
-        }
-        #videoStsModal .modal-body{
-          text-align: center;
+.pdfIcon {
+    background: url(../img/pdf.png) no-repeat;
+    width: 23px;
+    height: 30px;
+}
 
-        }
-        .cb{
-          width: 50%;
-          text-align: right;
-          direction: rtl;
-          margin: 10px 10px;
-        }
-        .cb input[type="radio"]{
-          float: right;
-          margin-left: 7px;
-        }
-        #webinarInfo{
-          width: 670px;
-        }
-        #webinarInfo .modal-body{
-          max-height: 450px;
-        }
-        .webinarInfo{
-          text-align: justify;
-          margin-top: 1em;
-        }
-        .webinarInfo ul{
-          margin-right: 25px;
-        }
-        .webinarInfo ul li{
-          margin-bottom: 6px;
-        }
-        .webinarInfo img{
-          float: right;
-          margin-left: 25px;
-          margin-bottom: 5px;
-          border-bottom: 1px solid #EEE;
-        }
-        .modal-body h4, .modal-body h5{
-          font-weight: normal;
-          color: #5092BD;
-          text-align: right;
-          font-size: 21px;
-          line-height: 1.5em;
-          margin: 1em 0;
-        }
-        .webinarInfo p{
-          font: 22px/1.65em "Zar",Georgia,serif;
-        }
-        .presentorInfo{
-          margin-top: 2em;
-          text-align: right;
-        }
-        .presentorInfo ul{
-          margin-right: 30px;
-        }
-        .table th, .table td{
-          text-align: right;
-        }
+.mp4Icon {
+    background: url(../img/mp4.png) no-repeat;
+    width: 32px;
+    height: 32px;
+}
 
-// Chat list Crousel
+.txtIcon {
+    background: url(../img/txt.png) no-repeat;
+    width: 23px;
+    height: 30px;
+}
 
+.wordIcon {
+    background: url(../img/word.png) no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+.xlsIcon {
+    background: url(../img/xlsDoc.png) no-repeat;
+    width: 26px;
+    height: 30px;
+}
+
+.pptIcon {
+    background: url(../img/ppt.png) no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+/* Modals */
+.close {
+    float: left;
+}
+
+#myModal, #webinarInfo, #layoutModal, #videoStsModal {
+    direction: rtl;
+    text-align: right;
+}
+
+#videoStsModal {
+    width: 380px;
+}
+
+#videoStsModal .modal-body {
+    text-align: center;
+
+}
+
+.cb {
+    width: 50%;
+    text-align: right;
+    direction: rtl;
+    margin: 10px 10px;
+}
+
+.cb input[type="radio"] {
+    float: right;
+    margin-left: 7px;
+}
+
+#webinarInfo {
+    width: 670px;
+}
+
+#webinarInfo .modal-body {
+    max-height: 450px;
+}
+
+.webinarInfo {
+    text-align: justify;
+    margin-top: 1em;
+}
+
+.webinarInfo ul {
+    margin-right: 25px;
+}
+
+.webinarInfo ul li {
+    margin-bottom: 6px;
+}
+
+.webinarInfo img {
+    float: right;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #EEE;
+}
+
+.modal-body h4, .modal-body h5 {
+    font-weight: normal;
+    color: #5092BD;
+    text-align: right;
+    font-size: 21px;
+    line-height: 1.5em;
+    margin: 1em 0;
+}
+
+.webinarInfo p {
+    font: 22px/1.65em "Zar", Georgia, serif;
+}
+
+.presentorInfo {
+    margin-top: 2em;
+    text-align: right;
+}
+
+.presentorInfo ul {
+    margin-right: 30px;
+}
+
+.table th, .table td {
+    text-align: right;
+}
+
+/
+/
+Chat list Crousel
 .jcarousel-container-vertical {
     width: 100%;
     height: 600px;
@@ -800,9 +992,11 @@ ul.exposureThumbs li {
     height: auto;
     margin: 5px 0;
 }
-.Teacher{
-  background: #baf2d6;
+
+.Teacher {
+    background: #baf2d6;
 }
+
 .jcarousel-item h3,
 .jcarousel-item p,
 .jcarousel-item pre {
@@ -851,285 +1045,345 @@ ul.exposureThumbs li {
     filter: alpha(opacity=50);
 }
 
-  @media (max-width: 1200px){
-    #wrap{
-      width: 1200px;
-    }
-    #layoutContainer{
-        /*margin:   0 auto;*/
-        width:    1200px;
-        _width:   1200px; /* min-width for IE6 */
-      }
-      .container{
+@media (max-width: 1200px) {
+    #wrap {
         width: 1200px;
-      }
-    .pane{
+    }
+
+    #layoutContainer {
+        /*margin:   0 auto;*/
+        width: 1200px;
+        _width: 1200px; /* min-width for IE6 */
+    }
+
+    .container {
+        width: 1200px;
+    }
+
+    .pane {
 
     }
-    .ui-layout-west{
-      width: 333px;
+
+    .ui-layout-west {
+        width: 333px;
     }
-    .ui-layout-east{
-      width: 297px;
+
+    .ui-layout-east {
+        width: 297px;
     }
-    .ui-layout-center{
-      width: 564px;
+
+    .ui-layout-center {
+        width: 564px;
     }
-    .sendChat textarea{
-      width: 250px;
+
+    .sendChat textarea {
+        width: 250px;
     }
-    .popover ,
-    .popover-content, .popover-title{
-      text-align: right !important;
-      direction: rtl !important;
+
+    .popover,
+    .popover-content, .popover-title {
+        text-align: right !important;
+        direction: rtl !important;
     }
-    #videoThumbs .overview{
-      width: 233px;
+
+    #videoThumbs .overview {
+        width: 233px;
     }
-    #videoThumbs .viewport{
-      width: 229px;
-      height: 118px;
+
+    #videoThumbs .viewport {
+        width: 229px;
+        height: 118px;
     }
-    #videoThumbs .viewport img{
-      width: 233px;
-      height: 121px;
+
+    #videoThumbs .viewport img {
+        width: 233px;
+        height: 121px;
     }
-    .exposureTarget{
-      height: 393px;
-      width: 100%;
+
+    .exposureTarget {
+        height: 393px;
+        width: 100%;
     }
+
     .exposureWrapper img {
-      max-width: 485px !important;
-      cursor:pointer;
-      /*position:absolute;*/
-      padding: 0 10px;
-      margin: 0 auto !important;
-      /*top:0;
-      left:0;*/
+        max-width: 485px !important;
+        cursor: pointer;
+        /*position:absolute;*/
+        padding: 0 10px;
+        margin: 0 auto !important;
+        /*top:0;
+        left:0;*/
     }
-  }
-  @media (max-width: 1024px){
-    #wrap{
-      width: inherit;
+}
+
+@media (max-width: 1024px) {
+    #wrap {
+        width: inherit;
     }
-    #layoutContainer{
-        margin:   0 auto;
-        width:    1024px;
-        _width:   1024px; /* min-width for IE6 */
-      }
-      .container{
+
+    #layoutContainer {
+        margin: 0 auto;
         width: 1024px;
-      }
-      .ui-layout-west{
+        _width: 1024px; /* min-width for IE6 */
+    }
+
+    .container {
+        width: 1024px;
+    }
+
+    .ui-layout-west {
         width: 283px;
-      }
-      .ui-layout-east{
+    }
+
+    .ui-layout-east {
         width: 253px;
-      }
-      .ui-layout-center{
+    }
+
+    .ui-layout-center {
         width: 481px;
-      }
-      .sendChat textarea{
+    }
+
+    .sendChat textarea {
         width: 206px;
-      }
-      #videoThumbs .overview{
+    }
+
+    #videoThumbs .overview {
         width: 179px;
-      }
-      #videoThumbs .overview li{
+    }
+
+    #videoThumbs .overview li {
         border: none;
         padding: 0;
-      }
-      #videoThumbs .viewport{
+    }
+
+    #videoThumbs .viewport {
         width: 179px;
         height: 95px;
         margin-top: 17px;
-      }
-      #videoThumbs .viewport img{
+    }
+
+    #videoThumbs .viewport img {
         width: 179px;
         height: 95px;
-      }
-      .exposureTarget{
+    }
+
+    .exposureTarget {
         height: 343px;
         width: 100%;
-     }
-     .exposureWrapper img {
+    }
+
+    .exposureWrapper img {
         max-width: 400px !important;
-        cursor:pointer;
+        cursor: pointer;
         /*position:absolute;*/
         padding: 0 10px;
         margin: 0 auto !important;
         /*top:0;
         left:0;*/
-      }
-  }
-  @media (max-width: 767px) {
-    body{
-      padding: 0 !important;
     }
-    #wrap{
-      width: inherit;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 0 !important;
     }
-    #layoutContainer{
-        margin:   0 auto;
-        width:    767px;
-        _width:   767px; /* min-width for IE6 */
-      }
-      .container{
+
+    #wrap {
+        width: inherit;
+    }
+
+    #layoutContainer {
+        margin: 0 auto;
         width: 767px;
-      }
-      .ui-layout-west{
+        _width: 767px; /* min-width for IE6 */
+    }
+
+    .container {
+        width: 767px;
+    }
+
+    .ui-layout-west {
         width: 211px;
-      }
-      .ui-layout-east{
+    }
+
+    .ui-layout-east {
         width: 182px;
-      }
-      .ui-layout-center{
+    }
+
+    .ui-layout-center {
         width: 360px;
-      }
-      .sendChat textarea{
-       width: 135px;
-      }
-      #videoThumbs .overview{
+    }
+
+    .sendChat textarea {
+        width: 135px;
+    }
+
+    #videoThumbs .overview {
         width: 108px;
-      }
-      #videoThumbs .overview li{
+    }
+
+    #videoThumbs .overview li {
         border: none;
         padding: 0;
-      }
-      #videoThumbs .viewport{
+    }
+
+    #videoThumbs .viewport {
         width: 108px;
         height: 57px;
         margin-top: 30px;
-      }
-      #videoThumbs .viewport img{
+    }
+
+    #videoThumbs .viewport img {
         width: 108px;
         height: 57px;
-      }
-      .exposureTarget{
+    }
+
+    .exposureTarget {
         height: 230px;
         width: 100%;
-     }
-     .exposureWrapper img {
+    }
+
+    .exposureWrapper img {
         max-width: 280px !important;
-        cursor:pointer;
+        cursor: pointer;
         /*position:absolute;*/
         padding: 0 10px;
         margin: 0 auto !important;
         /*top:0;
         left:0;*/
-      }
+    }
+
     /*#footer {
       margin-left: -20px;
       margin-right: -20px;
       padding-left: 20px;
       padding-right: 20px;
     }*/
-  }
-  @media (max-width: 600px){
-    body{
-      padding: 0 !important;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0 !important;
     }
-    #wrap{
-      width: inherit;
-      min-width: 600px;
+
+    #wrap {
+        width: inherit;
+        min-width: 600px;
     }
-    .container{
+
+    .container {
         width: 600px;
-      }
-    #layoutContainer{
-        margin:   0 auto;
-        width:    600px;
-        _width:   600px; /* min-width for IE6 */
-      }
-      #videoThumbs .viewport{
+    }
+
+    #layoutContainer {
+        margin: 0 auto;
+        width: 600px;
+        _width: 600px; /* min-width for IE6 */
+    }
+
+    #videoThumbs .viewport {
         width: 68px;
         height: 35px;
         margin-top: 40px;
-      }
-      #videoThumbs .viewport img{
+    }
+
+    #videoThumbs .viewport img {
         width: 68px;
         height: 35px;
-      }
-      .ui-layout-west{
+    }
+
+    .ui-layout-west {
         width: 168px;
         min-width: 168px;
-      }
-      .ui-layout-east{
+    }
+
+    .ui-layout-east {
         width: 150px;
-      }
-      .ui-layout-center{
+    }
+
+    .ui-layout-center {
         width: 282px;
-      }
-      .sendChat textarea{
-       width: 103px;
-      }
-      .exposureTarget{
+    }
+
+    .sendChat textarea {
+        width: 103px;
+    }
+
+    .exposureTarget {
         height: 170px;
         width: 100%;
-     }
-     .exposureWrapper img {
+    }
+
+    .exposureWrapper img {
         max-width: 200px !important;
-        cursor:pointer;
+        cursor: pointer;
         /*position:absolute;*/
         padding: 0 10px;
         margin: 0 auto !important;
         /*top:0;
         left:0;*/
-      }
-  }
-  
-  
- 
- /* The CSS */
+    }
+}
+
+/* The CSS */
 #SelectVideoCombo {
-    padding:3px;
+    padding: 3px;
     margin: 0;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
-    border-radius:4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
     -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     background: #f8f8f8;
-    color:#888;
-    border:none;
-    outline:none;
+    color: #888;
+    border: none;
+    outline: none;
     display: inline-block;
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    appearance:none;
-    cursor:pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
 }
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    #SelectVideoCombo {padding-right:18px}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    #SelectVideoCombo {
+        padding-right: 18px
+    }
 }
 
-#SelectVideoCombo.label {position:relative}
-#SelectVideoCombo.label:after {
-    content:'<>';
-    font:11px "Consolas", monospace;
-    color:#aaa;
-    -webkit-transform:rotate(90deg);
-    -moz-transform:rotate(90deg);
-    -ms-transform:rotate(90deg);
-    transform:rotate(90deg);
-    right:8px; top:2px;
-    padding:0 0 2px;
-    border-bottom:1px solid #ddd;
-    position:absolute;
-    pointer-events:none;
-	border-radius:10px;
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px;
+#SelectVideoCombo.label {
+    position: relative
 }
+
+#SelectVideoCombo.label:after {
+    content: '<>';
+    font: 11px "Consolas", monospace;
+    color: #aaa;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 8px;
+    top: 2px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid #ddd;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
 #SelectVideoCombo.label:before {
-    content:'';
-    right:6px; top:0px;
-    width:20px; height:20px;
-    background:#f8f8f8;
-    position:absolute;
-    pointer-events:none;
-    display:block;
+    content: '';
+    right: 6px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    background: #f8f8f8;
+    position: absolute;
+    pointer-events: none;
+    display: block;
 }

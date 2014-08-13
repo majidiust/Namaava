@@ -271,10 +271,10 @@ function RegisterToServer() {
         $("#RegisterMessage").html("در حال ثبت نام....");
         $("#RegisterMessage").show();
         $.getJSON(ServerURL + "Account/RegisterToServer", {
-            username: m_uname,
-            password: m_pass,
-            email: m_email
-        },
+                username: m_uname,
+                password: m_pass,
+                email: m_email
+            },
             function (result) {
                 if (result.Status == false) {
                     if (result.Message.indexOf("Username already exists. Please enter a different user name") != -1) {
@@ -316,8 +316,6 @@ function RegisterToServer() {
         );
     }
 }
-
-
 
 
 function ClearRegisterForm() {
@@ -487,8 +485,8 @@ function SubscribeToNewspaper() {
         SubscribeMessages("لطفا پست الکترونیکی را صحیح وارد کنید.");
     } else {
         $.getJSON(ServerURL + "Utility/NewspaperSubscribe", {
-            email: email
-        },
+                email: email
+            },
             function (result) {
                 if (result.Status == true) {
                     SubscribeMessages("درخواست شما با موفقیت ثبت گردید");
@@ -535,15 +533,15 @@ function SubmitRequestForAnnounce() {
     } else {
         //		RequestForParticipateInTest
         $.getJSON(ServerURL + "Session/RequestToParticipate", {
-            sessionId: 36,
-            email: email
-        },
+                sessionId: 36,
+                email: email
+            },
             function (result) {
                 if (result.Status == true) {
                     $("#RequestForSeminarError").html("درخواست شما با موفقیت ثبت گردید و شماره پیگیری شما " + result.Result.followUpCode + "می باشد.");
                     $("#RequestForSeminarError").show();
                     setTimeout(function () {
-                        $("#RequestForSeminarError").hide(); 
+                        $("#RequestForSeminarError").hide();
                         { //TODO: CHeck If Is Visible 	
                             RequestForSeminarCancel();
                         }
@@ -594,8 +592,8 @@ function ForgetPassword() {
 
 
         $.getJSON(ServerURL + "Account/ForgetPassword", {
-            email: m_email
-        },
+                email: m_email
+            },
             function (result) {
                 if (result.Status == true) {
                     $('#ForgetPassMessage').removeClass("ErrorLink");
@@ -837,7 +835,7 @@ function ClearRegisterForm() {
 
 function LoginToAccountNew() {
     var m_userName = $("#username").val();
-    var m_password = $("#password").val(); 
+    var m_password = $("#password").val();
     {
         ShowModalWindow("توجه", 'در حال بررسی نام کاربری و کلمه عبور. لطفا اندکی منتظر بمانید...');
 
@@ -874,8 +872,6 @@ function LoginToAccountNew() {
                             } else {
                                 message = ("نام کاربری و یا کلمه عبور نادرست است.");
                             }
-
-
 
 
                         }
@@ -1078,7 +1074,9 @@ function GetSeminarInfo(sessionId) {
 
 function getQueryStrings() {
     var assoc = {};
-    var decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); };
+    var decode = function (s) {
+        return decodeURIComponent(s.replace(/\+/g, " "));
+    };
     var queryString = location.search.substring(1);
     var keyValues = queryString.split('&');
 
@@ -1172,7 +1170,7 @@ function RequestForSeminar(seminarID, offline) {
                             hasRequested = true;
 
                             //ShowModalWindow("توجه" , 'در خواست شما برای سمینار  گردید و شماره پیگیری شما ' + result.Result.Code + ' می باشد. ' );
-                            ShowModalWindow("توجه",'کاربر گرامی درخواست شما با شماره پیگیری  ' + result.Result.Code + ' ثبت گردید و منتظر تایید برگزار کننده می باشد . لطفا به قسمت پنل کاربری وارد شوید و از قسمت مشاهده ی سمینار ، وضعیت سمینار را ملاحظه فرمایید. ');
+                            ShowModalWindow("توجه", 'کاربر گرامی درخواست شما با شماره پیگیری  ' + result.Result.Code + ' ثبت گردید و منتظر تایید برگزار کننده می باشد . لطفا به قسمت پنل کاربری وارد شوید و از قسمت مشاهده ی سمینار ، وضعیت سمینار را ملاحظه فرمایید. ');
                             ShowModalCloseButton();
 
 
@@ -1181,7 +1179,7 @@ function RequestForSeminar(seminarID, offline) {
                         }
                         else {
                             ShowModalWindow("توجه",
-								'شما قبلا برای شرکت در سمینار درخواست داده اید، لطفا برای بررسی وضعیت درخواست خود، به پنل کاربری خود وارد شوید.');
+                                'شما قبلا برای شرکت در سمینار درخواست داده اید، لطفا برای بررسی وضعیت درخواست خود، به پنل کاربری خود وارد شوید.');
                             ShowModalCloseButton();
                             hasRequested = false;
 
@@ -1266,13 +1264,13 @@ function LoadSeminars(topEventsCount) {
 
                     //alert(result.Result.SearchResult[i].poster);
                     var sdf = GetMiddleTag(
-						result.Result.SearchResult[i].name,
-						result.Result.SearchResult[i].presentorUserName,
-						result.Result.SearchResult[i].desc,
-						result.Result.SearchResult[i].poster,
-						result.Result.SearchResult[i].id,
-						GetPrsianDate(result.Result.SearchResult[i].beginTime)
-						);
+                        result.Result.SearchResult[i].name,
+                        result.Result.SearchResult[i].presentorUserName,
+                        result.Result.SearchResult[i].desc,
+                        result.Result.SearchResult[i].poster,
+                        result.Result.SearchResult[i].id,
+                        GetPrsianDate(result.Result.SearchResult[i].beginTime)
+                    );
                     console.log(sdf);
                     if (i == 0)
                         $("#seminar_top_1").html(sdf);
@@ -1337,13 +1335,13 @@ function LoadPastSeminars(topEventsCount) {
                 for (var i = 0; i < result.Result.CurrentCount; i++) {
                     //alert(result.Result.SearchResult[i].poster);
                     var element = GetMiddleTag(
-						result.Result.SearchResult[i].name,
-						result.Result.SearchResult[i].presentorUserName,
-						result.Result.SearchResult[i].desc,
-						result.Result.SearchResult[i].poster,
-						result.Result.SearchResult[i].id,
-						GetPrsianDate(result.Result.SearchResult[i].beginTime)
-						);
+                        result.Result.SearchResult[i].name,
+                        result.Result.SearchResult[i].presentorUserName,
+                        result.Result.SearchResult[i].desc,
+                        result.Result.SearchResult[i].poster,
+                        result.Result.SearchResult[i].id,
+                        GetPrsianDate(result.Result.SearchResult[i].beginTime)
+                    );
                     elements[i] = element;
                 }
 
@@ -1449,13 +1447,13 @@ function LoadSeminarsB(topEventsCount) {
 
                     //alert(result.Result.SearchResult[i].poster);
                     var sdf = GetMiddleTagB(
-						result.Result.SearchResult[i].name,
-						result.Result.SearchResult[i].presentorUserName,
-						result.Result.SearchResult[i].desc,
-						result.Result.SearchResult[i].poster,
-						result.Result.SearchResult[i].id,
-						GetPrsianDate(result.Result.SearchResult[i].beginTime)
-						);
+                        result.Result.SearchResult[i].name,
+                        result.Result.SearchResult[i].presentorUserName,
+                        result.Result.SearchResult[i].desc,
+                        result.Result.SearchResult[i].poster,
+                        result.Result.SearchResult[i].id,
+                        GetPrsianDate(result.Result.SearchResult[i].beginTime)
+                    );
                     console.log(sdf);
                     $("#latestSeminars").append(sdf);
 
@@ -1603,13 +1601,13 @@ function LoadPastSeminarsB(topEventsCount) {
                 for (var i = 0; i < result.Result.CurrentCount; i++) {
                     //alert(result.Result.SearchResult[i].poster);
                     var element = GetMiddleTagCNew(
-						result.Result.SearchResult[i].name,
-						result.Result.SearchResult[i].presentorUserName,
-						result.Result.SearchResult[i].desc,
-						result.Result.SearchResult[i].poster,
-						result.Result.SearchResult[i].id,
-						GetPrsianDate(result.Result.SearchResult[i].beginTime), i
-						);
+                        result.Result.SearchResult[i].name,
+                        result.Result.SearchResult[i].presentorUserName,
+                        result.Result.SearchResult[i].desc,
+                        result.Result.SearchResult[i].poster,
+                        result.Result.SearchResult[i].id,
+                        GetPrsianDate(result.Result.SearchResult[i].beginTime), i
+                    );
                     $("#seminars").append(element);
                 }
                 walk(document.body, replaceNumbers);
@@ -1636,13 +1634,13 @@ function LoadNextSeminarsB(topEventsCount) {
                 for (var i = 0; i < result.Result.CurrentCount; i++) {
                     //alert(result.Result.SearchResult[i].poster);
                     var element = GetMiddleTagCNew(
-						result.Result.SearchResult[i].name,
-						result.Result.SearchResult[i].presentorUserName,
-						result.Result.SearchResult[i].desc,
-						result.Result.SearchResult[i].poster,
-						result.Result.SearchResult[i].id,
-						GetPrsianDate(result.Result.SearchResult[i].beginTime), i
-						);
+                        result.Result.SearchResult[i].name,
+                        result.Result.SearchResult[i].presentorUserName,
+                        result.Result.SearchResult[i].desc,
+                        result.Result.SearchResult[i].poster,
+                        result.Result.SearchResult[i].id,
+                        GetPrsianDate(result.Result.SearchResult[i].beginTime), i
+                    );
                     $("#seminars").append(element);
                 }
                 walk(document.body, replaceNumbers);
@@ -1679,7 +1677,7 @@ function LoadPictureGallery() {
                     speed: 2000,
                     pager: false
                 });
-            } 
+            }
         },
         error: function () {
         },

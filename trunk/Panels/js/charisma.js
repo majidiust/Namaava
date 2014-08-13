@@ -28,7 +28,6 @@ var fee;
 var WebinarPoster;
 
 
-
 $(document).load(function () {
     CustomBlockingPanel('توجه', 'لطفا اندکی صبر کنید.', -1, null);
 });
@@ -93,9 +92,9 @@ $(document).ready(function () {
             $("#BankResponseShow").show();
         }
     }
-	
-	initAboutUsEditor();
-	
+
+    initAboutUsEditor();
+
     var current_theme = $.cookie('current_theme') == null ? 'cerulean' : $.cookie('current_theme');
     switch_theme(current_theme);
 
@@ -142,7 +141,7 @@ $(document).ready(function () {
 
     //establish history variables
     var
-    History = window.History, // Note: We are using a capital H instead of a lower h
+        History = window.History, // Note: We are using a capital H instead of a lower h
         State = History.getState(),
         $log = $('#log');
 
@@ -200,7 +199,7 @@ $(document).ready(function () {
     });
 
     GetUserName();
-	LoadCities();
+    LoadCities();
     ShowControlPanel(true);
     GetUserProfile();
     CloseAllForm();
@@ -288,7 +287,7 @@ $(document).ready(function () {
                 newRow += "<td style='text-align:center;'>" + data.result.Size + "</td>";
 
 
-                  newRow += '<td style="text-align:center;" class="center" id="SeminarAdvertiseButton' + data.result.Id + '"><button  class="btn btn-inverse" style="font-family:tahoma;" onclick="SetAsSeminarAdvertise(' + data.result.Id + "," + CurrentSeminarID + ');"><i class="icon-trash icon-white"></i>به عنوان تبلیغ</button></td>';
+                newRow += '<td style="text-align:center;" class="center" id="SeminarAdvertiseButton' + data.result.Id + '"><button  class="btn btn-inverse" style="font-family:tahoma;" onclick="SetAsSeminarAdvertise(' + data.result.Id + "," + CurrentSeminarID + ');"><i class="icon-trash icon-white"></i>به عنوان تبلیغ</button></td>';
 
 
                 newRow += '<td style="text-align:center;" class="center" ><button class="btn btn-danger" style="font-family:tahoma;" onclick="deleteVideos(' + data.result.Id + '); $(this).parent().parent().remove();' + '"><i class="icon-trash icon-white"></i>حذف</button></td>';
@@ -325,7 +324,6 @@ $(document).ready(function () {
     } else {
         $("#UserPicture").prop("src", "http://www.vworld.ir/Pics/Users/Thumbnails/" + userName + "t.png");
     }
-
 
 
     $('#GalleryFileUpload').fileupload({
@@ -381,7 +379,6 @@ $(document).ready(function () {
     });
 
 
-
     $('#ProfileImage').fileupload({
         dataType: 'json',
         formData: {
@@ -422,9 +419,9 @@ $(document).ready(function () {
             WebinarPoster = _fileName;
         }
     });
-	
-	
-	 $('#NewsPicture').fileupload({
+
+
+    $('#NewsPicture').fileupload({
         dataType: 'json',
         url: ServerURL + 'Session/UploadNewsImage',
         progressall: function (e, data) {
@@ -437,8 +434,6 @@ $(document).ready(function () {
     });
 
 
-
-
     $('#NewSeminarPosterInfo').fileupload({
         dataType: 'json',
         formData: {
@@ -448,7 +443,8 @@ $(document).ready(function () {
         progressall: function (e, data) {
             var per = parseInt(data.loaded / data.total * 100, 10);
         },
-        done: function (e, data) {}
+        done: function (e, data) {
+        }
     });
 
     $('#NewSeminarPosterInfo').bind('fileuploadsubmit', function (e, data) {
@@ -480,230 +476,217 @@ $(document).ready(function () {
     LoadRoles();
 });
 
-function ShowEditAboutUs()
-{
-	initAboutUsEditor();
-	LoadAboutUsPage();
-	ShowBox('#EditAboutUs');
+function ShowEditAboutUs() {
+    initAboutUsEditor();
+    LoadAboutUsPage();
+    ShowBox('#EditAboutUs');
 }
 
-function EditSampleSeminars()
-{
-		 $('#SampleSeminarVideoUpload1').fileupload({
-			dataType: 'json',
-			formData: {
-				sampleId: 1
-			},
-			url: ServerURL + 'Account/UploadSampleVideos',
-			progressall: function (e, data) {
-				$("#SampleSeminarVideoUpload1Progress").show();
-				$("#SampleSeminarVideoUpload1Input").hide();
-				var per = parseInt(data.loaded / data.total * 100, 10);
-				$("#SampleSeminarVideoUpload1Progress").css("width", per + "%");
-			},
-			done: function (e, data) {
-				$("#SampleSeminarVideoUpload1Progress").css("width", "100%");
-				setTimeout(function () {
-					$("#SampleSeminarVideoUpload1Input").show();
-					$("#SampleSeminarVideoUpload1Progress").hide();
-					$("#SampleSeminarVideoUpload1Progress").css("width", "0%");
-				}, 1000);
-	
-			}
-		});
-	
-		$('#SampleSeminarVideoUpload1').bind('fileuploadsubmit', function (e, data) {
-			data.formData = {
-				sampleId: 1
-			};
-		});
-		
-		//
-		$('#SampleSeminarVideoUpload2').fileupload({
-			dataType: 'json',
-			formData: {
-				sampleId: 2
-			},
-			url: ServerURL + 'Account/UploadSampleVideos',
-			progressall: function (e, data) {
-				$("#SampleSeminarVideoUpload2Progress").show();
-				$("#SampleSeminarVideoUpload2Input").hide();
-				var per = parseInt(data.loaded / data.total * 100, 10);
-				$("#SampleSeminarVideoUpload2Progress").css("width", per + "%");
-			},
-			done: function (e, data) {
-				$("#SampleSeminarVideoUpload2Progress").css("width", "100%");
-				setTimeout(function () {
-					$("#SampleSeminarVideoUpload2Input").show();
-					$("#SampleSeminarVideoUpload2Progress").hide();
-					$("#SampleSeminarVideoUpload2Progress").css("width", "0%");
-				}, 1000);
-	
-			}
-		});
-	
-		$('#SampleSeminarVideoUpload2').bind('fileuploadsubmit', function (e, data) {
-			data.formData = {
-				sampleId: 2
-			};
-		});
-		//
-		$('#SampleSeminarVideoUpload3').fileupload({
-			dataType: 'json',
-			formData: {
-				sampleId:3
-			},
-			url: ServerURL + 'Account/UploadSampleVideos',
-			progressall: function (e, data) {
-				$("#SampleSeminarVideoUpload3Progress").show();
-				$("#SampleSeminarVideoUpload3Input").hide();
-				var per = parseInt(data.loaded / data.total * 100, 10);
-				$("#SampleSeminarVideoUpload3Progress").css("width", per + "%");
-			},
-			done: function (e, data) {
-				$("#SampleSeminarVideoUpload3Progress").css("width", "100%");
-				setTimeout(function () {
-					$("#SampleSeminarVideoUpload3Input").show();
-					$("#SampleSeminarVideoUpload3Progress").hide();
-					$("#SampleSeminarVideoUpload3Progress").css("width", "0%");
-				}, 1000);
-	
-			}
-		});
-	
-		$('#SampleSeminarVideoUpload3').bind('fileuploadsubmit', function (e, data) {
-			data.formData = {
-				sampleId: 3
-			};
-		});
+function EditSampleSeminars() {
+    $('#SampleSeminarVideoUpload1').fileupload({
+        dataType: 'json',
+        formData: {
+            sampleId: 1
+        },
+        url: ServerURL + 'Account/UploadSampleVideos',
+        progressall: function (e, data) {
+            $("#SampleSeminarVideoUpload1Progress").show();
+            $("#SampleSeminarVideoUpload1Input").hide();
+            var per = parseInt(data.loaded / data.total * 100, 10);
+            $("#SampleSeminarVideoUpload1Progress").css("width", per + "%");
+        },
+        done: function (e, data) {
+            $("#SampleSeminarVideoUpload1Progress").css("width", "100%");
+            setTimeout(function () {
+                $("#SampleSeminarVideoUpload1Input").show();
+                $("#SampleSeminarVideoUpload1Progress").hide();
+                $("#SampleSeminarVideoUpload1Progress").css("width", "0%");
+            }, 1000);
+
+        }
+    });
+
+    $('#SampleSeminarVideoUpload1').bind('fileuploadsubmit', function (e, data) {
+        data.formData = {
+            sampleId: 1
+        };
+    });
+
+    //
+    $('#SampleSeminarVideoUpload2').fileupload({
+        dataType: 'json',
+        formData: {
+            sampleId: 2
+        },
+        url: ServerURL + 'Account/UploadSampleVideos',
+        progressall: function (e, data) {
+            $("#SampleSeminarVideoUpload2Progress").show();
+            $("#SampleSeminarVideoUpload2Input").hide();
+            var per = parseInt(data.loaded / data.total * 100, 10);
+            $("#SampleSeminarVideoUpload2Progress").css("width", per + "%");
+        },
+        done: function (e, data) {
+            $("#SampleSeminarVideoUpload2Progress").css("width", "100%");
+            setTimeout(function () {
+                $("#SampleSeminarVideoUpload2Input").show();
+                $("#SampleSeminarVideoUpload2Progress").hide();
+                $("#SampleSeminarVideoUpload2Progress").css("width", "0%");
+            }, 1000);
+
+        }
+    });
+
+    $('#SampleSeminarVideoUpload2').bind('fileuploadsubmit', function (e, data) {
+        data.formData = {
+            sampleId: 2
+        };
+    });
+    //
+    $('#SampleSeminarVideoUpload3').fileupload({
+        dataType: 'json',
+        formData: {
+            sampleId: 3
+        },
+        url: ServerURL + 'Account/UploadSampleVideos',
+        progressall: function (e, data) {
+            $("#SampleSeminarVideoUpload3Progress").show();
+            $("#SampleSeminarVideoUpload3Input").hide();
+            var per = parseInt(data.loaded / data.total * 100, 10);
+            $("#SampleSeminarVideoUpload3Progress").css("width", per + "%");
+        },
+        done: function (e, data) {
+            $("#SampleSeminarVideoUpload3Progress").css("width", "100%");
+            setTimeout(function () {
+                $("#SampleSeminarVideoUpload3Input").show();
+                $("#SampleSeminarVideoUpload3Progress").hide();
+                $("#SampleSeminarVideoUpload3Progress").css("width", "0%");
+            }, 1000);
+
+        }
+    });
+
+    $('#SampleSeminarVideoUpload3').bind('fileuploadsubmit', function (e, data) {
+        data.formData = {
+            sampleId: 3
+        };
+    });
 
 
-	ShowBox('#SampleSeminars');
+    ShowBox('#SampleSeminars');
 }
 
-function EditAboutUsDetails()
-{
-	Debug('Alert SHow Box');
-	var d =  $("#AboutUsContent").val();
-	Debug(d);
-	CustomBlockingPanel("توجه" , 'در حال ذخیره سازی محتویات صفحه  ......', -1, null);
-			$.ajax({
-    	type: 'POST',
-		url: ServerURL + "Account/EditAboutUsPage",
-		dataType: 'json',
-		data : {text : d},
-		success: function(result) {
-			 CustomBlockingPanel('توجه', 'ارسال اطلاعات با موفقیت انجام شد.', 1000, null);
-			 if(result.Status == true){
-					$("#EditAboutUs").hide();
-				}
-				else
-				{
-					 CustomAlert("خطا","امکان ذخیره سازی وجود ندارد لطفا مجددا تلاش نمایید.", null);
-				}
-				},
-		async:true
-			});
+function EditAboutUsDetails() {
+    Debug('Alert SHow Box');
+    var d = $("#AboutUsContent").val();
+    Debug(d);
+    CustomBlockingPanel("توجه", 'در حال ذخیره سازی محتویات صفحه  ......', -1, null);
+    $.ajax({
+        type: 'POST',
+        url: ServerURL + "Account/EditAboutUsPage",
+        dataType: 'json',
+        data: {text: d},
+        success: function (result) {
+            CustomBlockingPanel('توجه', 'ارسال اطلاعات با موفقیت انجام شد.', 1000, null);
+            if (result.Status == true) {
+                $("#EditAboutUs").hide();
+            }
+            else {
+                CustomAlert("خطا", "امکان ذخیره سازی وجود ندارد لطفا مجددا تلاش نمایید.", null);
+            }
+        },
+        async: true
+    });
 }
 
-function initAboutUsEditor()
-{
-	AboutUsEditor = $('#AboutUsContent').ckeditor();
+function initAboutUsEditor() {
+    AboutUsEditor = $('#AboutUsContent').ckeditor();
 }
 
 
-function ShowEditGuidePage()
-{
-	 $('#EditGuideContent').ckeditor();
-	 LoadGuidePage();
-	 ShowBox('#EditGuide');
+function ShowEditGuidePage() {
+    $('#EditGuideContent').ckeditor();
+    LoadGuidePage();
+    ShowBox('#EditGuide');
 }
 
-function EditGuidePage()
-{
-	var d =  $("#EditGuideContent").val();
-	Debug(d);
-	CustomBlockingPanel("توجه" , 'در حال ذخیره سازی محتویات صفحه  ......', -1, null);
-			$.ajax({
-    	type: 'POST',
-		url: ServerURL + "Account/EditGuidePage",
-		dataType: 'json',
-		data : {text : d},
-		success: function(result) {
-			 CustomBlockingPanel('توجه', 'ارسال اطلاعات با موفقیت انجام شد.', 1000, null);
-			 if(result.Status == true){
-					$("#EditGuideContent").hide();
-				}
-				else
-				{
-					 CustomAlert("خطا","امکان ذخیره سازی وجود ندارد لطفا مجددا تلاش نمایید.", null);
-				}
-				},
-		async:true
-			});
+function EditGuidePage() {
+    var d = $("#EditGuideContent").val();
+    Debug(d);
+    CustomBlockingPanel("توجه", 'در حال ذخیره سازی محتویات صفحه  ......', -1, null);
+    $.ajax({
+        type: 'POST',
+        url: ServerURL + "Account/EditGuidePage",
+        dataType: 'json',
+        data: {text: d},
+        success: function (result) {
+            CustomBlockingPanel('توجه', 'ارسال اطلاعات با موفقیت انجام شد.', 1000, null);
+            if (result.Status == true) {
+                $("#EditGuideContent").hide();
+            }
+            else {
+                CustomAlert("خطا", "امکان ذخیره سازی وجود ندارد لطفا مجددا تلاش نمایید.", null);
+            }
+        },
+        async: true
+    });
 }
 
 
-function LoadGuidePage()
-{
-		CustomBlockingPanel("توجه" , 'در حال دریافت محتویات صفحه  ......', -1, null);
-			$.ajax({
-    	type: 'GET',
-		url: ServerURL + "Account/GetGuidePage",
-		dataType: 'json',
-		success: function(result) {
-			 CustomBlockingPanel('توجه', 'دریافت اطلاعات با موفقیت انجام شد.', 1000, null);
-			 if(result.Status == true){
-					$("#EditGuideContent").val(result.Result);
-					$("#EditGuideContent").show();
-					Debug(result.Result);
-				}
-				else
-				{
-					 CustomAlert("خطا","برای این صفحه داده ای وجود ندارد.", null);
-				}
-				},
-		async:true
-			});
+function LoadGuidePage() {
+    CustomBlockingPanel("توجه", 'در حال دریافت محتویات صفحه  ......', -1, null);
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Account/GetGuidePage",
+        dataType: 'json',
+        success: function (result) {
+            CustomBlockingPanel('توجه', 'دریافت اطلاعات با موفقیت انجام شد.', 1000, null);
+            if (result.Status == true) {
+                $("#EditGuideContent").val(result.Result);
+                $("#EditGuideContent").show();
+                Debug(result.Result);
+            }
+            else {
+                CustomAlert("خطا", "برای این صفحه داده ای وجود ندارد.", null);
+            }
+        },
+        async: true
+    });
 
 }
 
 
-function LoadAboutUsPage()
-{
-		CustomBlockingPanel("توجه" , 'در حال دریافت محتویات صفحه  ......', -1, null);
-			$.ajax({
-    	type: 'GET',
-		url: ServerURL + "Account/GetAboutUsPage",
-		dataType: 'json',
-		success: function(result) {
-			 CustomBlockingPanel('توجه', 'دریافت اطلاعات با موفقیت انجام شد.', 1000, null);
-			 if(result.Status == true){
-					$("#AboutUsContent").val(result.Result);
-					$("#AboutUsContent").show();
-					Debug(result.Result);
+function LoadAboutUsPage() {
+    CustomBlockingPanel("توجه", 'در حال دریافت محتویات صفحه  ......', -1, null);
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Account/GetAboutUsPage",
+        dataType: 'json',
+        success: function (result) {
+            CustomBlockingPanel('توجه', 'دریافت اطلاعات با موفقیت انجام شد.', 1000, null);
+            if (result.Status == true) {
+                $("#AboutUsContent").val(result.Result);
+                $("#AboutUsContent").show();
+                Debug(result.Result);
 //					AboutUsEditor.setData(result.Result);
-				}
-				else
-				{
-					 CustomAlert("خطا","برای این صفحه داده ای وجود ندارد.", null);
-				}
-				},
-		async:true
-			});
+            }
+            else {
+                CustomAlert("خطا", "برای این صفحه داده ای وجود ندارد.", null);
+            }
+        },
+        async: true
+    });
 
 }
 
-function SetAsSeminarAdvertise(fileID, sessionId)
-{
-	$.getJSON(ServerURL + "Account/GetCurrentAdvertise", {
+function SetAsSeminarAdvertise(fileID, sessionId) {
+    $.getJSON(ServerURL + "Account/GetCurrentAdvertise", {
             sessionId: sessionId
         },
         function (result) {
-			var currentAdvertise = result.Result;
+            var currentAdvertise = result.Result;
             if (result.Status == true) {
-				
-	 $.getJSON(ServerURL + "Account/SetAsAdvertise", {
+
+                $.getJSON(ServerURL + "Account/SetAsAdvertise", {
                         fileID: fileID
                     },
                     function (response) {
@@ -715,31 +698,29 @@ function SetAsSeminarAdvertise(fileID, sessionId)
                             alert(response.Message);
                         }
                     });
-			}
-		});
+            }
+        });
 }
 
 function NewNews() {
     ShowBox("#News");
 }
 
-function LoadCities()
-{
-				
-	 $.getJSON(ServerURL + "Utility/GetCities", {}, 
-                    function (result) 
-					{ 
-						//ProfileSelectCity
-						if(result.Status == true){
-							for(var i = 0 ; i < result.Result.length ; i++){
-								var option = "<option id='ProfileSelectCity" + result.Result[i].CityId + "' value='" + result.Result[i].CityId + "'>" + result.Result[i].Name + "</option>";
-								Debug(option);
-								$("#ProfileSelectCity").append(option);
-							}
-						}
-						else{
-						}
-					});
+function LoadCities() {
+
+    $.getJSON(ServerURL + "Utility/GetCities", {},
+        function (result) {
+            //ProfileSelectCity
+            if (result.Status == true) {
+                for (var i = 0; i < result.Result.length; i++) {
+                    var option = "<option id='ProfileSelectCity" + result.Result[i].CityId + "' value='" + result.Result[i].CityId + "'>" + result.Result[i].Name + "</option>";
+                    Debug(option);
+                    $("#ProfileSelectCity").append(option);
+                }
+            }
+            else {
+            }
+        });
 }
 
 function LoadRoles() {
@@ -789,11 +770,12 @@ function AddNews() {
                 CustomAlert('خطا', result.Message, null);
             }
         },
-        error: function () {},
+        error: function () {
+        },
         data: {
             name: topic,
             desc: desc,
-			picture : NewsPictureID
+            picture: NewsPictureID
         },
         async: true
     });
@@ -810,7 +792,8 @@ function DeleteNews(newsID, table) {
         success: function (result) {
             CustomBlockingPanel('توجه', 'اخبار حذف شد', 1000, null);
         },
-        error: function () {},
+        error: function () {
+        },
         async: false
     });
 }
@@ -852,9 +835,11 @@ function ShowGallery() {
                     newRow += "</tr>";
                     table.append(newRow);
                 }
-            } else {}
+            } else {
+            }
         },
-        error: function () {},
+        error: function () {
+        },
         async: true
     });
 }
@@ -888,7 +873,8 @@ function LoadAllNews() {
                 CustomBlockingPanel('توجه', 'دریافت اطلاعات با خطا روبرو گردید.', 1000, null);
             }
         },
-        error: function () {},
+        error: function () {
+        },
         async: true
     });
 }
@@ -933,42 +919,42 @@ function GetPrsianDate(currentDate) {
     var _splitedDate = currentDate.split(":");
     var _month = _splitedDate[1];
     switch (_month) {
-    case "1":
-        _month = "فروردین";
-        break;
-    case "2":
-        _month = "اردیبهشت";
-        break;
-    case "3":
-        _month = "خرداد";
-        break;
-    case "4":
-        _month = "تیر";
-        break;
-    case "5":
-        _month = "مرداد";
-        break;
-    case "6":
-        _month = "شهریور";
-        break;
-    case "7":
-        _month = "مهر";
-        break;
-    case "8":
-        _month = "آبان";
-        break;
-    case "9":
-        _month = "آذر";
-        break;
-    case "10":
-        _month = "دی";
-        break;
-    case "11":
-        _month = "بهمن";
-        break;
-    case "12":
-        _month = "اسفند";
-        break;
+        case "1":
+            _month = "فروردین";
+            break;
+        case "2":
+            _month = "اردیبهشت";
+            break;
+        case "3":
+            _month = "خرداد";
+            break;
+        case "4":
+            _month = "تیر";
+            break;
+        case "5":
+            _month = "مرداد";
+            break;
+        case "6":
+            _month = "شهریور";
+            break;
+        case "7":
+            _month = "مهر";
+            break;
+        case "8":
+            _month = "آبان";
+            break;
+        case "9":
+            _month = "آذر";
+            break;
+        case "10":
+            _month = "دی";
+            break;
+        case "11":
+            _month = "بهمن";
+            break;
+        case "12":
+            _month = "اسفند";
+            break;
     }
     var _msg;
     if (_splitedDate[3] != "") {
@@ -1059,9 +1045,9 @@ function GetListOfSessionFilesForSeminarInfo(sessionID) {
             index = -1;
         }
     });
-	
-	
-	 CustomBlockingPanel('توجه', 'در حال دریافت اطلاعات از سرور ... ', -1, null);
+
+
+    CustomBlockingPanel('توجه', 'در حال دریافت اطلاعات از سرور ... ', -1, null);
     $.getJSON(ServerURL + "Account/GetListOfVideos", {
         sessionId: sessionID
     }, function (result) {
@@ -1085,8 +1071,8 @@ function GetListOfSessionFilesForSeminarInfo(sessionID) {
                 newRow += "<td style='text-align:center;'>" + result.Result[i].fileSize + "</td>";
 
 
-                  newRow += '<td style="text-align:center;" class="center" id="SeminarAdvertiseButton' + result.Result[i].fileId + '"><button  class="btn btn-inverse" style="font-family:tahoma;" onclick="SetAsSeminarAdvertise(' + result.Result[i].fileId + "," + sessionID + ');"><i class="icon-trash icon-white"></i>به عنوان تبلیغ</button></td>';
-					
+                newRow += '<td style="text-align:center;" class="center" id="SeminarAdvertiseButton' + result.Result[i].fileId + '"><button  class="btn btn-inverse" style="font-family:tahoma;" onclick="SetAsSeminarAdvertise(' + result.Result[i].fileId + "," + sessionID + ');"><i class="icon-trash icon-white"></i>به عنوان تبلیغ</button></td>';
+
                 newRow += '<td style="text-align:center;" class="center" ><button id="SeminarInfoButton' + result.Result[i].fileId + '" class="btn btn-danger" style="font-family:tahoma;" onclick=" SelectedVideoForDelete = $(this).parent().parent(); deleteVideos(' + result.Result[i].fileId + '); "><i class="icon-trash icon-white"></i>حذف</button></td>';
                 newRow += "</tr>";
                 table.append(newRow);
@@ -1096,7 +1082,6 @@ function GetListOfSessionFilesForSeminarInfo(sessionID) {
         }
     });
 }
-
 
 
 function CustomAlert(title, message, callback) {
@@ -1252,7 +1237,8 @@ function GetListOfParticipant() {
                 alert(result.Message);
             }
         });
-    } catch (exception) {}
+    } catch (exception) {
+    }
 }
 
 function SetAsSeminarContent(fileID, sessionID) {
@@ -1319,7 +1305,6 @@ function deleteVideos(fileID) {
 }
 
 
-
 var businessModel;
 
 function SeminarWizard(step, isNext) {
@@ -1364,15 +1349,18 @@ function SeminarWizard(step, isNext) {
                     success: function (result) {
                         if (result.Status == true) {
 
-                            CustomAlert("کسر از شارژ", "شما برای ایجاد این سمینار به اعتبار " + result.Result + " ریال احتیاج دارید. درصورت ساخت این هزینه از حساب شما برداشته خواهد شد.", function () {});
+                            CustomAlert("کسر از شارژ", "شما برای ایجاد این سمینار به اعتبار " + result.Result + " ریال احتیاج دارید. درصورت ساخت این هزینه از حساب شما برداشته خواهد شد.", function () {
+                            });
 
                             fee = result.Result;
                         } else if (result.Message.indexOf("charge") != -1) {
-                            CustomAlert("کمبود شارژ", "شما برای ایجاد این سمینار به اعتبار " + result.Result + " ریال احتیاج دارید. لطفا حساب خود را شارژ کرده و دوباره تلاش نمایید.", function () {});
+                            CustomAlert("کمبود شارژ", "شما برای ایجاد این سمینار به اعتبار " + result.Result + " ریال احتیاج دارید. لطفا حساب خود را شارژ کرده و دوباره تلاش نمایید.", function () {
+                            });
                             fee = result.Result;
                             _hasError = true;
                         } else {
-                            CustomAlert("خطا در برقراری ارتباط", result.Message, function () {});
+                            CustomAlert("خطا در برقراری ارتباط", result.Message, function () {
+                            });
                             _hasError = true;
                         }
                     },
@@ -1480,7 +1468,8 @@ function ReFetchVideo() {
         $("#SeminarMasterVideoPlayer").stop();
         $("#SeminarMasterVideoPlayer").load();
         $("#SeminarMasterVideoPlayer").play();
-    } catch (exception) {}
+    } catch (exception) {
+    }
 }
 
 
@@ -1511,7 +1500,6 @@ function GetUserName() {
 function GetSeminarType() {
     //	NewSeminarType
 }
-
 
 
 function SearchForAccounts(page) {
@@ -1567,8 +1555,6 @@ function SearchForAccounts(page) {
                     $("#FindPersonDialogTable").append(newRecord);
 
                 }
-
-
 
 
             } else {
@@ -2010,7 +1996,6 @@ function GetMoreSeminarInformation(seminarID) {
     });
 
 
-
     //Managed Files
 }
 
@@ -2213,12 +2198,12 @@ function GoToSeminar(seminarID) {
                                 //Load Content Video
                                 if (hasContent == true) {
                                     /*	$("#SeminarMasterContent").show();
-							var seminarContent = document.getElementById("SeminarMasterContentPlayer");
-							seminarContent.src = defaultContent.m_url;
-							$("#SeminarContentVideoBandwidth").html(defaultContent.m_bandwidth + " کیلو بیت در ثانیه ");
-							$("#SeminarContentVideoCodec").html(defaultContent.m_codec);
-							seminarContent.load();
-							seminarContent.play();*/
+                                     var seminarContent = document.getElementById("SeminarMasterContentPlayer");
+                                     seminarContent.src = defaultContent.m_url;
+                                     $("#SeminarContentVideoBandwidth").html(defaultContent.m_bandwidth + " کیلو بیت در ثانیه ");
+                                     $("#SeminarContentVideoCodec").html(defaultContent.m_codec);
+                                     seminarContent.load();
+                                     seminarContent.play();*/
                                     CurrentSlidePage = 1;
                                     var imageSrc = ServerURL + "Seminars/" + seminarID + "/PowerPoint/" + CurrentSlidePage + ".png";
                                     $("#SeminarMasterContentImage").attr(
@@ -2696,11 +2681,11 @@ function GetMySeminars() {
                     } else {
                         newRow += "<td></td>";
                     }
-                
-					
-					 newRow += '<td style="width:100px;"><center>' + '<div  title="برای حذف سمینار کلیک کنید." data-rel="tooltip" class="btn btn-error" onclick="DeleteSeminar(' + _session.m_seminarID + ');">حذف سمینار</div>' + '</center></td>';
-					
-				    newRow += '</tr>';
+
+
+                    newRow += '<td style="width:100px;"><center>' + '<div  title="برای حذف سمینار کلیک کنید." data-rel="tooltip" class="btn btn-error" onclick="DeleteSeminar(' + _session.m_seminarID + ');">حذف سمینار</div>' + '</center></td>';
+
+                    newRow += '</tr>';
 
                     $('#OwnedSeminarsTable').append(newRow);
                 }
@@ -2764,9 +2749,9 @@ function GetMySeminars() {
                             } else {
                                 newRow += "<td></td>";
                             }
-							
-							 newRow += '<td style="width:100px;"><center>' + '<div  title="برای حذف سمینار کلیک کنید." data-rel="tooltip" class="btn btn-error" onclick="DeleteSeminar(' + _session.m_seminarID + ');">حذف سمینار</div>' + '</center></td>';
-							 
+
+                            newRow += '<td style="width:100px;"><center>' + '<div  title="برای حذف سمینار کلیک کنید." data-rel="tooltip" class="btn btn-error" onclick="DeleteSeminar(' + _session.m_seminarID + ');">حذف سمینار</div>' + '</center></td>';
+
                             newRow += '</tr>';
                             $('#OwnedSeminarsTable').append(newRow);
                         }
@@ -2782,23 +2767,23 @@ function GetMySeminars() {
     }
 }
 
-function DeleteSeminar(sessionId){
-	    $.ajax({
-                type: 'GET',
-                url: ServerURL + "Session/DeleteSeminar",
-                dataType: 'Json',
-                success: function (result) {
-                    if (result.Status == true) {
-                        CustomBlockingPanel('توجه', 'حذف سمینار با موفقیت صورت پذیرفت', null);
-                        $("#Pishnahadat").hide();
-                    } else {
-                        CustomBlockingPanel('توجه', 'حذف سمینار با خطا روبرو گردید', null);
+function DeleteSeminar(sessionId) {
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Session/DeleteSeminar",
+        dataType: 'Json',
+        success: function (result) {
+            if (result.Status == true) {
+                CustomBlockingPanel('توجه', 'حذف سمینار با موفقیت صورت پذیرفت', null);
+                $("#Pishnahadat").hide();
+            } else {
+                CustomBlockingPanel('توجه', 'حذف سمینار با خطا روبرو گردید', null);
 
-                    }
-                },
-                data: {sessionId : sessionId },
-                async: true
-            });
+            }
+        },
+        data: {sessionId: sessionId },
+        async: true
+    });
 }
 
 function SendRecom() {
@@ -3066,7 +3051,6 @@ function InviteNewPerson() {
         }
 
 
-
         if (_hasError == false) {
             var type = $('#EditInviteModalType').val();
             if (type.indexOf('Edit') != -1) {
@@ -3093,7 +3077,6 @@ function InviteNewPerson() {
         } else {
             $('#MemberInviteEmailCapacitytError').hide();
         }
-
 
 
         if (_hasError == false) {
@@ -3123,7 +3106,7 @@ function AddOnDemandInvite() {
     $("#OnDemandInviteMessages").html("در حال دعوت از " + email + "لطفا اندکی صبر کنید");
     $("#OnDemandInviteMessages").fadeIn(1000);
     var sessionID = CurrentSeminarID;
-	console.log(sessionID);
+    console.log(sessionID);
     $.getJSON(ServerURL + "Session/InviteToParticipate", {
         email: email,
         firstName: firstName,
@@ -3220,7 +3203,8 @@ function LoadSeminarTimes(loadFirstTime) {
 
 
     if ($('#NewSeminarDateMonth').val() == something) {
-        for (var j = _dayOfMonth + 1; j < 32; j++) {;
+        for (var j = _dayOfMonth + 1; j < 32; j++) {
+            ;
 
             $("#NewSeminarDateDay").html($("#NewSeminarDateDay").html() + "<option>" + j + "</option>");
         }
@@ -3317,9 +3301,9 @@ function RemoveInvitedFromList() {
     var index = 0;
     $('td', DeleteInviteRowSeleted).each(function () {
         switch (index) {
-        case 2:
-            email = $(this).html();
-            break;
+            case 2:
+                email = $(this).html();
+                break;
         }
         index++;
     });
@@ -3343,28 +3327,28 @@ function DoEditInvitedPerson() {
     var lastEmail;
     $('td', EditInviteRowSeleted).each(function () {
         switch (index) {
-        case 0:
-            $(this).html(FirstName);
-            break;
-        case 1:
-            $(this).html(LastName);
-            break;
-        case 2:
-            lastEmail = $(this).html();
-            $(this).html(email);
-            break;
-        case 3:
-            $(this).html(mobile);
-            break;
+            case 0:
+                $(this).html(FirstName);
+                break;
+            case 1:
+                $(this).html(LastName);
+                break;
+            case 2:
+                lastEmail = $(this).html();
+                $(this).html(email);
+                break;
+            case 3:
+                $(this).html(mobile);
+                break;
         }
         index++;
         /*if( $(this).html().indexOf('$(this)') == -1)
-			{
-				$(this).html('<input type="text" value="' + $(this).html() + '" />');
-			}
-			else
-			{
-			}*/
+         {
+         $(this).html('<input type="text" value="' + $(this).html() + '" />');
+         }
+         else
+         {
+         }*/
     });
 
     var edited;
@@ -3683,7 +3667,7 @@ function SaveUserProfile() {
         });
 
     } else {
-        CustomAlert('توجه' , "لطفا فرم را تکمیل کنید." ,null);
+        CustomAlert('توجه', "لطفا فرم را تکمیل کنید.", null);
     }
 }
 
@@ -3957,8 +3941,6 @@ function docReady() {
     });
 
 
-
-
     //initialize the external events for calender
 
     $('#external-events div.external-event').each(function () {
@@ -4026,13 +4008,16 @@ function docReady() {
             cos.push([i, Math.cos(i)]);
         }
 
-        var plot = $.plot($("#sincos"), [{
-            data: sin,
-            label: "sin(x)/x"
-        }, {
-            data: cos,
-            label: "cos(x)"
-        }], {
+        var plot = $.plot($("#sincos"), [
+            {
+                data: sin,
+                label: "sin(x)/x"
+            },
+            {
+                data: cos,
+                label: "cos(x)"
+            }
+        ], {
             series: {
                 lines: {
                     show: true
@@ -4082,14 +4067,13 @@ function docReady() {
                         y = item.datapoint[1].toFixed(2);
 
                     showTooltip(item.pageX, item.pageY,
-                        item.series.label + " of " + x + " = " + y);
+                            item.series.label + " of " + x + " = " + y);
                 }
             } else {
                 $("#tooltip").remove();
                 previousPoint = null;
             }
         });
-
 
 
         $("#sincos").bind("plotclick", function (event, pos, item) {
@@ -4114,16 +4098,20 @@ function docReady() {
         for (var i = 0; i < Math.PI * 2; i += 0.1)
             d3.push([i, Math.tan(i)]);
 
-        $.plot($("#flotchart"), [{
-            label: "sin(x)",
-            data: d1
-        }, {
-            label: "cos(x)",
-            data: d2
-        }, {
-            label: "tan(x)",
-            data: d3
-        }], {
+        $.plot($("#flotchart"), [
+            {
+                label: "sin(x)",
+                data: d1
+            },
+            {
+                label: "cos(x)",
+                data: d2
+            },
+            {
+                label: "tan(x)",
+                data: d3
+            }
+        ], {
             series: {
                 lines: {
                     show: true
@@ -4205,25 +4193,32 @@ function docReady() {
     }
 
     //pie chart
-    var data = [{
-        label: "Internet Explorer",
-        data: 12
-    }, {
-        label: "Mobile",
-        data: 27
-    }, {
-        label: "Safari",
-        data: 85
-    }, {
-        label: "Opera",
-        data: 64
-    }, {
-        label: "Firefox",
-        data: 90
-    }, {
-        label: "Chrome",
-        data: 112
-    }];
+    var data = [
+        {
+            label: "Internet Explorer",
+            data: 12
+        },
+        {
+            label: "Mobile",
+            data: 27
+        },
+        {
+            label: "Safari",
+            data: 85
+        },
+        {
+            label: "Opera",
+            data: 64
+        },
+        {
+            label: "Firefox",
+            data: 90
+        },
+        {
+            label: "Chrome",
+            data: 112
+        }
+    ];
 
     if ($("#piechart").length) {
         $.plot($("#piechart"), data, {
@@ -4246,6 +4241,7 @@ function docReady() {
             percent = parseFloat(obj.series.percent).toFixed(2);
             $("#hover").html('<span style="font-weight: bold; color: ' + obj.series.color + '">' + obj.series.label + ' (' + percent + '%)</span>');
         }
+
         $("#piechart").bind("plothover", pieHover);
     }
 
@@ -4263,8 +4259,6 @@ function docReady() {
             }
         });
     }
-
-
 
 
     // we use an inline data source in the example, usually data would

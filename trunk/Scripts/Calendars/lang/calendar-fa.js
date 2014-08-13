@@ -12,13 +12,13 @@
 // full day names
 Calendar._DN = new Array
 ("یکشنبه",
- "دوشنبه",
- "سه شنبه",
- "چهارشنبه",
- "پنجشنبه",
- "جمعه",
- "شنبه",
- "یکشنبه");
+    "دوشنبه",
+    "سه شنبه",
+    "چهارشنبه",
+    "پنجشنبه",
+    "جمعه",
+    "شنبه",
+    "یکشنبه");
 
 // Please note that the following array of short day names (and the same goes
 // for short month names, _SMN) isn't absolutely necessary.  We give it here
@@ -35,13 +35,13 @@ Calendar._DN = new Array
 // short day names
 Calendar._SDN = new Array
 ("یک",
- "دو",
- "سه",
- "چهار",
- "پنج",
- "جمعه",
- "شنبه",
- "یک");
+    "دو",
+    "سه",
+    "چهار",
+    "پنج",
+    "جمعه",
+    "شنبه",
+    "یک");
 
 // First day of the week. "0" means display Sunday first, "1" means display
 // Monday first, etc.
@@ -50,62 +50,62 @@ Calendar._FD = 6;
 // full month names
 Calendar._MN = new Array
 ("ژانویه",
- "فوریه",
- "مارس",
- "آوریل",
- "می",
- "جون",
- "جولای",
- "آگوست",
- "سپتامبر",
- "اکتبر",
- "نوامبر",
- "دسامبر");
+    "فوریه",
+    "مارس",
+    "آوریل",
+    "می",
+    "جون",
+    "جولای",
+    "آگوست",
+    "سپتامبر",
+    "اکتبر",
+    "نوامبر",
+    "دسامبر");
 
 // short month names
 Calendar._SMN = new Array
 ("Jan",
- "Feb",
- "Mar",
- "Apr",
- "May",
- "Jun",
- "Jul",
- "Aug",
- "Sep",
- "Oct",
- "Nov",
- "Dec");
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec");
 
- // full month names
+// full month names
 Calendar._JMN = new Array
 ("فروردین",
- "اردیبهشت",
- "خرداد",
- "تیر",
- "مرداد",
- "شهریور",
- "مهر",
- "آبان",
- "آذر",
- "دی",
- "بهمن",
- "اسفند");
+    "اردیبهشت",
+    "خرداد",
+    "تیر",
+    "مرداد",
+    "شهریور",
+    "مهر",
+    "آبان",
+    "آذر",
+    "دی",
+    "بهمن",
+    "اسفند");
 
 // short month names
 Calendar._JSMN = new Array
 ("فروردین",
- "اردیبهشت",
- "خرداد",
- "تیر",
- "مرداد",
- "شهریور",
- "مهر",
- "آبان",
- "آذر",
- "دی",
- "بهمن",
- "اسفند");
+    "اردیبهشت",
+    "خرداد",
+    "تیر",
+    "مرداد",
+    "شهریور",
+    "مهر",
+    "آبان",
+    "آذر",
+    "دی",
+    "بهمن",
+    "اسفند");
 
 
 // tooltips
@@ -113,23 +113,23 @@ Calendar._TT = {};
 Calendar._TT["INFO"] = "درباره تقویم";
 
 Calendar._TT["ABOUT"] =
-"JalaliJSCalendar\n" +
-"Copyright (c) 2008 Ali Farhadi (http://farhadi.ir/)\n" + // don't translate this this ;-)
-"Distributed under GNU GPL. See http://gnu.org/licenses/gpl.html for details.\n\n" +
+    "JalaliJSCalendar\n" +
+    "Copyright (c) 2008 Ali Farhadi (http://farhadi.ir/)\n" + // don't translate this this ;-)
+    "Distributed under GNU GPL. See http://gnu.org/licenses/gpl.html for details.\n\n" +
 
-"Based on The DHTML Calendar developed by Dynarch.com.\n" +
-"(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" + // don't translate this this ;-)
+    "Based on The DHTML Calendar developed by Dynarch.com.\n" +
+    "(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" + // don't translate this this ;-)
 
-"\n\n" +
-"Date selection:\n" +
-"- Use the \xab, \xbb buttons to select year\n" +
-"- Use the " + String.fromCharCode(0x2039) + ", " + String.fromCharCode(0x203a) + " buttons to select month\n" +
-"- Hold mouse button on any of the above buttons for faster selection.";
+    "\n\n" +
+    "Date selection:\n" +
+    "- Use the \xab, \xbb buttons to select year\n" +
+    "- Use the " + String.fromCharCode(0x2039) + ", " + String.fromCharCode(0x203a) + " buttons to select month\n" +
+    "- Hold mouse button on any of the above buttons for faster selection.";
 Calendar._TT["ABOUT_TIME"] = "\n\n" +
-"Time selection:\n" +
-"- Click on any of the time parts to increase it\n" +
-"- or Shift-click to decrease it\n" +
-"- or click and drag for faster selection.";
+    "Time selection:\n" +
+    "- Click on any of the time parts to increase it\n" +
+    "- or Shift-click to decrease it\n" +
+    "- or click and drag for faster selection.";
 
 Calendar._TT["PREV_YEAR"] = "سال قبل (hold for menu)";
 Calendar._TT["PREV_MONTH"] = "ماه قبل (hold for menu)";

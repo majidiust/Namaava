@@ -14,7 +14,7 @@ var BrowserDetect = {
         this.OS = this.searchString(this.dataOS) || "an unknown OS";
     },
     searchString: function (data) {
-        for (var i=0;i<data.length;i++)	{
+        for (var i = 0; i < data.length; i++) {
             var dataString = data[i].string;
             var dataProp = data[i].prop;
             this.versionSearchString = data[i].versionSearch || data[i].identity;
@@ -29,7 +29,7 @@ var BrowserDetect = {
     searchVersion: function (dataString) {
         var index = dataString.indexOf(this.versionSearchString);
         if (index == -1) return;
-        return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+        return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
     },
     dataBrowser: [
         {
@@ -37,7 +37,7 @@ var BrowserDetect = {
             subString: "Chrome",
             identity: "Chrome"
         },
-        { 	string: navigator.userAgent,
+        {    string: navigator.userAgent,
             subString: "OmniWeb",
             versionSearch: "OmniWeb/",
             identity: "OmniWeb"
@@ -97,7 +97,7 @@ var BrowserDetect = {
             versionSearch: "Mozilla"
         }
     ],
-    dataOS : [
+    dataOS: [
         {
             string: navigator.platform,
             subString: "Win",

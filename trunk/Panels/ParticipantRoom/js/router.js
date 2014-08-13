@@ -1,11 +1,11 @@
 Room.Router = Backbone.Router.extend({
-	routes:{
-		'':'index'
-	},
+    routes: {
+        '': 'index'
+    },
 
-	index:function(){
-		// if(console != 'undefined'){
-		// 	console.log('the index page');
-		// }
-	}
+    index: function () {
+        // if(console != 'undefined'){
+        // 	console.log('the index page');
+        // }
+    }
 });

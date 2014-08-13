@@ -1,627 +1,677 @@
 ﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>
-      نمای آوای زندگی
+        نمای آوای زندگی
     </title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,800" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Oleo+Script:400" rel="stylesheet" type="text/css" />
-    <link href="jquery.bxslider.css" rel="stylesheet" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,800" rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Oleo+Script:400" rel="stylesheet" type="text/css"/>
+    <link href="jquery.bxslider.css" rel="stylesheet"/>
     <script type="text/javascript" src="Scripts/jquery-1.8.2.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/skel.min.js"></script>
     <script src="js/skel-panels.min.js"></script>
- 	<script type="text/javascript" src="Scripts/Calendars/jalali.js"></script>
+    <script type="text/javascript" src="Scripts/Calendars/jalali.js"></script>
     <script type="text/javascript" src="Scripts/Info.js"></script>
     <script type="text/javascript" src="Scripts/video.js"></script>
     <script type="text/javascript" src="Scripts/tooltip.js"></script>
-        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 
-	<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
 
 
     <script type="text/javascript" src="Scripts/utility.js"></script>
     <script type="text/javascript" src="Scripts/Login.js"></script>
-        <script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function () {
 
-            $('#forgotpassword-forms').submit(function(e) {
-				ForgotPassword();
-				return false;
-			});
-			 $('#login-forms').submit(function(e) {
-				LoginToAccountNew();
-				return false;
-			});
-			DetectLoggedInUserNew();
-			LoadSeminars(3);
-			LoadTopNews(4);
-			LoadPictureGallery();
+            $('#forgotpassword-forms').submit(function (e) {
+                ForgotPassword();
+                return false;
+            });
+            $('#login-forms').submit(function (e) {
+                LoginToAccountNew();
+                return false;
+            });
+            DetectLoggedInUserNew();
+            LoadSeminars(3);
+            LoadTopNews(4);
+            LoadPictureGallery();
         });
 
     </script>
     <noscript>
-      <link rel="stylesheet" href="css/skel-noscript.css" />
-      <link rel="stylesheet" href="css/style.css" />
-      <link rel="stylesheet" href="css/style-desktop.css" />
-      <link rel="stylesheet" href="css/shared.css" />
+        <link rel="stylesheet" href="css/skel-noscript.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/style-desktop.css"/>
+        <link rel="stylesheet" href="css/shared.css"/>
     </noscript>
     <!--[if lte IE 8]>
-<script src="js/html5shiv.js">
-</script>
-<link rel="stylesheet" href="css/ie8.css" />
-<![endif]-->
+    <script src="js/html5shiv.js">
+    </script>
+    <link rel="stylesheet" href="css/ie8.css"/>
+    <![endif]-->
     <!--[if lte IE 7]>
-<link rel="stylesheet" href="css/ie7.css" />
-<![endif]-->
-  </head>
-  <body class="homepage">
-    
-    <!-- Header Wrapper -->
-    <!-- 1 -->
-    <div id="header-wrapper">
-      <!-- 2 -->
-      <div class="container">
-      	<!-- 3 -->
-        <div class="row">
-          <!-- 4 -->
-          <div class="12u">
-            
-            <!-- Header -->
-            <header id="header">
-              
-              
-              <!-- Logo -->
-              <div id="logo">
-              	<img src="images/nama ava-01.png" style="width:240px;;height:auto;"/>
-              </div>
-              
-              <!-- Nav -->
-              <nav id="nav">
-                <ul>
-                  <li>
-                    <a href="http://www.namaava.com/">
-                      وب سایت اصلی
-                    </a>
-                  </li>
-                  <li>
-                    <a href="LastSeminars.html">
-                      سمینارهای برگزارشده
-                    </a>
-                  </li>
-                  <li>
-                    <a href="NextSeminars.htm">
-                      سمینارهای آینده
-                    </a>
-                  </li>
-                  <li>
-                    <a href="index.html">
-                      راهنمای استفاده
-                    </a>
-                  </li>
-                  <li class="current_page_item">
-                    <a href="index.html">
-                      صفحه نخست
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-              
-            </header>
-            <!-- Header -->
-            
-          </div>
-          <!-- 4 -->
-        </div>
-        <!-- 3 -->
-      </div>
-      <!-- 2 -->
-    </div>
-    <!-- 1 -->
-    
-    <!-- Banner Wrapper -->
-    <!-- 1 -->
-    <div id="banner-wrapper"  style="display:none;">
-      <!-- 2 -->
-      <div class="container">
+    <link rel="stylesheet" href="css/ie7.css"/>
+    <![endif]-->
+</head>
+<body class="homepage">
+
+<!-- Header Wrapper -->
+<!-- 1 -->
+<div id="header-wrapper">
+    <!-- 2 -->
+    <div class="container">
         <!-- 3 -->
         <div class="row">
-          <!-- 4 -->
-          <div class="12u">
-            
-            <!-- 5 -->
-            <!-- Banner -->
-            <div id="banner" class="box">
-              
-              <!-- 6 -->
-              <div>
-                <!-- 7 -->
-                <div class="row">
-                  <!-- 8 -->
-                 <div class="5u">
-                    <ul>
-                      <li>
-                        <div onClick="ShowLoginForms(true);"  style="cursor:pointer;">
-                        <img src="images/onlogin.png" style="width:400px; height:auto;" onMouseOver="this.src='images/login.png';" onMouseOut="this.src='images/onlogin.png';"/>
-                        </div>
-                      </li>
-                      <li>
-                        <div  onClick="ShowRegisterForm(true);"  style="cursor:pointer;">
-                         <img src="images/register.png" style="width:400px; height:auto;" onMouseOver="this.src='images/onregister.png';" onMouseOut="this.src='images/register.png';"/>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- 8 -->
-                  <!-- 8 -->
-                  <div class="7u title">
-                    به سامانه سمینارهای نمای آوای زندگی خوشامدید
-                    <br/>
-                    <br/>
-                    <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;">
-                      با استفاده از این سامانه شما می توانید با استفاده از کامپیوتر ، تبلت و گوش همراه خود از طریق اینترنت در سمینارهای ما شرکت کنید.  در صورتیکه عضو سامانه هستید دکمه 'عضو هستم' و در صورتی که میخواهید در سامانه سمینارهای نمای آوای زندگی عضو شوید، دکمه 'ثبت نام 'را فشار دهید.
-                      <br/>
-                      همچنین برای عضویت کافی است یک پیامک بدون متن به شماره 30002666000220 ارسال نمایید.
-                      
-                      
-                      
+            <!-- 4 -->
+            <div class="12u">
+
+                <!-- Header -->
+                <header id="header">
+
+
+                    <!-- Logo -->
+                    <div id="logo">
+                        <img src="images/nama ava-01.png" style="width:240px;;height:auto;"/>
                     </div>
-                  </div>
-                  <!-- 8 -->
-                </div>
-                <!-- 7 -->
-                
-              </div>
-              <!-- 6 -->
-              
+
+                    <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li>
+                                <a href="http://www.namaava.com/">
+                                    وب سایت اصلی
+                                </a>
+                            </li>
+                            <li>
+                                <a href="LastSeminars.html">
+                                    سمینارهای برگزارشده
+                                </a>
+                            </li>
+                            <li>
+                                <a href="NextSeminars.htm">
+                                    سمینارهای آینده
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    راهنمای استفاده
+                                </a>
+                            </li>
+                            <li class="current_page_item">
+                                <a href="index.html">
+                                    صفحه نخست
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </header>
+                <!-- Header -->
+
             </div>
-            <!-- 5 -->
-          </div>
-          <!-- 4 -->
+            <!-- 4 -->
         </div>
         <!-- 3 -->
-      </div>
-      <!-- 2 -->
     </div>
-    <!-- 1 -->
-    <!-- End Of Banner -->
-    
-    
-    
-    <!-- Begin Of User Info -->
-    <!-- 1 -->
-    <div id="loggedin-wrapper" style="display:none;">
-      <!-- 2 -->
-      <div class="container">
+    <!-- 2 -->
+</div>
+<!-- 1 -->
+
+<!-- Banner Wrapper -->
+<!-- 1 -->
+<div id="banner-wrapper" style="display:none;">
+    <!-- 2 -->
+    <div class="container">
         <!-- 3 -->
         <div class="row">
-          <!-- 4 -->
-          <div class="12u">
-            
-            <!-- 5 -->
-            <!-- Banner -->
-            <div id="banner">
-              
-              <!-- 6 -->
-              <div>
-                <!-- 7 -->
-                <div class="row">
-                  <!-- 8 -->
-                  <div class="5u customBoxBorder" >
-                  
-                     <div >
-                    	<div class="title fa-adn" style="color:#F00;">
-                        	پیام های سامانه به شما 
+            <!-- 4 -->
+            <div class="12u">
+
+                <!-- 5 -->
+                <!-- Banner -->
+                <div id="banner" class="box">
+
+                    <!-- 6 -->
+                    <div>
+                        <!-- 7 -->
+                        <div class="row">
+                            <!-- 8 -->
+                            <div class="5u">
+                                <ul>
+                                    <li>
+                                        <div onClick="ShowLoginForms(true);" style="cursor:pointer;">
+                                            <img src="images/onlogin.png" style="width:400px; height:auto;"
+                                                 onMouseOver="this.src='images/login.png';"
+                                                 onMouseOut="this.src='images/onlogin.png';"/>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div onClick="ShowRegisterForm(true);" style="cursor:pointer;">
+                                            <img src="images/register.png" style="width:400px; height:auto;"
+                                                 onMouseOver="this.src='images/onregister.png';"
+                                                 onMouseOut="this.src='images/register.png';"/>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 8 -->
+                            <!-- 8 -->
+                            <div class="7u title">
+                                به سامانه سمینارهای نمای آوای زندگی خوشامدید
+                                <br/>
+                                <br/>
+
+                                <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;">
+                                    با استفاده از این سامانه شما می توانید با استفاده از کامپیوتر ، تبلت و گوش همراه خود
+                                    از طریق اینترنت در سمینارهای ما شرکت کنید. در صورتیکه عضو سامانه هستید دکمه 'عضو
+                                    هستم' و در صورتی که میخواهید در سامانه سمینارهای نمای آوای زندگی عضو شوید، دکمه 'ثبت
+                                    نام 'را فشار دهید.
+                                    <br/>
+                                    همچنین برای عضویت کافی است یک پیامک بدون متن به شماره 30002666000220 ارسال نمایید.
+
+
+                                </div>
+                            </div>
+                            <!-- 8 -->
                         </div>
-                        <hr/>
-                        <div id="loggedinuser_systemMessage" style="color:#333;direction:rtl;text-align:right;font-size:14px;">
-                         	پیامی وجود ندارد.
-                        </div>
+                        <!-- 7 -->
+
                     </div>
-                  </div>
-                  <!-- 8 -->
-                  <!-- 8 -->
-                  <div class="7u title box">
-                    به سامانه سمینارهای نمای آوای زندگی خوشامدید
-                    <hr/>
-                    <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;" id="loggedin_userName">
-                    	
-                    </div>
-                     <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;" id="loggedin_email">
- </div>
+                    <!-- 6 -->
 
-   <div style="width:100%;font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;" id="loggedin_invited">
-
-   </div>
-
-   <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;"  id="loggedin_acceptedRequest">
-                    </div>
-
-   <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;"  id="loggedin_rejectedRequest">
-                    </div>
-
-   <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;" id="loggedin_credit">
-                  </div>
-<hr/>
-<div>
-
-    <div class="Animated3DButton" style="cursor:pointer;width:40%;float:right;" onClick="GoToPanel();">
-                         ورود به پانل مدیریت
-     </div>                 
-     
-       <div class="Animated3DButton" style="cursor:pointer;width:40%;float:left;" onClick="LogOutNew();">
-خروج از سیستم     </div>  
-       </div>
-
-                  </div>
-                  <!-- 8 -->
                 </div>
-                <!-- 7 -->
-                
-              </div>
-              <!-- 6 -->
-              
+                <!-- 5 -->
             </div>
-            <!-- 5 -->
-          </div>
-          <!-- 4 -->
+            <!-- 4 -->
         </div>
         <!-- 3 -->
-      </div>
-      <!-- 2 -->
     </div>
-    <!-- 1 -->
-    <!-- End Of UserInfo -->
-    
-    <!-- Begin Of Registeration -->
-    
-    <!-- 1 -->
-    <div id="register-wrapper" style="display:none;">
-      <!-- 2 -->
-      <div class="container">
+    <!-- 2 -->
+</div>
+<!-- 1 -->
+<!-- End Of Banner -->
+
+
+<!-- Begin Of User Info -->
+<!-- 1 -->
+<div id="loggedin-wrapper" style="display:none;">
+    <!-- 2 -->
+    <div class="container">
+        <!-- 3 -->
+        <div class="row">
+            <!-- 4 -->
+            <div class="12u">
+
+                <!-- 5 -->
+                <!-- Banner -->
+                <div id="banner">
+
+                    <!-- 6 -->
+                    <div>
+                        <!-- 7 -->
+                        <div class="row">
+                            <!-- 8 -->
+                            <div class="5u customBoxBorder">
+
+                                <div>
+                                    <div class="title fa-adn" style="color:#F00;">
+                                        پیام های سامانه به شما
+                                    </div>
+                                    <hr/>
+                                    <div id="loggedinuser_systemMessage"
+                                         style="color:#333;direction:rtl;text-align:right;font-size:14px;">
+                                        پیامی وجود ندارد.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 8 -->
+                            <!-- 8 -->
+                            <div class="7u title box">
+                                به سامانه سمینارهای نمای آوای زندگی خوشامدید
+                                <hr/>
+                                <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;"
+                                     id="loggedin_userName">
+
+                                </div>
+                                <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;"
+                                     id="loggedin_email">
+                                </div>
+
+                                <div style="width:100%;font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;"
+                                     id="loggedin_invited">
+
+                                </div>
+
+                                <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;"
+                                     id="loggedin_acceptedRequest">
+                                </div>
+
+                                <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;"
+                                     id="loggedin_rejectedRequest">
+                                </div>
+
+                                <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;"
+                                     id="loggedin_credit">
+                                </div>
+                                <hr/>
+                                <div>
+
+                                    <div class="Animated3DButton" style="cursor:pointer;width:40%;float:right;"
+                                         onClick="GoToPanel();">
+                                        ورود به پانل مدیریت
+                                    </div>
+
+                                    <div class="Animated3DButton" style="cursor:pointer;width:40%;float:left;"
+                                         onClick="LogOutNew();">
+                                        خروج از سیستم
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- 8 -->
+                        </div>
+                        <!-- 7 -->
+
+                    </div>
+                    <!-- 6 -->
+
+                </div>
+                <!-- 5 -->
+            </div>
+            <!-- 4 -->
+        </div>
+        <!-- 3 -->
+    </div>
+    <!-- 2 -->
+</div>
+<!-- 1 -->
+<!-- End Of UserInfo -->
+
+<!-- Begin Of Registeration -->
+
+<!-- 1 -->
+<div id="register-wrapper" style="display:none;">
+    <!-- 2 -->
+    <div class="container">
         <!-- 3-->
         <div class="row">
-          <!-- 4-->
-          <div class="12u">
-            
-            <!-- Banner -->
-            <!-- 5 -->
-            <div id="banner">
-              <!-- 6 -->
-              <div>
-                <!-- 7 -->
-                <div class="row">
-                  <!-- 8 -->
-                  <div class="5u title">
-                    ثبت نام کاربران جدید                    
-                    <br/>
-                    <br/>
-                    <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;">
-                      برای ثبت نام کافی است اطلاعات روبرو را تکمیل کرده و دکمه
-                      <u>
-                        'ثبت نام' 
-                      </u>
-                      را فشار دهید. سیستم بصورت خودکار، رایانامه حاوی کلمه عبور را به پست الکترونیکی شما ارسال میکند. همچنین شما می بایست در اولین ورود به سیستم با نام کاربری، اطلاعات خواسته شده را جهت تکمیل مراحل ثبت نام کامل نمایید.
-                      <br/>
-                      همچنین برای عضویت کافی است یک پیامک بدون متن به شماره 30002666000220 ارسال نمایید.
-                      
-                      
-                      
+            <!-- 4-->
+            <div class="12u">
+
+                <!-- Banner -->
+                <!-- 5 -->
+                <div id="banner">
+                    <!-- 6 -->
+                    <div>
+                        <!-- 7 -->
+                        <div class="row">
+                            <!-- 8 -->
+                            <div class="5u title">
+                                ثبت نام کاربران جدید
+                                <br/>
+                                <br/>
+
+                                <div style="font-family:Tahoma, Geneva, sans-serif;font-size:12px;color:#333;text-align:justify;">
+                                    برای ثبت نام کافی است اطلاعات روبرو را تکمیل کرده و دکمه
+                                    <u>
+                                        'ثبت نام'
+                                    </u>
+                                    را فشار دهید. سیستم بصورت خودکار، رایانامه حاوی کلمه عبور را به پست الکترونیکی شما
+                                    ارسال میکند. همچنین شما می بایست در اولین ورود به سیستم با نام کاربری، اطلاعات
+                                    خواسته شده را جهت تکمیل مراحل ثبت نام کامل نمایید.
+                                    <br/>
+                                    همچنین برای عضویت کافی است یک پیامک بدون متن به شماره 30002666000220 ارسال نمایید.
+
+
+                                </div>
+                            </div>
+                            <!-- 8 -->
+                            <div class="7u">
+                                <div style="direction:rtl;" class="customBoxBorder">
+                                    <br/>
+                                    <table style="width:100%;direction:rtl;text-align:justify;border:none;">
+                                        <tbody style="direction:rtl;text-align:justify;border:none;">
+                                        <tr>
+                                            <td width="40%">
+                                                <label for="fname2">
+                                                    نام کاربری
+                                                </label>
+                                            </td>
+                                            <td width="60%">
+                                                <div class="input-container">
+                                                    <input class="registerInput" name="fname" id="uname2" type="text"/>
+
+                                                    <div id="RegisterMessageUserName"
+                                                         style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="lname">
+                                                    پست الکترونیکی
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <div class="input-container">
+                                                    <input name="lname2" id="email2" type="text"
+                                                           onfocus="ShowRegisterationError(1);" class="registerInput"/>
+
+                                                    <div id="RegisterMessageEmail"
+                                                         style="text-align:justify;  display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="email">
+                                                    کلمه عبور
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <div class="input-container">
+                                                    <input name="email2" id="pass2" type="password"
+                                                           onfocus="ShowRegisterationError(2);" class="registerInput"/>
+
+                                                    <div id="RegisterMessagePass"
+                                                         style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="pass">
+                                                    تکرار کلمه عبور
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <div class="input-container">
+                                                    <input class="registerInput" name="pass" id="passConfirm2"
+                                                           type="password" onfocus="ShowRegisterationError(3);"/>
+
+                                                    <div id="RegisterMessageRepeatPass"
+                                                         style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td>
+                                                <div id="RegisterMessage2"
+                                                     style="text-align:justify; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;
+
+
+                                            </td>
+                                            <td>
+
+                                                <input type="submit" name="go" class="customButton1" value="ثبت نام"
+                                                       onclick="RegisterToServer2();"
+                                                       style="font-family:Tahoma, Geneva, sans-serif;"/>
+                                                <input type="submit" name="go" class="customButton1" value="بازگشت"
+                                                       onclick="ShowRegisterForm(false);"
+                                                       style="font-family:Tahoma, Geneva, sans-serif;"/>
+
+
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- 7-->
                     </div>
-                  </div>
-                  <!-- 8 -->
-                  <div class="7u">
-                    <div style="direction:rtl;" class="customBoxBorder">
-                      <br/>
-                      <table style="width:100%;direction:rtl;text-align:justify;border:none;">
-                        <tbody style="direction:rtl;text-align:justify;border:none;">
-                          <tr>
-                            <td width="40%">
-                              <label for="fname2">
-                                نام کاربری
-                              </label>
-                            </td>
-                            <td width="60%">
-                              <div class="input-container">
-                                <input class="registerInput"  name="fname" id="uname2" type="text" />
-                                <div id="RegisterMessageUserName" style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <label for="lname">
-                                پست الکترونیکی
-                              </label>
-                            </td>
-                            <td>
-                              <div class="input-container">
-                                <input name="lname2" id="email2" type="text" onfocus="ShowRegisterationError(1);" class="registerInput"/>
-                                <div id="RegisterMessageEmail" style="text-align:justify;  display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <label for="email">
-                                کلمه عبور
-                              </label>
-                            </td>
-                            <td>
-                              <div class="input-container">
-                                <input name="email2" id="pass2" type="password" onfocus="ShowRegisterationError(2);" class="registerInput"/>
-                                <div id="RegisterMessagePass" style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <label for="pass">
-                                تکرار کلمه عبور
-                              </label>
-                            </td>
-                            <td>
-                              <div class="input-container">
-                                <input class="registerInput" name="pass" id="passConfirm2" type="password" onfocus="ShowRegisterationError(3);" />
-                                <div id="RegisterMessageRepeatPass" style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                            </td>
-                            <td>
-                              <div id="RegisterMessage2" style="text-align:justify; font-family:Tahoma, Geneva, sans-serif;font-size:xx-small; color: #F00;">
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>&nbsp;
-                              
-                              
-                              
-                            </td>
-                            <td>
-                              
-                              <input type="submit" name="go"  class="customButton1" value="ثبت نام" onclick="RegisterToServer2();" style="font-family:Tahoma, Geneva, sans-serif;"/>
-                              <input type="submit" name="go"  class="customButton1" value="بازگشت" onclick="ShowRegisterForm(false);" style="font-family:Tahoma, Geneva, sans-serif;"/>
-                              
-                              
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      
-                    </div>
-                  </div>
-                  
+                    <!-- 6 -->
                 </div>
-                <!-- 7-->
-              </div>
-              <!-- 6 -->
+                <!-- 5 -->
             </div>
-            <!-- 5 -->
-          </div>
-          <!-- 4 -->
+            <!-- 4 -->
         </div>
         <!-- 3 -->
-      </div>
-      <!--2 -->
     </div>
-    <!-- 1 -->
-    
-    <!-- Ebnd If Registeration -->
-  
-    <!-- Begin of login -->
-    <!-- 1 -->
-    <div id="login-wrapper" style="display:none;">
-      <!-- 2 -->
-      <div class="container">
+    <!--2 -->
+</div>
+<!-- 1 -->
+
+<!-- Ebnd If Registeration -->
+
+<!-- Begin of login -->
+<!-- 1 -->
+<div id="login-wrapper" style="display:none;">
+    <!-- 2 -->
+    <div class="container">
         <!-- 3 -->
         <div class="row">
-          <!-- 4 -->
-          <div class="12u">
-            
-            <!-- 5 -->
-            <!-- Banner -->
-            <div id="banner">
-              
-              <!-- 6 -->
-              <div>
-                <!-- 7 -->
-                <div class="row">
-                  <!-- 8 -->
-                  <div class="5u">
-                  <section id="forgotpassword-form">
-		<form id="forgotpassword-forms">
-			<h1 style="font-family:tahoma;">فراموش کردن کلمه عبور</h1>
-            <div style="font-size:12px;direction:rtl;line-height:18px;text-align:justify">
-            	در صورت فراموش کردن کلمه عبور پست الکترونیکی خود را در فرم زیر وارد کرده و منتظر رایانامه ما حاوی کلمه عبور باشید.
-                همچنین میتوانید یک پیامک کوتاه با عدد 3 را به شماره 30002666000220 ارسال نمایید.
-                <br/>
-                <br/>
-            </div>
-			<div>
-				<input type="email" placeholder="پست الکترونیکی" id="forgot_password_email" name="forgot_password_email" required/>
-			</div>
-			<div>
-				<input type="submit" value="بازیابی کلمه عبور"/>
-			</div>
-		</form><!-- form -->
-	</section><!-- content -->
-                  </div>
-                  <!-- 8 -->
-                  <!-- 8 -->
-                  <div class="7u title login-content">
-	<section id="login-form">
-		<form id="login-forms">
-			<h1 style="font-family:tahoma;margin-bottom:43px;">ورود کاربران</h1>
-    
-			<div>
-				<input type="text" placeholder="نام کاربری" required id="username" />
-			</div>
-			<div>
-				<input type="password" placeholder="کلمه عبور" required id="password"/>
-			</div>
-			<div>
-           		
-				<input type="submit" value="ورود به سامانه" style="float:right;" />
-                <input type="button" value="ثبت نام" style="float:left;" onClick="ShowRegisterForm(true);" />
-                
-			</div>
-		</form><!-- form -->
-	</section><!-- content -->
-                  </div>
-                  <!-- 8 -->
+            <!-- 4 -->
+            <div class="12u">
+
+                <!-- 5 -->
+                <!-- Banner -->
+                <div id="banner">
+
+                    <!-- 6 -->
+                    <div>
+                        <!-- 7 -->
+                        <div class="row">
+                            <!-- 8 -->
+                            <div class="5u">
+                                <section id="forgotpassword-form">
+                                    <form id="forgotpassword-forms">
+                                        <h1 style="font-family:tahoma;">فراموش کردن کلمه عبور</h1>
+
+                                        <div style="font-size:12px;direction:rtl;line-height:18px;text-align:justify">
+                                            در صورت فراموش کردن کلمه عبور پست الکترونیکی خود را در فرم زیر وارد کرده و
+                                            منتظر رایانامه ما حاوی کلمه عبور باشید.
+                                            همچنین میتوانید یک پیامک کوتاه با عدد 3 را به شماره 30002666000220 ارسال
+                                            نمایید.
+                                            <br/>
+                                            <br/>
+                                        </div>
+                                        <div>
+                                            <input type="email" placeholder="پست الکترونیکی" id="forgot_password_email"
+                                                   name="forgot_password_email" required/>
+                                        </div>
+                                        <div>
+                                            <input type="submit" value="بازیابی کلمه عبور"/>
+                                        </div>
+                                    </form>
+                                    <!-- form -->
+                                </section>
+                                <!-- content -->
+                            </div>
+                            <!-- 8 -->
+                            <!-- 8 -->
+                            <div class="7u title login-content">
+                                <section id="login-form">
+                                    <form id="login-forms">
+                                        <h1 style="font-family:tahoma;margin-bottom:43px;">ورود کاربران</h1>
+
+                                        <div>
+                                            <input type="text" placeholder="نام کاربری" required id="username"/>
+                                        </div>
+                                        <div>
+                                            <input type="password" placeholder="کلمه عبور" required id="password"/>
+                                        </div>
+                                        <div>
+
+                                            <input type="submit" value="ورود به سامانه" style="float:right;"/>
+                                            <input type="button" value="ثبت نام" style="float:left;"
+                                                   onClick="ShowRegisterForm(true);"/>
+
+                                        </div>
+                                    </form>
+                                    <!-- form -->
+                                </section>
+                                <!-- content -->
+                            </div>
+                            <!-- 8 -->
+                        </div>
+                        <!-- 7 -->
+
+                    </div>
+                    <!-- 6 -->
+
                 </div>
-                <!-- 7 -->
-                
-              </div>
-              <!-- 6 -->
-              
+                <!-- 5 -->
             </div>
-            <!-- 5 -->
-          </div>
-          <!-- 4 -->
+            <!-- 4 -->
         </div>
         <!-- 3 -->
-      </div>
-      <!-- 2 -->
     </div>
-    <!-- 1 -->
-    <!-- End Of Login -->
-    <!-- Middle Page -->
-    <center>
-    <div id="main-wrapper"   style="border:dashed 1px; border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;">
+    <!-- 2 -->
+</div>
+<!-- 1 -->
+<!-- End Of Login -->
+<!-- Middle Page -->
+<center>
+    <div id="main-wrapper"
+         style="border:dashed 1px; border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;">
         <div class="container">
-          <div class="row">
-            <div class="4u">
-              
-              <!-- Sidebar -->
-              <div id="sidebar">
-                <section class="widget-thumbnails">
-                  <h3>
-                    اخبار
-                  </h3>
-                  <hr/>
-                 
-                    <div class="row">
-                      <div id="NewsContainer" style="text-align:right; direction:rtl;float:right;text-decoration: underline">
-                      
-                      </div>
-                     
-                      </div>
-                  <div >
-                  <img src="images/newsArchive.gif" style="height:60px;cursor:pointer;"/>
-                  </div>
-                </section>
-              </div>
-              
+            <div class="row">
+                <div class="4u">
+
+                    <!-- Sidebar -->
+                    <div id="sidebar">
+                        <section class="widget-thumbnails">
+                            <h3>
+                                اخبار
+                            </h3>
+                            <hr/>
+
+                            <div class="row">
+                                <div id="NewsContainer"
+                                     style="text-align:right; direction:rtl;float:right;text-decoration: underline">
+
+                                </div>
+
+                            </div>
+                            <div>
+                                <img src="images/newsArchive.gif" style="height:60px;cursor:pointer;"/>
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+                <div class="8u">
+
+                    <!-- Content -->
+                    <div id="content">
+
+                        <ul class="bxslider" id="Gallery">
+                            <li><img src="images/pic01.jpg"
+                                     style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>
+                            <li><img src="images/pic02.jpg"
+                                     style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>
+                            <li><img src="images/pic03.jpg"
+                                     style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>
+                            <li><img src="images/pic04.jpg"
+                                     style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>
+                            <li><img src="images/pic04.jpg"
+                                     style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>
+                        </ul>
+
+                    </div>
+
+                </div>
             </div>
-            <div class="8u">
-              
-              <!-- Content -->
-              <div id="content" >
-           
-                 <ul class="bxslider" id="Gallery">
-  <li><img src="images/pic01.jpg" style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>
-  <li><img src="images/pic02.jpg" style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>
-  <li><img src="images/pic03.jpg" style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>
-  <li><img src="images/pic04.jpg" style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>
-    <li><img src="images/pic04.jpg" style="width:90%;height:100%;max-height:300px;border-radius:10px;	"/></li>
-</ul>
-   
-              </div>
-              
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     <!-- end of middle -->
     <!-- Features Wrapper -->
     <div id="features-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="4u">
-            
-            <!-- Box -->
-            <section class="box box-feature" id="seminar_top_1">
-             <div id="seminar_top_1">
-           </div>
+        <div class="container">
+            <div class="row">
+                <div class="4u">
+
+                    <!-- Box -->
+                    <section class="box box-feature" id="seminar_top_1">
+                        <div id="seminar_top_1">
+                        </div>
 
 
-            </section>
-            
-          </div>
-          <div class="4u">
-            
-            <!-- Box -->
-           <section class="box box-feature">
-           <div id="seminar_top_2">
-           </div>
-              
+                    </section>
 
-            </section>
-            
-          </div>
-          <div class="4u">
-            
-           <section class="box box-feature" id="seminar_top_3">
-            <div id="seminar_top_3">
-           </div>
-         
+                </div>
+                <div class="4u">
 
-            </section>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-      </center>
-    
+                    <!-- Box -->
+                    <section class="box box-feature">
+                        <div id="seminar_top_2">
+                        </div>
 
-    
-    <!-- Footer Wrapper -->
-    <div id="footer-wrapper">
-      <footer id="footer" class="container">
-        <div class="row">
-          <div class="12u">
-            <div id="copyright">
-              تمامی حقوق مادی و معنوی این وب‌سایت متعلق به موسسه فرهنگی هنری نماآوای زندگی می‌باشد. © 1387 - 1392
-              <br/>
-              هرگونه کپی برداری بدون ذکر نام نماآوای زندگی غیرمجاز می‌باشد.
+
+                    </section>
+
+                </div>
+                <div class="4u">
+
+                    <section class="box box-feature" id="seminar_top_3">
+                        <div id="seminar_top_3">
+                        </div>
+
+
+                    </section>
+
+                </div>
             </div>
-          </div>
         </div>
-      </footer>
     </div>
-    
-    
-    <!-- Modal Dialog -->
-    <div id="openModal" class="modalDialog">
-        <div>
-            <div id="openModal_Close" title="Close" class="close" onClick="CloseModalWindow();" >X</div>
-            <center>
-            <h2 id="openModel_Title" style="font-family:tahoma;font-size:16px;margin-bottom:20px;margin-top:10px; letter-spacing:1px;">توجه</h2>
+
+</center>
+
+
+<!-- Footer Wrapper -->
+<div id="footer-wrapper">
+    <footer id="footer" class="container">
+        <div class="row">
+            <div class="12u">
+                <div id="copyright">
+                    تمامی حقوق مادی و معنوی این وب‌سایت متعلق به موسسه فرهنگی هنری نماآوای زندگی می‌باشد. © 1387 - 1392
+                    <br/>
+                    هرگونه کپی برداری بدون ذکر نام نماآوای زندگی غیرمجاز می‌باشد.
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<!-- Modal Dialog -->
+<div id="openModal" class="modalDialog">
+    <div>
+        <div id="openModal_Close" title="Close" class="close" onClick="CloseModalWindow();">X</div>
+        <center>
+            <h2 id="openModel_Title"
+                style="font-family:tahoma;font-size:16px;margin-bottom:20px;margin-top:10px; letter-spacing:1px;">
+                توجه</h2>
             <hr/>
-            </center>
-            <center>
+        </center>
+        <center>
             <div style="font-family:tahoma;font-size:14px;direction:rtl;margin-bottom:10px;">
-            <p id="openModal_Message"></p>
+                <p id="openModal_Message"></p>
             </div>
-            </center>
-        </div>
-	</div>
-    <!-- End Of Modal -->
-    
-    
-  </body>
+        </center>
+    </div>
+</div>
+<!-- End Of Modal -->
+
+
+</body>
 </html>
