@@ -1283,7 +1283,7 @@ function LoadSeminars(topEventsCount) {
                 walk(document.body, replaceNumbers);
             }
             else {
-                alert(result.Message);
+                console.log(result.Message);
             }
         });
 }
@@ -1352,7 +1352,7 @@ function LoadPastSeminars(topEventsCount) {
                 walk(document.body, replaceNumbers);
             }
             else {
-                alert(result.Message);
+               console.log(result.Message);
             }
         });
 }
@@ -1613,7 +1613,7 @@ function LoadPastSeminarsB(topEventsCount) {
                 walk(document.body, replaceNumbers);
             }
             else {
-                alert(result.Message);
+                console.log(result.Message);
             }
         });
 }
@@ -1646,7 +1646,7 @@ function LoadNextSeminarsB(topEventsCount) {
                 walk(document.body, replaceNumbers);
             }
             else {
-                alert(result.Message);
+                console.log(result.Message);
             }
         });
 }
