@@ -48,6 +48,7 @@
                     var guid = qs["guid"];
 
                     var type = qs["type"];
+                    console.log(guid);
                     console.log("type is:" + type);
                     if (type == 2) {
                         $('#forgetPassword').show();
@@ -73,6 +74,56 @@
                     }
                 }
         );
+
+        function ForgetPasswordHandler(){
+            var m_pass = $("#pass").val();
+            var m_confirmPass = $("#passConfirm").val();
+
+            if(m_pass == "")
+            {
+                $("#ForgetPassMessage").html("لطفا کلمه عبور را وارد کنید.");
+                $("#ForgetPassMessage").show();
+                setTimeout(function(){
+                    $("#ForgetPassMessage").hide();
+                },3000);
+            }
+            else if(m_confirmPass == "") {
+                $("#ForgetPassMessage").html("لطفا تکرار کلمه عبور را وارد کنید.");
+                $("#ForgetPassMessage").show();
+                setTimeout(function(){
+                    $("#ForgetPassMessage").hide();
+                },3000);
+            }
+            else if(m_confirmPass != m_pass) {
+                $("#ForgetPassMessage").html("کلمه عبور و تکرار آن با هم برابر نیستند.");
+                $("#ForgetPassMessage").show();
+                setTimeout(function(){
+                    $("#ForgetPassMessage").hide();
+                },3000);
+            }
+            else{
+                $("#ForgetPassMessage").html("در حال تغییر کلمه عبور....");
+                $("#ForgetPassMessage").show();
+                $("input[name=ForgetPassBtn]").hide();
+                $.getJSON(ServerURL + "Account/ChangePasswordForget",
+                        {id:guid ,
+                            newPassword: m_pass
+                        },
+                        function(result)
+                        {
+                            if(result.Status == true){
+                                $('#ForgetPassMessage').removeClass("ErrorLink");
+                                $('#ForgetPassMessage').addClass("SuccessLink");
+                                $("#ForgetPassMessage").html("کلمه عبور شما با موفقیت تغییر یافت. جهت ورو به سایت به صفحه [خانه] رفته و با نام کاربری و کلمه عبور خود وارد شوید");
+                            }
+                            else{
+                                $("#ForgetPassMessage").html(result.Message);
+                                $("input[name=ForgetPassBtn]").show();
+                            }
+                        });
+            }
+        }
+
 
     </script>
 
@@ -184,6 +235,68 @@
         </div>
         <br class="clear"/>
     </div>
+</div>
+<div class="fl_right" id = "forgetPassword" style="display:none;">
+
+    <table>
+        <tr>
+            <td style="border:none;">
+                <h2 style="direction:rtl;float:right;font-family:Tahoma, Geneva, sans-serif;">فراموش کردن کلمه عبور</h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="border:none;">
+                <hr/>
+            </td>
+        </tr>
+        <tr>
+            <td style="border:none;font-size:11px">
+                <table>
+                    <tr>
+                        <td style="border:none;">
+                            <label for="email">کلمه عبور</label>
+                        </td>
+                        <td style="border:none;">
+                            <div class="input-container" style="float:right;">
+                                <input id="pass" type="password" />
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:none;">
+                            <label for="pass">تکرار کلمه عبور</label>
+                        </td>
+                        <td style="border:none;">
+                            <div class="input-container" style="float:right;">
+                                <input id="passConfirm" type="password"  />
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="border:none;font-size:11px">
+                <hr/>
+            </td>
+        </tr>
+        <tr><td valign="middle" align="center" style="border:none;">
+            <input type="submit" name="ForgetPassBtn"  class="col2" value="ثبت " onclick="ForgetPasswordHandler();" style="width:100px; font-family:Tahoma, Geneva, sans-serif;"/>
+        </td></tr>
+    </table>
+
+    <div id="ForgetPassMessage"  class="ErrorLink" style="text-align:justify; display: none; font-family:Tahoma, Geneva, sans-serif;font-size:11px;">
+    </div>
+
+    <br/>
+    <br/>
+    <!--    <ul>
+          <li><a href="#">Link Text</a></li>
+          <li><a href="#">Link Text</a></li>
+          <li class="last"><a href="#">Link Text</a></li>
+        </ul>-->
 </div>
 
 
