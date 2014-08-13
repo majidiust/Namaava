@@ -32,7 +32,7 @@
     </script>
     <!-- End Homepage Specific Elements -->
     <script type="text/javascript">
-
+        var guid;
         $(document).ready(function () {
                     $.modal.close();
                     LoadPageComponents();
@@ -45,7 +45,7 @@
                     }
 
                     var qs = getQueryStrings();
-                    var guid = qs["guid"];
+                    guid = qs["guid"];
 
                     var type = qs["type"];
                     console.log(guid);
