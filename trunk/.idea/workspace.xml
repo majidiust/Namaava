@@ -27,9 +27,9 @@
         <entry file="file://$PROJECT_DIR$/Panels/blank.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.33203125" vertical-offset="38488" max-vertical-offset="57103">
-              <caret line="2290" column="59" selection-start-line="2290" selection-start-column="59" selection-end-line="2290" selection-end-column="59" />
+              <caret line="2290" column="57" selection-start-line="2290" selection-start-column="57" selection-end-line="2290" selection-end-column="57" />
               <folding>
-                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#9;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1407925569346" expanded="true" signature="6806:6820" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -452,9 +452,9 @@
     <entry file="file://$PROJECT_DIR$/Panels/blank.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33203125" vertical-offset="38488" max-vertical-offset="57103">
-          <caret line="2290" column="59" selection-start-line="2290" selection-start-column="59" selection-end-line="2290" selection-end-column="59" />
+          <caret line="2290" column="57" selection-start-line="2290" selection-start-column="57" selection-end-line="2290" selection-end-column="57" />
           <folding>
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#9;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1407925569346" expanded="true" signature="6806:6820" placeholder="..." />
           </folding>
         </state>
       </provider>
