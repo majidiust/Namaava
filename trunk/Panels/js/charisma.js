@@ -48,7 +48,7 @@ $(document).ready(function () {
             //Fetch The User Balanc Data
             CustomBlockingPanel('توجه', 'در حال دریافت اطلاعات از سرور ... ', -1, null);
             $.ajax({
-                type: 'GET',
+                type: 'POST',
                 url: ServerURL + "Payment/ConfirmPayment",
                 data: {paymentId:qs["paymentCode"]},
                 dataType: 'json',
