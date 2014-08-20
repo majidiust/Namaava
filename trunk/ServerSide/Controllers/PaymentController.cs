@@ -563,6 +563,7 @@ namespace Webinar.Controllers
                     {
                         profile.Balance += int.Parse(fee);
                         payment.IsCalculated = true;
+                        m_bankDb.SubmitChanges();
                         m_model.SubmitChanges();
                     }
                    
