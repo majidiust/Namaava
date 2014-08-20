@@ -33,15 +33,15 @@ namespace Webinar.Models
     partial void InsertApplication(Application instance);
     partial void UpdateApplication(Application instance);
     partial void DeleteApplication(Application instance);
-    partial void InsertPayment(Payment instance);
-    partial void UpdatePayment(Payment instance);
-    partial void DeletePayment(Payment instance);
     partial void InsertBankInfo(BankInfo instance);
     partial void UpdateBankInfo(BankInfo instance);
     partial void DeleteBankInfo(BankInfo instance);
     partial void InsertBankResponse(BankResponse instance);
     partial void UpdateBankResponse(BankResponse instance);
     partial void DeleteBankResponse(BankResponse instance);
+    partial void InsertPayment(Payment instance);
+    partial void UpdatePayment(Payment instance);
+    partial void DeletePayment(Payment instance);
     #endregion
 		
 		public BankDataBaseDataContext() : 
@@ -82,14 +82,6 @@ namespace Webinar.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Payment> Payments
-		{
-			get
-			{
-				return this.GetTable<Payment>();
-			}
-		}
-		
 		public System.Data.Linq.Table<BankInfo> BankInfos
 		{
 			get
@@ -111,6 +103,14 @@ namespace Webinar.Models
 			get
 			{
 				return this.GetTable<PaymentInformation>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Payment> Payments
+		{
+			get
+			{
+				return this.GetTable<Payment>();
 			}
 		}
 	}
@@ -250,346 +250,6 @@ namespace Webinar.Models
 		{
 			this.SendPropertyChanging();
 			entity.Application = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment")]
-	public partial class Payment : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _PaymentId;
-		
-		private System.Nullable<System.Guid> _UserId;
-		
-		private string _Amount;
-		
-		private System.Nullable<System.DateTime> _Date;
-		
-		private System.Nullable<int> _BankId;
-		
-		private string _TimeStamp;
-		
-		private string _DiscountCode;
-		
-		private System.Nullable<System.Guid> _ApplicationCode;
-		
-		private EntitySet<BankResponse> _BankResponses;
-		
-		private EntityRef<Application> _Application;
-		
-		private EntityRef<BankInfo> _BankInfo;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPaymentIdChanging(int value);
-    partial void OnPaymentIdChanged();
-    partial void OnUserIdChanging(System.Nullable<System.Guid> value);
-    partial void OnUserIdChanged();
-    partial void OnAmountChanging(string value);
-    partial void OnAmountChanged();
-    partial void OnDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateChanged();
-    partial void OnBankIdChanging(System.Nullable<int> value);
-    partial void OnBankIdChanged();
-    partial void OnTimeStampChanging(string value);
-    partial void OnTimeStampChanged();
-    partial void OnDiscountCodeChanging(string value);
-    partial void OnDiscountCodeChanged();
-    partial void OnApplicationCodeChanging(System.Nullable<System.Guid> value);
-    partial void OnApplicationCodeChanged();
-    #endregion
-		
-		public Payment()
-		{
-			this._BankResponses = new EntitySet<BankResponse>(new Action<BankResponse>(this.attach_BankResponses), new Action<BankResponse>(this.detach_BankResponses));
-			this._Application = default(EntityRef<Application>);
-			this._BankInfo = default(EntityRef<BankInfo>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int PaymentId
-		{
-			get
-			{
-				return this._PaymentId;
-			}
-			set
-			{
-				if ((this._PaymentId != value))
-				{
-					this.OnPaymentIdChanging(value);
-					this.SendPropertyChanging();
-					this._PaymentId = value;
-					this.SendPropertyChanged("PaymentId");
-					this.OnPaymentIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="NVarChar(50)")]
-		public string Amount
-		{
-			get
-			{
-				return this._Amount;
-			}
-			set
-			{
-				if ((this._Amount != value))
-				{
-					this.OnAmountChanging(value);
-					this.SendPropertyChanging();
-					this._Amount = value;
-					this.SendPropertyChanged("Amount");
-					this.OnAmountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BankId", DbType="Int")]
-		public System.Nullable<int> BankId
-		{
-			get
-			{
-				return this._BankId;
-			}
-			set
-			{
-				if ((this._BankId != value))
-				{
-					if (this._BankInfo.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnBankIdChanging(value);
-					this.SendPropertyChanging();
-					this._BankId = value;
-					this.SendPropertyChanged("BankId");
-					this.OnBankIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeStamp", DbType="NVarChar(20)")]
-		public string TimeStamp
-		{
-			get
-			{
-				return this._TimeStamp;
-			}
-			set
-			{
-				if ((this._TimeStamp != value))
-				{
-					this.OnTimeStampChanging(value);
-					this.SendPropertyChanging();
-					this._TimeStamp = value;
-					this.SendPropertyChanged("TimeStamp");
-					this.OnTimeStampChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiscountCode", DbType="NVarChar(50)")]
-		public string DiscountCode
-		{
-			get
-			{
-				return this._DiscountCode;
-			}
-			set
-			{
-				if ((this._DiscountCode != value))
-				{
-					this.OnDiscountCodeChanging(value);
-					this.SendPropertyChanging();
-					this._DiscountCode = value;
-					this.SendPropertyChanged("DiscountCode");
-					this.OnDiscountCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApplicationCode", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> ApplicationCode
-		{
-			get
-			{
-				return this._ApplicationCode;
-			}
-			set
-			{
-				if ((this._ApplicationCode != value))
-				{
-					if (this._Application.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnApplicationCodeChanging(value);
-					this.SendPropertyChanging();
-					this._ApplicationCode = value;
-					this.SendPropertyChanged("ApplicationCode");
-					this.OnApplicationCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Payment_BankResponse", Storage="_BankResponses", ThisKey="PaymentId", OtherKey="PaymentId")]
-		public EntitySet<BankResponse> BankResponses
-		{
-			get
-			{
-				return this._BankResponses;
-			}
-			set
-			{
-				this._BankResponses.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Application_Payment", Storage="_Application", ThisKey="ApplicationCode", OtherKey="ApplicationCode", IsForeignKey=true)]
-		public Application Application
-		{
-			get
-			{
-				return this._Application.Entity;
-			}
-			set
-			{
-				Application previousValue = this._Application.Entity;
-				if (((previousValue != value) 
-							|| (this._Application.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Application.Entity = null;
-						previousValue.Payments.Remove(this);
-					}
-					this._Application.Entity = value;
-					if ((value != null))
-					{
-						value.Payments.Add(this);
-						this._ApplicationCode = value.ApplicationCode;
-					}
-					else
-					{
-						this._ApplicationCode = default(Nullable<System.Guid>);
-					}
-					this.SendPropertyChanged("Application");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BankInfo_Payment", Storage="_BankInfo", ThisKey="BankId", OtherKey="BankId", IsForeignKey=true)]
-		public BankInfo BankInfo
-		{
-			get
-			{
-				return this._BankInfo.Entity;
-			}
-			set
-			{
-				BankInfo previousValue = this._BankInfo.Entity;
-				if (((previousValue != value) 
-							|| (this._BankInfo.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BankInfo.Entity = null;
-						previousValue.Payments.Remove(this);
-					}
-					this._BankInfo.Entity = value;
-					if ((value != null))
-					{
-						value.Payments.Add(this);
-						this._BankId = value.BankId;
-					}
-					else
-					{
-						this._BankId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("BankInfo");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BankResponses(BankResponse entity)
-		{
-			this.SendPropertyChanging();
-			entity.Payment = this;
-		}
-		
-		private void detach_BankResponses(BankResponse entity)
-		{
-			this.SendPropertyChanging();
-			entity.Payment = null;
 		}
 	}
 	
@@ -1260,6 +920,370 @@ namespace Webinar.Models
 					this._TransId = value;
 				}
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment")]
+	public partial class Payment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PaymentId;
+		
+		private System.Nullable<System.Guid> _UserId;
+		
+		private string _Amount;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private System.Nullable<int> _BankId;
+		
+		private string _TimeStamp;
+		
+		private string _DiscountCode;
+		
+		private System.Nullable<System.Guid> _ApplicationCode;
+		
+		private System.Nullable<bool> _IsCalculated;
+		
+		private EntitySet<BankResponse> _BankResponses;
+		
+		private EntityRef<Application> _Application;
+		
+		private EntityRef<BankInfo> _BankInfo;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPaymentIdChanging(int value);
+    partial void OnPaymentIdChanged();
+    partial void OnUserIdChanging(System.Nullable<System.Guid> value);
+    partial void OnUserIdChanged();
+    partial void OnAmountChanging(string value);
+    partial void OnAmountChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
+    partial void OnBankIdChanging(System.Nullable<int> value);
+    partial void OnBankIdChanged();
+    partial void OnTimeStampChanging(string value);
+    partial void OnTimeStampChanged();
+    partial void OnDiscountCodeChanging(string value);
+    partial void OnDiscountCodeChanged();
+    partial void OnApplicationCodeChanging(System.Nullable<System.Guid> value);
+    partial void OnApplicationCodeChanged();
+    partial void OnIsCalculatedChanging(System.Nullable<bool> value);
+    partial void OnIsCalculatedChanged();
+    #endregion
+		
+		public Payment()
+		{
+			this._BankResponses = new EntitySet<BankResponse>(new Action<BankResponse>(this.attach_BankResponses), new Action<BankResponse>(this.detach_BankResponses));
+			this._Application = default(EntityRef<Application>);
+			this._BankInfo = default(EntityRef<BankInfo>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int PaymentId
+		{
+			get
+			{
+				return this._PaymentId;
+			}
+			set
+			{
+				if ((this._PaymentId != value))
+				{
+					this.OnPaymentIdChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentId = value;
+					this.SendPropertyChanged("PaymentId");
+					this.OnPaymentIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="NVarChar(50)")]
+		public string Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this.OnAmountChanging(value);
+					this.SendPropertyChanging();
+					this._Amount = value;
+					this.SendPropertyChanged("Amount");
+					this.OnAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BankId", DbType="Int")]
+		public System.Nullable<int> BankId
+		{
+			get
+			{
+				return this._BankId;
+			}
+			set
+			{
+				if ((this._BankId != value))
+				{
+					if (this._BankInfo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBankIdChanging(value);
+					this.SendPropertyChanging();
+					this._BankId = value;
+					this.SendPropertyChanged("BankId");
+					this.OnBankIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeStamp", DbType="NVarChar(20)")]
+		public string TimeStamp
+		{
+			get
+			{
+				return this._TimeStamp;
+			}
+			set
+			{
+				if ((this._TimeStamp != value))
+				{
+					this.OnTimeStampChanging(value);
+					this.SendPropertyChanging();
+					this._TimeStamp = value;
+					this.SendPropertyChanged("TimeStamp");
+					this.OnTimeStampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiscountCode", DbType="NVarChar(50)")]
+		public string DiscountCode
+		{
+			get
+			{
+				return this._DiscountCode;
+			}
+			set
+			{
+				if ((this._DiscountCode != value))
+				{
+					this.OnDiscountCodeChanging(value);
+					this.SendPropertyChanging();
+					this._DiscountCode = value;
+					this.SendPropertyChanged("DiscountCode");
+					this.OnDiscountCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApplicationCode", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> ApplicationCode
+		{
+			get
+			{
+				return this._ApplicationCode;
+			}
+			set
+			{
+				if ((this._ApplicationCode != value))
+				{
+					if (this._Application.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnApplicationCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ApplicationCode = value;
+					this.SendPropertyChanged("ApplicationCode");
+					this.OnApplicationCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsCalculated", DbType="Bit")]
+		public System.Nullable<bool> IsCalculated
+		{
+			get
+			{
+				return this._IsCalculated;
+			}
+			set
+			{
+				if ((this._IsCalculated != value))
+				{
+					this.OnIsCalculatedChanging(value);
+					this.SendPropertyChanging();
+					this._IsCalculated = value;
+					this.SendPropertyChanged("IsCalculated");
+					this.OnIsCalculatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Payment_BankResponse", Storage="_BankResponses", ThisKey="PaymentId", OtherKey="PaymentId")]
+		public EntitySet<BankResponse> BankResponses
+		{
+			get
+			{
+				return this._BankResponses;
+			}
+			set
+			{
+				this._BankResponses.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Application_Payment", Storage="_Application", ThisKey="ApplicationCode", OtherKey="ApplicationCode", IsForeignKey=true)]
+		public Application Application
+		{
+			get
+			{
+				return this._Application.Entity;
+			}
+			set
+			{
+				Application previousValue = this._Application.Entity;
+				if (((previousValue != value) 
+							|| (this._Application.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Application.Entity = null;
+						previousValue.Payments.Remove(this);
+					}
+					this._Application.Entity = value;
+					if ((value != null))
+					{
+						value.Payments.Add(this);
+						this._ApplicationCode = value.ApplicationCode;
+					}
+					else
+					{
+						this._ApplicationCode = default(Nullable<System.Guid>);
+					}
+					this.SendPropertyChanged("Application");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BankInfo_Payment", Storage="_BankInfo", ThisKey="BankId", OtherKey="BankId", IsForeignKey=true)]
+		public BankInfo BankInfo
+		{
+			get
+			{
+				return this._BankInfo.Entity;
+			}
+			set
+			{
+				BankInfo previousValue = this._BankInfo.Entity;
+				if (((previousValue != value) 
+							|| (this._BankInfo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BankInfo.Entity = null;
+						previousValue.Payments.Remove(this);
+					}
+					this._BankInfo.Entity = value;
+					if ((value != null))
+					{
+						value.Payments.Add(this);
+						this._BankId = value.BankId;
+					}
+					else
+					{
+						this._BankId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("BankInfo");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BankResponses(BankResponse entity)
+		{
+			this.SendPropertyChanging();
+			entity.Payment = this;
+		}
+		
+		private void detach_BankResponses(BankResponse entity)
+		{
+			this.SendPropertyChanging();
+			entity.Payment = null;
 		}
 	}
 }
