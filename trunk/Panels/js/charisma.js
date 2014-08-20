@@ -49,12 +49,13 @@ $(document).ready(function () {
             CustomBlockingPanel('توجه', 'در حال دریافت اطلاعات از سرور ... ', -1, null);
             $.ajax({
                 type: 'GET',
-                url: ServerURL + "Account/GetUserBalance",
+                url: ServerURL + "Payment/ConfirmPayment",
+                data: {paymentId:qs["paymentCode"]},
                 dataType: 'json',
                 success: function (result) {
                     CustomBlockingPanel('توجه', 'اطلاعات دریاف شد.', 1000, null);
                     if (result.Status == true) {
-                        $("#BankResponseShow_UserBalanace").html(result.Result.balance + '  ریال است ');
+                        $("#BankResponseShow_UserBalanace").html(result.balance + '  ریال است ');
                     } else {
                         CustomAlert('خطا', result.Message, null);
                     }

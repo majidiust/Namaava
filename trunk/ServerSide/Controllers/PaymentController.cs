@@ -84,9 +84,7 @@ namespace Webinar.Controllers
                     hashCode = post["x_fp_hash"]
                 };
                 #endregion
-                #region Check The HashCode
-                //TODO
-                #endregion
+
                 #region Refetch PaymentInfo
                 var paymentCount = m_bankDb.Payments.Count(P => P.PaymentId == int.Parse(bankResult.sequence));
                 Application application = null;
@@ -548,6 +546,32 @@ namespace Webinar.Controllers
             }
         }
 
+        [HttpPost]
+        [Authorize]
+        public ActionResult ConfirmPayment(int paymentId)
+        {
+            try
+            {
+                if (m_bankDb.Payments.Count(P => P.PaymentId == paymentId) > 0)
+                {
+                    string userName = User.Identity.Name;
+                    aspnet_User user = m_model.aspnet_Users.Single(P => P.UserName.ToLower().Equals(userName));
+                    var profile = m_model.Profiles.Single(P => P.UserId == user.UserId);
+                    var payment = m_bankDb.Payments.Single(P => P.PaymentId == paymentId);
+                    var fee = payment.Amount;
+                    profile.Balance += int.Parse(fee);
+                    return Json(new { Status = true, balance = profile.Balance, Message = "ok" }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(new { Status = false, Message = "Payment is incorrect" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Status = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
         private string createfpHash(string signacher)
         {
             string key = "eoXaEm2LUnz2OiyQ";
