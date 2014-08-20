@@ -559,7 +559,7 @@ namespace Webinar.Controllers
                     var profile = m_model.Profiles.Single(P => P.UserId == user.UserId);
                     var payment = m_bankDb.Payments.Single(P => P.PaymentId == paymentId);
                     var fee = payment.Amount;
-                    if (payment.IsCalculated != null || payment.IsCalculated == false)
+                    if (payment.IsCalculated != null && payment.IsCalculated == false)
                     {
                         profile.Balance += int.Parse(fee);
                         payment.IsCalculated = true;
