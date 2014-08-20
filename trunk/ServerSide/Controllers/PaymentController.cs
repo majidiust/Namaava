@@ -560,6 +560,7 @@ namespace Webinar.Controllers
                     var payment = m_bankDb.Payments.Single(P => P.PaymentId == paymentId);
                     var fee = payment.Amount;
                     profile.Balance += int.Parse(fee);
+                    m_model.SubmitChanges();
                     return Json(new { Status = true, balance = profile.Balance, Message = "ok" }, JsonRequestBehavior.AllowGet);
                 }
                 else
