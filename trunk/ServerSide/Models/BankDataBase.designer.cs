@@ -30,15 +30,15 @@ namespace Webinar.Models
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertApplication(Application instance);
-    partial void UpdateApplication(Application instance);
-    partial void DeleteApplication(Application instance);
     partial void InsertBankInfo(BankInfo instance);
     partial void UpdateBankInfo(BankInfo instance);
     partial void DeleteBankInfo(BankInfo instance);
     partial void InsertBankResponse(BankResponse instance);
     partial void UpdateBankResponse(BankResponse instance);
     partial void DeleteBankResponse(BankResponse instance);
+    partial void InsertApplication(Application instance);
+    partial void UpdateApplication(Application instance);
+    partial void DeleteApplication(Application instance);
     partial void InsertPayment(Payment instance);
     partial void UpdatePayment(Payment instance);
     partial void DeletePayment(Payment instance);
@@ -74,14 +74,6 @@ namespace Webinar.Models
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Application> Applications
-		{
-			get
-			{
-				return this.GetTable<Application>();
-			}
-		}
-		
 		public System.Data.Linq.Table<BankInfo> BankInfos
 		{
 			get
@@ -106,150 +98,20 @@ namespace Webinar.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<Application> Applications
+		{
+			get
+			{
+				return this.GetTable<Application>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Payment> Payments
 		{
 			get
 			{
 				return this.GetTable<Payment>();
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Application")]
-	public partial class Application : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Guid _ApplicationCode;
-		
-		private string _ApplicationName;
-		
-		private string _ReturnUrl;
-		
-		private EntitySet<Payment> _Payments;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnApplicationCodeChanging(System.Guid value);
-    partial void OnApplicationCodeChanged();
-    partial void OnApplicationNameChanging(string value);
-    partial void OnApplicationNameChanged();
-    partial void OnReturnUrlChanging(string value);
-    partial void OnReturnUrlChanged();
-    #endregion
-		
-		public Application()
-		{
-			this._Payments = new EntitySet<Payment>(new Action<Payment>(this.attach_Payments), new Action<Payment>(this.detach_Payments));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApplicationCode", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
-		public System.Guid ApplicationCode
-		{
-			get
-			{
-				return this._ApplicationCode;
-			}
-			set
-			{
-				if ((this._ApplicationCode != value))
-				{
-					this.OnApplicationCodeChanging(value);
-					this.SendPropertyChanging();
-					this._ApplicationCode = value;
-					this.SendPropertyChanged("ApplicationCode");
-					this.OnApplicationCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApplicationName", DbType="NVarChar(50)")]
-		public string ApplicationName
-		{
-			get
-			{
-				return this._ApplicationName;
-			}
-			set
-			{
-				if ((this._ApplicationName != value))
-				{
-					this.OnApplicationNameChanging(value);
-					this.SendPropertyChanging();
-					this._ApplicationName = value;
-					this.SendPropertyChanged("ApplicationName");
-					this.OnApplicationNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReturnUrl", DbType="NVarChar(50)")]
-		public string ReturnUrl
-		{
-			get
-			{
-				return this._ReturnUrl;
-			}
-			set
-			{
-				if ((this._ReturnUrl != value))
-				{
-					this.OnReturnUrlChanging(value);
-					this.SendPropertyChanging();
-					this._ReturnUrl = value;
-					this.SendPropertyChanged("ReturnUrl");
-					this.OnReturnUrlChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Application_Payment", Storage="_Payments", ThisKey="ApplicationCode", OtherKey="ApplicationCode")]
-		public EntitySet<Payment> Payments
-		{
-			get
-			{
-				return this._Payments;
-			}
-			set
-			{
-				this._Payments.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Payments(Payment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Application = this;
-		}
-		
-		private void detach_Payments(Payment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Application = null;
 		}
 	}
 	
@@ -923,6 +785,144 @@ namespace Webinar.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Application")]
+	public partial class Application : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _ApplicationCode;
+		
+		private string _ApplicationName;
+		
+		private string _ReturnUrl;
+		
+		private EntitySet<Payment> _Payments;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnApplicationCodeChanging(System.Guid value);
+    partial void OnApplicationCodeChanged();
+    partial void OnApplicationNameChanging(string value);
+    partial void OnApplicationNameChanged();
+    partial void OnReturnUrlChanging(string value);
+    partial void OnReturnUrlChanged();
+    #endregion
+		
+		public Application()
+		{
+			this._Payments = new EntitySet<Payment>(new Action<Payment>(this.attach_Payments), new Action<Payment>(this.detach_Payments));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApplicationCode", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid ApplicationCode
+		{
+			get
+			{
+				return this._ApplicationCode;
+			}
+			set
+			{
+				if ((this._ApplicationCode != value))
+				{
+					this.OnApplicationCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ApplicationCode = value;
+					this.SendPropertyChanged("ApplicationCode");
+					this.OnApplicationCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApplicationName", DbType="NVarChar(MAX)")]
+		public string ApplicationName
+		{
+			get
+			{
+				return this._ApplicationName;
+			}
+			set
+			{
+				if ((this._ApplicationName != value))
+				{
+					this.OnApplicationNameChanging(value);
+					this.SendPropertyChanging();
+					this._ApplicationName = value;
+					this.SendPropertyChanged("ApplicationName");
+					this.OnApplicationNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReturnUrl", DbType="NVarChar(MAX)")]
+		public string ReturnUrl
+		{
+			get
+			{
+				return this._ReturnUrl;
+			}
+			set
+			{
+				if ((this._ReturnUrl != value))
+				{
+					this.OnReturnUrlChanging(value);
+					this.SendPropertyChanging();
+					this._ReturnUrl = value;
+					this.SendPropertyChanged("ReturnUrl");
+					this.OnReturnUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Application_Payment", Storage="_Payments", ThisKey="ApplicationCode", OtherKey="ApplicationCode")]
+		public EntitySet<Payment> Payments
+		{
+			get
+			{
+				return this._Payments;
+			}
+			set
+			{
+				this._Payments.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Payments(Payment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Application = this;
+		}
+		
+		private void detach_Payments(Payment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Application = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment")]
 	public partial class Payment : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -946,6 +946,8 @@ namespace Webinar.Models
 		private System.Nullable<System.Guid> _ApplicationCode;
 		
 		private System.Nullable<bool> _IsCalculated;
+		
+		private string _Desc;
 		
 		private EntitySet<BankResponse> _BankResponses;
 		
@@ -975,6 +977,8 @@ namespace Webinar.Models
     partial void OnApplicationCodeChanged();
     partial void OnIsCalculatedChanging(System.Nullable<bool> value);
     partial void OnIsCalculatedChanged();
+    partial void OnDescChanging(string value);
+    partial void OnDescChanged();
     #endregion
 		
 		public Payment()
@@ -1169,6 +1173,26 @@ namespace Webinar.Models
 					this._IsCalculated = value;
 					this.SendPropertyChanged("IsCalculated");
 					this.OnIsCalculatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desc]", Storage="_Desc", DbType="NVarChar(MAX)")]
+		public string Desc
+		{
+			get
+			{
+				return this._Desc;
+			}
+			set
+			{
+				if ((this._Desc != value))
+				{
+					this.OnDescChanging(value);
+					this.SendPropertyChanging();
+					this._Desc = value;
+					this.SendPropertyChanged("Desc");
+					this.OnDescChanged();
 				}
 			}
 		}

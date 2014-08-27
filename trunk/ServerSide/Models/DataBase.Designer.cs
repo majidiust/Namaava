@@ -102,9 +102,15 @@ namespace Webinar.Models
     partial void InsertMessageReceiver(MessageReceiver instance);
     partial void UpdateMessageReceiver(MessageReceiver instance);
     partial void DeleteMessageReceiver(MessageReceiver instance);
+    partial void InsertNew(New instance);
+    partial void UpdateNew(New instance);
+    partial void DeleteNew(New instance);
     partial void InsertNewspaperMember(NewspaperMember instance);
     partial void UpdateNewspaperMember(NewspaperMember instance);
     partial void DeleteNewspaperMember(NewspaperMember instance);
+    partial void InsertPage(Page instance);
+    partial void UpdatePage(Page instance);
+    partial void DeletePage(Page instance);
     partial void InsertPeymentPlan(PeymentPlan instance);
     partial void UpdatePeymentPlan(PeymentPlan instance);
     partial void DeletePeymentPlan(PeymentPlan instance);
@@ -123,6 +129,9 @@ namespace Webinar.Models
     partial void InsertSession(Session instance);
     partial void UpdateSession(Session instance);
     partial void DeleteSession(Session instance);
+    partial void InsertSessionAdvertise(SessionAdvertise instance);
+    partial void UpdateSessionAdvertise(SessionAdvertise instance);
+    partial void DeleteSessionAdvertise(SessionAdvertise instance);
     partial void InsertSessionFile(SessionFile instance);
     partial void UpdateSessionFile(SessionFile instance);
     partial void DeleteSessionFile(SessionFile instance);
@@ -141,6 +150,9 @@ namespace Webinar.Models
     partial void InsertSessionStatus(SessionStatus instance);
     partial void UpdateSessionStatus(SessionStatus instance);
     partial void DeleteSessionStatus(SessionStatus instance);
+    partial void InsertSessionVideo(SessionVideo instance);
+    partial void UpdateSessionVideo(SessionVideo instance);
+    partial void DeleteSessionVideo(SessionVideo instance);
     partial void InsertSettingsProperty(SettingsProperty instance);
     partial void UpdateSettingsProperty(SettingsProperty instance);
     partial void DeleteSettingsProperty(SettingsProperty instance);
@@ -177,19 +189,10 @@ namespace Webinar.Models
     partial void InsertWebinarDateTime(WebinarDateTime instance);
     partial void UpdateWebinarDateTime(WebinarDateTime instance);
     partial void DeleteWebinarDateTime(WebinarDateTime instance);
-    partial void InsertSessionVideo(SessionVideo instance);
-    partial void UpdateSessionVideo(SessionVideo instance);
-    partial void DeleteSessionVideo(SessionVideo instance);
-    partial void InsertNew(New instance);
-    partial void UpdateNew(New instance);
-    partial void DeleteNew(New instance);
-    partial void InsertPage(Page instance);
-    partial void UpdatePage(Page instance);
-    partial void DeletePage(Page instance);
     #endregion
 		
 		public DataBaseDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["sampleConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["NamaavaConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -426,11 +429,27 @@ namespace Webinar.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<New> News
+		{
+			get
+			{
+				return this.GetTable<New>();
+			}
+		}
+		
 		public System.Data.Linq.Table<NewspaperMember> NewspaperMembers
 		{
 			get
 			{
 				return this.GetTable<NewspaperMember>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Page> Pages
+		{
+			get
+			{
+				return this.GetTable<Page>();
 			}
 		}
 		
@@ -482,6 +501,14 @@ namespace Webinar.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<SessionAdvertise> SessionAdvertises
+		{
+			get
+			{
+				return this.GetTable<SessionAdvertise>();
+			}
+		}
+		
 		public System.Data.Linq.Table<SessionFile> SessionFiles
 		{
 			get
@@ -527,6 +554,14 @@ namespace Webinar.Models
 			get
 			{
 				return this.GetTable<SessionStatus>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SessionVideo> SessionVideos
+		{
+			get
+			{
+				return this.GetTable<SessionVideo>();
 			}
 		}
 		
@@ -623,30 +658,6 @@ namespace Webinar.Models
 			get
 			{
 				return this.GetTable<WebinarDateTime>();
-			}
-		}
-		
-		public System.Data.Linq.Table<SessionVideo> SessionVideos
-		{
-			get
-			{
-				return this.GetTable<SessionVideo>();
-			}
-		}
-		
-		public System.Data.Linq.Table<New> News
-		{
-			get
-			{
-				return this.GetTable<New>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Page> Pages
-		{
-			get
-			{
-				return this.GetTable<Page>();
 			}
 		}
 	}
@@ -7720,6 +7731,164 @@ namespace Webinar.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.News")]
+	public partial class New : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _Subject;
+		
+		private string _Describtion;
+		
+		private string _PictureID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
+    partial void OnSubjectChanging(string value);
+    partial void OnSubjectChanged();
+    partial void OnDescribtionChanging(string value);
+    partial void OnDescribtionChanged();
+    partial void OnPictureIDChanging(string value);
+    partial void OnPictureIDChanged();
+    #endregion
+		
+		public New()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="NVarChar(MAX)")]
+		public string Subject
+		{
+			get
+			{
+				return this._Subject;
+			}
+			set
+			{
+				if ((this._Subject != value))
+				{
+					this.OnSubjectChanging(value);
+					this.SendPropertyChanging();
+					this._Subject = value;
+					this.SendPropertyChanged("Subject");
+					this.OnSubjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Describtion", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Describtion
+		{
+			get
+			{
+				return this._Describtion;
+			}
+			set
+			{
+				if ((this._Describtion != value))
+				{
+					this.OnDescribtionChanging(value);
+					this.SendPropertyChanging();
+					this._Describtion = value;
+					this.SendPropertyChanged("Describtion");
+					this.OnDescribtionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PictureID", DbType="NVarChar(MAX)")]
+		public string PictureID
+		{
+			get
+			{
+				return this._PictureID;
+			}
+			set
+			{
+				if ((this._PictureID != value))
+				{
+					this.OnPictureIDChanging(value);
+					this.SendPropertyChanging();
+					this._PictureID = value;
+					this.SendPropertyChanged("PictureID");
+					this.OnPictureIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NewspaperMembers")]
 	public partial class NewspaperMember : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -7829,6 +7998,116 @@ namespace Webinar.Models
 					this._Enabled = value;
 					this.SendPropertyChanged("Enabled");
 					this.OnEnabledChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Pages")]
+	public partial class Page : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _PageName;
+		
+		private string _PageContent;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnPageNameChanging(string value);
+    partial void OnPageNameChanged();
+    partial void OnPageContentChanging(string value);
+    partial void OnPageContentChanged();
+    #endregion
+		
+		public Page()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PageName", DbType="NVarChar(50)")]
+		public string PageName
+		{
+			get
+			{
+				return this._PageName;
+			}
+			set
+			{
+				if ((this._PageName != value))
+				{
+					this.OnPageNameChanging(value);
+					this.SendPropertyChanging();
+					this._PageName = value;
+					this.SendPropertyChanged("PageName");
+					this.OnPageNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PageContent", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string PageContent
+		{
+			get
+			{
+				return this._PageContent;
+			}
+			set
+			{
+				if ((this._PageContent != value))
+				{
+					this.OnPageContentChanging(value);
+					this.SendPropertyChanging();
+					this._PageContent = value;
+					this.SendPropertyChanged("PageContent");
+					this.OnPageContentChanged();
 				}
 			}
 		}
@@ -9021,9 +9300,9 @@ namespace Webinar.Models
 		
 		private EntitySet<SessionStatus> _SessionStatus;
 		
-		private EntitySet<UserInSession> _UserInSessions;
-		
 		private EntitySet<SessionVideo> _SessionVideos;
+		
+		private EntitySet<UserInSession> _UserInSessions;
 		
 		private EntityRef<aspnet_User> _aspnet_User;
 		
@@ -9091,8 +9370,8 @@ namespace Webinar.Models
 			this._SessionRequests = new EntitySet<SessionRequest>(new Action<SessionRequest>(this.attach_SessionRequests), new Action<SessionRequest>(this.detach_SessionRequests));
 			this._SessionServices = new EntitySet<SessionService>(new Action<SessionService>(this.attach_SessionServices), new Action<SessionService>(this.detach_SessionServices));
 			this._SessionStatus = new EntitySet<SessionStatus>(new Action<SessionStatus>(this.attach_SessionStatus), new Action<SessionStatus>(this.detach_SessionStatus));
-			this._UserInSessions = new EntitySet<UserInSession>(new Action<UserInSession>(this.attach_UserInSessions), new Action<UserInSession>(this.detach_UserInSessions));
 			this._SessionVideos = new EntitySet<SessionVideo>(new Action<SessionVideo>(this.attach_SessionVideos), new Action<SessionVideo>(this.detach_SessionVideos));
+			this._UserInSessions = new EntitySet<UserInSession>(new Action<UserInSession>(this.attach_UserInSessions), new Action<UserInSession>(this.detach_UserInSessions));
 			this._aspnet_User = default(EntityRef<aspnet_User>);
 			this._aspnet_User1 = default(EntityRef<aspnet_User>);
 			this._SessionState = default(EntityRef<SessionState>);
@@ -9619,19 +9898,6 @@ namespace Webinar.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Session_UserInSession", Storage="_UserInSessions", ThisKey="SessionId", OtherKey="SessionId")]
-		public EntitySet<UserInSession> UserInSessions
-		{
-			get
-			{
-				return this._UserInSessions;
-			}
-			set
-			{
-				this._UserInSessions.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Session_SessionVideo", Storage="_SessionVideos", ThisKey="SessionId", OtherKey="SessionID")]
 		public EntitySet<SessionVideo> SessionVideos
 		{
@@ -9642,6 +9908,19 @@ namespace Webinar.Models
 			set
 			{
 				this._SessionVideos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Session_UserInSession", Storage="_UserInSessions", ThisKey="SessionId", OtherKey="SessionId")]
+		public EntitySet<UserInSession> UserInSessions
+		{
+			get
+			{
+				return this._UserInSessions;
+			}
+			set
+			{
+				this._UserInSessions.Assign(value);
 			}
 		}
 		
@@ -9907,6 +10186,18 @@ namespace Webinar.Models
 			entity.Session = null;
 		}
 		
+		private void attach_SessionVideos(SessionVideo entity)
+		{
+			this.SendPropertyChanging();
+			entity.Session = this;
+		}
+		
+		private void detach_SessionVideos(SessionVideo entity)
+		{
+			this.SendPropertyChanging();
+			entity.Session = null;
+		}
+		
 		private void attach_UserInSessions(UserInSession entity)
 		{
 			this.SendPropertyChanging();
@@ -9918,17 +10209,187 @@ namespace Webinar.Models
 			this.SendPropertyChanging();
 			entity.Session = null;
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SessionAdvertise")]
+	public partial class SessionAdvertise : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		private void attach_SessionVideos(SessionVideo entity)
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _SessionID;
+		
+		private string _VideoName;
+		
+		private System.Nullable<System.DateTime> _VideoDate;
+		
+		private System.Nullable<System.Guid> _VideoUUID;
+		
+		private System.Nullable<bool> _VideoIsEnable;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnSessionIDChanging(System.Nullable<int> value);
+    partial void OnSessionIDChanged();
+    partial void OnVideoNameChanging(string value);
+    partial void OnVideoNameChanged();
+    partial void OnVideoDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnVideoDateChanged();
+    partial void OnVideoUUIDChanging(System.Nullable<System.Guid> value);
+    partial void OnVideoUUIDChanged();
+    partial void OnVideoIsEnableChanging(System.Nullable<bool> value);
+    partial void OnVideoIsEnableChanged();
+    #endregion
+		
+		public SessionAdvertise()
 		{
-			this.SendPropertyChanging();
-			entity.Session = this;
+			OnCreated();
 		}
 		
-		private void detach_SessionVideos(SessionVideo entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
 		{
-			this.SendPropertyChanging();
-			entity.Session = null;
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SessionID", DbType="Int")]
+		public System.Nullable<int> SessionID
+		{
+			get
+			{
+				return this._SessionID;
+			}
+			set
+			{
+				if ((this._SessionID != value))
+				{
+					this.OnSessionIDChanging(value);
+					this.SendPropertyChanging();
+					this._SessionID = value;
+					this.SendPropertyChanged("SessionID");
+					this.OnSessionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VideoName", DbType="NVarChar(MAX)")]
+		public string VideoName
+		{
+			get
+			{
+				return this._VideoName;
+			}
+			set
+			{
+				if ((this._VideoName != value))
+				{
+					this.OnVideoNameChanging(value);
+					this.SendPropertyChanging();
+					this._VideoName = value;
+					this.SendPropertyChanged("VideoName");
+					this.OnVideoNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VideoDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> VideoDate
+		{
+			get
+			{
+				return this._VideoDate;
+			}
+			set
+			{
+				if ((this._VideoDate != value))
+				{
+					this.OnVideoDateChanging(value);
+					this.SendPropertyChanging();
+					this._VideoDate = value;
+					this.SendPropertyChanged("VideoDate");
+					this.OnVideoDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VideoUUID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> VideoUUID
+		{
+			get
+			{
+				return this._VideoUUID;
+			}
+			set
+			{
+				if ((this._VideoUUID != value))
+				{
+					this.OnVideoUUIDChanging(value);
+					this.SendPropertyChanging();
+					this._VideoUUID = value;
+					this.SendPropertyChanged("VideoUUID");
+					this.OnVideoUUIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VideoIsEnable", DbType="Bit")]
+		public System.Nullable<bool> VideoIsEnable
+		{
+			get
+			{
+				return this._VideoIsEnable;
+			}
+			set
+			{
+				if ((this._VideoIsEnable != value))
+				{
+					this.OnVideoIsEnableChanging(value);
+					this.SendPropertyChanging();
+					this._VideoIsEnable = value;
+					this.SendPropertyChanged("VideoIsEnable");
+					this.OnVideoIsEnableChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -11740,6 +12201,229 @@ namespace Webinar.Models
 						this._StateId = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("SessionState");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SessionVideos")]
+	public partial class SessionVideo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _SessionID;
+		
+		private string _VideoName;
+		
+		private System.Nullable<System.Guid> _VideoUUID;
+		
+		private System.Nullable<System.DateTime> _UploadDate;
+		
+		private System.Nullable<bool> _IsAdvertise;
+		
+		private EntityRef<Session> _Session;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnSessionIDChanging(System.Nullable<int> value);
+    partial void OnSessionIDChanged();
+    partial void OnVideoNameChanging(string value);
+    partial void OnVideoNameChanged();
+    partial void OnVideoUUIDChanging(System.Nullable<System.Guid> value);
+    partial void OnVideoUUIDChanged();
+    partial void OnUploadDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnUploadDateChanged();
+    partial void OnIsAdvertiseChanging(System.Nullable<bool> value);
+    partial void OnIsAdvertiseChanged();
+    #endregion
+		
+		public SessionVideo()
+		{
+			this._Session = default(EntityRef<Session>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SessionID", DbType="Int")]
+		public System.Nullable<int> SessionID
+		{
+			get
+			{
+				return this._SessionID;
+			}
+			set
+			{
+				if ((this._SessionID != value))
+				{
+					if (this._Session.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSessionIDChanging(value);
+					this.SendPropertyChanging();
+					this._SessionID = value;
+					this.SendPropertyChanged("SessionID");
+					this.OnSessionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VideoName", DbType="NVarChar(MAX)")]
+		public string VideoName
+		{
+			get
+			{
+				return this._VideoName;
+			}
+			set
+			{
+				if ((this._VideoName != value))
+				{
+					this.OnVideoNameChanging(value);
+					this.SendPropertyChanging();
+					this._VideoName = value;
+					this.SendPropertyChanged("VideoName");
+					this.OnVideoNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VideoUUID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> VideoUUID
+		{
+			get
+			{
+				return this._VideoUUID;
+			}
+			set
+			{
+				if ((this._VideoUUID != value))
+				{
+					this.OnVideoUUIDChanging(value);
+					this.SendPropertyChanging();
+					this._VideoUUID = value;
+					this.SendPropertyChanged("VideoUUID");
+					this.OnVideoUUIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UploadDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UploadDate
+		{
+			get
+			{
+				return this._UploadDate;
+			}
+			set
+			{
+				if ((this._UploadDate != value))
+				{
+					this.OnUploadDateChanging(value);
+					this.SendPropertyChanging();
+					this._UploadDate = value;
+					this.SendPropertyChanged("UploadDate");
+					this.OnUploadDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsAdvertise", DbType="Bit")]
+		public System.Nullable<bool> IsAdvertise
+		{
+			get
+			{
+				return this._IsAdvertise;
+			}
+			set
+			{
+				if ((this._IsAdvertise != value))
+				{
+					this.OnIsAdvertiseChanging(value);
+					this.SendPropertyChanging();
+					this._IsAdvertise = value;
+					this.SendPropertyChanged("IsAdvertise");
+					this.OnIsAdvertiseChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Session_SessionVideo", Storage="_Session", ThisKey="SessionID", OtherKey="SessionId", IsForeignKey=true)]
+		public Session Session
+		{
+			get
+			{
+				return this._Session.Entity;
+			}
+			set
+			{
+				Session previousValue = this._Session.Entity;
+				if (((previousValue != value) 
+							|| (this._Session.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Session.Entity = null;
+						previousValue.SessionVideos.Remove(this);
+					}
+					this._Session.Entity = value;
+					if ((value != null))
+					{
+						value.SessionVideos.Add(this);
+						this._SessionID = value.SessionId;
+					}
+					else
+					{
+						this._SessionID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Session");
 				}
 			}
 		}
@@ -14101,497 +14785,6 @@ namespace Webinar.Models
 		{
 			this.SendPropertyChanging();
 			entity.WebinarDateTime1 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SessionVideos")]
-	public partial class SessionVideo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _SessionID;
-		
-		private string _VideoName;
-		
-		private System.Nullable<System.Guid> _VideoUUID;
-		
-		private System.Nullable<System.DateTime> _UploadDate;
-		
-		private System.Nullable<bool> _IsAdvertise;
-		
-		private EntityRef<Session> _Session;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnSessionIDChanging(System.Nullable<int> value);
-    partial void OnSessionIDChanged();
-    partial void OnVideoNameChanging(string value);
-    partial void OnVideoNameChanged();
-    partial void OnVideoUUIDChanging(System.Nullable<System.Guid> value);
-    partial void OnVideoUUIDChanged();
-    partial void OnUploadDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnUploadDateChanged();
-    partial void OnIsAdvertiseChanging(System.Nullable<bool> value);
-    partial void OnIsAdvertiseChanged();
-    #endregion
-		
-		public SessionVideo()
-		{
-			this._Session = default(EntityRef<Session>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SessionID", DbType="Int")]
-		public System.Nullable<int> SessionID
-		{
-			get
-			{
-				return this._SessionID;
-			}
-			set
-			{
-				if ((this._SessionID != value))
-				{
-					if (this._Session.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSessionIDChanging(value);
-					this.SendPropertyChanging();
-					this._SessionID = value;
-					this.SendPropertyChanged("SessionID");
-					this.OnSessionIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VideoName", DbType="NVarChar(MAX)")]
-		public string VideoName
-		{
-			get
-			{
-				return this._VideoName;
-			}
-			set
-			{
-				if ((this._VideoName != value))
-				{
-					this.OnVideoNameChanging(value);
-					this.SendPropertyChanging();
-					this._VideoName = value;
-					this.SendPropertyChanged("VideoName");
-					this.OnVideoNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VideoUUID", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> VideoUUID
-		{
-			get
-			{
-				return this._VideoUUID;
-			}
-			set
-			{
-				if ((this._VideoUUID != value))
-				{
-					this.OnVideoUUIDChanging(value);
-					this.SendPropertyChanging();
-					this._VideoUUID = value;
-					this.SendPropertyChanged("VideoUUID");
-					this.OnVideoUUIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UploadDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> UploadDate
-		{
-			get
-			{
-				return this._UploadDate;
-			}
-			set
-			{
-				if ((this._UploadDate != value))
-				{
-					this.OnUploadDateChanging(value);
-					this.SendPropertyChanging();
-					this._UploadDate = value;
-					this.SendPropertyChanged("UploadDate");
-					this.OnUploadDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsAdvertise", DbType="Bit")]
-		public System.Nullable<bool> IsAdvertise
-		{
-			get
-			{
-				return this._IsAdvertise;
-			}
-			set
-			{
-				if ((this._IsAdvertise != value))
-				{
-					this.OnIsAdvertiseChanging(value);
-					this.SendPropertyChanging();
-					this._IsAdvertise = value;
-					this.SendPropertyChanged("IsAdvertise");
-					this.OnIsAdvertiseChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Session_SessionVideo", Storage="_Session", ThisKey="SessionID", OtherKey="SessionId", IsForeignKey=true)]
-		public Session Session
-		{
-			get
-			{
-				return this._Session.Entity;
-			}
-			set
-			{
-				Session previousValue = this._Session.Entity;
-				if (((previousValue != value) 
-							|| (this._Session.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Session.Entity = null;
-						previousValue.SessionVideos.Remove(this);
-					}
-					this._Session.Entity = value;
-					if ((value != null))
-					{
-						value.SessionVideos.Add(this);
-						this._SessionID = value.SessionId;
-					}
-					else
-					{
-						this._SessionID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Session");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.News")]
-	public partial class New : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<System.DateTime> _Date;
-		
-		private string _Subject;
-		
-		private string _Describtion;
-		
-		private string _PictureID;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateChanged();
-    partial void OnSubjectChanging(string value);
-    partial void OnSubjectChanged();
-    partial void OnDescribtionChanging(string value);
-    partial void OnDescribtionChanged();
-    partial void OnPictureIDChanging(string value);
-    partial void OnPictureIDChanged();
-    #endregion
-		
-		public New()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="NVarChar(MAX)")]
-		public string Subject
-		{
-			get
-			{
-				return this._Subject;
-			}
-			set
-			{
-				if ((this._Subject != value))
-				{
-					this.OnSubjectChanging(value);
-					this.SendPropertyChanging();
-					this._Subject = value;
-					this.SendPropertyChanged("Subject");
-					this.OnSubjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Describtion", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string Describtion
-		{
-			get
-			{
-				return this._Describtion;
-			}
-			set
-			{
-				if ((this._Describtion != value))
-				{
-					this.OnDescribtionChanging(value);
-					this.SendPropertyChanging();
-					this._Describtion = value;
-					this.SendPropertyChanged("Describtion");
-					this.OnDescribtionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PictureID", DbType="NVarChar(MAX)")]
-		public string PictureID
-		{
-			get
-			{
-				return this._PictureID;
-			}
-			set
-			{
-				if ((this._PictureID != value))
-				{
-					this.OnPictureIDChanging(value);
-					this.SendPropertyChanging();
-					this._PictureID = value;
-					this.SendPropertyChanged("PictureID");
-					this.OnPictureIDChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Pages")]
-	public partial class Page : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _PageName;
-		
-		private string _PageContent;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnPageNameChanging(string value);
-    partial void OnPageNameChanged();
-    partial void OnPageContentChanging(string value);
-    partial void OnPageContentChanged();
-    #endregion
-		
-		public Page()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PageName", DbType="NVarChar(50)")]
-		public string PageName
-		{
-			get
-			{
-				return this._PageName;
-			}
-			set
-			{
-				if ((this._PageName != value))
-				{
-					this.OnPageNameChanging(value);
-					this.SendPropertyChanging();
-					this._PageName = value;
-					this.SendPropertyChanged("PageName");
-					this.OnPageNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PageContent", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string PageContent
-		{
-			get
-			{
-				return this._PageContent;
-			}
-			set
-			{
-				if ((this._PageContent != value))
-				{
-					this.OnPageContentChanging(value);
-					this.SendPropertyChanging();
-					this._PageContent = value;
-					this.SendPropertyChanged("PageContent");
-					this.OnPageContentChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }

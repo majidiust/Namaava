@@ -345,13 +345,13 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\DataBase.dbml.layout">
-      <DependentUpon>DataBase.dbml</DependentUpon>
+    <None Include="Models\BankDataBase.dbml.layout">
+      <DependentUpon>BankDataBase.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\BankDataBase.dbml.layout">
-      <DependentUpon>BankDataBase.dbml</DependentUpon>
+    <None Include="Models\DataBase.dbml.layout">
+      <DependentUpon>DataBase.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

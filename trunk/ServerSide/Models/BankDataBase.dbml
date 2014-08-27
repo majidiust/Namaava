@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BankTransition" Class="BankDataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=5.200.78.10\MSSQLSERVER,1433;Initial Catalog=BankTransition;User ID=hiva" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BankTransitionConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Application" Member="Applications">
-    <Type Name="Application">
-      <Column Name="ApplicationCode" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ApplicationName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ReturnUrl" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="Application_Payment" Member="Payments" ThisKey="ApplicationCode" OtherKey="ApplicationCode" Type="Payment" />
-    </Type>
-  </Table>
   <Table Name="dbo.BankInfo" Member="BankInfos">
     <Type Name="BankInfo">
       <Column Name="BankId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -45,6 +37,14 @@
       <Column Name="TransId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Application" Member="Applications">
+    <Type Name="Application">
+      <Column Name="ApplicationCode" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ApplicationName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReturnUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Application_Payment" Member="Payments" ThisKey="ApplicationCode" OtherKey="ApplicationCode" Type="Payment" />
+    </Type>
+  </Table>
   <Table Name="dbo.Payment" Member="Payments">
     <Type Name="Payment">
       <Column Name="PaymentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -56,6 +56,7 @@
       <Column Name="DiscountCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ApplicationCode" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
       <Column Name="IsCalculated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="Payment_BankResponse" Member="BankResponses" ThisKey="PaymentId" OtherKey="PaymentId" Type="BankResponse" />
       <Association Name="Application_Payment" Member="Application" ThisKey="ApplicationCode" OtherKey="ApplicationCode" Type="Application" IsForeignKey="true" />
       <Association Name="BankInfo_Payment" Member="BankInfo" ThisKey="BankId" OtherKey="BankId" Type="BankInfo" IsForeignKey="true" />
