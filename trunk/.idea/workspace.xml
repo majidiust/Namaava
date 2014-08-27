@@ -23,23 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="confirmation.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/confirmation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4578314" vertical-offset="5066" max-vertical-offset="9435">
-              <caret line="310" column="88" selection-start-line="310" selection-start-column="88" selection-end-line="310" selection-end-column="88" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="eventInfo.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventInfo.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4578314" vertical-offset="3842" max-vertical-offset="7871">
-              <caret line="242" column="88" selection-start-line="242" selection-start-column="88" selection-end-line="242" selection-end-column="88" />
+            <state vertical-scroll-proportion="-1.9638554" vertical-offset="4937" max-vertical-offset="7871">
+              <caret line="306" column="74" selection-start-line="306" selection-start-column="72" selection-end-line="306" selection-end-column="74" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -50,7 +38,7 @@
       <file leaf-file-name="eventInfo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventInfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8433735" vertical-offset="11900" max-vertical-offset="12512">
+            <state vertical-scroll-proportion="-5.8846154" vertical-offset="11900" max-vertical-offset="12512">
               <caret line="709" column="21" selection-start-line="709" selection-start-column="21" selection-end-line="709" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -63,8 +51,8 @@
       <file leaf-file-name="Features.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Features.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.373494" vertical-offset="1996" max-vertical-offset="6341">
-              <caret line="129" column="88" selection-start-line="129" selection-start-column="88" selection-end-line="129" selection-end-column="88" />
+            <state vertical-scroll-proportion="-1.9638554" vertical-offset="3152" max-vertical-offset="6341">
+              <caret line="195" column="70" selection-start-line="195" selection-start-column="68" selection-end-line="195" selection-end-column="70" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -75,9 +63,33 @@
       <file leaf-file-name="footer.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/footer.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8433735" vertical-offset="0" max-vertical-offset="986">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="136" max-vertical-offset="986">
               <caret line="9" column="45" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="45" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.htm" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5783134" vertical-offset="3305" max-vertical-offset="9061">
+              <caret line="207" column="35" selection-start-line="207" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LastSeminars.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LastSeminars.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0120482" vertical-offset="2536" max-vertical-offset="9877">
+              <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+              <folding>
+                <marker date="1409116588235" expanded="true" signature="1903:1917" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,8 +97,8 @@
       <file leaf-file-name="newsinfo.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newsinfo.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.373494" vertical-offset="4563" max-vertical-offset="8908">
-              <caret line="282" column="88" selection-start-line="282" selection-start-column="88" selection-end-line="282" selection-end-column="88" />
+            <state vertical-scroll-proportion="-1.9638554" vertical-offset="3424" max-vertical-offset="8908">
+              <caret line="211" column="70" selection-start-line="211" selection-start-column="70" selection-end-line="211" selection-end-column="70" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -97,8 +109,8 @@
       <file leaf-file-name="NextSeminars.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NextSeminars.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.373494" vertical-offset="1962" max-vertical-offset="5984">
-              <caret line="128" column="88" selection-start-line="128" selection-start-column="88" selection-end-line="128" selection-end-column="88" />
+            <state vertical-scroll-proportion="-1.9638554" vertical-offset="3050" max-vertical-offset="5984">
+              <caret line="192" column="74" selection-start-line="192" selection-start-column="72" selection-end-line="192" selection-end-column="74" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -109,7 +121,7 @@
       <file leaf-file-name="NextSeminars.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NextSeminars.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4216866" vertical-offset="8231" max-vertical-offset="8857">
+            <state vertical-scroll-proportion="-7.730769" vertical-offset="8231" max-vertical-offset="8857">
               <caret line="510" column="88" selection-start-line="510" selection-start-column="88" selection-end-line="510" selection-end-column="88" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -119,23 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="portfolio.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="portfolio.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/portfolio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.373494" vertical-offset="2064" max-vertical-offset="6409">
-              <caret line="133" column="89" selection-start-line="133" selection-start-column="89" selection-end-line="133" selection-end-column="89" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Seminars.htm" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Seminars.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5419223" vertical-offset="1979" max-vertical-offset="6001">
-              <caret line="134" column="60" selection-start-line="134" selection-start-column="60" selection-end-line="134" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="3220" max-vertical-offset="6409">
+              <caret line="199" column="70" selection-start-line="199" selection-start-column="68" selection-end-line="199" selection-end-column="70" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -160,16 +160,17 @@
         <option value="$PROJECT_DIR$/Panels/ParticipantRoom/room.html" />
         <option value="$PROJECT_DIR$/Panels/ParticipantRoom/js/views.js" />
         <option value="$PROJECT_DIR$/Panels/js/charisma.js" />
-        <option value="$PROJECT_DIR$/index.htm" />
         <option value="$PROJECT_DIR$/confirmation.html" />
         <option value="$PROJECT_DIR$/eventInfo.htm" />
         <option value="$PROJECT_DIR$/eventInfo.html" />
         <option value="$PROJECT_DIR$/Features.htm" />
-        <option value="$PROJECT_DIR$/newsinfo.htm" />
         <option value="$PROJECT_DIR$/NextSeminars.htm" />
         <option value="$PROJECT_DIR$/NextSeminars.html" />
         <option value="$PROJECT_DIR$/portfolio.html" />
         <option value="$PROJECT_DIR$/Seminars.htm" />
+        <option value="$PROJECT_DIR$/index.htm" />
+        <option value="$PROJECT_DIR$/LastSeminars.html" />
+        <option value="$PROJECT_DIR$/newsinfo.htm" />
       </list>
     </option>
   </component>
@@ -624,20 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dilogs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3723">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LastSeminars.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307" vertical-offset="153" max-vertical-offset="9877">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ServerSide/Templates/EmailForgetPass.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6626506" vertical-offset="2584" max-vertical-offset="3162">
@@ -842,10 +829,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.htm">
+    <entry file="file://$PROJECT_DIR$/Seminars.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0481927" vertical-offset="4522" max-vertical-offset="9061">
-          <caret line="278" column="61" selection-start-line="278" selection-start-column="61" selection-end-line="278" selection-end-column="87" />
+        <state vertical-scroll-proportion="-10.771085" vertical-offset="1673" max-vertical-offset="6001">
+          <caret line="153" column="14" selection-start-line="153" selection-start-column="14" selection-end-line="153" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -854,18 +841,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/confirmation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4578314" vertical-offset="5066" max-vertical-offset="9435">
-          <caret line="310" column="88" selection-start-line="310" selection-start-column="88" selection-end-line="310" selection-end-column="88" />
+        <state vertical-scroll-proportion="-1.9638554" vertical-offset="6229" max-vertical-offset="9435">
+          <caret line="376" column="70" selection-start-line="376" selection-start-column="68" selection-end-line="376" selection-end-column="70" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dilogs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3723">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eventInfo.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4578314" vertical-offset="3842" max-vertical-offset="7871">
-          <caret line="242" column="88" selection-start-line="242" selection-start-column="88" selection-end-line="242" selection-end-column="88" />
+        <state vertical-scroll-proportion="-1.9638554" vertical-offset="4937" max-vertical-offset="7871">
+          <caret line="306" column="74" selection-start-line="306" selection-start-column="72" selection-end-line="306" selection-end-column="74" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -874,7 +869,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eventInfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8433735" vertical-offset="11900" max-vertical-offset="12512">
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="11900" max-vertical-offset="12512">
           <caret line="709" column="21" selection-start-line="709" selection-start-column="21" selection-end-line="709" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -885,8 +880,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Features.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.373494" vertical-offset="1996" max-vertical-offset="6341">
-          <caret line="129" column="88" selection-start-line="129" selection-start-column="88" selection-end-line="129" selection-end-column="88" />
+        <state vertical-scroll-proportion="-1.9638554" vertical-offset="3152" max-vertical-offset="6341">
+          <caret line="195" column="70" selection-start-line="195" selection-start-column="68" selection-end-line="195" selection-end-column="70" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -895,16 +890,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/footer.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8433735" vertical-offset="0" max-vertical-offset="986">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="136" max-vertical-offset="986">
           <caret line="9" column="45" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5783134" vertical-offset="3305" max-vertical-offset="9061">
+          <caret line="207" column="35" selection-start-line="207" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LastSeminars.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0120482" vertical-offset="2536" max-vertical-offset="9877">
+          <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+          <folding>
+            <marker date="1409116588235" expanded="true" signature="1903:1917" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/newsinfo.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.373494" vertical-offset="4563" max-vertical-offset="8908">
-          <caret line="282" column="88" selection-start-line="282" selection-start-column="88" selection-end-line="282" selection-end-column="88" />
+        <state vertical-scroll-proportion="-1.9638554" vertical-offset="3424" max-vertical-offset="8908">
+          <caret line="211" column="70" selection-start-line="211" selection-start-column="70" selection-end-line="211" selection-end-column="70" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -913,8 +928,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NextSeminars.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.373494" vertical-offset="1962" max-vertical-offset="5984">
-          <caret line="128" column="88" selection-start-line="128" selection-start-column="88" selection-end-line="128" selection-end-column="88" />
+        <state vertical-scroll-proportion="-1.9638554" vertical-offset="3050" max-vertical-offset="5984">
+          <caret line="192" column="74" selection-start-line="192" selection-start-column="72" selection-end-line="192" selection-end-column="74" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -923,7 +938,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NextSeminars.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4216866" vertical-offset="8231" max-vertical-offset="8857">
+        <state vertical-scroll-proportion="-7.730769" vertical-offset="8231" max-vertical-offset="8857">
           <caret line="510" column="88" selection-start-line="510" selection-start-column="88" selection-end-line="510" selection-end-column="88" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -934,18 +949,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/portfolio.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.373494" vertical-offset="2064" max-vertical-offset="6409">
-          <caret line="133" column="89" selection-start-line="133" selection-start-column="89" selection-end-line="133" selection-end-column="89" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Seminars.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5419223" vertical-offset="1979" max-vertical-offset="6001">
-          <caret line="134" column="60" selection-start-line="134" selection-start-column="60" selection-end-line="134" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="3220" max-vertical-offset="6409">
+          <caret line="199" column="70" selection-start-line="199" selection-start-column="68" selection-end-line="199" selection-end-column="70" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
