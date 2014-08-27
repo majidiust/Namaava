@@ -26,12 +26,11 @@
       <file leaf-file-name="blank.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Panels/blank.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.402863" vertical-offset="43204" max-vertical-offset="56967">
-              <caret line="2572" column="25" selection-start-line="2572" selection-start-column="25" selection-end-line="2572" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="43204" max-vertical-offset="56967">
+              <caret line="2570" column="107" selection-start-line="2570" selection-start-column="107" selection-end-line="2570" selection-end-column="107" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#1;n#div#14;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#2;n#fieldset#0;n#form#0;n#div#1;n#div#14;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1409118373984" expanded="true" signature="6806:6820" placeholder="..." />
+                <marker date="1409118541262" expanded="true" signature="6806:6820" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -952,12 +951,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Panels/blank.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.402863" vertical-offset="43204" max-vertical-offset="56967">
-          <caret line="2572" column="25" selection-start-line="2572" selection-start-column="25" selection-end-line="2572" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="43204" max-vertical-offset="56967">
+          <caret line="2570" column="107" selection-start-line="2570" selection-start-column="107" selection-end-line="2570" selection-end-column="107" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#1;n#div#14;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#2;n#fieldset#0;n#form#0;n#div#1;n#div#14;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1409118373984" expanded="true" signature="6806:6820" placeholder="..." />
+            <marker date="1409118541262" expanded="true" signature="6806:6820" placeholder="..." />
           </folding>
         </state>
       </provider>
