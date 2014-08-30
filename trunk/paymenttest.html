@@ -9,7 +9,7 @@
         var desc = "havij";
         function makePayment(){
             $.getJSON("http://www.vworld.ir/Payment/MakePayment",
-                    {applicationCode: guid,
+                    {
                         amount: $("#fee").val(),
                         bankId: 2,
                         description:desc,
