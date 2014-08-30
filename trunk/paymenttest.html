@@ -8,14 +8,17 @@
     <script type="text/javascript">
         var desc = "havij";
         function makePayment(){
-            $.getJSON("http://www.vworld.ir/Payment/MakePayment",
+            $.ajax({
+                type: 'POST' ,
+                url : "http://www.vworld.ir/Payment/MakePayment",
+                data :
                     {
                         amount: $("#fee").val(),
                         bankId: 2,
                         description:desc,
                         applicationCode:'33a0c7e7-5d5e-4083-89f1-b64f842ca4e2'
                     },
-                    function (result) {
+                success: function (result) {
                         console.log(result);
                         var sequence = result.x_fp_sequence;
                         var fee = result.x_amount;
@@ -70,7 +73,7 @@
                         form.appendChild(currencyCode);
                         //	form.appendChild(testMode);
                         form.submit();
-                    });
+                    }});
         }
 
     </script>
