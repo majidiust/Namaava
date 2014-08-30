@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>سمینار</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/layout-default-latest.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <script type="text/javascript" src="js/modernizer-2.6.2.min.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <style>
+        #Smodal {
+            display: block; /* ensures it’s invisible until it’s called */
+            position: fixed; /* makes the div go into a position that’s absolute to the browser viewing area */
+            left: 0%; /* makes the div span all the way across the viewing area */
+            top: 0%; /* makes the div span all the way across the viewing area */
+            background-color: black;
+            -moz-opacity: 1.001; /* makes the div transparent, so you have a cool overlay effect */
+            opacity: 1.001;
+            width: 99999px;
+            height: 999999px;
+            z-index: 90; /* makes the div the second most top layer, so it’ll lay on top of everything else EXCEPT for divs with a higher z-index (meaning the #overlay ruleset) */
+        }
+
+        #MessageBoxCSS {
+            position: fixed;
+            z-index: 100;
+            top: 50%;
+            left: 50%;
+            margin: -100px 0 0 -100px;
+            width: 400px;
+            height: 50px;
+            -moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+            -webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+            box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            font-size: 25px;
+            -moz-opacity: 1.0; /* makes the div transparent, so you have a cool overlay effect */
+            opacity: 1.0;
+        }
+    </style>
+</head>
+<body id="body">
+<div id="CustomMessageBox">
+    <div id="Smodal">
+    </div>
+    <div class="alert alert-danger" id="MessageBoxCSS">
+        <center>
+            در حال دریافت اطلاعات سمینار، لطفا منتظر بمانید.
+        </center>
+    </div>
+</div>
+
+
+<div id="wrap">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
+                        </span>
+            </button>
+            <a class="brand" href="#">نماآوای زندگی</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a href="#" class="file-down" data-toggle="modal" data-target="#myModal"><i
+                            class="icon-file icon-white">
+                    </i>دانلود فایلها</a></li>
+                    <li><a id="webinarInfoBtn" href="#" class="wInfo" data-toggle="modal" data-target="#webinarInfo">
+                        <i class="icon-info-sign icon-white"></i>سمینار</a></li>
+                    <li><a href="#" class="file-down" data-toggle="modal" data-target="#ListOfPresent"><i
+                            class="icon-file icon-bell"></i>لیست حاضران</a></li>
+                    <li><a id="sliderClose" class="ui-layout-button-toggle-west" href="#" layoutname="inner">
+                        <i class="icon-arrow-up icon-white"></i>اسلایدر</a></li>
+                    <li><a href="http://www.iwebinar.ir:6060/Panels/blank.html"><i class="icon-home icon-white">
+                    </i>بازگشت</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- navbar-inner end -->
+</div>
+<div id="layoutContainer" style="overflow: hidden; position: relative; dispaly: none;">
+    <!-- Begin of West -->
+    <div id="layoutWest">
+        <div id="SlideHere" class="slideWrapper">
+            <div class="slideTop">
+                <div id="pptSelect" class="btn-group dropdown">
+                    <button class="btn btn-mini">
+                        انتخاب اسلاید
+                    </button>
+                    <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                </div>
+            </div>
+            <div id="svPlayerId" class="slidePlayer clr">
+                <div class="dispaly">
+                    <div id="exposure">
+                    </div>
+                    <div class="thumbsPanel">
+                        <ul id="images" class="exposureThumbs">
+                        </ul>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="toolbar">
+                    <div class="slideNavActions">
+                        <button id="syncWithT" class="btn btn-success btn-mini" title="همزمانی با استاد"
+                                type="button">
+                            <i class="icon-refresh"></i>
+                        </button>
+                        <label class="goToSlideLabel" title="شماره اسلاید">
+                            <input type="text" name="gotoSlide" value="1">
+                            <span title="تعداد کل اسلایدها"></span>
+                        </label>
+                        <button id="slideshow" class="btn btn-success btn-mini" title="اسلاید شو" type="button">
+                            <i class="icon-film"></i>
+                        </button>
+                    </div>
+                    <div class="time" title="زمان باقی مانده">
+                        <span></span><i class="icon-time"></i>
+                    </div>
+                    <div class="slideNav">
+                        <a href="#btnLast" rel="nofollow" title="اولین اسلاید" class="btnLast"></a><a href="#btnNext"
+                                                                                                      rel="nofollow"
+                                                                                                      title="قبلی"
+                                                                                                      class="btnNext"></a><a
+                            href="#btnPrevious" rel="nofollow"
+                            title="بعدی" class="btnPrevious"></a><a href="#btnFirst" rel="nofollow" title="آخرین اسلاید"
+                                                                    class="btnFirst"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Of West -->
+    <!-- Begin Of Center -->
+    <div id="layoutCenter">
+        <div id="layoutCenter_east" style="background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */    ">
+            <div id="a">
+                asddddddddddddddd
+                asdddddddddddd
+                asddddddddddddddd
+                asddddddddddd
+                asdddddddddddddddd
+                asddddddddddddd
+                asdddddddddddd
+                asddddddddddddddddd
+                asdddddddddddddd
+                asddddddddddd
+                asddddddddd
+            </div>
+        </div>
+        <div id="layoutCenter_center">
+        </div>
+    </div>
+    <!-- End Of Center -->
+    <div id="layoutEast">
+        <div id="chatSlider" style="dispaly: none; height: 70%; margin-bottom: 5px;">
+            <div class="viewport" id="chatList" style="dispaly: none; overflow: scroll; height: 100%;">
+                <ul class="overview">
+                </ul>
+            </div>
+        </div>
+        <div class="sendChat" style="height: 25%;">
+            <form class="navbar-form pull-left">
+                <textarea rows="3" cols="5"></textarea>
+
+                <div class="btn-group">
+                    <button id="toTeacher" class="btn">
+                        ارسال به استاد
+                    </button>
+                    <button id="toTechnical" class="btn">
+                        ارسال به پشتیبان
+                    </button>
+                </div>
+                <button id="ShowAllChats" class="btn btn-success btn-mini" title="نمایش همه چت ها"
+                        type="button">
+                    <i class="icon-refresh"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <p class="muted credit">
+            &copy; تمامی حقوق این سایت متعلق به <a href="http://www.iwebinar.ir">نماآوای زندگی</a>
+            است.</p>
+    </div>
+</div>
+<div id="webinarInfo" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×
+        </button>
+        <h3 class="myModalLabel">
+            اطلاعات سمینار</h3>
+    </div>
+    <div class="modal-body">
+        <div class="tabbable tabs-right">
+            <ul class="nav nav-tabs" id="infoTab">
+                <li class="active"><a href="#tab1">درباره سمینار</a></li>
+                <li><a href="#tab2">درباره ارائه دهنده</a></li>
+                <li><a href="#tab3">موضوعات</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active " id="tab1">
+                    <div class="webinarInfo">
+                        <img class="img-polaroid" width="90" height="90" src="img/webinarIcon.png" alt="Small">
+                        <h4>
+                            عنوان سمینار <span></span>
+                        </h4>
+
+                        <p>
+                            جديدترين تکنولوژي مايکروسافت بر پايه ASP.NET است که تمام مزاياي متد MVC را جهت توليد
+                            نرم‌افزارهاي بهتر در اختيار برنامه‌نويسان قرار مي‌دهد. بهبود کيفيت کد نوشته‌شده
+                            با Unit Testها، عدم نياز به کنترلرهاي مرسوم و دلايل ديگر باعث محبوبيت اين تکنولوژي
+                            شده‌است.
+                        </p>
+                    </div>
+                </div>
+                <div class="tab-pane " id="tab2">
+                    <div class="webinarInfo">
+                        <img class="img-circle" width="90" height="90" src="img/avatar.jpg" alt="Small">
+                        <h4>
+                            درباره ارائه دهنده <span></span>
+                        </h4>
+
+                        <p>
+                            جديدترين تکنولوژي مايکروسافت بر پايه ASP.NET است که تمام مزاياي متد MVC را جهت توليد
+                            نرم‌افزارهاي بهتر در اختيار برنامه‌نويسان قرار مي‌دهد. بهبود کيفيت کد نوشته‌شده
+                            با Unit Testها، عدم نياز به کنترلرهاي مرسوم و دلايل ديگر باعث محبوبيت اين تکنولوژي
+                            شده‌است.</p>
+                    </div>
+                </div>
+                <div class="tab-pane " id="tab3">
+                    <div class="webinarInfo">
+                        <h4>
+                            موضوعات مورد بررسی <span></span>
+                        </h4>
+                        <ul>
+                            <li>موضوعات تعیین نشده است.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">
+            بازگشت
+        </button>
+    </div>
+</div>
+<div id="myModal" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×
+        </button>
+        <h3 class="myModalLabel">
+            دانلود فایلهای سمینار</h3>
+    </div>
+    <div class="modal-body">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td>
+                    ردیف
+                </td>
+                <td>
+                    نام فایل
+                </td>
+                <td>
+                    حجم
+                </td>
+                <td>
+                    نوع
+                </td>
+                <td>
+                    دانلود
+                </td>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">
+            بازگشت
+        </button>
+    </div>
+</div>
+<div id="ListOfPresent" class="modal hide fade" role="dialog" aria-labelledby="myModalLabe4"
+     aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×
+        </button>
+        <h3 class="myModalLabel">
+            لیست حاضرین</h3>
+    </div>
+    <div class="modal-body">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td>
+                    نام
+                </td>
+                <td>
+                    نام خانوادگی
+                </td>
+                <td>
+                    نام کاربری
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">
+            بازگشت
+        </button>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="js/underscore-min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-latest.js"></script>
+<script type="text/javascript" src="js/jquery.layout-latest.js"></script>
+<script type="text/javascript" src="js/jquery.exposure.min.js"></script>
+<script type="text/javascript" src="js/jCarousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.tinycarousel.js"></script>
+<script type="text/javascript" src="js/jquery.tinyscrollbar.min.js"></script>
+<script type="text/javascript" src="js/jPlayey/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(window).load(function () {
+        $("#CustomMessageBox").fadeOut(2000);
+    });
+
+    $(document).ready(function () {
+        var roomLayout = $("#layoutContainer").layout({
+            west__paneSelector: '#layoutWest',
+            east__paneSelector: '#layoutEast',
+            center__paneSelector: '#layoutCenter',
+            west__initClosed: true,
+            east__initClosed: true,
+            autoBindCustomButtons: true,
+            west__size: .46,
+            west__maxSize: .50,
+            west__minSize: .46,
+            east__size: .24,
+            east__maxSize: .35,
+            east__minSize: .24,
+            center__size: .40,
+            center__maxSize: .50,
+            center__minSize: .21,
+            livePaneResizing: true
+        });
+
+        var centerLayout = $("#layoutCenter").layout({
+            east__paneSelector: '#layoutCenter_east',
+            center__paneSelector: '#layoutCenter_center',
+            west__initClosed: true,
+            east__initClosed: false,
+            autoBindCustomButtons: true,
+            west__size: .25,
+            west__maxSize: .30,
+            west__minSize: .25,
+            east__size: .24,
+            east__maxSize: .35,
+            east__minSize: .24,
+            center__size: .40,
+            center__maxSize: .50,
+            center__minSize: .21,
+            livePaneResizing: true
+        });
+    });
+
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="Scripts/jquery-1.8.2.min.js">
+    </script>
+    <script type="text/javascript">
+        var desc = "havij";
+        function makePayment(){
+            $.getJSON("http://www.vworld.ir/Payment/MakePayment",
+                    {applicationCode: guid,
+                        amount: $("#fee").val(),
+                        bankId: 2,
+                        description:desc,
+                        applicationCode:'33a0c7e7-5d5e-4083-89f1-b64f842ca4e2'
+                    },
+                    function (result) {
+                        console.log(result);
+                        var sequence = result.x_fp_sequence;
+                        var fee = result.x_amount;
+                        var rpUrl = "http://www.vworld.ir/Payment/GetResponse";
+                        var fingerprint = result.x_fp_hash;
+                        var form = document.getElementById("MaleiForm");
+                        form.setAttribute("method", "post");
+                        form.setAttribute("action", "https://damoon.bankmelli-iran.com/DamoonPrePaymentController");
+                        var desc = document.createElement('input');
+                        desc.setAttribute('type', 'hidden');
+                        desc.setAttribute('name', 'x_description');
+                        desc.setAttribute('value', desc);
+                        var amount = document.createElement('input');
+                        amount.setAttribute('type', 'hidden');
+                        amount.setAttribute('name', 'x_amount');
+                        amount.setAttribute('value', fee);
+                        var seq = document.createElement('input');
+                        seq.setAttribute('type', 'hidden');
+                        seq.setAttribute('name', 'x_fp_sequence');
+                        seq.setAttribute('value', sequence);
+                        var tstmp = document.createElement('input');
+                        tstmp.setAttribute('type', 'hidden');
+                        tstmp.setAttribute('name', 'x_fp_timestamp');
+                        tstmp.setAttribute('value', result.x_fp_timestamp);
+                        var fingerPrint = document.createElement('input');
+                        fingerPrint.setAttribute('type', 'hidden');
+                        fingerPrint.setAttribute('name', 'x_fp_hash');
+                        fingerPrint.setAttribute('value', result.x_fp_hash);
+                        var returnUrl = document.createElement('input');
+                        returnUrl.setAttribute('type', 'hidden');
+                        returnUrl.setAttribute('name', 'x_fp_receiptpage');
+                        returnUrl.setAttribute('value', result.x_fp_receiptpage);
+                        var login = document.createElement('input');
+                        login.setAttribute('type', 'hidden');
+                        login.setAttribute('name', 'x_login');
+                        login.setAttribute('value', result.x_login);
+                        var currencyCode = document.createElement('input');
+                        currencyCode.setAttribute('type', 'hidden');
+                        currencyCode.setAttribute('name', 'x_currency_code');
+                        currencyCode.setAttribute('value', "Rial");
+                        //	var testMode = document.createElement('input');
+                        ///	testMode.setAttribute('type','hidden');
+                        //	testMode.setAttribute('name','x_test_request');
+                        //	testMode.setAttribute('value', "true");
+                        form.appendChild(desc);
+                        form.appendChild(amount);
+                        form.appendChild(seq);
+                        form.appendChild(tstmp);
+                        form.appendChild(fingerPrint);
+                        form.appendChild(returnUrl);
+                        form.appendChild(login);
+                        form.appendChild(currencyCode);
+                        //	form.appendChild(testMode);
+                        form.submit();
+                    });
+        }
+
+    </script>
+</head>
+<body>
+<form id="MaleiForm" class="form-horizontal">
+<table>
+
+    <tr>
+        <td>
+            مبلغ
+        </td>
+        <td>
+           <input type="text" id="fee" onclick="makePayment();"/>
+        </td>
+    </tr>
+</table>
+    </form>
+</body>
+</html>
