@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
+<!--
 RayanHiva v1.0.0
 Copyright 2012 RayanHiva
 Licensed under the Apache License v2.0
@@ -10,270 +10,425 @@ http://www.apache.org/licenses/LICENSE-2.0
 http://www.Rayanhiva.ir
 info@rayanhiva.ir
 -->
-    <meta charset="utf-8">
-    <title>سمینار من </title>
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Scientist Webinar Network">
-    <meta name="author" content="RayanHiva.Ltd">
-    <!-- 
+<meta charset="utf-8">
+<title>
+    سمینار من
+</title>
+<meta http-equiv="Cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Scientist Webinar Network">
+<meta name="author" content="RayanHiva.Ltd">
+<!-- 
 <meta http-equiv='cache-control' content='no-cache'>
 <meta http-equiv='expires' content='0'>
 <meta http-equiv='pragma' content='no-cache'>
 -->
-    <!-- The styles -->
-    <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
-    <style type="text/css">
-        body {
-            padding-bottom: 40px;
-        }
+<!-- The styles -->
+<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
+<style type="text/css">
+    body {
+        padding-bottom: 40px;
+    }
 
-        .sidebar-nav {
-            padding: 9px 0;
-            direction: rtl;
-        }
+    .sidebar-nav {
+        padding: 9px 0;
+        direction: rtl;
+    }
 
-        body {
-            font-family: Tahoma, Geneva, sans-serif;
-        }
+    body {
+        font-family: Tahoma, Geneva, sans-serif;
+    }
 
-        a.customfilelink:link {
-            color: #FF9 !important;
-        }
+    a.customfilelink:link {
+        color: #FF9 !important;
+    }
 
-        div.terms {
-            width: 615px;
-            height: 220px;
-            border: 1px solid #ccc;
-            background: #f2f2f2;
-            padding: 6px;
-            overflow: auto;
-        }
+    div.terms {
+        width: 615px;
+        height: 220px;
+        border: 1px solid #ccc;
+        background: #f2f2f2;
+        padding: 6px;
+        overflow: auto;
+    }
 
-        div.terms p, div.terms li {
-            font: normal 11px/15px arial;
-            color: #333;
-        }
+    div.terms p, div.terms li {
+        font: normal 11px/15px arial;
+        color: #333;
+    }
 
-        div.terms h3 {
-            font: bold 14px/19px arial;
-            color: #000;
-        }
+    div.terms h3 {
+        font: bold 14px/19px arial;
+        color: #000;
+    }
 
-        div.terms h4 {
-            font: bold 12px/17px arial;
-            color: #000;
-        }
+    div.terms h4 {
+        font: bold 12px/17px arial;
+        color: #000;
+    }
 
-        div.terms strong {
-            color: #000;
-        }
+    div.terms strong {
+        color: #000;
+    }
 
-        .gobutton {
-            cursor: pointer; /*forces the cursor to change to a hand when the button is hovered*/
-            padding: 5px 25px; /*add some padding to the inside of the button*/
-            background: #35b128; /*the colour of the button*/
-            border: 1px solid #33842a; /*required or the default border for the browser will appear*/
-            /*give the button curved corners, alter the size as required*/
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            border-radius: 10px; /*give the button a drop shadow*/
-            -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .75);
-            -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .75);
-            box-shadow: 0 0 4px rgba(0, 0, 0, .75); /*style the text*/
-            color: #f3f3f3;
-            font-size: 1.1em;
-        }
+    .gobutton {
+        cursor: pointer;
+        /*forces the cursor to change to a hand when the button is hovered*/
+        padding: 5px 25px;
+        /*add some padding to the inside of the button*/
+        background: #35b128;
+        /*the colour of the button*/
+        border: 1px solid #33842a;
+        /*required or the default border for the browser will appear*/
+        /*give the button curved corners, alter the size as required*/
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        /*give the button a drop shadow*/
+        -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .75);
+        -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .75);
+        box-shadow: 0 0 4px rgba(0, 0, 0, .75);
+        /*style the text*/
+        color: #f3f3f3;
+        font-size: 1.1em;
+    }
 
-        /***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
-        .gobutton:hover, .gobutton:focus {
-            background-color: #399630; /*make the background a little darker*/
-            /*reduce the drop shadow size to give a pushed button effect*/
-            -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .75);
-            -moz-box-shadow: 0 0 1px rgba(0, 0, 0, .75);
-            box-shadow: 0 0 1px rgba(0, 0, 0, .75);
-        }
+    /***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+    .gobutton:hover, .gobutton:focus {
+        background-color: #399630;
+        /*make the background a little darker*/
+        /*reduce the drop shadow size to give a pushed button effect*/
+        -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .75);
+        -moz-box-shadow: 0 0 1px rgba(0, 0, 0, .75);
+        box-shadow: 0 0 1px rgba(0, 0, 0, .75);
+    }
 
-        .BusinessPlanDiv {
-            width: 150px;
-            height: 150px;
-            line-height: 150px;
-            text-align: center;
-            -moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
-            -webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
-            box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
-            border-radius: 10px;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-            text-shadow: 2px 2px 15px #6473d1;
-            filter: dropshadow(color=#6473d1, offx=2, offy=2);
-            cursor: pointer;
-            background-color: #CCC;
-        }
+    .BusinessPlanDiv {
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
+        text-align: center;
+        -moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+        -webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+        box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-shadow: 2px 2px 15px #6473d1;
+        filter: dropshadow(color=#6473d1, offx=2, offy=2);
+        cursor: pointer;
+        background-color: #CCC;
+    }
 
-        .BusinessPlanDiv:hover {
-            background-color: #FFF;
-        }
+    .BusinessPlanDiv:hover {
+        background-color: #FFF;
+    }
 
-        .Smodal {
-            display: block; /* ensures it’s invisible until it’s called */
-            position: fixed; /* makes the div go into a position that’s absolute to the browser viewing area */
-            left: 0%; /* makes the div span all the way across the viewing area */
-            top: 0%; /* makes the div span all the way across the viewing area */
-            background-color: black;
-            -moz-opacity: .001; /* makes the div transparent, so you have a cool overlay effect */
-            opacity: 0.001;
-            width: 99999px;
-            height: 999999px;
-            z-index: 90; /* makes the div the second most top layer, so it’ll lay on top of everything else EXCEPT for divs with a higher z-index (meaning the #overlay ruleset) */
-        }
+    .Smodal {
+        display: block;
+        /* ensures it’s invisible until it’s called */
+        position: fixed;
+        /* makes the div go into a position that’s absolute to the browser viewing area */
+        left: 0%;
+        /* makes the div span all the way across the viewing area */
+        top: 0%;
+        /* makes the div span all the way across the viewing area */
+        background-color: black;
+        -moz-opacity: .001;
+        /* makes the div transparent, so you have a cool overlay effect */
+        opacity: 0.001;
+        width: 99999px;
+        height: 999999px;
+        z-index: 90;
+        /* makes the div the second most top layer, so it’ll lay on top of everything else EXCEPT for divs with a higher z-index (meaning the #overlay ruleset) */
+    }
 
-        #MessageBoxCSS {
-            position: fixed;
-            z-index: 100;
-            top: 50%;
-            left: 50%;
-            margin: -100px 0 0 -100px;
-            width: 400px;
-            height: 200px;
-            -moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
-            -webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
-            box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
-            border-radius: 10px;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            font-size: 14px;
-            font-weight: bold;
-            -moz-opacity: 1.0; /* makes the div transparent, so you have a cool overlay effect */
-            opacity: 1.0;
-        }
+    #MessageBoxCSS {
+        position: fixed;
+        z-index: 100;
+        top: 50%;
+        left: 50%;
+        margin: -100px 0 0 -100px;
+        width: 400px;
+        height: 200px;
+        -moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+        -webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+        box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        -moz-opacity: 1.0;
+        /* makes the div transparent, so you have a cool overlay effect */
+        opacity: 1.0;
+    }
 
-        .Smodal div strong {
-            font-size: 14px;
-            font-weight: bold;
-            font-family: Tahoma, Geneva, sans-serif;
-            color: #000;
-        }
+    .Smodal div strong {
+        font-size: 14px;
+        font-weight: bold;
+        font-family: Tahoma, Geneva, sans-serif;
+        color: #000;
+    }
 
-        .CustomtextBoxError input[type=text] {
-            background-color: #F00;
-        }
-    </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="css/charisma-app.css" rel="stylesheet">
-    <link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
-    <link href='css/fullcalendar.css' rel='stylesheet'>
-    <link href='css/fullcalendar.print.css' rel='stylesheet' media='print'>
-    <link href='css/chosen.css' rel='stylesheet'>
-    <link href='css/uniform.default.css' rel='stylesheet'>
-    <link href='css/colorbox.css' rel='stylesheet'>
-    <link href='css/jquery.cleditor.css' rel='stylesheet'>
-    <link href='css/jquery.noty.css' rel='stylesheet'>
-    <link href='css/noty_theme_default.css' rel='stylesheet'>
-    <link href='css/elfinder.min.css' rel='stylesheet'>
-    <link href='css/elfinder.theme.css' rel='stylesheet'>
-    <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
-    <link href='css/opa-icons.css' rel='stylesheet'>
-    <link href='css/uploadify.css' rel='stylesheet'>
-    <!-- 
+    .CustomtextBoxError input[type=text] {
+        background-color: #F00;
+    }
+</style>
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/charisma-app.css" rel="stylesheet">
+<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+<link href='css/fullcalendar.css' rel='stylesheet'>
+<link href='css/fullcalendar.print.css' rel='stylesheet' media='print'>
+<link href='css/chosen.css' rel='stylesheet'>
+<link href='css/uniform.default.css' rel='stylesheet'>
+<link href='css/colorbox.css' rel='stylesheet'>
+<link href='css/jquery.cleditor.css' rel='stylesheet'>
+<link href='css/jquery.noty.css' rel='stylesheet'>
+<link href='css/noty_theme_default.css' rel='stylesheet'>
+<link href='css/elfinder.min.css' rel='stylesheet'>
+<link href='css/elfinder.theme.css' rel='stylesheet'>
+<link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+<link href='css/opa-icons.css' rel='stylesheet'>
+<link href='css/uploadify.css' rel='stylesheet'>
+<!-- 
 <link type='text/css' href="~/Content/jquery.fileupload-ui.css" rel="stylesheet" type="text/css" />
 -->
-    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
-    </script>
-    <![endif]-->
-    <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<!-- The fav icon -->
+<link rel="shortcut icon" href="img/favicon.ico">
 </head>
 <body style="direction: rtl;">
 <!-- topbar starts -->
 <div class="navbar">
-    <div class="navbar-inner">
-        <div class="container-fluid">
-            <a class="btn btn-navbar" data-toggle="collapse"
-               data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
-                    </span></a><a class="brand" href="../index.html" style="font-size: 16px;">نماآوای زندگی
-        </a>
-            <!-- theme selector starts -->
-            <div class="btn-group pull-right theme-container">
-                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-tint">
-                </i><span class="hidden-phone">تغییر ظاهر سایت </span><span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" id="themes">
-                    <li><a data-value="classic" href="#"><i class="icon-blank"></i>کلاسیک </a></li>
-                    <li><a data-value="cerulean" href="#"><i class="icon-blank"></i>آبی نیلگون </a></li>
-                    <li><a data-value="cyborg" href="#"><i class="icon-blank"></i>سایبورگ </a></li>
-                    <li><a data-value="redy" href="#"><i class="icon-blank"></i>قرمز </a></li>
-                    <li><a data-value="journal" href="#"><i class="icon-blank"></i>ژورنال </a></li>
-                    <li><a data-value="simplex" href="#"><i class="icon-blank"></i>ساده </a></li>
-                    <li><a data-value="slate" href="#"><i class="icon-blank"></i>تخته سنگ </a></li>
-                    <li><a data-value="spacelab" href="#"><i class="icon-blank"></i>دلنشین </a></li>
-                    <li><a data-value="united" href="#"><i class="icon-blank"></i>متحد </a></li>
-                </ul>
-            </div>
-            <!-- theme selector ends -->
-            <!-- user dropdown starts -->
-            <div class="btn-group pull-right">
-                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user">
-                </i><span class="hidden-phone" id="UserName">نام کاربری </span><span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#" onclick="ShowBox('#ProfileDetails');">حساب کاربری </a></li>
-                    <li class="divider"></li>
-                    <li><a href="#" onclick="LogoutFromServer();">خروج از سیستم </a></li>
-                </ul>
-            </div>
-            <!-- user dropdown ends -->
-            <!-- User Balance -->
-            <div class="btn-group pull-right" id="UpUserBalance">
-                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-info">
-                </i><span class="hidden-phone" id="UpUserBalance_Balance">میزان شارژ شما </span><span
-                        class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#" onclick="ShowBox('#PaymentPanel');">شارژ حساب </a></li>
-                </ul>
-            </div>
-            <!-- User Balance -->
-            <!-- About Us -->
-            <div class="btn-group pull-right">
-                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-info">
-                </i><span class="hidden-phone">راهنمایی </span><span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#" onclick="ShowHelp();">راهنمای استفاده از سامانه </a></li>
-                    <li class="divider"></li>
-                    <li><a href="http://www.namaava.com/">وب سایت نماآوای زندگی </a></li>
-                    <li class="divider"></li>
-                    <li><a onclick="ShowContactUs();">تماس با ما </a></li>
-                </ul>
-            </div>
-            <!-- About Us -->
-            <!-- Request Seminar -->
-            <div class="btn-group pull-right">
-                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-info">
-                </i><span class="hidden-phone">درخواست برای سمینار </span><span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <!--<li><a href="http://www.iwebinar.ir:6060/Seminars.htm">سمینارهای جدید </a></li>-->
-                    <li class="divider"></li>
-                    <li><a href="http://www.iwebinar.ir:6060/Seminars.htm">سمینارهای برگزار شده </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="http://www.iwebinar.ir:6060/NextSeminars.htm">سمینارهای آینده </a></li>
-                </ul>
-            </div>
-            <!-- About Us -->
-            <div class="top-nav nav-collapse">
-                <ul class="nav">
-                    <li><a href="../index.htm">صفحه نخست </a></li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </div>
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-toggle="collapse"
+   data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+</a>
+<a class="brand" href="../index.html" style="font-size: 16px;">
+    نماآوای زندگی
+</a>
+<!-- theme selector starts -->
+<div class="btn-group pull-right theme-container">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon-tint">
+        </i>
+              <span class="hidden-phone">
+                تغییر ظاهر سایت 
+              </span>
+              <span class="caret">
+              </span>
+    </a>
+    <ul class="dropdown-menu" id="themes">
+        <li>
+            <a data-value="classic" href="#">
+                <i class="icon-blank">
+                </i>
+                کلاسیک
+            </a>
+        </li>
+        <li>
+            <a data-value="cerulean" href="#">
+                <i class="icon-blank">
+                </i>
+                آبی نیلگون
+            </a>
+        </li>
+        <li>
+            <a data-value="cyborg" href="#">
+                <i class="icon-blank">
+                </i>
+                سایبورگ
+            </a>
+        </li>
+        <li>
+            <a data-value="redy" href="#">
+                <i class="icon-blank">
+                </i>
+                قرمز
+            </a>
+        </li>
+        <li>
+            <a data-value="journal" href="#">
+                <i class="icon-blank">
+                </i>
+                ژورنال
+            </a>
+        </li>
+        <li>
+            <a data-value="simplex" href="#">
+                <i class="icon-blank">
+                </i>
+                ساده
+            </a>
+        </li>
+        <li>
+            <a data-value="slate" href="#">
+                <i class="icon-blank">
+                </i>
+                تخته سنگ
+            </a>
+        </li>
+        <li>
+            <a data-value="spacelab" href="#">
+                <i class="icon-blank">
+                </i>
+                دلنشین
+            </a>
+        </li>
+        <li>
+            <a data-value="united" href="#">
+                <i class="icon-blank">
+                </i>
+                متحد
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- theme selector ends -->
+<!-- user dropdown starts -->
+<div class="btn-group pull-right">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon-user">
+        </i>
+              <span class="hidden-phone" id="UserName">
+                نام کاربری 
+              </span>
+              <span class="caret">
+              </span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#" onclick="ShowBox('#ProfileDetails');">
+                حساب کاربری
+            </a>
+        </li>
+        <li class="divider">
+        </li>
+        <li>
+            <a href="#" onclick="LogoutFromServer();">
+                خروج از سیستم
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- user dropdown ends -->
+<!-- User Balance -->
+<div class="btn-group pull-right" id="UpUserBalance">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon-info">
+        </i>
+              <span class="hidden-phone" id="UpUserBalance_Balance">
+                میزان شارژ شما 
+              </span>
+              <span
+                      class="caret">
+              </span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#" onclick="ShowBox('#PaymentPanel');">
+                شارژ حساب
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- User Balance -->
+<!-- About Us -->
+<div class="btn-group pull-right">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon-info">
+        </i>
+              <span class="hidden-phone">
+                راهنمایی 
+              </span>
+              <span class="caret">
+              </span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#" onclick="ShowHelp();">
+                راهنمای استفاده از سامانه
+            </a>
+        </li>
+        <li class="divider">
+        </li>
+        <li>
+            <a href="http://www.namaava.com/">
+                وب سایت نماآوای زندگی
+            </a>
+        </li>
+        <li class="divider">
+        </li>
+        <li>
+            <a onclick="ShowContactUs();">
+                تماس با ما
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- About Us -->
+<!-- Request Seminar -->
+<div class="btn-group pull-right">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon-info">
+        </i>
+              <span class="hidden-phone">
+                درخواست برای سمینار 
+              </span>
+              <span class="caret">
+              </span>
+    </a>
+    <ul class="dropdown-menu">
+        <!--
+<li>
+<a href="http://www.iwebinar.ir:6060/Seminars.htm">
+سمینارهای جدید 
+</a>
+</li>
+-->
+        <li class="divider">
+        </li>
+        <li>
+            <a href="http://www.iwebinar.ir:6060/Seminars.htm">
+                سمینارهای برگزار شده
+            </a>
+        </li>
+        <li class="divider">
+        </li>
+        <li>
+            <a href="http://www.iwebinar.ir:6060/NextSeminars.htm">
+                سمینارهای آینده
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- About Us -->
+<div class="top-nav nav-collapse">
+    <ul class="nav">
+        <li>
+            <a href="../index.htm">
+                صفحه نخست
+            </a>
+        </li>
+    </ul>
+</div>
+<!--/.nav-collapse -->
+</div>
+</div>
 </div>
 <!-- topbar ends -->
 <div class="container-fluid">
@@ -281,15 +436,30 @@ info@rayanhiva.ir
 <div class="row-fluid">
 <!-- left menu starts -->
 <div class="span2 main-menu-span" style="float: right;">
-    <div class="well nav-collapse sidebar-nav">
-        <ul class="nav nav-tabs nav-stacked main-menu">
-            <li class="nav-header hidden-tablet">سمینارها</li>
-            <li><a class="ajax-link" style="cursor: pointer;" onclick="GetMyRequests();"><i class="icon-list-alt">
-            </i><span class="hidden-tablet">مشاهده سمینار </span></a></li>
-            <li><a class="ajax-link" style="cursor: pointer;" onclick="GetListOfInvitedSeminars();">
-                <i class="icon-home"></i><span class="hidden-tablet">دعوت نامه های رسیده </span>
-            </a></li>
-            <!--	
+<div class="well nav-collapse sidebar-nav">
+<ul class="nav nav-tabs nav-stacked main-menu">
+<li class="nav-header hidden-tablet">
+    سمینارها
+</li>
+<li>
+    <a class="ajax-link" style="cursor: pointer;" onclick="GetMyRequests();">
+        <i class="icon-list-alt">
+        </i>
+                  <span class="hidden-tablet">
+                    مشاهده سمینار 
+                  </span>
+    </a>
+</li>
+<li>
+    <a class="ajax-link" style="cursor: pointer;" onclick="GetListOfInvitedSeminars();">
+        <i class="icon-home">
+        </i>
+                  <span class="hidden-tablet">
+                    دعوت نامه های رسیده 
+                  </span>
+    </a>
+</li>
+<!--	
 <li class="nav-header hidden-tablet">
 پیام ها
 </li>
@@ -321,80 +491,168 @@ info@rayanhiva.ir
 </a>
 </li>
 -->
-            <li style="display: none;" id="Management" class="nav-header hidden-tablet">مدیریت
-            </li>
-            <li><a name="Management" class="ajax-link" style="cursor: pointer;" onclick="LoadAllNews();">
-                <i class="icon-th"></i><span class="hidden-tablet">مشاهده اخبارها </span></a>
-            </li>
-            <li><a name="Management" class="ajax-link" style="cursor: pointer;" onclick="NewNews();">
-                <i class="icon-th"></i><span class="hidden-tablet">اخبار جدید </span></a></li>
-            <li><a name="Management" class="ajax-link" style="cursor: pointer;" onclick="EditSampleSeminars();">
-                <i class="icon-th"></i><span class="hidden-tablet">نمونه سمینارها </span></a>
-            </li>
-            <li><a name="Management" class="ajax-link" style="cursor: pointer;" onclick="ShowGallery();">
-                <i class="icon-th"></i><span class="hidden-tablet">گالری تصاویر </span></a></li>
-            <li><a name="Management" class="ajax-link" style="cursor: pointer;" onclick="ShowBox('#NewSeminar');">
-                <i class="icon-home"></i><span class="hidden-tablet">ایجاد سمینار </span></a>
-            </li>
-            <li><a name="Management" class="ajax-link" style="cursor: pointer;" onclick="GetMySeminars();">
-                <i class="icon-calendar"></i><span class="hidden-tablet">مدیریت سمینارها </span>
-            </a></li>
-            <li><a name="Management" class="ajax-link" style="cursor: pointer;" onclick="ShowEditAboutUs();">
-                <i class="icon-calendar"></i><span class="hidden-tablet">ویرایش درباره ما </span>
-            </a></li>
-            <li><a name="Management" class="ajax-link" style="cursor: pointer;" onclick="ShowEditGuidePage();">
-                <i class="icon-calendar"></i><span class="hidden-tablet">ویرایش راهنمای سامانه </span>
-            </a></li>
-            <li class="nav-header hidden-tablet">اطلاعات شخصی</li>
-            <li><a class="ajax-link" style="cursor: pointer;" onclick="ShowBox('#ProfileDetails');">
-                <i class="icon-th"></i><span class="hidden-tablet">پروفایل </span></a></li>
-            <li><a class="ajax-link" style="cursor: pointer;" onclick="ShowBox('#ProfileLogInDetails');">
-                <i class="icon-th"></i><span class="hidden-tablet">تغییر کلمه عبور </span></a>
-            </li>
-            <li><a class="ajax-link" style="cursor: pointer;" onclick="ShowBox('#UserPeyments');">
-                <i class="icon-th"></i><span class="hidden-tablet">سابقه پرداخت </span></a></li>
-            <li><a class="ajax-link" onclick="ShowBox('#PaymentPanel');" style="cursor: pointer;">
-                <i class="icon-th"></i><span class="hidden-tablet">پرداخت آنلاین (شارژ) </span></a>
-            </li>
-            <li class="nav-header hidden-tablet">انتقادات و پیشنهادات</li>
-            <li><a class="ajax-link" style="cursor: pointer;" onclick="ShowBox('#Pishnahadat');">
-                <i class="icon-th"></i><span class="hidden-tablet">پیشنهاد/انتقاد جدید </span></a>
-            </li>
-            <!--     <li class="nav-header hidden-tablet">
-                  درباره ما
-                </li>
-                
-                <li>
-                  <a class="ajax-link" style="cursor:pointer;" href="http://www.namaava.com/"  >
-                    <i class="icon-th">
-                    </i>
-                    <span class="hidden-tablet">
-                      وب سایت نماآوای زندگی
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a class="ajax-link" style="cursor:pointer;" onClick="alert('To Be Implement');"  >
-                    <i class="icon-th">
-                    </i>
-                    <span class="hidden-tablet">
-                      راهنمای سامانه
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a class="ajax-link" style="cursor:pointer;" onClick="ShowBox('#ContactUs');"  >
-                    <i class="icon-th">
-                    </i>
-                    <span class="hidden-tablet">
-                      تماس با ما
-                    </span>
-                  </a>
-                </li>
-                -->
-        </ul>
-    </div>
-    <!--/.well -->
+<li style="display: none;" id="Management" class="nav-header hidden-tablet">
+    مدیریت
+</li>
+<li>
+    <a name="Management" class="ajax-link" style="cursor: pointer;" onclick="LoadAllNews();">
+        <i class="icon-th">
+        </i>
+              <span class="hidden-tablet">
+                مشاهده اخبارها 
+              </span>
+    </a>
+</li>
+<li>
+    <a name="Management" class="ajax-link" style="cursor: pointer;" onclick="NewNews();">
+        <i class="icon-th">
+        </i>
+              <span class="hidden-tablet">
+                اخبار جدید 
+              </span>
+    </a>
+</li>
+<li>
+    <a name="Management" class="ajax-link" style="cursor: pointer;" onclick="EditSampleSeminars();">
+        <i class="icon-th">
+        </i>
+              <span class="hidden-tablet">
+                نمونه سمینارها 
+              </span>
+    </a>
+</li>
+<li>
+    <a name="Management" class="ajax-link" style="cursor: pointer;" onclick="ShowGallery();">
+        <i class="icon-th">
+        </i>
+              <span class="hidden-tablet">
+                گالری تصاویر 
+              </span>
+    </a>
+</li>
+<li>
+    <a name="Management" class="ajax-link" style="cursor: pointer;" onclick="ShowBox('#NewSeminar');">
+        <i class="icon-home">
+        </i>
+              <span class="hidden-tablet">
+                ایجاد سمینار 
+              </span>
+    </a>
+</li>
+<li>
+    <a name="Management" class="ajax-link" style="cursor: pointer;" onclick="GetMySeminars();">
+        <i class="icon-calendar">
+        </i>
+              <span class="hidden-tablet">
+                مدیریت سمینارها 
+              </span>
+    </a>
+</li>
+<li>
+    <a name="Management" class="ajax-link" style="cursor: pointer;" onclick="ShowEditAboutUs();">
+        <i class="icon-calendar">
+        </i>
+              <span class="hidden-tablet">
+                ویرایش درباره ما 
+              </span>
+    </a>
+</li>
+<li>
+    <a name="Management" class="ajax-link" style="cursor: pointer;" onclick="ShowEditGuidePage();">
+        <i class="icon-calendar">
+        </i>
+              <span class="hidden-tablet">
+                ویرایش راهنمای سامانه 
+              </span>
+    </a>
+</li>
+<li class="nav-header hidden-tablet">
+    اطلاعات شخصی
+</li>
+<li>
+    <a class="ajax-link" style="cursor: pointer;" onclick="ShowBox('#ProfileDetails');">
+        <i class="icon-th">
+        </i>
+              <span class="hidden-tablet">
+                پروفایل 
+              </span>
+    </a>
+</li>
+<li>
+    <a class="ajax-link" style="cursor: pointer;" onclick="ShowBox('#ProfileLogInDetails');">
+        <i class="icon-th">
+        </i>
+              <span class="hidden-tablet">
+                تغییر کلمه عبور 
+              </span>
+    </a>
+</li>
+<li>
+    <a class="ajax-link" style="cursor: pointer;" onclick="ShowBox('#UserPeyments');">
+        <i class="icon-th">
+        </i>
+              <span class="hidden-tablet">
+                سابقه پرداخت 
+              </span>
+    </a>
+</li>
+<li>
+    <a class="ajax-link" onclick="ShowBox('#PaymentPanel');" style="cursor: pointer;">
+        <i class="icon-th">
+        </i>
+              <span class="hidden-tablet">
+                پرداخت آنلاین (شارژ) 
+              </span>
+    </a>
+</li>
+<li class="nav-header hidden-tablet">
+    انتقادات و پیشنهادات
+</li>
+<li>
+    <a class="ajax-link" style="cursor: pointer;" onclick="ShowBox('#Pishnahadat');">
+        <i class="icon-th">
+        </i>
+              <span class="hidden-tablet">
+                پیشنهاد/انتقاد جدید 
+              </span>
+    </a>
+</li>
+<!--     
+<li class="nav-header hidden-tablet">
+درباره ما
+</li>
+
+<li>
+<a class="ajax-link" style="cursor:pointer;" href="http://www.namaava.com/"  >
+<i class="icon-th">
+</i>
+<span class="hidden-tablet">
+وب سایت نماآوای زندگی
+</span>
+</a>
+</li>
+<li>
+<a class="ajax-link" style="cursor:pointer;" onClick="alert('To Be Implement');"  >
+<i class="icon-th">
+</i>
+<span class="hidden-tablet">
+راهنمای سامانه
+</span>
+</a>
+</li>
+<li>
+<a class="ajax-link" style="cursor:pointer;" onClick="ShowBox('#ContactUs');"  >
+<i class="icon-th">
+</i>
+<span class="hidden-tablet">
+تماس با ما
+</span>
+</a>
+</li>
+-->
+</ul>
+</div>
+<!--/.well -->
 </div>
 <!--/span-->
 <!-- left menu ends -->
@@ -402,7 +660,9 @@ info@rayanhiva.ir
 <!-- content starts -->
 <div class="box span12">
     <div class="box-content" id="Welcome" style="display: none;">
-        <legend>شمیم آموزش</legend>
+        <legend>
+            شمیم آموزش
+        </legend>
         <table>
             <tr>
                 <td style="width: 160px;" id="UserPictureHolder">
@@ -446,28 +706,71 @@ info@rayanhiva.ir
 </div>
 <div class="row-fluid sortable">
 <div class="box span10" id="SeminarMoreInfo" name="PanelWindow" style="float: right;
-                            display: none;">
+display: none;">
 <div class="box-header well">
     <h2 style="float: right;">
-        <i class="icon-info-sign"></i>مشخصات سمینار
+        <i class="icon-info-sign">
+        </i>
+        مشخصات سمینار
     </h2>
 
     <div class="box-icon" style="float: left;">
-        <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                     class="btn btn-minimize btn-round"><i
-            class="icon-chevron-up"></i></a><a href="#"
-                                               class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+        <a href="#" class="btn btn-setting btn-round">
+            <i class="icon-cog">
+            </i>
+        </a>
+        <a href="#"
+           class="btn btn-minimize btn-round">
+            <i
+                    class="icon-chevron-up">
+            </i>
+        </a>
+        <a href="#"
+           class="btn btn-close btn-round">
+            <i class="icon-remove">
+            </i>
+        </a>
     </div>
 </div>
 <div class="box-content">
 
 <div id="tabs" style="width:100%;font-family:Tahoma, Geneva, sans-serif;">
 <ul>
-    <li><a href="#fragment-1"><span>مشخصات کلی</span></a></li>
-    <li><a href="#fragment-2"><span>درخواست ها</span></a></li>
-    <li><a href="#fragment-3"><span>دعوت</span></a></li>
-    <li><a href="#fragment-4"><span>ویدیوها</span></a></li>
-    <li><a href="#fragment-5"><span>فایل ها</span></a></li>
+    <li>
+        <a href="#fragment-1">
+            <span>
+              مشخصات کلی
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="#fragment-2">
+            <span>
+              درخواست ها
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="#fragment-3">
+            <span>
+              دعوت
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="#fragment-4">
+            <span>
+              ویدیوها
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="#fragment-5">
+            <span>
+              فایل ها
+            </span>
+        </a>
+    </li>
 </ul>
 <div id="fragment-1" style="width:80%;">
     <table>
@@ -545,7 +848,8 @@ info@rayanhiva.ir
             <td>
             </td>
             <td>
-                <textarea id="SeminarMoreInfoDesc" rows="3" cols="10"></textarea>
+                <textarea id="SeminarMoreInfoDesc" rows="3" cols="10">
+                </textarea>
             </td>
         </tr>
         <tr>
@@ -555,7 +859,8 @@ info@rayanhiva.ir
             <td>
             </td>
             <td>
-                <textarea id="SeminarMoreInfoWhy" rows="3" cols="10"></textarea>
+                <textarea id="SeminarMoreInfoWhy" rows="3" cols="10">
+                </textarea>
             </td>
         </tr>
         <tr>
@@ -565,7 +870,9 @@ info@rayanhiva.ir
             <td>
             </td>
             <td>
-                <textarea id="SeminarMoreInfoFor" rows="3" cols="10"> </textarea>
+                <textarea id="SeminarMoreInfoFor" rows="3" cols="10">
+
+                </textarea>
             </td>
         </tr>
         <tr>
@@ -575,7 +882,8 @@ info@rayanhiva.ir
             <td>
             </td>
             <td>
-                <textarea id="SeminarMoreInfoPre" rows="3" cols="10"></textarea>
+                <textarea id="SeminarMoreInfoPre" rows="3" cols="10">
+                </textarea>
             </td>
         </tr>
         </tbody>
@@ -606,8 +914,8 @@ document.getElementById('posterPreviewInfo').src = oFREvent.target.result;
                 <tr>
                     <td>
                         <img id="posterPreviewInfo" style="-moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
-                                                        -webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6); box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
-                                                        border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
+-webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6); box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
                              width="240" height="180"/>
                     </td>
                 </tr>
@@ -616,7 +924,7 @@ document.getElementById('posterPreviewInfo').src = oFREvent.target.result;
     </div>
 </div>
 <div id="fragment-2" style="width:80%;">
-    <label class="control-label" for="typeahead" style="float: right; font-weight: bold;">
+    <label class="control-label" style="float: right; font-weight: bold;">
         درخواست ها
     </label>
     <table class="table table-bordered table-striped table-condensed" id="SeminarDetailsRequestedTable">
@@ -649,7 +957,7 @@ document.getElementById('posterPreviewInfo').src = oFREvent.target.result;
     </table>
 </div>
 <div id="fragment-3" style="width:80%;">
-    <label class="control-label" for="typeahead" style="float: right; font-weight: bold;">
+    <label class="control-label"  style="float: right; font-weight: bold;">
         دعوت ها
     </label>
     <table class="table table-bordered table-striped table-condensed" id="SeminarDetailsInvitedTable">
@@ -680,11 +988,12 @@ document.getElementById('posterPreviewInfo').src = oFREvent.target.result;
     <div class="form-actions" id="SeminarMoreInfoAddInvite">
     </div>
     <div class="alert alert-success">
-        <strong id="OnDemandInviteMessages" style=": Tahoma, Geneva, sans-serif"></strong>
+        <strong id="OnDemandInviteMessages" style=": Tahoma, Geneva, sans-serif">
+        </strong>
     </div>
 </div>
 <div id="fragment-5" style="width:80%;">
-    <label class="control-label" for="NewSeminarFiles" style="float: right; font-weight: bold;">
+    <label class="control-label"  style="float: right; font-weight: bold;">
         فایل های سمینار
     </label>
     <br/>
@@ -720,31 +1029,31 @@ document.getElementById('posterPreviewInfo').src = oFREvent.target.result;
             <div class="fileupload-buttonbar">
                 <div class="progressbar fileupload-progressbar">
                 </div>
-                                        <span class="fileinput-button">
-                                            <!--	
+              <span class="fileinput-button">
+                <!--	
 <a href="javascript:void(0)" class="upload-image">
 Upload images
 </a>
 -->
-                                            <label class="control-label" for="Invited" style="float: right;">
-                                                انتخاب فایهای سمینار
-                                            </label>
-                                            <div id="SeminarInfoFileInput">
-                                                <input type="file" name="files[]" multiple>
-                                            </div>
-                                            <br/>
-                                            <div class="progress progress-info progress-striped active">
-                                                <div class="bar" style="width: 0%" id="SeminarInfoFileProgress">
-                                                </div>
-                                            </div>
-                                        </span>
+                <label class="control-label" for="Invited" style="float: right;">
+                    انتخاب فایهای سمینار
+                </label>
+                <div id="SeminarInfoFileInput">
+                    <input type="file" name="files[]" multiple>
+                </div>
+                <br/>
+                <div class="progress progress-info progress-striped active">
+                    <div class="bar" style="width: 0%" id="SeminarInfoFileProgress">
+                    </div>
+                </div>
+              </span>
             </div>
         </form>
     </div>
 </div>
 <div id="fragment-4" style="width:80%;">
     <div id="OfflineWebinar">
-        <label class="control-label" for="NewSeminarVideos" style="float: right; font-weight: bold;">
+        <label class="control-label" style="float: right; font-weight: bold;">
             ویدیوهای سمینار
         </label>
         <br/>
@@ -780,24 +1089,24 @@ Upload images
                 <div class="fileupload-buttonbar">
                     <div class="progressbar fileupload-progressbar">
                     </div>
-                                            <span class="fileinput-button">
-                                                <!--	
+                <span class="fileinput-button">
+                  <!--	
 <a href="javascript:void(0)" class="upload-image">
 Upload images
 </a>
 -->
-                                                <label class="control-label" for="Invited" style="float: right;">
-                                                    انتخاب ویدیوهای سمینار
-                                                </label>
-                                                <div id="SeminarInfoVideoInput">
-                                                    <input type="file" name="files[]" multiple>
-                                                </div>
-                                                <br/>
-                                                <div class="progress progress-info progress-striped active">
-                                                    <div class="bar" style="width: 0%" id="SeminarInfoVideoProgress">
-                                                    </div>
-                                                </div>
-                                            </span>
+                  <label class="control-label" for="Invited" style="float: right;">
+                      انتخاب ویدیوهای سمینار
+                  </label>
+                  <div id="SeminarInfoVideoInput">
+                      <input type="file" name="files[]" multiple>
+                  </div>
+                  <br/>
+                  <div class="progress progress-info progress-striped active">
+                      <div class="bar" style="width: 0%" id="SeminarInfoVideoProgress">
+                      </div>
+                  </div>
+                </span>
                 </div>
             </form>
         </div>
@@ -805,18 +1114,32 @@ Upload images
 </div>
 </div>
 </div>
+</div>
 <div class="box span10" id="InvitedToSeminar" name="PanelWindow" style="float: right;
-                            display: none;">
+display: none;">
     <div class="box-header well">
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>پیگیری دعوت نامه ها
+            <i class="icon-info-sign">
+            </i>
+            پیگیری دعوت نامه ها
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -865,14 +1188,27 @@ Upload images
 <div class="box span10" id="ContactUs" name="PanelWindow" style="float: right; display: none;">
     <div class="box-header well">
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>پیگیری درخواست ها
+            <i class="icon-info-sign">
+            </i>
+            پیگیری درخواست ها
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content" id="ContactUsPanel">
@@ -883,17 +1219,30 @@ Upload images
 
 -->
 <div class="box span10" id="MyRequestedSeminars" name="PanelWindow" style="float: right;
-                            display: none;">
+display: none;">
     <div class="box-header well">
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>مشاهده سمینار
+            <i class="icon-info-sign">
+            </i>
+            مشاهده سمینار
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -949,14 +1298,27 @@ Upload images
 <div class="box span12" id="OwnedSeminars" name="PanelWindow" style="display: none;">
     <div class="box-header well">
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>سمینارهای من
+            <i class="icon-info-sign">
+            </i>
+            سمینارهای من
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -1003,14 +1365,27 @@ Upload images
 <div class="box span9" id="UserPeyments" name="PanelWindow" style="display: none;">
     <div class="box-header well">
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>صورتحساب مشتری
+            <i class="icon-info-sign">
+            </i>
+            صورتحساب مشتری
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -1045,17 +1420,30 @@ Upload images
 <!-- End Of Customer Payment -->
 <!-- Begin Of Profile Details -->
 <div class="box span9" id="ProfileDetails" name="PanelWindow" style="float: right;
-                            margin-right: 30px; display: none;">
+margin-right: 30px; display: none;">
 <div class="box-header well">
     <h2 style="float: right;">
-        <i class="icon-info-sign"></i>اطلاعات عمومی
+        <i class="icon-info-sign">
+        </i>
+        اطلاعات عمومی
     </h2>
 
     <div class="box-icon" style="float: left;">
-        <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                     class="btn btn-minimize btn-round"><i
-            class="icon-chevron-up"></i></a><a href="#"
-                                               class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+        <a href="#" class="btn btn-setting btn-round">
+            <i class="icon-cog">
+            </i>
+        </a>
+        <a href="#"
+           class="btn btn-minimize btn-round">
+            <i
+                    class="icon-chevron-up">
+            </i>
+        </a>
+        <a href="#"
+           class="btn btn-close btn-round">
+            <i class="icon-remove">
+            </i>
+        </a>
     </div>
 </div>
 <div class="box-content">
@@ -1082,7 +1470,7 @@ Upload images
 <div class="form-horizontal">
 <fieldset>
 <div class="control-group" id="ProfileFirstNameGroup">
-    <label class="control-label" for="typeahead" style="float: right;">
+    <label class="control-label" style="float: right;">
         * نام
     </label>
 
@@ -1091,7 +1479,7 @@ Upload images
     </div>
 </div>
 <div class="control-group" id="ProfileLastNameGroup">
-    <label class="control-label" for="typeahead" style="float: right;">
+    <label class="control-label"  style="float: right;">
         * نام خانوادگی
     </label>
 
@@ -1106,9 +1494,15 @@ Upload images
 
     <div class="controls">
         <select id="ProfileselectGender">
-            <option id="ProfileselectGender1000" value="-1">انتخاب نشده</option>
-            <option id="ProfileselectGender0" value="0">مرد</option>
-            <option id="ProfileselectGender1" value="1">زن</option>
+            <option id="ProfileselectGender1000" value="-1">
+                انتخاب نشده
+            </option>
+            <option id="ProfileselectGender0" value="0">
+                مرد
+            </option>
+            <option id="ProfileselectGender1" value="1">
+                زن
+            </option>
         </select>
     </div>
 </div>
@@ -1119,7 +1513,9 @@ Upload images
 
     <div class="controls">
         <select id="ProfileSelectCity">
-            <option id="ProfileSelectCity0" value="0">انتخاب نشده</option>
+            <option id="ProfileSelectCity0" value="0">
+                انتخاب نشده
+            </option>
         </select>
     </div>
 </div>
@@ -1130,7 +1526,9 @@ Upload images
 
     <div class="controls">
         <select id="ProfileSelectCountry">
-            <option value="1">ایران</option>
+            <option value="1">
+                ایران
+            </option>
         </select>
     </div>
 </div>
@@ -1141,13 +1539,27 @@ Upload images
 
     <div class="controls">
         <select id="ProfileSelectDegree">
-            <option id="ProfileSelectDegree0" value="0">انتخاب نشده</option>
-            <option id="ProfileSelectDegree1" value="1">دیپلم</option>
-            <option id="ProfileSelectDegree2" value="2">فوق دیپلم</option>
-            <option id="ProfileSelectDegree3" value="3">کارشناسی</option>
-            <option id="ProfileSelectDegree4" value="4">کارشناسی ارشد</option>
-            <option id="ProfileSelectDegree5" value="5">دکترا</option>
-            <option id="ProfileSelectDegree6" value="6">فوق دکترا</option>
+            <option id="ProfileSelectDegree0" value="0">
+                انتخاب نشده
+            </option>
+            <option id="ProfileSelectDegree1" value="1">
+                دیپلم
+            </option>
+            <option id="ProfileSelectDegree2" value="2">
+                فوق دیپلم
+            </option>
+            <option id="ProfileSelectDegree3" value="3">
+                کارشناسی
+            </option>
+            <option id="ProfileSelectDegree4" value="4">
+                کارشناسی ارشد
+            </option>
+            <option id="ProfileSelectDegree5" value="5">
+                دکترا
+            </option>
+            <option id="ProfileSelectDegree6" value="6">
+                فوق دکترا
+            </option>
         </select>
     </div>
 </div>
@@ -1161,7 +1573,7 @@ Upload images
     </div>
 </div>
 <div class="control-group" id="ProfileMobileGroup">
-    <label class="control-label" for="typeahead" style="float: right;">
+    <label class="control-label" style="float: right;">
         * تلفن همراه
     </label>
 
@@ -1170,149 +1582,411 @@ Upload images
     </div>
 </div>
 <div class="control-group">
-    <label class="control-label" for="ProfileBirthdate" style="float: right;">
-        * تولد
-    </label>
+<label class="control-label"  style="float: right;">
+    * تولد
+</label>
 
-    <div class="controls">
-        <select id="ProfileBirthdateDay" style="width: 60px;">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
-            <option>19</option>
-            <option>20</option>
-            <option>21</option>
-            <option>22</option>
-            <option>23</option>
-            <option>24</option>
-            <option>25</option>
-            <option>26</option>
-            <option>27</option>
-            <option>28</option>
-            <option>29</option>
-            <option>30</option>
-            <option>31</option>
-        </select>
-        <select id="ProfileBirthdateMonth" style="width: 90px;">
-            <option value="1">فروردین</option>
-            <option value="2">اردیبهشت</option>
-            <option value="3">خرداد</option>
-            <option value="4">تیر</option>
-            <option value="5">مرداد</option>
-            <option value="6">شهریور</option>
-            <option value="7">مهر</option>
-            <option value="8">آبان</option>
-            <option value="9">آذر</option>
-            <option value="10">دی</option>
-            <option value="11">بهمن</option>
-            <option value="12">اسفند</option>
-        </select>
-        <select id="ProfileBirthdateYear" style="width: 60px;">
-            <option value="1327">1304</option>
-            <option value="1328">1305</option>
-            <option value="1329">1306</option>
-            <option value="1330">1307</option>
-            <option value="1331">1308</option>
-            <option value="1332">1309</option>
-            <option value="1333">1310</option>
-            <option value="1334">1311</option>
-            <option value="1335">1312</option>
-            <option value="1336">1313</option>
-            <option value="1337">1314</option>
-            <option value="1327">1315</option>
-            <option value="1328">1316</option>
-            <option value="1329">1317</option>
-            <option value="1330">1318</option>
-            <option value="1331">1319</option>
-            <option value="1332">1320</option>
-            <option value="1333">1321</option>
-            <option value="1334">1322</option>
-            <option value="1335">1323</option>
-            <option value="1336">1324</option>
-            <option value="1337">1325</option>
-            <option value="1338">1326</option>
-            <option value="1327">1327</option>
-            <option value="1328">1328</option>
-            <option value="1329">1329</option>
-            <option value="1330">1330</option>
-            <option value="1331">1331</option>
-            <option value="1332">1332</option>
-            <option value="1333">1333</option>
-            <option value="1334">1334</option>
-            <option value="1335">1335</option>
-            <option value="1336">1336</option>
-            <option value="1337">1337</option>
-            <option value="1338">1338</option>
-            <option value="1339">1339</option>
-            <option value="1340">1340</option>
-            <option value="1341">1341</option>
-            <option value="1342">1342</option>
-            <option value="1343">1343</option>
-            <option value="1344">1344</option>
-            <option value="1345">1345</option>
-            <option value="1346">1346</option>
-            <option value="1347">1347</option>
-            <option value="1348">1348</option>
-            <option value="1349">1349</option>
-            <option value="1350">1350</option>
-            <option value="1351">1351</option>
-            <option value="1352">1352</option>
-            <option value="1353">1353</option>
-            <option value="1354">1354</option>
-            <option value="1355">1355</option>
-            <option value="1356">1356</option>
-            <option value="1357">1357</option>
-            <option value="1358">1358</option>
-            <option value="1359">1359</option>
-            <option value="1360">1360</option>
-            <option value="1361">1361</option>
-            <option value="1362">1362</option>
-            <option value="1363">1363</option>
-            <option value="1364">1364</option>
-            <option value="1365">1365</option>
-            <option value="1366">1366</option>
-            <option value="1367">1367</option>
-            <option value="1368">1368</option>
-            <option value="1369">1369</option>
-            <option value="1370">1370</option>
-            <option value="1371">1371</option>
-            <option value="1372">1372</option>
-            <option value="1373">1373</option>
-            <option value="1374">1374</option>
-            <option value="1375">1375</option>
-            <option value="1376">1376</option>
-            <option value="1377">1377</option>
-            <option value="1378">1378</option>
-            <option value="1379">1379</option>
-            <option value="1380">1380</option>
-            <option value="1381">1381</option>
-            <option value="1382">1382</option>
-            <option value="1383">1383</option>
-            <option value="1384">1384</option>
-            <option value="1385">1385</option>
-            <option value="1386">1386</option>
-            <option value="1387">1387</option>
-            <option value="1388">1388</option>
-            <option value="1389">1389</option>
-            <option value="1390">1390</option>
-            <option value="1391">1391</option>
-        </select>
-    </div>
+<div class="controls">
+<select id="ProfileBirthdateDay" style="width: 60px;">
+    <option>
+        1
+    </option>
+    <option>
+        2
+    </option>
+    <option>
+        3
+    </option>
+    <option>
+        4
+    </option>
+    <option>
+        5
+    </option>
+    <option>
+        6
+    </option>
+    <option>
+        7
+    </option>
+    <option>
+        8
+    </option>
+    <option>
+        9
+    </option>
+    <option>
+        10
+    </option>
+    <option>
+        11
+    </option>
+    <option>
+        12
+    </option>
+    <option>
+        13
+    </option>
+    <option>
+        14
+    </option>
+    <option>
+        15
+    </option>
+    <option>
+        16
+    </option>
+    <option>
+        17
+    </option>
+    <option>
+        18
+    </option>
+    <option>
+        19
+    </option>
+    <option>
+        20
+    </option>
+    <option>
+        21
+    </option>
+    <option>
+        22
+    </option>
+    <option>
+        23
+    </option>
+    <option>
+        24
+    </option>
+    <option>
+        25
+    </option>
+    <option>
+        26
+    </option>
+    <option>
+        27
+    </option>
+    <option>
+        28
+    </option>
+    <option>
+        29
+    </option>
+    <option>
+        30
+    </option>
+    <option>
+        31
+    </option>
+</select>
+<select id="ProfileBirthdateMonth" style="width: 90px;">
+    <option value="1">
+        فروردین
+    </option>
+    <option value="2">
+        اردیبهشت
+    </option>
+    <option value="3">
+        خرداد
+    </option>
+    <option value="4">
+        تیر
+    </option>
+    <option value="5">
+        مرداد
+    </option>
+    <option value="6">
+        شهریور
+    </option>
+    <option value="7">
+        مهر
+    </option>
+    <option value="8">
+        آبان
+    </option>
+    <option value="9">
+        آذر
+    </option>
+    <option value="10">
+        دی
+    </option>
+    <option value="11">
+        بهمن
+    </option>
+    <option value="12">
+        اسفند
+    </option>
+</select>
+<select id="ProfileBirthdateYear" style="width: 60px;">
+<option value="1327">
+    1304
+</option>
+<option value="1328">
+    1305
+</option>
+<option value="1329">
+    1306
+</option>
+<option value="1330">
+    1307
+</option>
+<option value="1331">
+    1308
+</option>
+<option value="1332">
+    1309
+</option>
+<option value="1333">
+    1310
+</option>
+<option value="1334">
+    1311
+</option>
+<option value="1335">
+    1312
+</option>
+<option value="1336">
+    1313
+</option>
+<option value="1337">
+    1314
+</option>
+<option value="1327">
+    1315
+</option>
+<option value="1328">
+    1316
+</option>
+<option value="1329">
+    1317
+</option>
+<option value="1330">
+    1318
+</option>
+<option value="1331">
+    1319
+</option>
+<option value="1332">
+    1320
+</option>
+<option value="1333">
+    1321
+</option>
+<option value="1334">
+    1322
+</option>
+<option value="1335">
+    1323
+</option>
+<option value="1336">
+    1324
+</option>
+<option value="1337">
+    1325
+</option>
+<option value="1338">
+    1326
+</option>
+<option value="1327">
+    1327
+</option>
+<option value="1328">
+    1328
+</option>
+<option value="1329">
+    1329
+</option>
+<option value="1330">
+    1330
+</option>
+<option value="1331">
+    1331
+</option>
+<option value="1332">
+    1332
+</option>
+<option value="1333">
+    1333
+</option>
+<option value="1334">
+    1334
+</option>
+<option value="1335">
+    1335
+</option>
+<option value="1336">
+    1336
+</option>
+<option value="1337">
+    1337
+</option>
+<option value="1338">
+    1338
+</option>
+<option value="1339">
+    1339
+</option>
+<option value="1340">
+    1340
+</option>
+<option value="1341">
+    1341
+</option>
+<option value="1342">
+    1342
+</option>
+<option value="1343">
+    1343
+</option>
+<option value="1344">
+    1344
+</option>
+<option value="1345">
+    1345
+</option>
+<option value="1346">
+    1346
+</option>
+<option value="1347">
+    1347
+</option>
+<option value="1348">
+    1348
+</option>
+<option value="1349">
+    1349
+</option>
+<option value="1350">
+    1350
+</option>
+<option value="1351">
+    1351
+</option>
+<option value="1352">
+    1352
+</option>
+<option value="1353">
+    1353
+</option>
+<option value="1354">
+    1354
+</option>
+<option value="1355">
+    1355
+</option>
+<option value="1356">
+    1356
+</option>
+<option value="1357">
+    1357
+</option>
+<option value="1358">
+    1358
+</option>
+<option value="1359">
+    1359
+</option>
+<option value="1360">
+    1360
+</option>
+<option value="1361">
+    1361
+</option>
+<option value="1362">
+    1362
+</option>
+<option value="1363">
+    1363
+</option>
+<option value="1364">
+    1364
+</option>
+<option value="1365">
+    1365
+</option>
+<option value="1366">
+    1366
+</option>
+<option value="1367">
+    1367
+</option>
+<option value="1368">
+    1368
+</option>
+<option value="1369">
+    1369
+</option>
+<option value="1370">
+    1370
+</option>
+<option value="1371">
+    1371
+</option>
+<option value="1372">
+    1372
+</option>
+<option value="1373">
+    1373
+</option>
+<option value="1374">
+    1374
+</option>
+<option value="1375">
+    1375
+</option>
+<option value="1376">
+    1376
+</option>
+<option value="1377">
+    1377
+</option>
+<option value="1378">
+    1378
+</option>
+<option value="1379">
+    1379
+</option>
+<option value="1380">
+    1380
+</option>
+<option value="1381">
+    1381
+</option>
+<option value="1382">
+    1382
+</option>
+<option value="1383">
+    1383
+</option>
+<option value="1384">
+    1384
+</option>
+<option value="1385">
+    1385
+</option>
+<option value="1386">
+    1386
+</option>
+<option value="1387">
+    1387
+</option>
+<option value="1388">
+    1388
+</option>
+<option value="1389">
+    1389
+</option>
+<option value="1390">
+    1390
+</option>
+<option value="1391">
+    1391
+</option>
+</select>
+</div>
 </div>
 </fieldset>
 </div>
@@ -1339,18 +2013,18 @@ Upload images
                         <div class="fileupload-buttonbar">
                             <div class="progressbar fileupload-progressbar">
                             </div>
-                                                                <span class="fileinput-button">
-                                                                    <div id="ProfileImageFileInput">
-                                                                        <input id="ProfileImageInput" type="file"
-                                                                               name="files[]" multiple
-                                                                               onchange="var file = this.files[0]; oFReader = new FileReader(); oFReader.readAsDataURL(document.getElementById('ProfileImageInput').files[0]); oFReader.onload = function (oFREvent) { document.getElementById('ProfileImageImage').src = oFREvent.target.result;};">
-                                                                    </div>
-                                                                    <div class="progress progress-info progress-striped active">
-                                                                        <div class="bar" style="width: 0%"
-                                                                             id="ProfileImageProgress">
-                                                                        </div>
-                                                                    </div>
-                                                                </span>
+                      <span class="fileinput-button">
+                        <div id="ProfileImageFileInput">
+                            <input id="ProfileImageInput" type="file"
+                                   name="files[]" multiple
+                                   onchange="var file = this.files[0]; oFReader = new FileReader(); oFReader.readAsDataURL(document.getElementById('ProfileImageInput').files[0]); oFReader.onload = function (oFREvent) { document.getElementById('ProfileImageImage').src = oFREvent.target.result;};">
+                        </div>
+                        <div class="progress progress-info progress-striped active">
+                            <div class="bar" style="width: 0%"
+                                 id="ProfileImageProgress">
+                            </div>
+                        </div>
+                      </span>
                         </div>
                     </form>
                 </div>
@@ -1377,29 +2051,46 @@ Upload images
 <div class="box span12" id="NewSeminar" name="PanelWindow" style="display: none;">
 <div class="box-header well">
     <h2 style="float: right;">
-        <i class="icon-info-sign"></i>ایجاد سمینار جدید
+        <i class="icon-info-sign">
+        </i>
+        ایجاد سمینار جدید
     </h2>
 
     <div class="box-icon" style="float: left;">
-        <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                     class="btn btn-minimize btn-round"><i
-            class="icon-chevron-up"></i></a><a href="#"
-                                               class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+        <a href="#" class="btn btn-setting btn-round">
+            <i class="icon-cog">
+            </i>
+        </a>
+        <a href="#"
+           class="btn btn-minimize btn-round">
+            <i
+                    class="icon-chevron-up">
+            </i>
+        </a>
+        <a href="#"
+           class="btn btn-close btn-round">
+            <i class="icon-remove">
+            </i>
+        </a>
     </div>
 </div>
 <div class="box-content">
 <div id="NewTerminalWizard-1">
-    <legend>مدل سمینار را انتخاب کنید</legend>
+    <legend>
+        مدل سمینار را انتخاب کنید
+    </legend>
     <div class="form-horizontal">
         <center>
             <table style="width: 70%; direction: rtl;">
                 <tr>
                     <td style="width: 30%">
                         <div id="pb1" class="BusinessPlanDiv" onclick=" peymentMethod = 1 ;SeminarWizard(0, true);">
-                                                            <span style="display: inline-block; vertical-align: middle; line-height: normal;
-                                                                font-size: 20px; font-family: Tahoma, Geneva, sans-serif; -webkit-transform: rotate(-45deg);
-                                                                -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg);
-                                                                transform: rotate(-45deg);">مدل آفلاین </span>
+                    <span style="display: inline-block; vertical-align: middle; line-height: normal;
+font-size: 20px; font-family: Tahoma, Geneva, sans-serif; -webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg);
+transform: rotate(-45deg);">
+  مدل آفلاین 
+                    </span>
                         </div>
                     </td>
                     <td style="width: 70%; text-align: right;">
@@ -1414,10 +2105,12 @@ Upload images
                 <tr>
                     <td style="width: 30%">
                         <div id="pb2" class="BusinessPlanDiv" onclick=" peymentMethod = 1 ;SeminarWizard(0, true);">
-                                                            <span style="display: inline-block; vertical-align: middle; line-height: normal;
-                                                                font-size: 20px; font-family: Tahoma, Geneva, sans-serif; -webkit-transform: rotate(-45deg);
-                                                                -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg);
-                                                                transform: rotate(-45deg);">مدل آنلاین </span>
+                    <span style="display: inline-block; vertical-align: middle; line-height: normal;
+font-size: 20px; font-family: Tahoma, Geneva, sans-serif; -webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg);
+transform: rotate(-45deg);">
+  مدل آنلاین 
+                    </span>
                         </div>
                     </td>
                     <td style="width: 70%; text-align: right; direction: rtl;">
@@ -1433,7 +2126,9 @@ Upload images
     </div>
 </div>
 <div id="NewTerminalWizard1">
-    <legend>مرحله اول - اطلاعات عمومی</legend>
+    <legend>
+        مرحله اول - اطلاعات عمومی
+    </legend>
     <div class="form-horizontal">
         <fieldset>
             <!-- Seminar Name -->
@@ -1444,9 +2139,10 @@ Upload images
 
                 <div class="controls">
                     <input type="text" class="span6 typeahead" id="NewSeminarName" data-provide="typeahead">
-                                                    <span class="help-inline ui-state-error-text"
-                                                          id="NewSeminarNameError" style="display: none;">
-                                                        موضوع سمینار را وارد کنید </span>
+                <span class="help-inline ui-state-error-text"
+                      id="NewSeminarNameError" style="display: none;">
+                  موضوع سمینار را وارد کنید 
+                </span>
                 </div>
             </div>
             <!-- Seminar Presentor-->
@@ -1458,9 +2154,10 @@ Upload images
                 <div class="controls">
                     <input type="text" class="span6 typeahead" id="NewSeminarPresentor" data-provide="typeahead"
                            onclick="$('#SearchFor').val('NewSeminarPresentor');  $('#SearchPhrase').focus(); $('#FindPersonDialog').modal('show');">
-                                                    <span class="help-inline ui-state-error-text"
-                                                          id="NewSeminarPresentorError" style="display: none;">
-                                                        پست الکترونیکی ارائه دهنده سمینار </span>
+                <span class="help-inline ui-state-error-text"
+                      id="NewSeminarPresentorError" style="display: none;">
+                  پست الکترونیکی ارائه دهنده سمینار 
+                </span>
                 </div>
             </div>
             <!-- Seminar Type -->
@@ -1471,9 +2168,15 @@ Upload images
 
                 <div class="controls">
                     <select id="NewSeminarType" style="float: right; font-family: Tahoma, Geneva, sans-serif;">
-                        <option value="1">عمومی</option>
-                        <option value="0">خصوصی</option>
-                        <option value="2">تستی</option>
+                        <option value="1">
+                            عمومی
+                        </option>
+                        <option value="0">
+                            خصوصی
+                        </option>
+                        <option value="2">
+                            تستی
+                        </option>
                     </select>
                 </div>
             </div>
@@ -1499,8 +2202,8 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
                         <tr>
                             <td>
                                 <img id="posterPreview" style="-moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
-                                                                    -webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6); box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
-                                                                    border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
+-webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6); box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
                                      width="240" height="180"/>
                             </td>
                         </tr>
@@ -1531,7 +2234,9 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 <!-- End Of Seminar Primary Info -->
 <!-- Seminar Price Prediction -->
 <div id="NewTerminalWizard0">
-    <legend>برآورد هزینه</legend>
+    <legend>
+        برآورد هزینه
+    </legend>
     <div class="form-horizontal">
         <fieldset>
             <div class="form-actions">
@@ -1542,15 +2247,33 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 
                     <div class="controls">
                         <select id="NewSeminarCapacityPredict">
-                            <option>35</option>
-                            <option>50</option>
-                            <option>100</option>
-                            <option>150</option>
-                            <option>200</option>
-                            <option>250</option>
-                            <option>300</option>
-                            <option>400</option>
-                            <option>500</option>
+                            <option>
+                                35
+                            </option>
+                            <option>
+                                50
+                            </option>
+                            <option>
+                                100
+                            </option>
+                            <option>
+                                150
+                            </option>
+                            <option>
+                                200
+                            </option>
+                            <option>
+                                250
+                            </option>
+                            <option>
+                                300
+                            </option>
+                            <option>
+                                400
+                            </option>
+                            <option>
+                                500
+                            </option>
                         </select>
                     </div>
                 </div>
@@ -1561,11 +2284,21 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 
                     <div class="controls">
                         <select id="NewSeminarHourLength">
-                            <option>1</option>
-                            <option>1.5</option>
-                            <option>2</option>
-                            <option>2.5</option>
-                            <option>3</option>
+                            <option>
+                                1
+                            </option>
+                            <option>
+                                1.5
+                            </option>
+                            <option>
+                                2
+                            </option>
+                            <option>
+                                2.5
+                            </option>
+                            <option>
+                                3
+                            </option>
                         </select>
                     </div>
                 </div>
@@ -1576,11 +2309,15 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 
                     <div class="controls">
                         <input type="text" class="span5 typeahead" id="NewSeminarCustomFee" data-provide="typeahead">
-                                                        <span class="help-inline ui-state-error-text"
-                                                              id="NewSeminarCustomFeeError" style="display: none;">
-                                                            هزینه ثبت نام را وارد کنید </span><span
-                            class="help-block ui-state-processing">این مبلغ
-                                                                در هنگام ثبت نام از شرکت کنندگان دریافت میشود </span>
+                  <span class="help-inline ui-state-error-text"
+                        id="NewSeminarCustomFeeError" style="display: none;">
+                    هزینه ثبت نام را وارد کنید 
+                  </span>
+                  <span
+                          class="help-block ui-state-processing">
+                    این مبلغ
+                    در هنگام ثبت نام از شرکت کنندگان دریافت میشود 
+                  </span>
                     </div>
                 </div>
                 <button type="button" class="btn btn-primary" id="ProfileSave" onclick="SeminarWizard(1, true); ">
@@ -1596,7 +2333,9 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 <!-- End Of Prediction -->
 <!-- Seminar Description -->
 <div id="NewTerminalWizard2" style="display: none;">
-    <legend>مرحله دوم - توصیف سمینار</legend>
+    <legend>
+        مرحله دوم - توصیف سمینار
+    </legend>
     <div class="form-horizontal">
         <fieldset>
             <div class="control-group">
@@ -1606,9 +2345,10 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 
                 <div class="controls">
                     <input type="text" class="span6 typeahead" id="NewSeminarKeyWords" data-provide="typeahead">
-                                                    <span class="help-inline ui-state-error-text"
-                                                          id="NewSeminarKeyWordsError" style="display: none;">
-                                                        کلمات کلیدی سمینار را وارد کنید </span>
+                <span class="help-inline ui-state-error-text"
+                      id="NewSeminarKeyWordsError" style="display: none;">
+                  کلمات کلیدی سمینار را وارد کنید 
+                </span>
                 </div>
             </div>
             <div class="control-group">
@@ -1659,7 +2399,8 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
                 </label>
 
                 <div class="controls">
-                    <textarea id="NewSeminarDescription" rows="3" cols="10"></textarea>
+                    <textarea id="NewSeminarDescription" rows="3" cols="10">
+                    </textarea>
                 </div>
             </div>
             <div class="control-group">
@@ -1668,7 +2409,8 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
                 </label>
 
                 <div class="controls">
-                    <textarea id="NewSeminarWhyParticipate" rows="3" cols="10"></textarea>
+                    <textarea id="NewSeminarWhyParticipate" rows="3" cols="10">
+                    </textarea>
                 </div>
             </div>
             <div class="control-group">
@@ -1677,7 +2419,8 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
                 </label>
 
                 <div class="controls">
-                    <textarea id="NewSeminarForWho" rows="3" cols="10"></textarea>
+                    <textarea id="NewSeminarForWho" rows="3" cols="10">
+                    </textarea>
                 </div>
             </div>
             <div class="control-group">
@@ -1686,7 +2429,8 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
                 </label>
 
                 <div class="controls">
-                    <textarea id="NewSeminarPrecondition" rows="3" cols="10"></textarea>
+                    <textarea id="NewSeminarPrecondition" rows="3" cols="10">
+                    </textarea>
                 </div>
             </div>
             <div class="form-actions">
@@ -1707,119 +2451,230 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 
 <!-- Seminar Timing -->
 <div id="NewTerminalWizard3" style="display: none;">
-    <legend>مرحله سوم - زمان سمینار</legend>
-    <div class="form-horizontal">
-        <fieldset>
-            <div class="control-group">
-                <label class="control-label" for="NewSeminarDate" style="float: right;">
-                    زمان برگزاری
-                </label>
+<legend>
+    مرحله سوم - زمان سمینار
+</legend>
+<div class="form-horizontal">
+<fieldset>
+<div class="control-group">
+    <label class="control-label" for="NewSeminarDate" style="float: right;">
+        زمان برگزاری
+    </label>
 
-                <div class="controls">
-                    <select id="NewSeminarDateYear">
-                        <option value="1393">1393</option>
-                        <option value="1394">1394</option>
-                    </select>
-                    <select id="NewSeminarDateMonth" onchange="LoadSeminarTimes();">
-                        <option id="NewSeminarDateMonth0" value="1">فروردین</option>
-                        <option id="NewSeminarDateMonth1" value="2">اردیبهشت</option>
-                        <option id="NewSeminarDateMonth2" value="3">خرداد</option>
-                        <option id="NewSeminarDateMonth3" value="4">تیر</option>
-                        <option id="NewSeminarDateMonth4" value="5">مرداد</option>
-                        <option id="NewSeminarDateMonth5" value="6">شهریور</option>
-                        <option id="NewSeminarDateMonth6" value="7">مهر</option>
-                        <option id="NewSeminarDateMonth7" value="8">آبان</option>
-                        <option id="NewSeminarDateMonth8" value="9">آذر</option>
-                        <option id="NewSeminarDateMonth9" value="10">دی</option>
-                        <option id="NewSeminarDateMonth10" value="11">بهمن</option>
-                        <option id="NewSeminarDateMonth11" value="12">اسفند</option>
-                    </select>
-                    <select id="NewSeminarDateDay">
-                    </select>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label" for="NewSeminarHeldingHour" style="float: right;">
-                    ساعت برگزاری
-                </label>
-
-                <div class="controls">
-                    <select id="NewSeminarHeldingHour">
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                        <option>15</option>
-                        <option>16</option>
-                        <option>17</option>
-                        <option>18</option>
-                        <option>19</option>
-                        <option>20</option>
-                        <option>21</option>
-                        <option>22</option>
-                        <option>23</option>
-                    </select>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label" for="NewSeminarEndingHour" style="float: right;">
-                    ساعت اتمام
-                </label>
-
-                <div class="controls">
-                    <select id="NewSeminarEndingHour">
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                        <option>15</option>
-                        <option>16</option>
-                        <option>17</option>
-                        <option>18</option>
-                        <option>19</option>
-                        <option>20</option>
-                        <option>21</option>
-                        <option>22</option>
-                        <option>23</option>
-                    </select>
-                                                    <span class="help-inline ui-state-error-text"
-                                                          id="NewSeminarEndingHourError" style="display: none;">
-                                                        زمان پایان نمیتواند پیش از زمان شروع باشد! </span><span
-                        class="help-inline ui-state-error-text"
-                        id="NewSeminarDurationError" style="display: none;">زمان پایان نمیتواند پیش از زمان
-                                                            شروع باشد! </span><span
-                        class="help-inline ui-state-error-text" id="NewSeminartimeExistError"
-                        style="display: none;">امکان برقراری سمینار در این لحظه وجود ندارد </span>
-                </div>
-            </div>
-            <div class="form-actions">
-                <button type="button" class="btn btn-primary" id="ProfileSave" onclick="SeminarWizard(4, true);">
-                    مرحله بعدی
-                </button>
-                <button type="button" class="btn btn-primary" id="ProfileSave" onclick="SeminarWizard(2, false);">
-                    مرحله قبلی
-                </button>
-                <button type="reset" class="btn" id="ProfileCancel" onclick="$('#NewSeminar').hide();">
-                    انصراف
-                </button>
-            </div>
-        </fieldset>
+    <div class="controls">
+        <select id="NewSeminarDateYear">
+            <option value="1393">
+                1393
+            </option>
+            <option value="1394">
+                1394
+            </option>
+        </select>
+        <select id="NewSeminarDateMonth" onchange="LoadSeminarTimes();">
+            <option id="NewSeminarDateMonth0" value="1">
+                فروردین
+            </option>
+            <option id="NewSeminarDateMonth1" value="2">
+                اردیبهشت
+            </option>
+            <option id="NewSeminarDateMonth2" value="3">
+                خرداد
+            </option>
+            <option id="NewSeminarDateMonth3" value="4">
+                تیر
+            </option>
+            <option id="NewSeminarDateMonth4" value="5">
+                مرداد
+            </option>
+            <option id="NewSeminarDateMonth5" value="6">
+                شهریور
+            </option>
+            <option id="NewSeminarDateMonth6" value="7">
+                مهر
+            </option>
+            <option id="NewSeminarDateMonth7" value="8">
+                آبان
+            </option>
+            <option id="NewSeminarDateMonth8" value="9">
+                آذر
+            </option>
+            <option id="NewSeminarDateMonth9" value="10">
+                دی
+            </option>
+            <option id="NewSeminarDateMonth10" value="11">
+                بهمن
+            </option>
+            <option id="NewSeminarDateMonth11" value="12">
+                اسفند
+            </option>
+        </select>
+        <select id="NewSeminarDateDay">
+        </select>
     </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="NewSeminarHeldingHour" style="float: right;">
+        ساعت برگزاری
+    </label>
+
+    <div class="controls">
+        <select id="NewSeminarHeldingHour">
+            <option>
+                6
+            </option>
+            <option>
+                7
+            </option>
+            <option>
+                8
+            </option>
+            <option>
+                9
+            </option>
+            <option>
+                10
+            </option>
+            <option>
+                11
+            </option>
+            <option>
+                12
+            </option>
+            <option>
+                13
+            </option>
+            <option>
+                14
+            </option>
+            <option>
+                15
+            </option>
+            <option>
+                16
+            </option>
+            <option>
+                17
+            </option>
+            <option>
+                18
+            </option>
+            <option>
+                19
+            </option>
+            <option>
+                20
+            </option>
+            <option>
+                21
+            </option>
+            <option>
+                22
+            </option>
+            <option>
+                23
+            </option>
+        </select>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="NewSeminarEndingHour" style="float: right;">
+        ساعت اتمام
+    </label>
+
+    <div class="controls">
+        <select id="NewSeminarEndingHour">
+            <option>
+                6
+            </option>
+            <option>
+                7
+            </option>
+            <option>
+                8
+            </option>
+            <option>
+                9
+            </option>
+            <option>
+                10
+            </option>
+            <option>
+                11
+            </option>
+            <option>
+                12
+            </option>
+            <option>
+                13
+            </option>
+            <option>
+                14
+            </option>
+            <option>
+                15
+            </option>
+            <option>
+                16
+            </option>
+            <option>
+                17
+            </option>
+            <option>
+                18
+            </option>
+            <option>
+                19
+            </option>
+            <option>
+                20
+            </option>
+            <option>
+                21
+            </option>
+            <option>
+                22
+            </option>
+            <option>
+                23
+            </option>
+        </select>
+                <span class="help-inline ui-state-error-text"
+                      id="NewSeminarEndingHourError" style="display: none;">
+                  زمان پایان نمیتواند پیش از زمان شروع باشد! 
+                </span>
+                <span
+                        class="help-inline ui-state-error-text"
+                        id="NewSeminarDurationError" style="display: none;">
+                  زمان پایان نمیتواند پیش از زمان
+                  شروع باشد! 
+                </span>
+                <span
+                        class="help-inline ui-state-error-text" id="NewSeminartimeExistError"
+                        style="display: none;">
+                  امکان برقراری سمینار در این لحظه وجود ندارد 
+                </span>
+    </div>
+</div>
+<div class="form-actions">
+    <button type="button" class="btn btn-primary" id="ProfileSave" onclick="SeminarWizard(4, true);">
+        مرحله بعدی
+    </button>
+    <button type="button" class="btn btn-primary" id="ProfileSave" onclick="SeminarWizard(2, false);">
+        مرحله قبلی
+    </button>
+    <button type="reset" class="btn" id="ProfileCancel" onclick="$('#NewSeminar').hide();">
+        انصراف
+    </button>
+</div>
+</fieldset>
+</div>
 </div>
 <!-- End Of Timing -->
 <!-- Invite Wizard -->
 <div id="NewTerminalWizard4" style="display: none;">
-    <legend>مرحله چهارم - دعوت شرکت کنندگان</legend>
+    <legend>
+        مرحله چهارم - دعوت شرکت کنندگان
+    </legend>
     <div class="form-horizontal">
         <fieldset>
             <div class="control-group">
@@ -1873,7 +2728,9 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 <!-- ٍEnd Of Invite -->
 <!-- Seminar Content -->
 <div id="NewTerminalWizard5" style="display: none;">
-    <legend>مرحله پنجم - موافقتنامه</legend>
+    <legend>
+        مرحله پنجم - موافقتنامه
+    </legend>
     <div class="form-horizontal">
         <p style="font-size: 11px;">
             الف. مسئولیت مطالب سمینارها شامل فایل های ویدیویی، صدا و تصویر ارائه دهنده و بطور
@@ -1903,9 +2760,10 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
         <p style="font-size: 11px;">
             و. زمان سمینار متناسب با زمان انتخاب شده می باشد و افزایش زمان امکان پذیر نمی باشد.
         </p>
-                                        <span class="help-inline ui-state-error-text" id="NewSeminarAggrementError"
-                                              style="display: none;">
-                                            تنها با قبول شرایط قادر به برگزاری سمینار خواهید بود </span>
+          <span class="help-inline ui-state-error-text" id="NewSeminarAggrementError"
+                style="display: none;">
+            تنها با قبول شرایط قادر به برگزاری سمینار خواهید بود 
+          </span>
         <hr/>
         <br/>
 
@@ -1935,7 +2793,9 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 
 <!-- Begin Of Seminar Payment-->
 <div id="NewTerminalWizard6" style="display: none;">
-    <legend>مرحله ششم - پرداخت</legend>
+    <legend>
+        مرحله ششم - پرداخت
+    </legend>
     <div class="form-horizontal">
         <fieldset>
             <p style="font-size: 11px;">
@@ -2051,20 +2911,28 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 </div>
 <div id="NewTerminalWizard8" style="display: none;">
     <div class="form-horizontal">
-        <legend>سمینار با موفقیت ثبت گردید</legend>
+        <legend>
+            سمینار با موفقیت ثبت گردید
+        </legend>
         <hr/>
         شما می توانید در قسمت سمینارهای من، سمینار خود را مشاهده کرده و با زدن دکمه جزئیات
         بیشتر
         <br/>
         <br/>
         <ul style="margin-right: 10px;">
-            <li style="margin-right: 10px;">دعوت از شرکت کنندگان جدید</li>
-            <li style="margin-right: 10px;">مدیریت درخواست های داده شده برای شرکت در سمینار
+            <li style="margin-right: 10px;">
+                دعوت از شرکت کنندگان جدید
             </li>
-            <li style="margin-right: 10px;">مدیریت منابع سمینار از جمله فایل های متنی، پاورپوینتها،
+            <li style="margin-right: 10px;">
+                مدیریت درخواست های داده شده برای شرکت در سمینار
+            </li>
+            <li style="margin-right: 10px;">
+                مدیریت منابع سمینار از جمله فایل های متنی، پاورپوینتها،
                 عکسها و ....
             </li>
-            <li style="margin-right: 10px;">مشخص کردن اسلاید اصلی سمینار</li>
+            <li style="margin-right: 10px;">
+                مشخص کردن اسلاید اصلی سمینار
+            </li>
         </ul>
         <br/>
         را انجام دهید.
@@ -2081,11 +2949,13 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 </div>
 <div id="NewTerminalWizard9" style="display: none;">
     <div class="form-horizontal">
-        <legend>ایجاد سمینار با خطا روبرو گردید لطفا دقایقی دیگر مجددا تلاش کنید. لازم به ذکر
+        <legend>
+            ایجاد سمینار با خطا روبرو گردید لطفا دقایقی دیگر مجددا تلاش کنید. لازم به ذکر
             است وجه پرداختی به حساب شما برگردانده میشود
         </legend>
         <hr/>
-        <strong id="NewSemiarError"></strong>
+        <strong id="NewSemiarError">
+        </strong>
         <br/>
     </div>
 </div>
@@ -2095,17 +2965,30 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 <!-- End Of New seminar -->
 <!-- Begin of Bank Response showing -->
 <div class="box span6" id="BankResponseShow" name="PanelWindow" style="display: none;
-                            float: right;">
+float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>نتیجه پرداخت
+            <i class="icon-info-sign">
+            </i>
+            نتیجه پرداخت
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2144,17 +3027,30 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 <!-- End of Bank Response showing -->
 <!-- Begin Of Pishnahadat -->
 <div class="box span6" id="Pishnahadat" name="PanelWindow" style="display: none;
-                            float: right;">
+float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>پیشنهادات
+            <i class="icon-info-sign">
+            </i>
+            پیشنهادات
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2175,7 +3071,8 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
                     </label>
 
                     <div class="controls">
-                        <textarea id="PishnahadatPanel" rows="5" cols="10"></textarea>
+                        <textarea id="PishnahadatPanel" rows="5" cols="10">
+                        </textarea>
                     </div>
                 </div>
                 <div class="form-actions">
@@ -2193,17 +3090,30 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
 <!-- End Of Pishnahadat-->
 <!-- Begin Of Pishnahadat -->
 <div class="box span6" id="SampleSeminars" name="PanelWindow" style="display: none;
-                            float: right;">
+float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>سمینارهای نمونه
+            <i class="icon-info-sign">
+            </i>
+            سمینارهای نمونه
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2216,25 +3126,25 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
                 <div class="fileupload-buttonbar">
                     <div class="progressbar fileupload-progressbar">
                     </div>
-                                        <span class="fileinput-button">
-                                            <!--	
+          <span class="fileinput-button">
+            <!--	
 <a href="javascript:void(0)" class="upload-image">
 Upload images
 </a>
 -->
-                                            <label class="control-label" for="Invited" style="float: right;">
-                                                نمونه شماره 1
-                                            </label>
-                                            <div id="SampleSeminarVideoUpload1Input">
-                                                <input type="file" name="files[]" multiple>
-                                            </div>
-                                            <br/>
-                                            <div class="progress progress-info progress-striped active">
-                                                <div class="bar" style="width: 0%"
-                                                     id="SampleSeminarVideoUpload1Progress">
-                                                </div>
-                                            </div>
-                                        </span>
+            <label class="control-label" for="Invited" style="float: right;">
+                نمونه شماره 1
+            </label>
+            <div id="SampleSeminarVideoUpload1Input">
+                <input type="file" name="files[]" multiple>
+            </div>
+            <br/>
+            <div class="progress progress-info progress-striped active">
+                <div class="bar" style="width: 0%"
+                     id="SampleSeminarVideoUpload1Progress">
+                </div>
+            </div>
+          </span>
                 </div>
             </form>
         </div>
@@ -2244,25 +3154,25 @@ Upload images
                 <div class="fileupload-buttonbar">
                     <div class="progressbar fileupload-progressbar">
                     </div>
-                                        <span class="fileinput-button">
-                                            <!--	
+          <span class="fileinput-button">
+            <!--	
 <a href="javascript:void(0)" class="upload-image">
 Upload images
 </a>
 -->
-                                            <label class="control-label" for="Invited" style="float: right;">
-                                                نمونه شماره 2
-                                            </label>
-                                            <div id="SampleSeminarVideoUpload2Input">
-                                                <input type="file" name="files[]" multiple>
-                                            </div>
-                                            <br/>
-                                            <div class="progress progress-info progress-striped active">
-                                                <div class="bar" style="width: 0%"
-                                                     id="SampleSeminarVideoUpload2Progress">
-                                                </div>
-                                            </div>
-                                        </span>
+            <label class="control-label" for="Invited" style="float: right;">
+                نمونه شماره 2
+            </label>
+            <div id="SampleSeminarVideoUpload2Input">
+                <input type="file" name="files[]" multiple>
+            </div>
+            <br/>
+            <div class="progress progress-info progress-striped active">
+                <div class="bar" style="width: 0%"
+                     id="SampleSeminarVideoUpload2Progress">
+                </div>
+            </div>
+          </span>
                 </div>
             </form>
         </div>
@@ -2272,25 +3182,25 @@ Upload images
                 <div class="fileupload-buttonbar">
                     <div class="progressbar fileupload-progressbar">
                     </div>
-                                        <span class="fileinput-button">
-                                            <!--	
+          <span class="fileinput-button">
+            <!--	
 <a href="javascript:void(0)" class="upload-image">
 Upload images
 </a>
 -->
-                                            <label class="control-label" for="Invited" style="float: right;">
-                                                نمونه شماره 3
-                                            </label>
-                                            <div id="SampleSeminarVideoUpload3Input">
-                                                <input type="file" name="files[]" multiple>
-                                            </div>
-                                            <br/>
-                                            <div class="progress progress-info progress-striped active">
-                                                <div class="bar" style="width: 0%"
-                                                     id="SampleSeminarVideoUpload3Progress">
-                                                </div>
-                                            </div>
-                                        </span>
+            <label class="control-label" for="Invited" style="float: right;">
+                نمونه شماره 3
+            </label>
+            <div id="SampleSeminarVideoUpload3Input">
+                <input type="file" name="files[]" multiple>
+            </div>
+            <br/>
+            <div class="progress progress-info progress-striped active">
+                <div class="bar" style="width: 0%"
+                     id="SampleSeminarVideoUpload3Progress">
+                </div>
+            </div>
+          </span>
                 </div>
             </form>
         </div>
@@ -2301,14 +3211,27 @@ Upload images
 <div class="box span12" id="EditAboutUs" name="PanelWindow" style="display: none;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>ویرایش درباره ما
+            <i class="icon-info-sign">
+            </i>
+            ویرایش درباره ما
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2316,7 +3239,8 @@ Upload images
             <fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <textarea id="AboutUsContent" rows="5" cols="10"></textarea>
+                        <textarea id="AboutUsContent" rows="5" cols="10">
+                        </textarea>
                     </div>
                 </div>
                 <div class="form-actions">
@@ -2337,14 +3261,27 @@ Upload images
 <div class="box span12" id="EditGuide" name="PanelWindow" style="display: none;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>ویرایش راهنمای استفاده
+            <i class="icon-info-sign">
+            </i>
+            ویرایش راهنمای استفاده
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2352,7 +3289,8 @@ Upload images
             <fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <textarea id="EditGuideContent" rows="5" cols="10"></textarea>
+                        <textarea id="EditGuideContent" rows="5" cols="10">
+                        </textarea>
                     </div>
                 </div>
                 <div class="form-actions">
@@ -2372,14 +3310,27 @@ Upload images
 <div class="box span8" id="News" name="PanelWindow" style="display: none; float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>اخبار جدید
+            <i class="icon-info-sign">
+            </i>
+            اخبار جدید
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2400,7 +3351,8 @@ Upload images
                     </label>
 
                     <div class="controls">
-                        <textarea id="NewsDesc" rows="5" cols="10"></textarea>
+                        <textarea id="NewsDesc" rows="5" cols="10">
+                        </textarea>
                     </div>
                 </div>
                 <div class="control-group">
@@ -2424,7 +3376,7 @@ document.getElementById('newsImagePreview').src = oFREvent.target.result;
                         <tr>
                             <td>
                                 <img id="newsImagePreview" src="../images/login.jpg" style="width: 200px; height: 200px;
-                                                            border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"/>
+border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"/>
                             </td>
                         </tr>
                     </table>
@@ -2445,17 +3397,30 @@ $('#NewsTopic').val('');">
 <!-- End Of News -->
 <!-- Begin Of Payment -->
 <div class="box span7" id="PaymentPanel" name="PanelWindow" style="display: none;
-                            float: right;">
+float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>شارژ حساب
+            <i class="icon-info-sign">
+            </i>
+            شارژ حساب
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2477,9 +3442,10 @@ $('#NewsTopic').val('');">
 
                     <div class="controls">
                         <input type="text" class="span6 typeahead" id="PaymentPanelAmmount" data-provide="typeahead">
-                                            <span class="help-inline ui-state-error-text" id="PaymentPanelAmmountError"
-                                                  style="display: none;">
-                                                مبلغ را وارد کنید. حداقل پنجاه هزار ریال </span>
+            <span class="help-inline ui-state-error-text" id="PaymentPanelAmmountError"
+                  style="display: none;">
+              مبلغ را وارد کنید. حداقل پنجاه هزار ریال 
+            </span>
                     </div>
                 </div>
                 <div class="control-group">
@@ -2489,9 +3455,10 @@ $('#NewsTopic').val('');">
 
                     <div class="controls">
                         <input type="text" class="span6 typeahead" id="PaymentPanelDiscount" data-provide="typeahead">
-                                            <span class="help-inline ui-state-error-text" id="PaymentPanelDiscountError"
-                                                  style="display: none;">
-                                                کد شارژ غلط است </span>
+            <span class="help-inline ui-state-error-text" id="PaymentPanelDiscountError"
+                  style="display: none;">
+              کد شارژ غلط است 
+            </span>
                     </div>
                 </div>
                 <div class="control-group">
@@ -2501,7 +3468,9 @@ $('#NewsTopic').val('');">
 
                     <div class="controls">
                         <select id="PaymentPanelBank">
-                            <option value="2">بانک ملی</option>
+                            <option value="2">
+                                بانک ملی
+                            </option>
                         </select>
                     </div>
                 </div>
@@ -2519,7 +3488,9 @@ $('#NewsTopic').val('');">
                                     &nbsp;
                                 </td>
                                 <td>
-                                    <strong id="PaymentConfirmAmmount">10000 </strong>
+                                    <strong id="PaymentConfirmAmmount">
+                                        10000
+                                    </strong>
                                 </td>
                             </tr>
                             <tr>
@@ -2530,7 +3501,9 @@ $('#NewsTopic').val('');">
                             <tr>
                                 <td colspan="3" align="center" valign="middle">
                                     <div class="btn btn-success" style="width: 200px;" onclick="MakePayment(2);">
-                                        <i class="icon-edit icon-white"></i>تایید و ادامه
+                                        <i class="icon-edit icon-white">
+                                        </i>
+                                        تایید و ادامه
                                     </div>
                                 </td>
                             </tr>
@@ -2540,13 +3513,16 @@ $('#NewsTopic').val('');">
                 <div class="control-group" id="PaymentError" style="display: none;">
                     <div class="alert alert-error"
                          style="text-align: justify; font-family: Tahoma, Geneva, sans-serif;">
-                        <strong id="PaymentErrorMessage"></strong>
+                        <strong id="PaymentErrorMessage">
+                        </strong>
                     </div>
                 </div>
                 <div class="control-group" div="FirstPayment">
                     <div class="controls">
                         <div class="btn btn-warning" style="width: 200px;" onclick="MakePayment(1);">
-                            <i class="icon-edit icon-white"></i>پرداخت
+                            <i class="icon-edit icon-white">
+                            </i>
+                            پرداخت
                         </div>
                     </div>
                 </div>
@@ -2557,17 +3533,30 @@ $('#NewsTopic').val('');">
 <!-- End Of Payment-->
 <!-- Begin of PaymentAccount Information -->
 <div class="box span7" id="PaymentInformationPanel" name="PanelWindow" style="display: none;
-                            float: right;">
+float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>حساب من
+            <i class="icon-info-sign">
+            </i>
+            حساب من
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2592,14 +3581,27 @@ $('#NewsTopic').val('');">
 <div class="box span7" id="Gallery" name="PanelWindow" style="display: none; float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>جدول تصاویر
+            <i class="icon-info-sign">
+            </i>
+            جدول تصاویر
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2634,24 +3636,24 @@ $('#NewsTopic').val('');">
                 <div class="fileupload-buttonbar">
                     <div class="progressbar fileupload-progressbar">
                     </div>
-                                        <span class="fileinput-button">
-                                            <!--	
+            <span class="fileinput-button">
+              <!--	
 <a href="javascript:void(0)" class="upload-image">
 Upload images
 </a>
 -->
-                                            <label class="control-label" for="Invited" style="float: right;">
-                                                انتخاب فایها
-                                            </label>
-                                            <div id="GalleryFileInput">
-                                                <input type="file" name="files[]" multiple>
-                                            </div>
-                                            <br/>
-                                            <div class="progress progress-info progress-striped active">
-                                                <div class="bar" style="width: 0%" id="GalleryFileProgress">
-                                                </div>
-                                            </div>
-                                        </span>
+              <label class="control-label" for="Invited" style="float: right;">
+                  انتخاب فایها
+              </label>
+              <div id="GalleryFileInput">
+                  <input type="file" name="files[]" multiple>
+              </div>
+              <br/>
+              <div class="progress progress-info progress-striped active">
+                  <div class="bar" style="width: 0%" id="GalleryFileProgress">
+                  </div>
+              </div>
+            </span>
                 </div>
             </form>
         </div>
@@ -2662,14 +3664,27 @@ Upload images
 <div class="box span7" id="AllNews" name="PanelWindow" style="display: none; float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>جدول اخبارها
+            <i class="icon-info-sign">
+            </i>
+            جدول اخبارها
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2704,15 +3719,27 @@ Upload images
 <div class="box span7" id="HelpPanel" name="PanelWindow" style="display: none; float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>
+            <i class="icon-info-sign">
+            </i>
             راهنمای سامانه
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content" id="HelpPanelContent" style="direction: rtl;">
@@ -2722,17 +3749,30 @@ Upload images
 <!-- End Of AllNews -->
 <!-- Begin of HistoryPayment -->
 <div class="box span7" id="HistoryPayment" name="PanelWindow" style="display: none;
-                            float: right;">
+float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>سابقه
+            <i class="icon-info-sign">
+            </i>
+            سابقه
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2765,17 +3805,30 @@ Upload images
 </div>
 <!-- End Of HistoryPayment -->
 <div class="box span6" id="ProfileLogInDetails" name="PanelWindow" style="display: none;
-                            float: right;">
+float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>تغییر کلمه عبور
+            <i class="icon-info-sign">
+            </i>
+            تغییر کلمه عبور
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2824,17 +3877,30 @@ Upload images
     </div>
 </div>
 <div class="box span6" id="ProfileContactDetails" name="PanelWindow" style="display: none;
-                            float: right;">
+float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
-            <i class="icon-info-sign"></i>اطلاعات تماس
+            <i class="icon-info-sign">
+            </i>
+            اطلاعات تماس
         </h2>
 
         <div class="box-icon" style="float: left;">
-            <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a><a href="#"
-                                                                                         class="btn btn-minimize btn-round"><i
-                class="icon-chevron-up"></i></a><a href="#"
-                                                   class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            <a href="#" class="btn btn-setting btn-round">
+                <i class="icon-cog">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-minimize btn-round">
+                <i
+                        class="icon-chevron-up">
+                </i>
+            </a>
+            <a href="#"
+               class="btn btn-close btn-round">
+                <i class="icon-remove">
+                </i>
+            </a>
         </div>
     </div>
     <div class="box-content">
@@ -2894,7 +3960,9 @@ Upload images
         <div class="alert alert-success" style="height: 50px; width: 80%; cursor: pointer;"
              onclick="if(isMember==0) {$('#InviteNewUser').hide(); isMember=-1;}else {isMember=0 ; $('#InviteNewUser').show();  $('#InviteMemberUser').hide();}">
             <strong style="float: right; font-family: Tahoma, Geneva, sans-serif; font-size: 14px;
-                        color: #333">دعوت از فرد جدید </strong>
+color: #333">
+                دعوت از فرد جدید
+            </strong>
         </div>
         <div id="InviteNewUser" style="display: none">
             <div class="form-horizontal">
@@ -2909,9 +3977,10 @@ Upload images
 
                         <div class="controls">
                             <input type="text" class="span4 typeahead" id="InviteFirstName" data-provide="typeahead">
-                                    <span class="help-inline ui-state-error-text" id="InviteFirstNameError"
-                                          style="display: none;">
-                                        نام فرد برای دعوت الزامی است </span>
+                <span class="help-inline ui-state-error-text" id="InviteFirstNameError"
+                      style="display: none;">
+                  نام فرد برای دعوت الزامی است 
+                </span>
                         </div>
                     </div>
                     <div class="control-group">
@@ -2921,9 +3990,10 @@ Upload images
 
                         <div class="controls">
                             <input type="text" class="span4 typeahead" id="InviteLastName" data-provide="typeahead">
-                                    <span class="help-inline ui-state-error-text" id="InviteLastNameError"
-                                          style="display: none;">
-                                        نام خانوادگی فرد برای دعوت الزامی است </span>
+                <span class="help-inline ui-state-error-text" id="InviteLastNameError"
+                      style="display: none;">
+                  نام خانوادگی فرد برای دعوت الزامی است 
+                </span>
                         </div>
                     </div>
                     <div class="control-group">
@@ -2933,14 +4003,21 @@ Upload images
 
                         <div class="controls">
                             <input type="text" class="span4 typeahead" id="InviteEmail" data-provide="typeahead">
-                                    <span class="help-inline ui-state-error-text" id="InviteEmailError"
-                                          style="display: none;">
-                                        پست الکترونیکی برای فرد الزامی است. </span><span
-                                class="help-inline ui-state-error-text"
-                                id="InviteEmailExistError" style="display: none;">کاربری با این پست الکترونیکی قبلا
-                                            دعوت شده است! </span><span class="help-inline ui-state-error-text"
-                                                                       id="InviteEmailCapacityError"
-                                                                       style="display: none;">ظرفیت تکمیل است! </span>
+                <span class="help-inline ui-state-error-text" id="InviteEmailError"
+                      style="display: none;">
+                  پست الکترونیکی برای فرد الزامی است. 
+                </span>
+                <span
+                        class="help-inline ui-state-error-text"
+                        id="InviteEmailExistError" style="display: none;">
+                  کاربری با این پست الکترونیکی قبلا
+                  دعوت شده است! 
+                </span>
+                <span class="help-inline ui-state-error-text"
+                      id="InviteEmailCapacityError"
+                      style="display: none;">
+                  ظرفیت تکمیل است! 
+                </span>
                         </div>
                     </div>
                     <div class="control-group">
@@ -2960,7 +4037,9 @@ Upload images
         <div class="alert alert-success" style="height: 50px; width: 80%; cursor: pointer;"
              onclick="if(isMember==1){$('#InviteMemberUser').hide(); isMember=-1;}else{isMember=1; $('#InviteNewUser').hide();  $('#InviteMemberUser').show();}">
             <strong style="float: right; font-family: Tahoma, Geneva, sans-serif; font-size: 14px;
-                        color: #333">دعوت از یکی از اعضا </strong>
+color: #333">
+                دعوت از یکی از اعضا
+            </strong>
         </div>
         <div id="InviteMemberUser" style="display: none">
             <label class="control-label" for="MemberInvite" style="float: right; font-size: 14px;">
@@ -2970,13 +4049,20 @@ Upload images
             </label>
             <input type="text" class="span4 typeahead" id="MemberInvite" data-provide="typeahead"
                    onfocus="$('#SearchFor').val('MemberInvite'); $('#MemberInvite').blur();  $('#SearchPhrase').focus(); $('#FindPersonDialog').modal('show');">
-                    <span class="help-inline ui-state-error-text" id="MemberInviteEmailError" style="display: none;">
-                        پست الکترونیکی برای فرد الزامی است. </span><span class="help-inline ui-state-error-text"
-                                                                         id="MemberInviteEmailExistError"
-                                                                         style="display: none;">کاربری با این پست الکترونیکی
-                            قبلا دعوت شده است! </span><span class="help-inline ui-state-error-text"
-                                                            id="MemberInviteEmailCapacityError"
-                                                            style="display: none;">ظرفیت تکمیل است! </span>
+        <span class="help-inline ui-state-error-text" id="MemberInviteEmailError" style="display: none;">
+          پست الکترونیکی برای فرد الزامی است. 
+        </span>
+        <span class="help-inline ui-state-error-text"
+              id="MemberInviteEmailExistError"
+              style="display: none;">
+          کاربری با این پست الکترونیکی
+          قبلا دعوت شده است! 
+        </span>
+        <span class="help-inline ui-state-error-text"
+              id="MemberInviteEmailCapacityError"
+              style="display: none;">
+          ظرفیت تکمیل است! 
+        </span>
             <!--	
 <button class="btn btn-large btn-primary" onclick="$('#EditInviteModalType').val('Add'); $('#FindPersonDialog').modal('show');">
 جستجوی کاربر
@@ -3118,9 +4204,10 @@ Http://www.RayanHiva.ir
     </div>
     <div class="alert alert-danger" id="MessageBoxCSS">
         <strong style="font-size: 16px; font-weight: bold; font-family: Tahoma; color: #000;
-                text-align: right;" id="CustomMessageTitle">
+text-align: right;" id="CustomMessageTitle">
             <br/>
-            &nbsp هزینه سمینار </strong>
+            &nbsp هزینه سمینار
+        </strong>
         <hr/>
         <center>
             <table style="width: 70%; height: 50px;">
@@ -3133,7 +4220,7 @@ Http://www.RayanHiva.ir
                 </tr>
                 <tr>
                     <td align="center" valign="middle" style="font-family: Tahoma, Geneva, sans-serif;
-                            font-size: 14px; font-weight: bold;" id="CustomMessageText">
+font-size: 14px; font-weight: bold;" id="CustomMessageText">
                     </td>
                 </tr>
             </table>
@@ -3170,124 +4257,85 @@ Http://www.RayanHiva.ir
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <!-- Server Info -->
-<script src="../Scripts/Info.js">
-</script>
+<script src="../Scripts/Info.js"></script>
 <!-- jQuery -->
-<script src="js/jquery-1.7.2.min.js">
-</script>
+<script src="js/jquery-1.7.2.min.js"></script>
 <!-- jQuery Tools -->
-<script src="js/jquery.tools.min.js">
-</script>
+<script src="js/jquery.tools.min.js"></script>
 <!-- jQuery UI -->
-<script src="js/jquery-ui-1.8.21.custom.min.js">
-</script>
+<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
 <!-- transition / effect library -->
-<script src="js/bootstrap-transition.js">
-</script>
+<script src="js/bootstrap-transition.js"></script>
 <!-- alert enhancer library -->
-<script src="js/bootstrap-alert.js">
-</script>
+<script src="js/bootstrap-alert.js"></script>
 <!-- modal / dialog library -->
-<script src="js/bootstrap-modal.js">
-</script>
+<script src="js/bootstrap-modal.js"></script>
 <!-- custom dropdown library -->
-<script src="js/bootstrap-dropdown.js">
-</script>
+<script src="js/bootstrap-dropdown.js"></script>
 <!-- scrolspy library -->
-<script src="js/bootstrap-scrollspy.js">
-</script>
+<script src="js/bootstrap-scrollspy.js"></script>
 <!-- library for creating tabs -->
-<script src="js/bootstrap-tab.js">
-</script>
+<script src="js/bootstrap-tab.js"></script>
 <!-- library for advanced tooltip -->
-<script src="js/bootstrap-tooltip.js">
-</script>
+<script src="js/bootstrap-tooltip.js"></script>
 <!-- popover effect library -->
-<script src="js/bootstrap-popover.js">
-</script>
+<script src="js/bootstrap-popover.js"></script>
 <!-- button enhancer library -->
-<script src="js/bootstrap-button.js">
-</script>
+<script src="js/bootstrap-button.js"></script>
 <!-- accordion library (optional, not used in demo) -->
-<script src="js/bootstrap-collapse.js">
-</script>
+<script src="js/bootstrap-collapse.js"></script>
 <!-- carousel slideshow library (optional, not used in demo) -->
-<script src="js/bootstrap-carousel.js">
-</script>
+<script src="js/bootstrap-carousel.js"></script>
 <!-- autocomplete library -->
-<script src="js/bootstrap-typeahead.js">
-</script>
+<script src="js/bootstrap-typeahead.js"></script>
 <!-- tour library -->
-<script src="js/bootstrap-tour.js">
-</script>
+<script src="js/bootstrap-tour.js"></script>
 <!-- library for cookie management -->
-<script src="js/jquery.cookie.js">
-</script>
+<script src="js/jquery.cookie.js"></script>
 <!-- calander plugin -->
-<script src='js/fullcalendar.min.js'>
-</script>
+<script src='js/fullcalendar.min.js'></script>
 <!-- data table plugin -->
-<script src='js/jquery.dataTables.min.js'>
-</script>
+<script src='js/jquery.dataTables.min.js'></script>
 <!-- chart libraries start -->
-<script src="js/excanvas.js">
-</script>
-<script src="js/jquery.flot.min.js">
-</script>
-<script src="js/jquery.flot.pie.min.js">
-</script>
-<script src="js/jquery.flot.stack.js">
-</script>
-<script src="js/jquery.flot.resize.min.js">
-</script>
+<script src="js/excanvas.js"></script>
+<script src="js/jquery.flot.min.js"></script>
+<script src="js/jquery.flot.pie.min.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+<script src="js/jquery.flot.resize.min.js"></script>
 <!-- chart libraries end -->
 <!-- select or dropdown enhancer -->
-<script src="js/jquery.chosen.min.js">
-</script>
+<script src="js/jquery.chosen.min.js"></script>
 <!-- checkbox, radio, and file input styler -->
-<script src="js/jquery.uniform.min.js">
-</script>
+<script src="js/jquery.uniform.min.js"></script>
 <!-- plugin for gallery image view -->
-<script src="js/jquery.colorbox.min.js">
-</script>
+<script src="js/jquery.colorbox.min.js"></script>
 <!-- rich text editor library -->
-<script src="js/jquery.cleditor.min.js">
-</script>
+<script src="js/jquery.cleditor.min.js"></script>
 <!-- notification plugin -->
-<script src="js/jquery.noty.js">
-</script>
+<script src="js/jquery.noty.js"></script>
 <!-- file manager library -->
-<script src="js/jquery.elfinder.min.js">
-</script>
+<script src="js/jquery.elfinder.min.js"></script>
 <!-- star rating plugin -->
-<script src="js/jquery.raty.min.js">
-</script>
+<script src="js/jquery.raty.min.js"></script>
 <!-- for iOS style toggle switch -->
-<script src="js/jquery.iphone.toggle.js">
-</script>
+<script src="js/jquery.iphone.toggle.js"></script>
 <!-- autogrowing textarea plugin -->
-<script src="js/jquery.autogrow-textarea.js">
-</script>
+<script src="js/jquery.autogrow-textarea.js"></script>
 <!-- multiple file upload plugin -->
-<script src="js/jquery.uploadify-3.1.min.js">
-</script>
+<script src="js/jquery.uploadify-3.1.min.js"></script>
 <!-- history.js for cross-browser state change on ajax -->
-<script type='text/javascript' src='../Scripts/jquery.fileupload.js'>
+<script type='text/javascript' src='../Scripts/jquery.fileupload.js'></script>
+<script src="js/ckeditor/ckeditor.js">
 </script>
-<script src="js/ckeditor/ckeditor.js"></script>
-<script src="js/ckeditor/adapters/jquery.js"></script>
-<script src="js/jquery.history.js">
+<script src="js/ckeditor/adapters/jquery.js">
 </script>
-<script src="js/Calendars/jalali.js">
-</script>
-<script type="text/javascript" src="../Scripts/utility.js">
-</script>
+<script src="js/jquery.history.js"></script>
+<script src="js/Calendars/jalali.js"></script>
+<script type="text/javascript" src="../Scripts/utility.js"></script>
 <!-- application script for Charisma demo -->
-<script src="js/md5.js">
-</script>
-<script src="js/simlib.js">
-</script>
-<script src="js/charisma.js">
-</script>
+<script src="js/md5.js"></script>
+<script src="js/simlib.js"></script>
+<script src="js/charisma.js"></script>
 </body>
 </html>
+  
