@@ -483,6 +483,28 @@ function ShowEditAboutUs() {
     ShowBox('#EditAboutUs');
 }
 
+function ShowHelp(){
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Account/GetGuidePage",
+        dataType: 'json',
+        success: function (result) {
+            ShowBox("#HelpPanel")
+            if (result.Status == true) {
+                $("#HelpPanelContent").html(result.Result);
+            }
+            else {
+                $("#HelpPanelContent").html("مطلبی وجود ندارد");
+
+            }
+        },
+        error: function () {
+            $("#HelpPanelContent").html("مطلبی وجود ندارد");
+        },
+        async: true
+    });
+}
+
 function EditSampleSeminars() {
     $('#SampleSeminarVideoUpload1').fileupload({
         dataType: 'json',
