@@ -47,15 +47,24 @@
             background: linear-gradient(to bottom, #cedce7 0%, #596a72 100%); /* W3C */
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cedce7', endColorstr='#596a72', GradientType=0);
             box-sizing: content-box;
-            -webkit-box-shadow: 0px 0px 26px 0px rgba(50, 50, 50, 0.94);
-            -moz-box-shadow: 0px 0px 26px 0px rgba(50, 50, 50, 0.94);
-            box-shadow: 0px 0px 26px 0px rgba(50, 50, 50, 0.94);
+            -webkit-box-shadow: 2px 2px 14px 0px rgba(50, 50, 50, 0.94);
+            -moz-box-shadow: 2px 2px 14px 0px rgba(50, 50, 50, 0.94);
+            box-shadow: 2px 2px 14px 0px rgba(50, 50, 50, 0.94);
             padding: 10px;
             border-radius: 10px;
             -moz-border-radius: 10px;
             -webkit-border-radius: 10px;
+            margin: 0 auto;
             margin-bottom: 10px;
+
             cursor: pointer;
+        }
+
+        .contentSelector:hover {
+
+            -webkit-box-shadow: 2px 2px 30px 0px rgba(50, 50, 50, 0.94);
+            -moz-box-shadow: 2px 2px 30px 0px rgba(50, 50, 50, 0.94);
+            box-shadow: 2px 2px 30px 0px rgba(50, 50, 50, 0.94);
         }
 
         #MessageBoxCSS {
@@ -90,7 +99,6 @@
 </div>
 
 
-<div id="wrap">
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
@@ -119,7 +127,7 @@
     </div>
     <!-- navbar-inner end -->
 </div>
-<div id="layoutContainer" style="overflow: hidden; position: relative; dispaly: none;">
+<div id="layoutContainer" style="height: 100%;width: 100%; dispaly: none;">
     <!-- Begin of West -->
     <div id="layoutWest">
         <div id="SlideHere" class="slideWrapper">
@@ -179,23 +187,23 @@
     <div id="layoutCenter">
         <div id="layoutCenter_east" style="
         padding: 10px;
-        background: #ffffff; /* Old browsers */
-background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
-background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */    ">
+       background: rgb(247,251,252); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(247,251,252,1) 0%, rgba(217,237,242,1) 40%, rgba(173,217,228,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(247,251,252,1)), color-stop(40%,rgba(217,237,242,1)), color-stop(100%,rgba(173,217,228,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=0 ); /* IE6-9 */
+">
             <div id="a" class="contentSelector">
                 <table style="width: 100%;">
                     <tr>
-                        <td style="padding:5px;width:50%;font-family: tahoma, verdana, sans-serif; font-size: 12px;text-align: right;direction: rtl;">
-نمونه ویدیو
+                        <td style="padding:5px;width:60%; height:100px;font-family: tahoma, verdana, sans-serif; font-size: 12px;text-align: right;direction: rtl;">
+                            نمونه ویدیو
                         </td>
                         <td>
-                            <img id="seminar_pic" src="../images/default.png"
+                            <img id="seminar_pic" src="../../images/default.png"
                                  alt=""
                                  style="width:80%;
                          padding:
@@ -210,45 +218,53 @@ box-shadow:         8px 5px 15px 0px rgba(50, 50, 50, 0.75);">
                     </tr>
                 </table>
             </div>
-            <div id="a" class="contentSelector">
-                asddddddddddddddd
-                asdddddddddddd
-                asddddddddddddddd
-                asddddddddddd
-                asdddddddddddddddd
-                asddddddddddddd
-                asdddddddddddd
-                asddddddddddddddddd
-                asdddddddddddddd
-                asddddddddddd
-                asddddddddd
+
+            <div id="aa" class="contentSelector">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="padding:5px; height:100px;width:60%;font-family: tahoma, verdana, sans-serif; font-size: 12px;text-align: right;direction: rtl;">
+                            نمونه ویدیو
+                        </td>
+                        <td>
+                            <img id="seminar_pic" src="../../images/default.png"
+                                 alt=""
+                                 style="width:80%;
+                         padding:
+                         10px;background: #eeeeee;
+                         border: 0px solid #bbbbbb;
+                         border-radius: 10px;
+                         -moz-border-radius: 10px;
+                         -webkit-border-radius: 10px;vertical-align: middle;-webkit-box-shadow: 8px 5px 15px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    8px 5px 15px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         8px 5px 15px 0px rgba(50, 50, 50, 0.75);">
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <div id="a" class="contentSelector">
-                asddddddddddddddd
-                asdddddddddddd
-                asddddddddddddddd
-                asddddddddddd
-                asdddddddddddddddd
-                asddddddddddddd
-                asdddddddddddd
-                asddddddddddddddddd
-                asdddddddddddddd
-                asddddddddddd
-                asddddddddd
+
+            <div id="aaa" class="contentSelector">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="padding:5px; height:100px;width:60%;font-family: tahoma, verdana, sans-serif; font-size: 12px;text-align: right;direction: rtl;">
+                            نمونه ویدیو
+                        </td>
+                        <td>
+                            <img id="seminar_pic" src="../../images/default.png"
+                                 alt=""
+                                 style="width:80%;
+                         padding:
+                         10px;background: #eeeeee;
+                         border: 0px solid #bbbbbb;
+                         border-radius: 10px;
+                         -moz-border-radius: 10px;
+                         -webkit-border-radius: 10px;vertical-align: middle;-webkit-box-shadow: 8px 5px 15px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    8px 5px 15px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         8px 5px 15px 0px rgba(50, 50, 50, 0.75);">
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <div id="a" class="contentSelector">
-                asddddddddddddddd
-                asdddddddddddd
-                asddddddddddddddd
-                asddddddddddd
-                asdddddddddddddddd
-                asddddddddddddd
-                asdddddddddddd
-                asddddddddddddddddd
-                asdddddddddddddd
-                asddddddddddd
-                asddddddddd
-            </div>
+
         </div>
         <div id="layoutCenter_center" style="background: rgb(181,189,200); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%); /* FF3.6+ */
@@ -263,7 +279,7 @@ padding: 20px;
 
             <!-- Begin Of Video player -->
             <video id="example_video_1" class="video-js vjs-default-skin"
-                   controls preload="auto" width="640" height="480"
+                   controls preload="auto" width="80%" height="80%"
                    poster="http://video-js.zencoder.com/oceans-clip.png"
                    data-setup='{"example_option":true}'
                    style="margin:0 auto;-webkit-box-shadow: 0px 0px 26px 0px rgba(50, 50, 50, 0.94);
@@ -309,14 +325,6 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
                 </button>
             </form>
         </div>
-    </div>
-</div>
-
-<div id="footer">
-    <div class="container">
-        <p class="muted credit">
-            &copy; تمامی حقوق این سایت متعلق به <a href="http://www.iwebinar.ir">نماآوای زندگی</a>
-            است.</p>
     </div>
 </div>
 <div id="webinarInfo" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel"
@@ -457,7 +465,6 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
     </div>
 </div>
 
-
 <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
 <script type="text/javascript" src="js/underscore-min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-latest.js"></script>
@@ -475,6 +482,7 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
     });
 
     $(document).ready(function () {
+
         var roomLayout = $("#layoutContainer").layout({
             west__paneSelector: '#layoutWest',
             east__paneSelector: '#layoutEast',
@@ -515,9 +523,9 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
         videojs("example_video_1", {}, function () {
             // Player (this) is initialized and ready.
         });
+
     });
 
 </script>
-</div>
 </body>
 </html>
