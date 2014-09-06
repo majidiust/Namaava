@@ -26,8 +26,8 @@
       <file leaf-file-name="blank.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Panels/blank.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4274953" vertical-offset="11877" max-vertical-offset="73474">
-              <caret line="736" column="87" selection-start-line="736" selection-start-column="87" selection-end-line="736" selection-end-column="87" />
+            <state vertical-scroll-proportion="0.45951036" vertical-offset="11877" max-vertical-offset="73474">
+              <caret line="737" column="11" selection-start-line="737" selection-start-column="11" selection-end-line="737" selection-end-column="11" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -61,6 +61,7 @@
                 <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -335,7 +336,7 @@
                 <element signature="n#style#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#table#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1410004394531" expanded="true" signature="6315:6325" placeholder="..." />
+                <marker date="1410004540522" expanded="true" signature="6315:6325" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1170,8 +1171,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Panels/blank.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4274953" vertical-offset="11877" max-vertical-offset="73474">
-          <caret line="736" column="87" selection-start-line="736" selection-start-column="87" selection-end-line="736" selection-end-column="87" />
+        <state vertical-scroll-proportion="0.45951036" vertical-offset="11877" max-vertical-offset="73474">
+          <caret line="737" column="11" selection-start-line="737" selection-start-column="11" selection-end-line="737" selection-end-column="11" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1205,6 +1206,7 @@
             <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1479,7 +1481,7 @@
             <element signature="n#style#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#table#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1410004394531" expanded="true" signature="6315:6325" placeholder="..." />
+            <marker date="1410004540522" expanded="true" signature="6315:6325" placeholder="..." />
           </folding>
         </state>
       </provider>
