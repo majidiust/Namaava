@@ -505,6 +505,31 @@ function ShowHelp(){
     });
 }
 
+function ShoeContactUs(){
+
+
+    $.ajax({
+        type: 'GET',
+        url: ServerURL + "Account/GetAboutUsPage",
+        dataType: 'json',
+        success: function (result) {
+            ShowBox('#ContactUs');
+            if (result.Status == true) {
+                $("#ContactUsPanel").html(result.Result);
+            }
+            else {
+                $("#ContactUsPanel").html("مطلبی وجود ندارد");
+            }
+        },
+        error: function () {
+
+            $("#ContactUsPanel").html("مطلبی وجود ندارد");
+        },
+        async: true
+    });
+
+}
+
 function EditSampleSeminars() {
     $('#SampleSeminarVideoUpload1').fileupload({
         dataType: 'json',
