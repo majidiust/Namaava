@@ -26,8 +26,8 @@
       <file leaf-file-name="room.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Panels/SeminarRoom/room.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46640316" vertical-offset="4082" max-vertical-offset="6341">
-              <caret line="281" column="67" selection-start-line="281" selection-start-column="67" selection-end-line="281" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.5632411" vertical-offset="4033" max-vertical-offset="6460">
+              <caret line="281" column="82" selection-start-line="281" selection-start-column="82" selection-end-line="281" selection-end-column="82" />
               <folding>
                 <element signature="tag#div#1;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -173,6 +173,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Panels" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Panels" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SeminarRoom" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -841,8 +859,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Panels/SeminarRoom/room.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46640316" vertical-offset="4082" max-vertical-offset="6341">
-          <caret line="281" column="67" selection-start-line="281" selection-start-column="67" selection-end-line="281" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.5632411" vertical-offset="4033" max-vertical-offset="6460">
+          <caret line="281" column="82" selection-start-line="281" selection-start-column="82" selection-end-line="281" selection-end-column="82" />
           <folding>
             <element signature="tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
