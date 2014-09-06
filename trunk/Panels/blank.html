@@ -243,7 +243,7 @@ info@rayanhiva.ir
                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-info">
                 </i><span class="hidden-phone">راهنمایی </span><span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"  onclick="ShowHelp();">راهنمای استفاده از سامانه </a></li>
+                    <li><a href="#" onclick="ShowHelp();">راهنمای استفاده از سامانه </a></li>
                     <li class="divider"></li>
                     <li><a href="http://www.namaava.com/">وب سایت نماآوای زندگی </a></li>
                     <li class="divider"></li>
@@ -460,131 +460,140 @@ info@rayanhiva.ir
     </div>
 </div>
 <div class="box-content">
-<table>
-    <tbody>
-    <tr>
-        <td style="width: 150px;">
-            شماره سمینار
-        </td>
-        <td>
-        </td>
-        <td>
-            <div id="SeminarMoreInfoID" class="muted">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            موضوع سمینار
-        </td>
-        <td>
-        </td>
-        <td>
-            <div id="SeminarMoreInfoName" class="muted">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            حامی
-        </td>
-        <td>
-        </td>
-        <td>
-            <div id="SeminarMoreInfoAdmin" class="muted">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            ارائه دهنده
-        </td>
-        <td>
-        </td>
-        <td>
-            <div id="SeminarMoreInfoPresentor" class="muted">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            زمان برگزاری
-        </td>
-        <td>
-        </td>
-        <td>
-            <div id="SeminarMoreInfoDate" class="muted">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            وضعیت
-        </td>
-        <td>
-        </td>
-        <td>
-            <div id="SeminarMoreInfoStatus" class="muted">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            توضیحات
-        </td>
-        <td>
-        </td>
-        <td>
-            <textarea id="SeminarMoreInfoDesc" rows="3" cols="10"></textarea>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            چرا شرکت کنند
-        </td>
-        <td>
-        </td>
-        <td>
-            <textarea id="SeminarMoreInfoWhy" rows="3" cols="10"></textarea>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            مخاطبان دوره
-        </td>
-        <td>
-        </td>
-        <td>
-            <textarea id="SeminarMoreInfoFor" rows="3" cols="10"> </textarea>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            پیش نیاز دوره
-        </td>
-        <td>
-        </td>
-        <td>
-            <textarea id="SeminarMoreInfoPre" rows="3" cols="10"></textarea>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<br/>
 
-<div class="form-actions" id="SeminarMoreInfoSaveDesc">
-</div>
-<hr/>
-<div class="control-group">
-    <label class="control-label" style="float: right;">
-        پوستر سمینار
-    </label>
+<div id="tabs" style="width:100%;font-family:Tahoma, Geneva, sans-serif;">
+<ul>
+    <li><a href="#fragment-1"><span>مشخصات کلی</span></a></li>
+    <li><a href="#fragment-2"><span>درخواست ها</span></a></li>
+    <li><a href="#fragment-3"><span>دعوت</span></a></li>
+    <li><a href="#fragment-4"><span>ویدیوها</span></a></li>
+    <li><a href="#fragment-5"><span>فایل ها</span></a></li>
+</ul>
+<div id="fragment-1" style="width:80%;">
+    <table>
+        <tbody>
+        <tr>
+            <td style="width: 150px;">
+                شماره سمینار
+            </td>
+            <td>
+            </td>
+            <td>
+                <div id="SeminarMoreInfoID" class="muted">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                موضوع سمینار
+            </td>
+            <td>
+            </td>
+            <td>
+                <div id="SeminarMoreInfoName" class="muted">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                حامی
+            </td>
+            <td>
+            </td>
+            <td>
+                <div id="SeminarMoreInfoAdmin" class="muted">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ارائه دهنده
+            </td>
+            <td>
+            </td>
+            <td>
+                <div id="SeminarMoreInfoPresentor" class="muted">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                زمان برگزاری
+            </td>
+            <td>
+            </td>
+            <td>
+                <div id="SeminarMoreInfoDate" class="muted">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                وضعیت
+            </td>
+            <td>
+            </td>
+            <td>
+                <div id="SeminarMoreInfoStatus" class="muted">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                توضیحات
+            </td>
+            <td>
+            </td>
+            <td>
+                <textarea id="SeminarMoreInfoDesc" rows="3" cols="10"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                چرا شرکت کنند
+            </td>
+            <td>
+            </td>
+            <td>
+                <textarea id="SeminarMoreInfoWhy" rows="3" cols="10"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                مخاطبان دوره
+            </td>
+            <td>
+            </td>
+            <td>
+                <textarea id="SeminarMoreInfoFor" rows="3" cols="10"> </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                پیش نیاز دوره
+            </td>
+            <td>
+            </td>
+            <td>
+                <textarea id="SeminarMoreInfoPre" rows="3" cols="10"></textarea>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <hr/>
+    <div class="form-actions" id="SeminarMoreInfoSaveDesc">
+    </div>
 
-    <div class="controls">
-        <table>
-            <tr>
-                <td>
-                    <input id="NewSeminarPosterInfo" type="file" onchange="
+    <div class="control-group">
+        <label class="control-label" style="float: right;">
+            پوستر سمینار
+        </label>
+
+        <div class="controls">
+            <table>
+                <tr>
+                    <td>
+                        <input id="NewSeminarPosterInfo" type="file" onchange="
 var file = this.files[0];
 oFReader = new FileReader();
 oFReader.readAsDataURL(document.getElementById('NewSeminarPosterInfo').files[0]);
@@ -592,121 +601,125 @@ oFReader.onload = function (oFREvent) {
 document.getElementById('posterPreviewInfo').src = oFREvent.target.result;
 };
 ">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img id="posterPreviewInfo" style="-moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img id="posterPreviewInfo" style="-moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
                                                         -webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6); box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
                                                         border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
-                         width="240" height="180"/>
-                </td>
-            </tr>
-        </table>
+                             width="240" height="180"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
-<br/>
-<label class="control-label" for="typeahead" style="float: right; font-weight: bold;">
-    درخواست ها
-</label>
-<table class="table table-bordered table-striped table-condensed" id="SeminarDetailsRequestedTable">
-    <thead>
-    <tr>
-        <th>
-            شماره درخواست
-        </th>
-        <th>
-            نام
-        </th>
-        <th>
-            نام خانوادگی
-        </th>
-        <th>
-            پست الکترونیکی
-        </th>
-        <th>
-            تاریخ درخواست
-        </th>
-        <th>
-            وضعیت درخواست
-        </th>
-        <th>
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
-<br/>
-<label class="control-label" for="typeahead" style="float: right; font-weight: bold;">
-    دعوت ها
-</label>
-<table class="table table-bordered table-striped table-condensed" id="SeminarDetailsInvitedTable">
-    <thead>
-    <tr>
-        <th>
-            شماره دعوتنامه
-        </th>
-        <th>
-            نام
-        </th>
-        <th>
-            نام خانوادگی
-        </th>
-        <th>
-            پست الکترونیکی
-        </th>
-        <th>
-            تاریخ دعوت
-        </th>
-        <th>
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
-<div class="form-actions" id="SeminarMoreInfoAddInvite">
+<div id="fragment-2" style="width:80%;">
+    <label class="control-label" for="typeahead" style="float: right; font-weight: bold;">
+        درخواست ها
+    </label>
+    <table class="table table-bordered table-striped table-condensed" id="SeminarDetailsRequestedTable">
+        <thead>
+        <tr>
+            <th>
+                شماره درخواست
+            </th>
+            <th>
+                نام
+            </th>
+            <th>
+                نام خانوادگی
+            </th>
+            <th>
+                پست الکترونیکی
+            </th>
+            <th>
+                تاریخ درخواست
+            </th>
+            <th>
+                وضعیت درخواست
+            </th>
+            <th>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </div>
-<div class="alert alert-success">
-    <strong id="OnDemandInviteMessages" style=": Tahoma, Geneva, sans-serif"></strong>
+<div id="fragment-3" style="width:80%;">
+    <label class="control-label" for="typeahead" style="float: right; font-weight: bold;">
+        دعوت ها
+    </label>
+    <table class="table table-bordered table-striped table-condensed" id="SeminarDetailsInvitedTable">
+        <thead>
+        <tr>
+            <th>
+                شماره دعوتنامه
+            </th>
+            <th>
+                نام
+            </th>
+            <th>
+                نام خانوادگی
+            </th>
+            <th>
+                پست الکترونیکی
+            </th>
+            <th>
+                تاریخ دعوت
+            </th>
+            <th>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="form-actions" id="SeminarMoreInfoAddInvite">
+    </div>
+    <div class="alert alert-success">
+        <strong id="OnDemandInviteMessages" style=": Tahoma, Geneva, sans-serif"></strong>
+    </div>
 </div>
-<label class="control-label" for="NewSeminarFiles" style="float: right; font-weight: bold;">
-    فایل های سمینار
-</label>
-<br/>
-<hr/>
-توجه نمایید تنها یک فایل با پسوند ppt یا pptx میتواند به عنوان اسلاید جلسه انتخاب
-شود
-<hr/>
-<br/>
-<table class="table table-bordered table-striped table-condensed" id="SeminarInfoFiles">
-    <thead>
-    <tr>
-        <th style="text-align: center;">
-            کد فایل
-        </th>
-        <th style="text-align: center;">
-            نام فایل
-        </th>
-        <th style="text-align: center;">
-            حجم(کیلو بیت)
-        </th>
-        <th style="text-align: center;">
-            وضعیت
-        </th>
-        <th style="text-align: center;">
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
-<div class="form-horizontal">
-    <form id="NewSeminarFileUpload" action="/Session/UploadFiles" method="POST" enctype="multipart/form-data">
-        <div class="fileupload-buttonbar">
-            <div class="progressbar fileupload-progressbar">
-            </div>
+<div id="fragment-5" style="width:80%;">
+    <label class="control-label" for="NewSeminarFiles" style="float: right; font-weight: bold;">
+        فایل های سمینار
+    </label>
+    <br/>
+    <hr/>
+    توجه نمایید تنها یک فایل با پسوند ppt یا pptx میتواند به عنوان اسلاید جلسه انتخاب
+    شود
+    <hr/>
+    <br/>
+    <table class="table table-bordered table-striped table-condensed" id="SeminarInfoFiles">
+        <thead>
+        <tr>
+            <th style="text-align: center;">
+                کد فایل
+            </th>
+            <th style="text-align: center;">
+                نام فایل
+            </th>
+            <th style="text-align: center;">
+                حجم(کیلو بیت)
+            </th>
+            <th style="text-align: center;">
+                وضعیت
+            </th>
+            <th style="text-align: center;">
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="form-horizontal">
+        <form id="NewSeminarFileUpload" action="/Session/UploadFiles" method="POST" enctype="multipart/form-data">
+            <div class="fileupload-buttonbar">
+                <div class="progressbar fileupload-progressbar">
+                </div>
                                         <span class="fileinput-button">
                                             <!--	
 <a href="javascript:void(0)" class="upload-image">
@@ -725,46 +738,48 @@ Upload images
                                                 </div>
                                             </div>
                                         </span>
-        </div>
-    </form>
+            </div>
+        </form>
+    </div>
 </div>
-<div id="OfflineWebinar">
-    <label class="control-label" for="NewSeminarVideos" style="float: right; font-weight: bold;">
-        ویدیوهای سمینار
-    </label>
-    <br/>
-    <hr/>
-    ویدیوهای با فرمت mp4 یا webm یا ogg باشند
-    <hr/>
-    <br/>
-    <table class="table table-bordered table-striped table-condensed" id="SeminarInfoVideos">
-        <thead>
-        <tr>
-            <th style="text-align: center;">
-                کد ویدیو
-            </th>
-            <th style="text-align: center;">
-                نام ویدیو
-            </th>
-            <th style="text-align: center;">
-                حجم(کیلو بیت)
-            </th>
-            <th style="text-align: center;">
-                وضعیت
-            </th>
-            <th style="text-align: center;">
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-    <div class="form-horizontal">
-        <form id="NewSeminarVideoUpload" action="/Account/UploadVideoFiles" method="POST"
-              enctype="multipart/form-data">
-            <div class="fileupload-buttonbar">
-                <div class="progressbar fileupload-progressbar">
-                </div>
+<div id="fragment-4" style="width:80%;">
+    <div id="OfflineWebinar">
+        <label class="control-label" for="NewSeminarVideos" style="float: right; font-weight: bold;">
+            ویدیوهای سمینار
+        </label>
+        <br/>
+        <hr/>
+        ویدیوهای با فرمت mp4 یا webm یا ogg باشند
+        <hr/>
+        <br/>
+        <table class="table table-bordered table-striped table-condensed" id="SeminarInfoVideos">
+            <thead>
+            <tr>
+                <th style="text-align: center;">
+                    کد ویدیو
+                </th>
+                <th style="text-align: center;">
+                    نام ویدیو
+                </th>
+                <th style="text-align: center;">
+                    حجم(کیلو بیت)
+                </th>
+                <th style="text-align: center;">
+                    وضعیت
+                </th>
+                <th style="text-align: center;">
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="form-horizontal">
+            <form id="NewSeminarVideoUpload" action="/Account/UploadVideoFiles" method="POST"
+                  enctype="multipart/form-data">
+                <div class="fileupload-buttonbar">
+                    <div class="progressbar fileupload-progressbar">
+                    </div>
                                             <span class="fileinput-button">
                                                 <!--	
 <a href="javascript:void(0)" class="upload-image">
@@ -783,8 +798,9 @@ Upload images
                                                     </div>
                                                 </div>
                                             </span>
-            </div>
-        </form>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 </div>
@@ -2159,7 +2175,7 @@ document.getElementById('posterPreview').src = oFREvent.target.result;
                     </label>
 
                     <div class="controls">
-                        <textarea  id="PishnahadatPanel" rows="5" cols="10"></textarea>
+                        <textarea id="PishnahadatPanel" rows="5" cols="10"></textarea>
                     </div>
                 </div>
                 <div class="form-actions">
@@ -2446,8 +2462,14 @@ $('#NewsTopic').val('');">
         <form id="MaleiForm" class="form-horizontal">
             <fieldset>
                 <div class="control-group">
-                    <div class="box-content" style="direction: rtl; font-family:tahoma, verdana, sans-serif; text-align: justify; font-size:12px;">
-                        لطفا شرح و مبلغ مورد نظر را برای پرداخت وارد نماييد و پس از واریز وجه مورد نظر حتما با شماره تلفن: 02122038013 داخلی 1 تماس بگیرید و شماره تراکنش را به همکاران ما اعلام نمایید. برای آگاهی از مراحل پرداخت راهنمای پرداخت اینترنتی را مطالعه فرمایید. لطفا توجه نمایید در مرحله آخر پرداخت در قسمت کد رهگیری و رسید دیجیتال حتما قسمت تکمیل فرآیند خرید را بزنید و پیام اخطار امنیتی و صفحه رمز نگاری شده را نیرادامه دهید تا پرداخت شما انجام شود و شماره پیگیری دریافت نمایید در غیر این صورت مبلغ به حساب شما برگشت می‌شود.
+                    <div class="box-content"
+                         style="direction: rtl; font-family:tahoma, verdana, sans-serif; text-align: justify; font-size:12px;">
+                        لطفا شرح و مبلغ مورد نظر را برای پرداخت وارد نماييد و پس از واریز وجه مورد نظر حتما با شماره
+                        تلفن: 02122038013 داخلی 1 تماس بگیرید و شماره تراکنش را به همکاران ما اعلام نمایید. برای آگاهی
+                        از مراحل پرداخت راهنمای پرداخت اینترنتی را مطالعه فرمایید. لطفا توجه نمایید در مرحله آخر پرداخت
+                        در قسمت کد رهگیری و رسید دیجیتال حتما قسمت تکمیل فرآیند خرید را بزنید و پیام اخطار امنیتی و صفحه
+                        رمز نگاری شده را نیرادامه دهید تا پرداخت شما انجام شود و شماره پیگیری دریافت نمایید در غیر این
+                        صورت مبلغ به حساب شما برگشت می‌شود.
                     </div>
                     <label class="control-label" for="PaymentPanelAmmount" style="float: right;">
                         مبلغ مورد نظر(ریال)

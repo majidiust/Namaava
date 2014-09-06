@@ -475,6 +475,8 @@ $(document).ready(function () {
     //$("#testMessage").center();
 
     LoadRoles();
+
+    $("#tabs").tabs();
 });
 
 function ShowEditAboutUs() {
