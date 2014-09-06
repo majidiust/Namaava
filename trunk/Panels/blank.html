@@ -744,6 +744,13 @@ display: none;">
         </a>
     </li>
     <li>
+        <a href="#fragment-6">
+            <span>
+پوستر سمینار
+            </span>
+        </a>
+    </li>
+    <li>
         <a href="#fragment-2">
             <span>
               درخواست ها
@@ -773,6 +780,7 @@ display: none;">
     </li>
 </ul>
 <div id="fragment-1" style="width:80%;">
+    <br/>
     <table>
         <tbody>
         <tr>
@@ -893,15 +901,21 @@ display: none;">
     </div>
 
     <div class="control-group">
-        <label class="control-label" style="float: right;">
-            پوستر سمینار
-        </label>
 
-        <div class="controls">
-            <table>
-                <tr>
-                    <td>
-                        <input id="NewSeminarPosterInfo" type="file" onchange="
+
+
+    </div>
+</div>
+<div id="fragment-6" style="width:80%;">
+    <br/>
+    <label class="control-label" style="float: right;">
+        پوستر سمینار
+    </label>
+    <div class="controls">
+        <table>
+            <tr>
+                <td>
+                    <input id="NewSeminarPosterInfo" type="file" onchange="
 var file = this.files[0];
 oFReader = new FileReader();
 oFReader.readAsDataURL(document.getElementById('NewSeminarPosterInfo').files[0]);
@@ -909,21 +923,21 @@ oFReader.onload = function (oFREvent) {
 document.getElementById('posterPreviewInfo').src = oFREvent.target.result;
 };
 ">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img id="posterPreviewInfo" style="-moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="posterPreviewInfo" style="-moz-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
 -webkit-box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6); box-shadow: 0px 0px 50px 10px rgba(119, 119, 119, 0.6);
 border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
-                             width="240" height="180"/>
-                    </td>
-                </tr>
-            </table>
-        </div>
+                         width="240" height="180"/>
+                </td>
+            </tr>
+        </table>
     </div>
-</div>
+    </div>
 <div id="fragment-2" style="width:80%;">
+    <br/>
     <label class="control-label" style="float: right; font-weight: bold;">
         درخواست ها
     </label>
@@ -957,6 +971,7 @@ border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
     </table>
 </div>
 <div id="fragment-3" style="width:80%;">
+    <br/>
     <label class="control-label"  style="float: right; font-weight: bold;">
         دعوت ها
     </label>
@@ -993,6 +1008,7 @@ border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
     </div>
 </div>
 <div id="fragment-5" style="width:80%;">
+    <br/>
     <label class="control-label"  style="float: right; font-weight: bold;">
         فایل های سمینار
     </label>
@@ -1052,6 +1068,7 @@ Upload images
     </div>
 </div>
 <div id="fragment-4" style="width:80%;">
+    <br/>
     <div id="OfflineWebinar">
         <label class="control-label" style="float: right; font-weight: bold;">
             ویدیوهای سمینار
