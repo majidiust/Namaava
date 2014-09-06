@@ -110,14 +110,18 @@
 
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a href="#" class="file-down" data-toggle="modal" data-target="#myModal"><i
-                            class="icon-file icon-white">
-                    </i>دانلود فایلها</a></li>
+                    <li style="display: none;">
+                        <a href="#" class="file-down" data-toggle="modal" data-target="#myModal">
+                            <i class="icon-file icon-white">
+                               دانلود فایل ها
+                            </i>
+                        </a>
+                    </li>
                     <li><a id="webinarInfoBtn" href="#" class="wInfo" data-toggle="modal" data-target="#webinarInfo">
                         <i class="icon-info-sign icon-white"></i>سمینار</a></li>
-                    <li><a href="#" class="file-down" data-toggle="modal" data-target="#ListOfPresent"><i
+                    <li style="display: none;"><a href="#" class="file-down" data-toggle="modal" data-target="#ListOfPresent"><i
                             class="icon-file icon-bell"></i>لیست حاضران</a></li>
-                    <li><a id="sliderClose" class="ui-layout-button-toggle-west" href="#" layoutname="inner">
+                    <li style="display: none;"><a id="sliderClose" class="ui-layout-button-toggle-west" href="#" layoutname="inner">
                         <i class="icon-arrow-up icon-white"></i>اسلایدر</a></li>
                     <li><a href="http://www.iwebinar.ir:6060/Panels/blank.html"><i class="icon-home icon-white">
                     </i>بازگشت</a></li>
@@ -517,14 +521,14 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
             livePaneResizing: true
         });
 
-        videoObj =videojs("example_video_1", {}, function () {
+        videoObj = videojs("example_video_1", {}, function () {
             // Player (this) is initialized and ready.
         });
 
     });
 
-    function loadVideo(id){
-        if(id == '1'){
+    function loadVideo(id) {
+        if (id == '1') {
             videoObj.src([
                 { type: "video/mp4", src: "http://94.232.174.206:7700/Namaava/3054/1037.webm" }
             ]);
