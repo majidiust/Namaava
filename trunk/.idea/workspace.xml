@@ -26,8 +26,8 @@
       <file leaf-file-name="blank.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Panels/blank.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0847458" vertical-offset="14843" max-vertical-offset="74154">
-              <caret line="907" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="4356" selection-end-column="2" />
+            <state vertical-scroll-proportion="-3.0612648" vertical-offset="28375" max-vertical-offset="74205">
+              <caret line="1578" column="16" selection-start-line="1578" selection-start-column="16" selection-end-line="1578" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -338,6 +338,7 @@
                 <element signature="n#style#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#table#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1410006306233" expanded="true" signature="6315:6325" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1172,8 +1173,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Panels/blank.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0847458" vertical-offset="14843" max-vertical-offset="74154">
-          <caret line="907" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="4356" selection-end-column="2" />
+        <state vertical-scroll-proportion="-3.0612648" vertical-offset="28375" max-vertical-offset="74205">
+          <caret line="1578" column="16" selection-start-line="1578" selection-start-column="16" selection-end-line="1578" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1484,6 +1485,7 @@
             <element signature="n#style#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#table#0;n#div#1;n#center#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1410006306233" expanded="true" signature="6315:6325" placeholder="..." />
           </folding>
         </state>
       </provider>
