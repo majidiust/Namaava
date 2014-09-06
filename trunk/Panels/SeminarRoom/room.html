@@ -10,9 +10,18 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
     <script type="text/javascript" src="js/modernizer-2.6.2.min.js"></script>
+
+    <link href="video-js/video-js.css" rel="stylesheet">
+    <script src="video-js/video.js"></script>
+    <script>
+        videojs.options.flash.swf = "video-js/video-js.swf"
+    </script>
+
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
+
+
     <![endif]-->
     <style>
         #Smodal {
@@ -26,6 +35,27 @@
             width: 99999px;
             height: 999999px;
             z-index: 90; /* makes the div the second most top layer, so it’ll lay on top of everything else EXCEPT for divs with a higher z-index (meaning the #overlay ruleset) */
+        }
+
+        .contentSelector {
+            background: #cedce7; /* Old browsers */
+            background: -moz-linear-gradient(top, #cedce7 0%, #596a72 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cedce7), color-stop(100%, #596a72)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #cedce7 0%, #596a72 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #cedce7 0%, #596a72 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #cedce7 0%, #596a72 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #cedce7 0%, #596a72 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cedce7', endColorstr='#596a72', GradientType=0);
+            box-sizing: content-box;
+            -webkit-box-shadow: 0px 0px 26px 0px rgba(50, 50, 50, 0.94);
+            -moz-box-shadow: 0px 0px 26px 0px rgba(50, 50, 50, 0.94);
+            box-shadow: 0px 0px 26px 0px rgba(50, 50, 50, 0.94);
+            padding: 10px;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
         }
 
         #MessageBoxCSS {
@@ -147,15 +177,66 @@
     <!-- End Of West -->
     <!-- Begin Of Center -->
     <div id="layoutCenter">
-        <div id="layoutCenter_east" style="background: #ffffff; /* Old browsers */
+        <div id="layoutCenter_east" style="
+        padding: 10px;
+        background: #ffffff; /* Old browsers */
 background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
 background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
 background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
 background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */    ">
-            <div id="a">
+            <div id="a" class="contentSelector">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="padding:5px;width:50%;font-family: tahoma, verdana, sans-serif; font-size: 12px;text-align: right;direction: rtl;">
+نمونه ویدیو
+                        </td>
+                        <td>
+                            <img id="seminar_pic" src="../images/default.png"
+                                 alt=""
+                                 style="width:80%;
+                         padding:
+                         10px;background: #eeeeee;
+                         border: 0px solid #bbbbbb;
+                         border-radius: 10px;
+                         -moz-border-radius: 10px;
+                         -webkit-border-radius: 10px;vertical-align: middle;-webkit-box-shadow: 8px 5px 15px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    8px 5px 15px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         8px 5px 15px 0px rgba(50, 50, 50, 0.75);">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="a" class="contentSelector">
+                asddddddddddddddd
+                asdddddddddddd
+                asddddddddddddddd
+                asddddddddddd
+                asdddddddddddddddd
+                asddddddddddddd
+                asdddddddddddd
+                asddddddddddddddddd
+                asdddddddddddddd
+                asddddddddddd
+                asddddddddd
+            </div>
+            <div id="a" class="contentSelector">
+                asddddddddddddddd
+                asdddddddddddd
+                asddddddddddddddd
+                asddddddddddd
+                asdddddddddddddddd
+                asddddddddddddd
+                asdddddddddddd
+                asddddddddddddddddd
+                asdddddddddddddd
+                asddddddddddd
+                asddddddddd
+            </div>
+            <div id="a" class="contentSelector">
                 asddddddddddddddd
                 asdddddddddddd
                 asddddddddddddddd
@@ -169,7 +250,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                 asddddddddd
             </div>
         </div>
-        <div id="layoutCenter_center">
+        <div id="layoutCenter_center" style="background: rgb(181,189,200); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(181,189,200,1)), color-stop(36%,rgba(130,140,149,1)), color-stop(100%,rgba(40,52,59,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
+padding: 20px;
+">
+
+            <!-- Begin Of Video player -->
+            <video id="example_video_1" class="video-js vjs-default-skin"
+                   controls preload="auto" width="640" height="480"
+                   poster="http://video-js.zencoder.com/oceans-clip.png"
+                   data-setup='{"example_option":true}'
+                   style="margin:0 auto;-webkit-box-shadow: 0px 0px 26px 0px rgba(50, 50, 50, 0.94);
+-moz-box-shadow:    0px 0px 26px 0px rgba(50, 50, 50, 0.94);
+box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
+                    border-radius: 8px;
+                    -webkit-border-radius: 8px;
+                    -moz-border-radius: 8px;
+                    ">
+                <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4'/>
+                <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm'/>
+                <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg'/>
+                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web
+                    browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                        video</a></p>
+            </video>
+            <!-- end of video player -->
         </div>
     </div>
     <!-- End Of Center -->
@@ -399,6 +510,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
             center__maxSize: .50,
             center__minSize: .21,
             livePaneResizing: true
+        });
+
+        videojs("example_video_1", {}, function () {
+            // Player (this) is initialized and ready.
         });
     });
 
