@@ -505,7 +505,7 @@ function ShowHelp(){
     });
 }
 
-function ShoeContactUs(){
+function ShowContactUs(){
 
 
     $.ajax({
