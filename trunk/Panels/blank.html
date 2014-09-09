@@ -617,39 +617,6 @@ info@rayanhiva.ir
               </span>
     </a>
 </li>
-<!--     
-<li class="nav-header hidden-tablet">
-درباره ما
-</li>
-
-<li>
-<a class="ajax-link" style="cursor:pointer;" href="http://www.namaava.com/"  >
-<i class="icon-th">
-</i>
-<span class="hidden-tablet">
-وب سایت نماآوای زندگی
-</span>
-</a>
-</li>
-<li>
-<a class="ajax-link" style="cursor:pointer;" onClick="alert('To Be Implement');"  >
-<i class="icon-th">
-</i>
-<span class="hidden-tablet">
-راهنمای سامانه
-</span>
-</a>
-</li>
-<li>
-<a class="ajax-link" style="cursor:pointer;" onClick="ShowBox('#ContactUs');"  >
-<i class="icon-th">
-</i>
-<span class="hidden-tablet">
-تماس با ما
-</span>
-</a>
-</li>
--->
 </ul>
 </div>
 <!--/.well -->
@@ -705,8 +672,8 @@ info@rayanhiva.ir
     </div>
 </div>
 <div class="row-fluid sortable">
-<div class="box span10" id="SeminarMoreInfo" name="PanelWindow" style="float: right;
-display: none;">
+<!-- begin of seminar info -->
+<div class="box span10" id="SeminarMoreInfo" name="PanelWindow" style="float: right; display: none;">
 <div class="box-header well">
     <h2 style="float: right;">
         <i class="icon-info-sign">
@@ -1131,8 +1098,9 @@ Upload images
 </div>
 </div>
 </div>
-<div class="box span10" id="InvitedToSeminar" name="PanelWindow" style="float: right;
-display: none;">
+<!-- end of seminar info -->
+<!-- begin of invite to seminar -->
+<div class="box span10" id="InvitedToSeminar" name="PanelWindow" style="float: right;display: none;">
     <div class="box-header well">
         <h2 style="float: right;">
             <i class="icon-info-sign">
@@ -1201,6 +1169,8 @@ display: none;">
         </table>
     </div>
 </div>
+<!-- end of invite to seminar -->
+<!-- begin of contact us -->
 <div class="box span10" id="ContactUs" name="PanelWindow" style="float: right; display: none;">
     <div class="box-header well">
         <h2 style="float: right;">
@@ -1231,11 +1201,9 @@ display: none;">
 
     </div>
 </div>
-<!--
-
--->
-<div class="box span10" id="MyRequestedSeminars" name="PanelWindow" style="float: right;
-display: none;">
+<!-- end of contact us -->
+<!-- begiin of my requests -->
+<div class="box span10" id="MyRequestedSeminars" name="PanelWindow" style="float: right; display: none;">
     <div class="box-header well">
         <h2 style="float: right;">
             <i class="icon-info-sign">
@@ -1311,6 +1279,8 @@ display: none;">
         </table>
     </div>
 </div>
+<!-- end of my requests -->
+<!-- begin of my seminars-->
 <div class="box span12" id="OwnedSeminars" name="PanelWindow" style="display: none;">
     <div class="box-header well">
         <h2 style="float: right;">
@@ -1377,6 +1347,7 @@ display: none;">
         </div>
     </div>
 </div>
+<!-- end of my seminars -->
 <!-- Begin Of Customer Pey,emts -->
 <div class="box span9" id="UserPeyments" name="PanelWindow" style="display: none;">
     <div class="box-header well">
@@ -1435,8 +1406,7 @@ display: none;">
 </div>
 <!-- End Of Customer Payment -->
 <!-- Begin Of Profile Details -->
-<div class="box span9" id="ProfileDetails" name="PanelWindow" style="float: right;
-margin-right: 30px; display: none;">
+<div class="box span9" id="ProfileDetails" name="PanelWindow" style="float: right; margin-right: 30px; display: none;">
 <div class="box-header well">
     <h2 style="float: right;">
         <i class="icon-info-sign">
@@ -2067,6 +2037,8 @@ margin-right: 30px; display: none;">
 </div>
 </div>
 </div>
+<!-- end of profile-->
+<!-- begin of new seminar -->
 <div class="box span12" id="NewSeminar" name="PanelWindow" style="display: none;">
 <div class="box-header well">
     <h2 style="float: right;">
@@ -2103,7 +2075,7 @@ margin-right: 30px; display: none;">
             <table style="width: 70%; direction: rtl;">
                 <tr>
                     <td style="width: 30%">
-                        <div id="pb1" class="BusinessPlanDiv" onclick=" peymentMethod = 1 ;SeminarWizard(0, true);">
+                        <div id="pb1" class="BusinessPlanDiv" onclick="seminarType = 0;$('#seminarTime_offline').show();$('#seminarTime_online').hide(); peymentMethod = 1 ;SeminarWizard(0, true);">
                     <span style="display: inline-block; vertical-align: middle; line-height: normal;
 font-size: 20px; font-family: Tahoma, Geneva, sans-serif; -webkit-transform: rotate(-45deg);
 -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg);
@@ -2123,7 +2095,7 @@ transform: rotate(-45deg);">
                 </tr>
                 <tr>
                     <td style="width: 30%">
-                        <div id="pb2" class="BusinessPlanDiv" onclick=" peymentMethod = 1 ;SeminarWizard(0, true);">
+                        <div id="pb2" class="BusinessPlanDiv" onclick="seminarType = 1; $('#seminarTime_offline').hide();$('#seminarTime_online').show();  peymentMethod = 1 ;SeminarWizard(0, true);">
                     <span style="display: inline-block; vertical-align: middle; line-height: normal;
 font-size: 20px; font-family: Tahoma, Geneva, sans-serif; -webkit-transform: rotate(-45deg);
 -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg);
@@ -2377,41 +2349,6 @@ border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
                     </p>
                 </div>
             </div>
-            <!--
-<div class="control-group">
-<label class="control-label" for="NewSeminarCapacity" style="float:right;">
-ظرفیت
-</label>
-<div class="controls">
-<select id="NewSeminarCapacity" >
-<option>
-35
-</option>
-<option>
-40
-</option>
-<option>
-45
-</option>
-<option>
-50
-</option>
-<option>
-75
-</option>
-<option>
-100
-</option>
-<option>
-200
-</option>
-<option>
-500
-</option>
-</select>
-</div>
-</div>
--->
             <div class="control-group">
                 <label class="control-label" for="NewSeminarDescription" style="float: right;">
                     توضیحات
@@ -2479,7 +2416,7 @@ border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
     <label class="control-label" for="NewSeminarDate" style="float: right;">
         زمان برگزاری
     </label>
-
+    <div  id="seminarTime_online" style="display: none;">
     <div class="controls">
         <select id="NewSeminarDateYear">
             <option value="1393">
@@ -2529,6 +2466,12 @@ border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
         </select>
         <select id="NewSeminarDateDay">
         </select>
+    </div>
+    </div>
+    <div id="seminarTime_offline" style="display: none;">
+        <label class="control-label" for="NewSeminarDate" style="float: right;">
+در حالت آفلاین زمان برگزاری نداشته و این سمینار همواره قابل دسترس است.
+        </label>
     </div>
 </div>
 <div class="control-group">
@@ -2983,8 +2926,7 @@ border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;"
 </div>
 <!-- End Of New seminar -->
 <!-- Begin of Bank Response showing -->
-<div class="box span6" id="BankResponseShow" name="PanelWindow" style="display: none;
-float: right;">
+<div class="box span6" id="BankResponseShow" name="PanelWindow" style="display: none; float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
             <i class="icon-info-sign">
@@ -3045,8 +2987,7 @@ float: right;">
 </div>
 <!-- End of Bank Response showing -->
 <!-- Begin Of Pishnahadat -->
-<div class="box span6" id="Pishnahadat" name="PanelWindow" style="display: none;
-float: right;">
+<div class="box span6" id="Pishnahadat" name="PanelWindow" style="display: none; float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
             <i class="icon-info-sign">
@@ -3108,8 +3049,7 @@ float: right;">
 </div>
 <!-- End Of Pishnahadat-->
 <!-- Begin Of Pishnahadat -->
-<div class="box span6" id="SampleSeminars" name="PanelWindow" style="display: none;
-float: right;">
+<div class="box span6" id="SampleSeminars" name="PanelWindow" style="display: none; float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
             <i class="icon-info-sign">
@@ -3415,8 +3355,7 @@ $('#NewsTopic').val('');">
 </div>
 <!-- End Of News -->
 <!-- Begin Of Payment -->
-<div class="box span7" id="PaymentPanel" name="PanelWindow" style="display: none;
-float: right;">
+<div class="box span7" id="PaymentPanel" name="PanelWindow" style="display: none;float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
             <i class="icon-info-sign">
@@ -3551,8 +3490,7 @@ float: right;">
 </div>
 <!-- End Of Payment-->
 <!-- Begin of PaymentAccount Information -->
-<div class="box span7" id="PaymentInformationPanel" name="PanelWindow" style="display: none;
-float: right;">
+<div class="box span7" id="PaymentInformationPanel" name="PanelWindow" style="display: none;float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
             <i class="icon-info-sign">
@@ -3767,8 +3705,7 @@ Upload images
 </div>
 <!-- End Of AllNews -->
 <!-- Begin of HistoryPayment -->
-<div class="box span7" id="HistoryPayment" name="PanelWindow" style="display: none;
-float: right;">
+<div class="box span7" id="HistoryPayment" name="PanelWindow" style="display: none;float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
             <i class="icon-info-sign">
@@ -3823,8 +3760,7 @@ float: right;">
     </div>
 </div>
 <!-- End Of HistoryPayment -->
-<div class="box span6" id="ProfileLogInDetails" name="PanelWindow" style="display: none;
-float: right;">
+<div class="box span6" id="ProfileLogInDetails" name="PanelWindow" style="display: none;float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
             <i class="icon-info-sign">
@@ -3895,8 +3831,7 @@ float: right;">
         </div>
     </div>
 </div>
-<div class="box span6" id="ProfileContactDetails" name="PanelWindow" style="display: none;
-float: right;">
+<div class="box span6" id="ProfileContactDetails" name="PanelWindow" style="display: none;float: right;">
     <div class="box-header well" data-original-title>
         <h2 style="float: right;">
             <i class="icon-info-sign">
@@ -4204,20 +4139,6 @@ color: #333">
     </div>
 </div>
 </div>
-<!-- 
-<footer>
-<center>
-<p>
-تمامی حقوق مادی و معنوی متعلق به شرکت فنی و مهندسی رایان هیوا کیش می باشد.
-</p>
-<p>
-<a href="http://www.rayanhiva.ir">
-Http://www.RayanHiva.ir
-</a>
-</p>
-</center>
-</footer>
--->
 <div id="CustomMessageBox" style="display: none;">
     <div class="Smodal">
     </div>

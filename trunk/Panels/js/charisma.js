@@ -23,7 +23,7 @@ var isMember = -1;
 var index = -1;
 var NewsPictureID = -1;
 var aboutUsEditor = null;
-
+var seminarType;
 var fee;
 var WebinarPoster;
 
@@ -1453,48 +1453,53 @@ function SeminarWizard(step, isNext) {
                 $("#NewSeminarKeyWordsError").show();
             } else $("#NewSeminarKeyWordsError").hide();
         } else if (step == 4) {
-            var _seminarEndTime = $("#NewSeminarEndingHour").val();
-            var _seminarBeginTime = $("#NewSeminarHeldingHour").val();
-            var _seminarMonth = $("#NewSeminarDateMonth").val();
-            var _seminarDay = $("#NewSeminarDateDay").val();
-            var _seminarYear = $("#NewSeminarDateYear").val();
-            var _seminarBaseTime = _seminarYear + ":" + _seminarMonth + ":" + _seminarDay;
-            var _seminarBegin = _seminarBaseTime + ":" + _seminarBeginTime + ":00:00";
-            var _seminarEnd = _seminarBaseTime + ":" + _seminarEndTime + ":00:00";
-            var _firstDuration = $("#NewSeminarHourLength").val();
-            //alert(_firstDuration);
-            var _postDuration = _seminarEndTime - _seminarBeginTime;
-            if (parseInt(_seminarEndTime) <= parseInt(_seminarBeginTime)) {
-                _hasError = true;
-                $("#NewSeminarEndingHourError").show();
-            } else $("#NewSeminarEndingHourError").hide();
+            if(seminarType == 1) {
+                var _seminarEndTime = $("#NewSeminarEndingHour").val();
+                var _seminarBeginTime = $("#NewSeminarHeldingHour").val();
+                var _seminarMonth = $("#NewSeminarDateMonth").val();
+                var _seminarDay = $("#NewSeminarDateDay").val();
+                var _seminarYear = $("#NewSeminarDateYear").val();
+                var _seminarBaseTime = _seminarYear + ":" + _seminarMonth + ":" + _seminarDay;
+                var _seminarBegin = _seminarBaseTime + ":" + _seminarBeginTime + ":00:00";
+                var _seminarEnd = _seminarBaseTime + ":" + _seminarEndTime + ":00:00";
+                var _firstDuration = $("#NewSeminarHourLength").val();
+                //alert(_firstDuration);
+                var _postDuration = _seminarEndTime - _seminarBeginTime;
+                if (parseInt(_seminarEndTime) <= parseInt(_seminarBeginTime)) {
+                    _hasError = true;
+                    $("#NewSeminarEndingHourError").show();
+                } else $("#NewSeminarEndingHourError").hide();
 
-            if (_postDuration != _firstDuration) {
-                _hasError = true;
-                $("#NewSeminarDurationError").html('مدت سمینار شما نمیتواند بیشتر از ' + _firstDuration + ' ساعت باشد. ');
-                $("#NewSeminarDurationError").show();
-            } else {
-                $("#NewSeminarDurationError").hide();
+                if (_postDuration != _firstDuration) {
+                    _hasError = true;
+                    $("#NewSeminarDurationError").html('مدت سمینار شما نمیتواند بیشتر از ' + _firstDuration + ' ساعت باشد. ');
+                    $("#NewSeminarDurationError").show();
+                } else {
+                    $("#NewSeminarDurationError").hide();
+                }
+                $.ajax({
+                    type: 'GET',
+                    url: ServerURL + "Session/CheckServerTime",
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.Status == false) {
+                            _hasError = true;
+                            $("#NewSeminartimeExistError").show();
+                            setTimeout(function () {
+                                $("#NewSeminartimeExistError").hide();
+                            }, 5000);
+                        }
+                    },
+                    data: {
+                        beginTime: _seminarBegin,
+                        endTime: _seminarEnd
+                    },
+                    async: false
+                });
             }
-            $.ajax({
-                type: 'GET',
-                url: ServerURL + "Session/CheckServerTime",
-                dataType: 'json',
-                success: function (result) {
-                    if (result.Status == false) {
-                        _hasError = true;
-                        $("#NewSeminartimeExistError").show();
-                        setTimeout(function () {
-                            $("#NewSeminartimeExistError").hide();
-                        }, 5000);
-                    }
-                },
-                data: {
-                    beginTime: _seminarBegin,
-                    endTime: _seminarEnd
-                },
-                async: false
-            });
+            else{
+                _hasError = false;
+            }
         }
     }
 
