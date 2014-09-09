@@ -502,7 +502,7 @@ namespace Webinar.Controllers
         public ActionResult CreateNewSession(string sessionAdmin, string presentorName, string sessionName, int sessionType,
             string beginTime /*YY:MM:DD:HH:MM:SS*/, string endTime /*YY:MM:DD:HH:MM:SS*/, int capacity, string fee,
             string wallpaper, string keywords, string description, string emails, string mobiles, string firstNames,
-            string lastNames, string why, string forLearner, string level, bool isBilled, bool sendSms, string bp, string cf)
+            string lastNames, string why, string forLearner, string level, bool isBilled, bool sendSms, string bp, string cf, int mode, string du)
         {
 
             int sId = -1;
@@ -511,6 +511,7 @@ namespace Webinar.Controllers
             {
                 //bool sendSms = false;
                 Session session = new Session();
+                session.mode = mode;
                 aspnet_User adminUser = m_model.aspnet_Users.Single(P => P.UserName.ToLower().Equals(User.Identity.Name));
                 
                 //Check For Admin Exist In System Or Not
@@ -541,25 +542,29 @@ namespace Webinar.Controllers
                 session.Why = why;
                 session.Level = level;
                 //Calc Start Time
-                string[] parsedBeginDate = beginTime.Split(new char[] { ':' });
-                WebinarDateTime sessionStartDate = new WebinarDateTime();
-                sessionStartDate.Year = int.Parse(parsedBeginDate[0]);
-                sessionStartDate.Month = int.Parse(parsedBeginDate[1]);
-                sessionStartDate.Day = int.Parse(parsedBeginDate[2]);
-                TimeSpan sessionStartTime = new TimeSpan(int.Parse(parsedBeginDate[3]), int.Parse(parsedBeginDate[4]), int.Parse(parsedBeginDate[5]));
-                sessionStartDate.Time = sessionStartTime;
+                 // the meaning of 2 is online
+                
+                    string[] parsedBeginDate = beginTime.Split(new char[] { ':' });
+                    WebinarDateTime sessionStartDate = new WebinarDateTime();
+                    sessionStartDate.Year = int.Parse(parsedBeginDate[0]);
+                    sessionStartDate.Month = int.Parse(parsedBeginDate[1]);
+                    sessionStartDate.Day = int.Parse(parsedBeginDate[2]);
+                    TimeSpan sessionStartTime = new TimeSpan(int.Parse(parsedBeginDate[3]), int.Parse(parsedBeginDate[4]), int.Parse(parsedBeginDate[5]));
 
-                //Calc End Time
-                string[] parsedEndDate = endTime.Split(new char[] { ':' });
-                WebinarDateTime sessionEndDate = new WebinarDateTime();
-                sessionEndDate.Year = int.Parse(parsedEndDate[0]);
-                sessionEndDate.Month = int.Parse(parsedEndDate[1]);
-                sessionEndDate.Day = int.Parse(parsedEndDate[2]);
-                int duration = int.Parse(parsedEndDate[3]) - int.Parse(parsedBeginDate[3]);
-                TimeSpan sessionEndTime = new TimeSpan(int.Parse(parsedEndDate[3]), int.Parse(parsedEndDate[4]), int.Parse(parsedEndDate[5]));
-                sessionEndDate.Time = sessionEndTime;
 
-               
+                    //Calc End Time
+                    string[] parsedEndDate = endTime.Split(new char[] { ':' });
+                    WebinarDateTime sessionEndDate = new WebinarDateTime();
+                    sessionEndDate.Year = int.Parse(parsedEndDate[0]);
+                    sessionEndDate.Month = int.Parse(parsedEndDate[1]);
+                    sessionEndDate.Day = int.Parse(parsedEndDate[2]);
+                    //int duration = int.Parse(parsedEndDate[3]) - int.Parse(parsedBeginDate[3]);
+                    TimeSpan sessionEndTime = new TimeSpan(int.Parse(parsedEndDate[3]), int.Parse(parsedEndDate[4]), int.Parse(parsedEndDate[5]));
+                if (mode == 1)
+                {
+                    sessionStartDate.Time = sessionStartTime;
+                    sessionEndDate.Time = sessionEndTime;
+                }
 
                 #region payment calculation
                 //We Know that bp == 1 is mean that there are post paid, we ry to find related record from plans and calculate seminar fee, after that we check the user balance and then if 
@@ -577,7 +582,7 @@ namespace Webinar.Controllers
                 }
 
 
-                int cost = int.Parse(plan.PrePeyment) * duration;
+                int cost = (int)(int.Parse(plan.PrePeyment) * float.Parse(du));
 
                 string userName = User.Identity.Name.ToLower();
                 var user = m_model.aspnet_Users.Single(p => p.UserName.ToLower().Equals(userName));
@@ -614,15 +619,21 @@ namespace Webinar.Controllers
   
 
                 //Add Dates To DataBase And Submit Changes In Order to Get Dates Key
-                m_model.WebinarDateTimes.InsertOnSubmit(sessionStartDate);
-                m_model.WebinarDateTimes.InsertOnSubmit(sessionEndDate);
+                if (mode == 1)
+                {
+                    m_model.WebinarDateTimes.InsertOnSubmit(sessionStartDate);
+                    m_model.WebinarDateTimes.InsertOnSubmit(sessionEndDate);
+                }
                 m_model.SubmitChanges();//1
 
                 //Set The Session Times
-                session.BeginTime = sessionStartDate.id;
-                session.EndTime = sessionEndDate.id;
-                session.WebinarDateTime = sessionStartDate;
-                session.WebinarDateTime1 = sessionEndDate;
+                if (mode == 1)
+                {
+                    session.BeginTime = sessionStartDate.id;
+                    session.EndTime = sessionEndDate.id;
+                    session.WebinarDateTime = sessionStartDate;
+                    session.WebinarDateTime1 = sessionEndDate;
+                }
 
                 //Set The Webinar Keywords
                 session.Keywords = keywords;

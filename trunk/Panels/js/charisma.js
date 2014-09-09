@@ -3040,7 +3040,9 @@ function CreateSeminar() {
             isBilled: true,
             sendSms: _isSendSMS,
             bp: peymentMethod,
-            cf: _seminarCustomFee
+            cf: _seminarCustomFee,
+            mode: seminarType,
+            du: $("#NewSeminarHourLength").val()
         };
 
         $.ajax({
