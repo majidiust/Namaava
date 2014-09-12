@@ -1009,15 +1009,25 @@ function GetSeminarInfo(sessionId) {
         $('#PleaseWait').hide();
         if (result.Status == true) {
             $("#seminar_title").html(result.Result.name);
+            if(result.mode == 1)
+            {
             $("#seminar_time").html(GetPrsianDate(result.Result.beginTime));
+                if (result.Result.remained == 0) {
+                    $("#seminar_capacity").html("ظرفیت تکمیل شده است");
+                }
+                else {
+                    $("#seminar_capacity").html("ظرفیت برای ثبت نام وجود دارد");
+                }
+            }
+            else if(result.mode == 0)
+            {
+                $("#seminar_time").hide();
+                $("#seminar_capacity").hide();
+            }
+
             //$("#WebinarHolder").html(result.Result.admin);
             $("#seminar_presenter").html(result.Result.presentor);
-            if (result.Result.remained == 0) {
-                $("#seminar_capacity").html("ظرفیت تکمیل شده است");
-            }
-            else {
-                $("#seminar_capacity").html("ظرفیت برای ثبت نام وجود دارد");
-            }
+
             //$("#seminar_capacity").html(result.Result.remained);
 
             $("#seminar_explain").html(result.Result.description);
