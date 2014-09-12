@@ -1760,7 +1760,7 @@ namespace Webinar.Controllers
             try
             {
                 var result = (from p in m_model.Sessions
-                              where p.mode==null && p.mode == 0
+                              where p.mode==null || p.mode == 0
                               select new
                               {
                                   id = p.SessionId,

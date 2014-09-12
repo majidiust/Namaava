@@ -2685,6 +2685,7 @@ function GetOfflineSeminars() {
         $.getJSON(ServerURL + "Session/GetOfflineSeminars", {
             adminName: userName
         }, function (resultAdmin) {
+            CustomBlockingPanel('توجه', 'اطلاعات دریافت شد', 1000, null);
             if (resultAdmin.Status == true) {
                 for (var j = 0; j < resultAdmin.Result.length; j++) {
                     if (IsExistSminarInList(resultAdmin.Result[j].id) == false) {
