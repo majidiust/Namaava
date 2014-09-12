@@ -1663,6 +1663,8 @@ namespace Webinar.Controllers
                 var x = m_model.Sessions.Count(P => P.SessionId == sessionId);
                 if (x > 0)
                 {
+                    bool isOffline = false;
+                    var tmp = m_model.Sessions.Single(P=>P.SessionId == sessionId);
                     Hashtable hashtable = new Hashtable();
 
                     var justForCapacity = (from p in m_model.Sessions
@@ -1686,32 +1688,65 @@ namespace Webinar.Controllers
                         FileInfo tmpFileIno = new FileInfo(video[0].VideoName);
                         ad = "http://94.232.174.204:7700/Namaava/" + sessionId + "/" + video[0].ID + tmpFileIno.Extension;
                     }
-                    var result = (from p in m_model.Sessions
-                                  where p.SessionId == sessionId
-                                  select new
-                                  {
-                                      id = p.SessionId,
-                                      name = p.SessionName,
-                                      description = p.Description,
-                                      capacity = p.Capacity,
-                                      presentor = p.aspnet_User.Profile == null ? p.aspnet_User.UserName : p.aspnet_User.Profile.FirstName + " " + p.aspnet_User.Profile.LastName,
-                                      admin = p.aspnet_User1.Profile == null ? p.aspnet_User1.UserName : p.aspnet_User1.Profile.FirstName + " " + p.aspnet_User1.Profile.LastName,
-                                      presentorUserName = p.aspnet_User.UserName,
-                                      adminUserName = p.aspnet_User1.UserName,
-                                      beginTime = p.WebinarDateTime == null ? "آفلاین" : DateToString(p.WebinarDateTime),
-                                      duration = p.Duration == null ? "1" : p.Duration,
-                                      primaryContent = p.PrimaryContentID == null ? -1 : p.PrimaryContentID,
-                                      status = p.SessionState.State,//"In Progress" //p.SessionStatus[p.SessionStatus.Count - 1].SessionState.State //"In Progress"// p.SessionStatus == null ? "In Progress" : (p.SessionStatus.Count > 0 ? p.SessionStatus[p.SessionStatus.Count - 1].SessionState.State : "In Progress"),
-                                      poster = p.Wallpaper,
-                                      why = p.Why,
-                                      forWho = p.Learner,
-                                      remained = hashtable[p.SessionId],
-                                      level = p.Level,
-                                      fee = UserPeymentSession(p.SessionId),
-                                      advertise = ad,
-                                      mode = p.mode == null ? 1:p.mode
-                                  }).ToList()[0];
-                    return Json(new { Status = true, Message = "Search done successfully", Result = result }, JsonRequestBehavior.AllowGet);
+                    if (tmp.mode == 1)
+                    {
+                        var result = (from p in m_model.Sessions
+                                      where p.SessionId == sessionId
+                                      select new
+                                      {
+                                          id = p.SessionId,
+                                          name = p.SessionName,
+                                          description = p.Description,
+                                          capacity = p.Capacity,
+                                          presentor = p.aspnet_User.Profile == null ? p.aspnet_User.UserName : p.aspnet_User.Profile.FirstName + " " + p.aspnet_User.Profile.LastName,
+                                          admin = p.aspnet_User1.Profile == null ? p.aspnet_User1.UserName : p.aspnet_User1.Profile.FirstName + " " + p.aspnet_User1.Profile.LastName,
+                                          presentorUserName = p.aspnet_User.UserName,
+                                          adminUserName = p.aspnet_User1.UserName,
+                                          beginTime = DateToString(p.WebinarDateTime),
+                                          duration = p.Duration == null ? "1" : p.Duration,
+                                          primaryContent = p.PrimaryContentID == null ? -1 : p.PrimaryContentID,
+                                          status = p.SessionState.State,//"In Progress" //p.SessionStatus[p.SessionStatus.Count - 1].SessionState.State //"In Progress"// p.SessionStatus == null ? "In Progress" : (p.SessionStatus.Count > 0 ? p.SessionStatus[p.SessionStatus.Count - 1].SessionState.State : "In Progress"),
+                                          poster = p.Wallpaper,
+                                          why = p.Why,
+                                          forWho = p.Learner,
+                                          remained = hashtable[p.SessionId],
+                                          level = p.Level,
+                                          fee = UserPeymentSession(p.SessionId),
+                                          advertise = ad,
+                                          mode = p.mode == null ? 1 : p.mode
+                                      }).ToList()[0];
+                        return Json(new { Status = true, Message = "Search done successfully", Result = result }, JsonRequestBehavior.AllowGet);
+                    }
+                    else if (tmp.mode == 0)
+                    {
+                        var result = (from p in m_model.Sessions
+                                      where p.SessionId == sessionId
+                                      select new
+                                      {
+                                          id = p.SessionId,
+                                          name = p.SessionName,
+                                          description = p.Description,
+                                          capacity = p.Capacity,
+                                          presentor = p.aspnet_User.Profile == null ? p.aspnet_User.UserName : p.aspnet_User.Profile.FirstName + " " + p.aspnet_User.Profile.LastName,
+                                          admin = p.aspnet_User1.Profile == null ? p.aspnet_User1.UserName : p.aspnet_User1.Profile.FirstName + " " + p.aspnet_User1.Profile.LastName,
+                                          presentorUserName = p.aspnet_User.UserName,
+                                          adminUserName = p.aspnet_User1.UserName,
+                                          beginTime ="آفلاین" ,
+                                          duration = p.Duration == null ? "1" : p.Duration,
+                                          primaryContent = p.PrimaryContentID == null ? -1 : p.PrimaryContentID,
+                                          status = p.SessionState.State,//"In Progress" //p.SessionStatus[p.SessionStatus.Count - 1].SessionState.State //"In Progress"// p.SessionStatus == null ? "In Progress" : (p.SessionStatus.Count > 0 ? p.SessionStatus[p.SessionStatus.Count - 1].SessionState.State : "In Progress"),
+                                          poster = p.Wallpaper,
+                                          why = p.Why,
+                                          forWho = p.Learner,
+                                          remained = hashtable[p.SessionId],
+                                          level = p.Level,
+                                          fee = UserPeymentSession(p.SessionId),
+                                          advertise = ad,
+                                          mode = p.mode == null ? 1 : p.mode
+                                      }).ToList()[0];
+                        return Json(new { Status = true, Message = "Search done successfully", Result = result }, JsonRequestBehavior.AllowGet);
+                    }
+                    return Json(new { Status = false, Message = "Mode not found"}, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
