@@ -1698,8 +1698,8 @@ namespace Webinar.Controllers
                                       admin = p.aspnet_User1.Profile == null ? p.aspnet_User1.UserName : p.aspnet_User1.Profile.FirstName + " " + p.aspnet_User1.Profile.LastName,
                                       presentorUserName = p.aspnet_User.UserName,
                                       adminUserName = p.aspnet_User1.UserName,
-                                      beginTime = DateToString(p.WebinarDateTime),
-                                      duration = p.WebinarDateTime1.Time.Value.Hours - p.WebinarDateTime.Time.Value.Hours,
+                                      beginTime = p.WebinarDateTime == null ? "آفلاین" : DateToString(p.WebinarDateTime),
+                                      duration = p.Duration,
                                       primaryContent = p.PrimaryContentID == null ? -1 : p.PrimaryContentID,
                                       status = p.SessionState.State,//"In Progress" //p.SessionStatus[p.SessionStatus.Count - 1].SessionState.State //"In Progress"// p.SessionStatus == null ? "In Progress" : (p.SessionStatus.Count > 0 ? p.SessionStatus[p.SessionStatus.Count - 1].SessionState.State : "In Progress"),
                                       poster = p.Wallpaper,
@@ -1708,7 +1708,8 @@ namespace Webinar.Controllers
                                       remained = hashtable[p.SessionId],
                                       level = p.Level,
                                       fee = UserPeymentSession(p.SessionId),
-                                      advertise = ad
+                                      advertise = ad,
+                                      mode = p.mode
                                   }).ToList()[0];
                     return Json(new { Status = true, Message = "Search done successfully", Result = result }, JsonRequestBehavior.AllowGet);
                 }

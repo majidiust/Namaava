@@ -1929,7 +1929,7 @@ function GetMoreSeminarInformation(seminarID) {
                     m_seminarID: response.Result.id,
                     m_seminarName: response.Result.name,
                     m_seminarPresentorName: response.Result.presentor,
-                    m_seminarBeginTime: GetPrsianDate(response.Result.beginTime),
+                    m_seminarBeginTime: response.mode == 1 ? GetPrsianDate(response.Result.beginTime) : response.Result.beginTime,
                     m_seminarDuration: response.Result.duration,
                     m_seminarStatus: response.Result.status,
                     m_seminarDesc: response.Result.description,
