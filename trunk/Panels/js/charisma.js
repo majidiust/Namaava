@@ -2693,7 +2693,7 @@ function GetOfflineSeminars() {
                             m_seminarID: resultAdmin.Result[j].id,
                             m_seminarBeginTime: 'آفلاین',
                             m_seminarName: resultAdmin.Result[j].name,
-                            m_seminarPresentorName: resultAdmin.Result[j].presentorUserName == userName ? 'خودم' : resultAdmin.Result[j].presentor,
+                            m_seminarPresentorName: resultAdmin.Result[j].presentorUserName == userName ? 'خودم' : resultAdmin.Result[j].presentorUserName,
                             m_seminarDuration: resultAdmin.Result[j].duration,
                             m_seminarStatus: resultAdmin.Result[j].status,
                             m_seminarsAdmin: 'خودم'
