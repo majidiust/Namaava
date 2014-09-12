@@ -1022,8 +1022,8 @@ function GetSeminarInfo(sessionId) {
             }
             else if(result.Result.mode == 0)
             {
-                $("#seminar_time").hide();
-                $("#seminar_capacity").hide();
+                $("#seminar_time").html('-------');
+                $("#seminar_capacity").html('-------');
             }
 
             //$("#WebinarHolder").html(result.Result.admin);
