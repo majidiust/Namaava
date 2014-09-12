@@ -1746,7 +1746,7 @@ namespace Webinar.Controllers
                                           level = p.Level,
                                           fee = UserPeymentSession(p.SessionId),
                                           advertise = ad,
-                                          mode = p.mode == null ? 1 : p.mode
+                                          mode = p.mode == null ? 0 : p.mode
                                       }).ToList()[0];
                         return Json(new { Status = true, Message = "Search done successfully", Result = result }, JsonRequestBehavior.AllowGet);
                     }
