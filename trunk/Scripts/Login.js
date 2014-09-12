@@ -1009,8 +1009,8 @@ function GetSeminarInfo(sessionId) {
         $('#PleaseWait').hide();
         if (result.Status == true) {
             $("#seminar_title").html(result.Result.name);
-            console.log("mode is : " + result.mode);
-            if(result.mode == 1)
+            console.log("mode is : " + result.Result.mode);
+            if(result.Result.mode == 1)
             {
             $("#seminar_time").html(GetPrsianDate(result.Result.beginTime));
                 if (result.Result.remained == 0) {
@@ -1020,7 +1020,7 @@ function GetSeminarInfo(sessionId) {
                     $("#seminar_capacity").html("ظرفیت برای ثبت نام وجود دارد");
                 }
             }
-            else if(result.mode == 0)
+            else if(result.Result.mode == 0)
             {
                 $("#seminar_time").hide();
                 $("#seminar_capacity").hide();
