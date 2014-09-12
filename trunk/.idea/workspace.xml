@@ -748,11 +748,12 @@
       <file leaf-file-name="Login.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scripts/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60645163" vertical-offset="1443" max-vertical-offset="5202">
-              <caret line="1024" column="46" selection-start-line="1024" selection-start-column="46" selection-end-line="1024" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.41451612" vertical-offset="3976" max-vertical-offset="5202">
+              <caret line="1601" column="52" selection-start-line="1601" selection-start-column="35" selection-end-line="1601" selection-end-column="52" />
               <folding>
+                <element signature="n#!!block;n#GetSeminarInfo#0" expanded="true" />
+                <element signature="e#40119#43515#0" expanded="true" />
                 <element signature="n#!!block;n#GetMiddleTagCNew#0" expanded="true" />
-                <element signature="n#!!block;n#LoadPastSeminarsB#0" expanded="true" />
                 <element signature="e#62596#63505#0" expanded="true" />
                 <element signature="n#!!block;n#LoadAboutUsPage#0" expanded="true" />
                 <marker date="1410549947752" expanded="false" signature="48170:48183" placeholder="..." />
@@ -3703,14 +3704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Seminars.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.653846" vertical-offset="359" max-vertical-offset="6137">
-          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eventInfo.htm">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.384615" vertical-offset="355" max-vertical-offset="7735">
@@ -3721,13 +3714,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Seminars.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.653846" vertical-offset="359" max-vertical-offset="6137">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60645163" vertical-offset="1443" max-vertical-offset="5202">
-          <caret line="1024" column="46" selection-start-line="1024" selection-start-column="46" selection-end-line="1024" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.41451612" vertical-offset="3976" max-vertical-offset="5202">
+          <caret line="1601" column="52" selection-start-line="1601" selection-start-column="35" selection-end-line="1601" selection-end-column="52" />
           <folding>
+            <element signature="n#!!block;n#GetSeminarInfo#0" expanded="true" />
+            <element signature="e#40119#43515#0" expanded="true" />
             <element signature="n#!!block;n#GetMiddleTagCNew#0" expanded="true" />
-            <element signature="n#!!block;n#LoadPastSeminarsB#0" expanded="true" />
             <element signature="e#62596#63505#0" expanded="true" />
             <element signature="n#!!block;n#LoadAboutUsPage#0" expanded="true" />
             <marker date="1410549947752" expanded="false" signature="48170:48183" placeholder="..." />

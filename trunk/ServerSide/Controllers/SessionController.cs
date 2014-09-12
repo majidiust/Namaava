@@ -2208,19 +2208,9 @@ namespace Webinar.Controllers
                                        select new
                                        {
                                            id = p.SessionId,
-                                           capacity = p.Capacity,
-                                           //year = p.WebinarDateTime.Year,
-                                           //month = p.WebinarDateTime.Month,
-                                           //day = p.WebinarDateTime.Day
+                                           capacity = p.Capacity
                                        });
 
-                //foreach (var itm in justForCapacity)
-                //{
-                //    if (!((itm.year.ToString() + Tools.TwoDigitString(itm.month.ToString()) + Tools.TwoDigitString(itm.day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0))
-                //    {
-                //        justForCapacity.Remove(itm);
-                //    }
-                //}
 
                 foreach (var x in justForCapacity)
                 {
@@ -2242,7 +2232,7 @@ namespace Webinar.Controllers
                                       poster = p.Wallpaper,
                                       presentor = p.aspnet_User.UserName,
                                       desc = p.Description,
-                                      mode = p.mode
+                                      mode = p.mode == null ? 0 : p.mode
                                   }).OrderByDescending(p => p.id).ToList();
 
                 var searchResult = baseSearch.Skip((index - 1) * pageSize).Take(pageSize);
