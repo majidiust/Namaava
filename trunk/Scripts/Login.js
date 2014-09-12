@@ -1009,6 +1009,7 @@ function GetSeminarInfo(sessionId) {
         $('#PleaseWait').hide();
         if (result.Status == true) {
             $("#seminar_title").html(result.Result.name);
+            console.log("mode is : " + result.mode);
             if(result.mode == 1)
             {
             $("#seminar_time").html(GetPrsianDate(result.Result.beginTime));
