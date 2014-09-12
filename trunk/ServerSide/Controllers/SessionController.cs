@@ -1738,7 +1738,6 @@ namespace Webinar.Controllers
                                           poster = p.Wallpaper,
                                           why = p.Why,
                                           forWho = p.Learner,
-                                          remained = hashtable[p.SessionId],
                                           level = p.Level,
                                           fee = UserPeymentSession(p.SessionId),
                                           advertise = ad,
