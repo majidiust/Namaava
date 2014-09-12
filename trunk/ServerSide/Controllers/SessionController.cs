@@ -575,6 +575,13 @@ namespace Webinar.Controllers
                     session.WebinarDateTime = sessionStartDate;
                     session.WebinarDateTime1 = sessionEndDate;
 
+                    var stateRecord = m_model.SessionStates.Single(p => p.State.Equals("Scheduled"));
+
+                    session.StateId = stateRecord.StateId;
+                }
+                else
+                {
+                    session.StateId = 3;
                 }
 
                 #region payment calculation
@@ -655,9 +662,7 @@ namespace Webinar.Controllers
                 else // satisfy if bill has been done
                 {
 
-                    var stateRecord = m_model.SessionStates.Single(p => p.State.Equals("Scheduled"));
-
-                    session.StateId = stateRecord.StateId;
+                   
                     //check presentor membership status
                     var presentor = (from p in m_model.aspnet_Memberships
                                      where p.Email == presentorName
@@ -2086,7 +2091,7 @@ namespace Webinar.Controllers
         }
 
         [HttpGet]
-        public ActionResult AllLastSearchSession(int index, int pageSize)
+        public ActionResult AllLastSearchSession(int index, int pageSize, int mode)
         {
             // m_logger.Log("SearchUsercp0");
             try
@@ -2100,11 +2105,6 @@ namespace Webinar.Controllers
 
                 var justForCapacity = (from p in m_model.Sessions
                                        where p.SessionType == 1 && p.StateId == 3
-                                       //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0 &&
-                                       //p.EndTime == p.WebinarDateTime.id
-                                       //join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0)
-                                       //on p.EndTime equals w.id
-                                       //where p.SessionType == 1 //&& p.StateId == 3
                                        select new
                                        {
                                            id = p.SessionId,
@@ -2128,7 +2128,7 @@ namespace Webinar.Controllers
                 }
 
                 var baseSearch = (from p in m_model.Sessions
-                                  where p.SessionType == 1 && p.StateId == 3
+                                  where p.SessionType == 1 && p.StateId == 3 
                                   //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0 &&
                                   //p.EndTime == p.WebinarDateTime.id
                                   //join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0)
@@ -2183,6 +2183,86 @@ namespace Webinar.Controllers
 
                 return Json(new { Status = true, Message = "Search Is Ok", Result }, JsonRequestBehavior.AllowGet);
                 //       return Json(new {Status = true, Username= username, Email = membership.ToString();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Status = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult AllOfflineSession(int index, int pageSize)
+        {
+            // m_logger.Log("SearchUsercp0");
+            try
+            {
+                if (index < 0)
+                {
+                    index = 1;
+                }
+                Hashtable hashtable = new Hashtable();
+
+
+                var justForCapacity = (from p in m_model.Sessions
+                                       where p.SessionType == 1 && p.StateId == 3
+                                       select new
+                                       {
+                                           id = p.SessionId,
+                                           capacity = p.Capacity,
+                                           //year = p.WebinarDateTime.Year,
+                                           //month = p.WebinarDateTime.Month,
+                                           //day = p.WebinarDateTime.Day
+                                       });
+
+                //foreach (var itm in justForCapacity)
+                //{
+                //    if (!((itm.year.ToString() + Tools.TwoDigitString(itm.month.ToString()) + Tools.TwoDigitString(itm.day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0))
+                //    {
+                //        justForCapacity.Remove(itm);
+                //    }
+                //}
+
+                foreach (var x in justForCapacity)
+                {
+                    hashtable[x.id] = x.capacity - SpaceLeft(x.id);
+                }
+
+                var baseSearch = (from p in m_model.Sessions
+                                  where p.SessionType == 1 && p.StateId == 3 &&  (p.mode == null || p.mode == 0) 
+                                  select new
+                                  {
+                                      id = p.SessionId,
+                                      name = p.SessionName,
+                                      presentorUserName = p.aspnet_User.Profile != null ? p.aspnet_User.Profile.FirstName + " " + p.aspnet_User.Profile.LastName : p.aspnet_User.UserName,
+                                      adminUserName = p.aspnet_User1.Profile.FirstName + " " + p.aspnet_User1.Profile.LastName,
+                                      admin = p.aspnet_User1.Profile.FirstName + " " + p.aspnet_User.Profile.LastName,
+                                      duration = p.Duration,
+                                      status = p.SessionState.State,
+                                      fee = UserPeymentSession(p.SessionId),
+                                      poster = p.Wallpaper,
+                                      presentor = p.aspnet_User.UserName,
+                                      desc = p.Description,
+                                      mode = p.mode
+                                  }).OrderByDescending(p => p.id).ToList();
+
+                var searchResult = baseSearch.Skip((index - 1) * pageSize).Take(pageSize);
+
+                int count = baseSearch.Count;
+
+                if (searchResult.Count() == 0)
+                {
+                    return Json(new { Status = false, Message = "There Is Not Any Record" }, JsonRequestBehavior.AllowGet);
+                }
+
+                var Result = new
+                {
+                    SearchResult = searchResult,
+                    CurrentCount = searchResult.Count(),
+                    TotalCount = count
+                };
+
+
+                return Json(new { Status = true, Message = "Search Is Ok", Result }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {

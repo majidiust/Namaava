@@ -1589,7 +1589,7 @@ function GetMiddleTagCNew(name, presentor, describtion, pic, webinarID, time, i)
 function LoadPastSeminarsB(topEventsCount) {
     //$('.PleaseWait').show();
     $("#seminars").html("");
-    $.getJSON(ServerURL + "Session/AllLastSearchSession",
+    $.getJSON(ServerURL + "Session/AllOfflineSession",
         {
             index: -1,
             pageSize: topEventsCount
@@ -1606,7 +1606,7 @@ function LoadPastSeminarsB(topEventsCount) {
                         result.Result.SearchResult[i].desc,
                         result.Result.SearchResult[i].poster,
                         result.Result.SearchResult[i].id,
-                        GetPrsianDate(result.Result.SearchResult[i].beginTime), i
+                        'افلاین', i
                     );
                     $("#seminars").append(element);
                 }

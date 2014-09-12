@@ -725,12 +725,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.htm" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.9478114" vertical-offset="1530" max-vertical-offset="8806">
-              <caret line="209" column="0" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+            <state vertical-scroll-proportion="-17.653847" vertical-offset="1241" max-vertical-offset="8721">
+              <caret line="116" column="10" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Seminars.htm" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Seminars.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.615385" vertical-offset="308" max-vertical-offset="6137">
+              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Scripts/Login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8151659" vertical-offset="2170" max-vertical-offset="3349">
+              <caret line="1609" column="20" selection-start-line="1609" selection-start-column="20" selection-end-line="1609" selection-end-column="20" />
+              <folding>
+                <element signature="n#!!block;n#LoadAboutUsPage#0" expanded="true" />
+                <marker date="1410548495902" expanded="false" signature="47927:47940" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="47969:48169" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="48252:48416" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="48486:48549" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="50976:50991" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="57041:57056" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="57524:57539" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="57629:57648" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="57721:57736" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="58149:58164" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="58254:58273" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="59887:60051" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="60198:60213" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="60442:60632" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="60679:60765" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61013:61022" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61053:61062" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61091:61100" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61128:61137" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61232:61241" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61269:61278" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61323:61487" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61595:61604" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61632:61641" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61761:61770" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61798:61807" placeholder="..." />
+                <marker date="1410548495902" expanded="false" signature="61844:61859" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -747,7 +796,6 @@
       <list>
         <option value="$PROJECT_DIR$/Scripts/utility.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/Scripts/Login.js" />
         <option value="$PROJECT_DIR$/Panels/ParticipantRoom/room.html" />
         <option value="$PROJECT_DIR$/Panels/ParticipantRoom/js/views.js" />
         <option value="$PROJECT_DIR$/confirmation.html" />
@@ -763,10 +811,11 @@
         <option value="$PROJECT_DIR$/styles/circularButton.css" />
         <option value="$PROJECT_DIR$/eventInfo.htm" />
         <option value="$PROJECT_DIR$/newsinfo.htm" />
-        <option value="$PROJECT_DIR$/index.htm" />
         <option value="$PROJECT_DIR$/Panels/SeminarRoom/room.html" />
         <option value="$PROJECT_DIR$/Panels/blank.html" />
         <option value="$PROJECT_DIR$/Panels/js/charisma.js" />
+        <option value="$PROJECT_DIR$/index.htm" />
+        <option value="$PROJECT_DIR$/Scripts/Login.js" />
       </list>
     </option>
   </component>
@@ -2814,13 +2863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Seminars.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.95238096" vertical-offset="1418" max-vertical-offset="6001">
-          <caret line="115" column="18" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NextSeminars.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="8857">
@@ -2916,13 +2958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64030135" vertical-offset="408" max-vertical-offset="6341">
           <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9389587" vertical-offset="28513" max-vertical-offset="29665">
-          <caret line="1708" column="7" selection-start-line="1690" selection-start-column="3" selection-end-line="1708" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -3654,9 +3689,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9478114" vertical-offset="1530" max-vertical-offset="8806">
-          <caret line="209" column="0" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+        <state vertical-scroll-proportion="-17.653847" vertical-offset="1241" max-vertical-offset="8721">
+          <caret line="116" column="10" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Seminars.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.615385" vertical-offset="308" max-vertical-offset="6137">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8151659" vertical-offset="2170" max-vertical-offset="3349">
+          <caret line="1609" column="20" selection-start-line="1609" selection-start-column="20" selection-end-line="1609" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!block;n#LoadAboutUsPage#0" expanded="true" />
+            <marker date="1410548495902" expanded="false" signature="47927:47940" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="47969:48169" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="48252:48416" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="48486:48549" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="50976:50991" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="57041:57056" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="57524:57539" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="57629:57648" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="57721:57736" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="58149:58164" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="58254:58273" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="59887:60051" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="60198:60213" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="60442:60632" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="60679:60765" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61013:61022" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61053:61062" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61091:61100" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61128:61137" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61232:61241" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61269:61278" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61323:61487" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61595:61604" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61632:61641" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61761:61770" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61798:61807" placeholder="..." />
+            <marker date="1410548495902" expanded="false" signature="61844:61859" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
