@@ -650,6 +650,7 @@
       <Column Name="[Level]" Member="Level" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Learner" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="mode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Duration" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="Session_Chat" Member="Chats" ThisKey="SessionId" OtherKey="SessionId" Type="Chat" />
       <Association Name="Session_SessionFile" Member="SessionFiles" ThisKey="SessionId" OtherKey="SessionId" Type="SessionFile" />
       <Association Name="Session_SessionInvite" Member="SessionInvites" ThisKey="SessionId" OtherKey="SessionId" Type="SessionInvite" />

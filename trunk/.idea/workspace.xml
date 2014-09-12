@@ -353,8 +353,8 @@
       <file leaf-file-name="charisma.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Panels/js/charisma.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2857143" vertical-offset="45509" max-vertical-offset="77112">
-              <caret line="2687" column="73" selection-start-line="2687" selection-start-column="73" selection-end-line="2687" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.76134455" vertical-offset="52468" max-vertical-offset="77112">
+              <caret line="3113" column="44" selection-start-line="3113" selection-start-column="44" selection-end-line="3113" selection-end-column="44" />
               <folding>
                 <element signature="e#656#726#0" expanded="true" />
                 <element signature="e#759#17886#0" expanded="true" />
@@ -558,6 +558,8 @@
                 <element signature="e#98408#105304#0" expanded="true" />
                 <element signature="n#!!block;n#GetListOfInvitedSeminars#0" expanded="true" />
                 <element signature="e#105723#109891#0" expanded="true" />
+                <element signature="n#!!block;n#GetOfflineSeminars#0" expanded="true" />
+                <element signature="e#110296#113817#0" expanded="true" />
                 <element signature="n#!!block;n#GetMySeminars#0" expanded="true" />
                 <element signature="e#114222#123582#0" expanded="true" />
                 <element signature="e#118634#123496#0" expanded="true" />
@@ -570,8 +572,6 @@
                 <element signature="n#!!block;n#GetUserProfile#0" expanded="true" />
                 <element signature="e#125431#127569#0" expanded="true" />
                 <element signature="n#!!block;n#CloseAllForm#0" expanded="true" />
-                <element signature="n#!!block;n#CreateSeminar#0" expanded="true" />
-                <element signature="e#132474#133353#0" expanded="true" />
                 <element signature="n#!!block;n#InviteNewPerson#0" expanded="true" />
                 <element signature="n#!!block;n#AddOnDemandInvite#0" expanded="true" />
                 <element signature="e#136652#138009#0" expanded="true" />
@@ -897,7 +897,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="1" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1148,6 +1148,8 @@
             <element signature="e#98408#105304#0" expanded="true" />
             <element signature="n#!!block;n#GetListOfInvitedSeminars#0" expanded="true" />
             <element signature="e#105723#109891#0" expanded="true" />
+            <element signature="n#!!block;n#GetOfflineSeminars#0" expanded="true" />
+            <element signature="e#110296#113817#0" expanded="true" />
             <element signature="n#!!block;n#GetMySeminars#0" expanded="true" />
             <element signature="e#114222#123582#0" expanded="true" />
             <element signature="e#118634#123496#0" expanded="true" />
@@ -1160,8 +1162,6 @@
             <element signature="n#!!block;n#GetUserProfile#0" expanded="true" />
             <element signature="e#125431#127569#0" expanded="true" />
             <element signature="n#!!block;n#CloseAllForm#0" expanded="true" />
-            <element signature="n#!!block;n#CreateSeminar#0" expanded="true" />
-            <element signature="e#132474#133353#0" expanded="true" />
             <element signature="n#!!block;n#InviteNewPerson#0" expanded="true" />
             <element signature="n#!!block;n#AddOnDemandInvite#0" expanded="true" />
             <element signature="e#136652#138009#0" expanded="true" />
@@ -1852,6 +1852,8 @@
             <element signature="e#98408#105304#0" expanded="true" />
             <element signature="n#!!block;n#GetListOfInvitedSeminars#0" expanded="true" />
             <element signature="e#105723#109891#0" expanded="true" />
+            <element signature="n#!!block;n#GetOfflineSeminars#0" expanded="true" />
+            <element signature="e#110296#113817#0" expanded="true" />
             <element signature="n#!!block;n#GetMySeminars#0" expanded="true" />
             <element signature="e#114222#123582#0" expanded="true" />
             <element signature="e#118634#123496#0" expanded="true" />
@@ -1864,8 +1866,6 @@
             <element signature="n#!!block;n#GetUserProfile#0" expanded="true" />
             <element signature="e#125431#127569#0" expanded="true" />
             <element signature="n#!!block;n#CloseAllForm#0" expanded="true" />
-            <element signature="n#!!block;n#CreateSeminar#0" expanded="true" />
-            <element signature="e#132474#133353#0" expanded="true" />
             <element signature="n#!!block;n#InviteNewPerson#0" expanded="true" />
             <element signature="n#!!block;n#AddOnDemandInvite#0" expanded="true" />
             <element signature="e#136652#138009#0" expanded="true" />
@@ -3289,8 +3289,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Panels/js/charisma.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2857143" vertical-offset="45509" max-vertical-offset="77112">
-          <caret line="2687" column="73" selection-start-line="2687" selection-start-column="73" selection-end-line="2687" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.76134455" vertical-offset="52468" max-vertical-offset="77112">
+          <caret line="3113" column="44" selection-start-line="3113" selection-start-column="44" selection-end-line="3113" selection-end-column="44" />
           <folding>
             <element signature="e#656#726#0" expanded="true" />
             <element signature="e#759#17886#0" expanded="true" />
@@ -3494,6 +3494,8 @@
             <element signature="e#98408#105304#0" expanded="true" />
             <element signature="n#!!block;n#GetListOfInvitedSeminars#0" expanded="true" />
             <element signature="e#105723#109891#0" expanded="true" />
+            <element signature="n#!!block;n#GetOfflineSeminars#0" expanded="true" />
+            <element signature="e#110296#113817#0" expanded="true" />
             <element signature="n#!!block;n#GetMySeminars#0" expanded="true" />
             <element signature="e#114222#123582#0" expanded="true" />
             <element signature="e#118634#123496#0" expanded="true" />
@@ -3506,8 +3508,6 @@
             <element signature="n#!!block;n#GetUserProfile#0" expanded="true" />
             <element signature="e#125431#127569#0" expanded="true" />
             <element signature="n#!!block;n#CloseAllForm#0" expanded="true" />
-            <element signature="n#!!block;n#CreateSeminar#0" expanded="true" />
-            <element signature="e#132474#133353#0" expanded="true" />
             <element signature="n#!!block;n#InviteNewPerson#0" expanded="true" />
             <element signature="n#!!block;n#AddOnDemandInvite#0" expanded="true" />
             <element signature="e#136652#138009#0" expanded="true" />

@@ -13867,6 +13867,8 @@ namespace Webinar.Models
 		
 		private System.Nullable<int> _mode;
 		
+		private string _Duration;
+		
 		private EntitySet<Chat> _Chats;
 		
 		private EntitySet<SessionFile> _SessionFiles;
@@ -13941,6 +13943,8 @@ namespace Webinar.Models
     partial void OnLearnerChanged();
     partial void OnmodeChanging(System.Nullable<int> value);
     partial void OnmodeChanged();
+    partial void OnDurationChanging(string value);
+    partial void OnDurationChanged();
     #endregion
 		
 		public Session()
@@ -14417,6 +14421,26 @@ namespace Webinar.Models
 					this._mode = value;
 					this.SendPropertyChanged("mode");
 					this.OnmodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duration", DbType="NVarChar(50)")]
+		public string Duration
+		{
+			get
+			{
+				return this._Duration;
+			}
+			set
+			{
+				if ((this._Duration != value))
+				{
+					this.OnDurationChanging(value);
+					this.SendPropertyChanging();
+					this._Duration = value;
+					this.SendPropertyChanged("Duration");
+					this.OnDurationChanged();
 				}
 			}
 		}

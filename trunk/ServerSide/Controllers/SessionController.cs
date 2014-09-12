@@ -217,7 +217,7 @@ namespace Webinar.Controllers
         {
             try
             {
-                string result = string.Format("ساعت {0} ، مورخ {1}/{2}/{3}",dateTime.Time.Value.Hours, dateTime.Day, dateTime.Month, dateTime.Year);// dateTime.Year, dateTime.Month, dateTime.Day, dateTime.Time);
+                string result = string.Format("ساعت {0} ، مورخ {1}/{2}/{3}", dateTime.Time.Value.Hours, dateTime.Day, dateTime.Month, dateTime.Year);// dateTime.Year, dateTime.Month, dateTime.Day, dateTime.Time);
                 return result;
             }
             catch (Exception ex)
@@ -497,7 +497,7 @@ namespace Webinar.Controllers
             return Json(new { Status = false, Message = message }, JsonRequestBehavior.AllowGet);
         }
 
-  
+
         [HttpPost]
         public ActionResult CreateNewSession(string sessionAdmin, string presentorName, string sessionName, int sessionType,
             string beginTime /*YY:MM:DD:HH:MM:SS*/, string endTime /*YY:MM:DD:HH:MM:SS*/, int capacity, string fee,
@@ -513,7 +513,7 @@ namespace Webinar.Controllers
                 Session session = new Session();
                 session.mode = mode;
                 aspnet_User adminUser = m_model.aspnet_Users.Single(P => P.UserName.ToLower().Equals(User.Identity.Name));
-                
+
                 //Check For Admin Exist In System Or Not
                 // Majid : What Happen If Admin DoesNot Exist In System ? I thnik that the pre condition is admin existanse
                 var admin = (from p in m_model.aspnet_Memberships
@@ -541,9 +541,11 @@ namespace Webinar.Controllers
                 session.Learner = forLearner;
                 session.Why = why;
                 session.Level = level;
+                session.Duration = du;
                 //Calc Start Time
-                 // the meaning of 2 is online
-                
+                // the meaning of 2 is online
+                if (mode == 1)
+                {
                     string[] parsedBeginDate = beginTime.Split(new char[] { ':' });
                     WebinarDateTime sessionStartDate = new WebinarDateTime();
                     sessionStartDate.Year = int.Parse(parsedBeginDate[0]);
@@ -560,10 +562,19 @@ namespace Webinar.Controllers
                     sessionEndDate.Day = int.Parse(parsedEndDate[2]);
                     //int duration = int.Parse(parsedEndDate[3]) - int.Parse(parsedBeginDate[3]);
                     TimeSpan sessionEndTime = new TimeSpan(int.Parse(parsedEndDate[3]), int.Parse(parsedEndDate[4]), int.Parse(parsedEndDate[5]));
-                if (mode == 1)
-                {
+
                     sessionStartDate.Time = sessionStartTime;
                     sessionEndDate.Time = sessionEndTime;
+                    //Add Dates To DataBase And Submit Changes In Order to Get Dates Key
+
+                    m_model.WebinarDateTimes.InsertOnSubmit(sessionStartDate);
+                    m_model.WebinarDateTimes.InsertOnSubmit(sessionEndDate);
+                    m_model.SubmitChanges();//1
+                    session.BeginTime = sessionStartDate.id;
+                    session.EndTime = sessionEndDate.id;
+                    session.WebinarDateTime = sessionStartDate;
+                    session.WebinarDateTime1 = sessionEndDate;
+
                 }
 
                 #region payment calculation
@@ -616,24 +627,9 @@ namespace Webinar.Controllers
                 m_model.SubmitChanges();
                 #endregion
 
-  
 
-                //Add Dates To DataBase And Submit Changes In Order to Get Dates Key
-                if (mode == 1)
-                {
-                    m_model.WebinarDateTimes.InsertOnSubmit(sessionStartDate);
-                    m_model.WebinarDateTimes.InsertOnSubmit(sessionEndDate);
-                }
-                m_model.SubmitChanges();//1
 
-                //Set The Session Times
-                if (mode == 1)
-                {
-                    session.BeginTime = sessionStartDate.id;
-                    session.EndTime = sessionEndDate.id;
-                    session.WebinarDateTime = sessionStartDate;
-                    session.WebinarDateTime1 = sessionEndDate;
-                }
+
 
                 //Set The Webinar Keywords
                 session.Keywords = keywords;
@@ -667,7 +663,7 @@ namespace Webinar.Controllers
                                      where p.Email == presentorName
                                      select p).ToList();
                     bool announcePresentor = false;
-                  
+
                     {
                         if (presentor.Count > 0)
                         {
@@ -724,7 +720,7 @@ namespace Webinar.Controllers
                     m_model.SubmitChanges(); // 2
                     sId = session.SessionId;
 
-                   
+
 
                     #region End Of Billing
                     WebinarPeyment webinarPeyment = new WebinarPeyment();
@@ -833,7 +829,7 @@ namespace Webinar.Controllers
             {
                 if (m_model.Sessions.Count(P => P.SessionId == sessionId) > 0)
                 {
-                    var session = m_model.Sessions.Single(P=>P.SessionId == sessionId);
+                    var session = m_model.Sessions.Single(P => P.SessionId == sessionId);
                     var invited = m_model.SessionInvites.Where(P => P.SessionId == sessionId);
                     m_model.SessionInvites.DeleteAllOnSubmit(invited);
                     var requested = m_model.SessionRequests.Where(P => P.SessionId == sessionId);
@@ -844,7 +840,7 @@ namespace Webinar.Controllers
                     m_model.SessionVideos.DeleteAllOnSubmit(videos);
                     var services = m_model.SessionServices.Where(P => P.SessionId == sessionId);
                     m_model.SessionServices.DeleteAllOnSubmit(services);
-                    var chats = m_model.Chats.Where(P=>P.SessionId == sessionId);
+                    var chats = m_model.Chats.Where(P => P.SessionId == sessionId);
                     m_model.Chats.DeleteAllOnSubmit(chats);
                     m_model.Sessions.DeleteOnSubmit(session);
 
@@ -973,7 +969,7 @@ namespace Webinar.Controllers
                 var presentor = session.aspnet_User.aspnet_Membership.Email;
 
                 EmailService service = new EmailService();
-               // int settingsId = m_model.ApplicationSettings.Single(i => (i.SettingName == "smsSettings")).SettingsId;
+                // int settingsId = m_model.ApplicationSettings.Single(i => (i.SettingName == "smsSettings")).SettingsId;
                 //var smsSend = m_model.SettingsProperties.Single(w => (w.SettingsId == settingsId) && (w.PropertyName == "smsSendForEvent")).PropertyValue;
                 SMS sms = new SMS();
                 StreamReader reader = new StreamReader(Server.MapPath("~/Templates/EmailInvites.html"));
@@ -1685,10 +1681,10 @@ namespace Webinar.Controllers
 
                     var video = m_model.SessionVideos.Where(P => P.SessionID.Equals(sessionId) && P.IsAdvertise == true).ToList();
                     string ad = "--";
-                    if(video.Count > 0 )
+                    if (video.Count > 0)
                     {
                         FileInfo tmpFileIno = new FileInfo(video[0].VideoName);
-                        ad = "http://94.232.174.204:7700/Namaava/" + sessionId + "/" + video[0].ID +  tmpFileIno.Extension;
+                        ad = "http://94.232.174.204:7700/Namaava/" + sessionId + "/" + video[0].ID + tmpFileIno.Extension;
                     }
                     var result = (from p in m_model.Sessions
                                   where p.SessionId == sessionId
@@ -1760,7 +1756,7 @@ namespace Webinar.Controllers
             try
             {
                 var result = (from p in m_model.Sessions
-                              where p.mode==null || p.mode == 0
+                              where p.mode == null || p.mode == 0
                               select new
                               {
                                   id = p.SessionId,
@@ -1769,7 +1765,7 @@ namespace Webinar.Controllers
                                   adminUserName = p.aspnet_User1.UserName,
                                   capacity = p.Capacity,
                                   admin = p.aspnet_User1.Profile.FirstName + " " + p.aspnet_User1.Profile.LastName,
-                                  duration = p.WebinarDateTime1.Time.Value.Hours - p.WebinarDateTime.Time.Value.Hours,
+                                  duration = p.Duration == null ? "1" : p.Duration,
                                   status = p.SessionState.State//"In Progress"// p.SessionStatus == null ? "In Progress" : (p.SessionStatus.Count > 0 ? p.SessionStatus[p.SessionStatus.Count - 1].SessionState.State : "In Progress")
 
                               }).OrderByDescending(P => P.id).ToList();
@@ -1964,7 +1960,7 @@ namespace Webinar.Controllers
                                        select new
                                        {
                                            id = p.SessionId,
-                                           capacity = p.Capacity, 
+                                           capacity = p.Capacity,
                                            //bTime = p.BeginTime ,
                                            //eTime = p.EndTime, 
                                            //year = p.WebinarDateTime.Year,
@@ -1993,9 +1989,9 @@ namespace Webinar.Controllers
 
                 var baseSearch = (from p in m_model.Sessions
                                   where p.SessionType == 1 && (p.StateId == 2 || p.StateId != 3)
-                                       //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0 &&
-                                       //p.WebinarDateTime.id == p.BeginTime
-                                      //join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0)
+                                  //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0 &&
+                                  //p.WebinarDateTime.id == p.BeginTime
+                                  //join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) >= 0)
                                   //on p.BeginTime equals w.id
                                   //where p.SessionType == 1 //&& p.StateId == 2
                                   select new
@@ -2098,8 +2094,8 @@ namespace Webinar.Controllers
 
                 var baseSearch = (from p in m_model.Sessions
                                   where p.SessionType == 1 && p.StateId == 3
-                                       //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0 &&
-                                       //p.EndTime == p.WebinarDateTime.id
+                                  //(p.WebinarDateTime.Year.ToString() + (p.WebinarDateTime.Month.ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Month.ToString()) : p.WebinarDateTime.Month.ToString()) + (p.WebinarDateTime.Day.ToString().ToString().Length < 2 ? string.Format("0{0}", p.WebinarDateTime.Day.ToString()) : p.WebinarDateTime.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0 &&
+                                  //p.EndTime == p.WebinarDateTime.id
                                   //join w in m_model.WebinarDateTimes.Where(wdt => (wdt.Year.ToString() + (string)Tools.TwoDigitString(wdt.Month.ToString()) + (string)Tools.TwoDigitString(wdt.Day.ToString())).CompareTo(Tools.JalaliNowDate("without/")) < 0)
                                   //on p.EndTime equals w.id
                                   //where p.SessionType == 1 //&& p.StateId == 3
@@ -2119,7 +2115,7 @@ namespace Webinar.Controllers
                                       fee = UserPeymentSession(p.SessionId),
                                       poster = p.Wallpaper,
                                       presentor = p.aspnet_User.UserName,
-                                      desc = p.Description  
+                                      desc = p.Description
                                       //year = p.WebinarDateTime.Year ,
                                       //month = p.WebinarDateTime.Month ,
                                       //day = p.WebinarDateTime.Day
@@ -2549,16 +2545,16 @@ namespace Webinar.Controllers
                         m_model.SubmitChanges();
 
                         //We Add COnetent Service if there is not any content service for this session
-                      /*  var isExistContentService = m_model.SessionServices.Count(P => P.SessionId == SessionId & P.ServiceTypeId == 2);
-                        if (isExistContentService <= 0)
-                        {
-                            SessionService contentSessionService = new SessionService();
-                            contentSessionService.SessionId = SessionId;
-                            contentSessionService.ServiceTypeId = 2;
-                            contentSessionService.ServerIP = "94.232.174.204";
-                            m_model.SessionServices.InsertOnSubmit(contentSessionService);
-                            m_model.SubmitChanges();
-                        }*/
+                        /*  var isExistContentService = m_model.SessionServices.Count(P => P.SessionId == SessionId & P.ServiceTypeId == 2);
+                          if (isExistContentService <= 0)
+                          {
+                              SessionService contentSessionService = new SessionService();
+                              contentSessionService.SessionId = SessionId;
+                              contentSessionService.ServiceTypeId = 2;
+                              contentSessionService.ServerIP = "94.232.174.204";
+                              m_model.SessionServices.InsertOnSubmit(contentSessionService);
+                              m_model.SubmitChanges();
+                          }*/
 
                         Webinar.Utility.FileUtility.ConvertPowerPointToImage(path, destination);
                         return Json(new { Status = true, Message = "Set As Seminar Presentation Successfully" }, JsonRequestBehavior.AllowGet);
@@ -3041,7 +3037,7 @@ namespace Webinar.Controllers
                             break;
                     }
 
-                   // bmp.Save(savedFileName + extension, format);
+                    // bmp.Save(savedFileName + extension, format);
 
                     temp.TemoValue = "Seminars/Posters/" + temp.TempID.ToString() + extension;
                     m_model.SubmitChanges();
@@ -3055,7 +3051,7 @@ namespace Webinar.Controllers
                     System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(newPic);
                     gr.DrawImage(bmp, 0, 0, width, height);
 
-                    newPic.Save(savedFileName +extension, format);
+                    newPic.Save(savedFileName + extension, format);
 
                     gr.Dispose();
                     newPic.Dispose();
@@ -3151,8 +3147,8 @@ namespace Webinar.Controllers
             {
                 if (m_model.aspnet_Users.Count(P => P.UserName.Equals(userName)) > 0)
                 {
-                    var user = m_model.aspnet_Users.Single(P=>P.UserName.Equals(userName));
-                    var membership = m_model.aspnet_Memberships.Single(P=>P.UserId.Equals(user.UserId));
+                    var user = m_model.aspnet_Users.Single(P => P.UserName.Equals(userName));
+                    var membership = m_model.aspnet_Memberships.Single(P => P.UserId.Equals(user.UserId));
                     if (m_model.Profiles.Count(P => P.UserId.Equals(user.UserId)) > 0)
                     {
                         var profile = m_model.Profiles.Single(P => P.UserId.Equals(user.UserId));
@@ -3170,14 +3166,14 @@ namespace Webinar.Controllers
                         }
                     }
                     var roles = m_model.aspnet_UsersInRoles.Where(P => P.UserId.Equals(user.UserId));
-                    var sessions = m_model.Sessions.Where(P=>P.SessionAdmin.Equals(user.UserId) || P.PresentorId.Equals(user.UserId));
+                    var sessions = m_model.Sessions.Where(P => P.SessionAdmin.Equals(user.UserId) || P.PresentorId.Equals(user.UserId));
                     foreach (var x in sessions)
                         DeleteSeminar(x.SessionId);
-                    var requests = m_model.SessionRequests.Where(P=>P.UserId.Equals(user.UserId));
+                    var requests = m_model.SessionRequests.Where(P => P.UserId.Equals(user.UserId));
                     m_model.SessionRequests.DeleteAllOnSubmit(requests);
                     m_model.SubmitChanges();
                     Membership.DeleteUser(userName);
-                    return Json(new { Status = true, Message = "Delete User Successfully"}, JsonRequestBehavior.AllowGet);
+                    return Json(new { Status = true, Message = "Delete User Successfully" }, JsonRequestBehavior.AllowGet);
                 }
                 return Json(new { Status = false, Message = "User Does not exist" }, JsonRequestBehavior.AllowGet);
             }
