@@ -1566,7 +1566,7 @@ function GetMiddleTagCNew(name, presentor, describtion, pic, webinarID, time, i)
     msg += '<tr  style="border:0;">';
     msg += '<td style="border:0;">';
     msg += '<span class="byline" style="text-align:center;width:100%;text-shadow: 1px 1px 10px #806e80;filter: dropshadow(color=#806e80, offx=1, offy=1);font-size:12px;font-family:tahoma;font-weight:bold;">';
-    msg += time;
+   // msg += time;
     msg += '</span>';
     msg += '</td>';
     msg += '</tr>';
