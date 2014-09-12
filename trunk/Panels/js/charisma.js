@@ -2960,6 +2960,7 @@ function CreateSeminar() {
     var _seminarKeyWords = $("#NewSeminarKeyWords").val();
 
     var _seminarType = $("#NewSeminarType").val();
+
     var _seminarCapacity = $("#NewSeminarCapacityPredict").val();
     var _seminarEndTime = $("#NewSeminarEndingHour").val();
     var _seminarBeginTime = $("#NewSeminarHeldingHour").val();
@@ -2970,6 +2971,7 @@ function CreateSeminar() {
     var _seminarBaseTime = _seminarYear + ":" + _seminarMonth + ":" + _seminarDay;
     var _seminarFee = fee;
 
+    console.log('step 3');
     var _participantEmail = "";
     var _participantMobiles = "";
     var _participantFirstNames = "";
@@ -3003,10 +3005,12 @@ function CreateSeminar() {
         _hasError = true;
         $("#NewSeminarPresentorError").show();
     } else $("#NewSeminarPresentorError").hide();
-    if (parseInt(_seminarEndTime) <= parseInt(_seminarBeginTime)) {
-        _hasError = true;
-        $("#NewSeminarEndingHourError").show();
-    } else $("#NewSeminarEndingHourError").hide();
+    if(seminarType == 1) {
+        if (parseInt(_seminarEndTime) <= parseInt(_seminarBeginTime)) {
+            _hasError = true;
+            $("#NewSeminarEndingHourError").show();
+        } else $("#NewSeminarEndingHourError").hide();
+    }
     if (_seminarKeyWords == "") {
         _hasError = true;
         $("#NewSeminarKeyWordsError").show();
@@ -3016,7 +3020,7 @@ function CreateSeminar() {
 
         $("#NewTerminalWizard5").hide();
         $("#NewTerminalWizard7").show();
-
+        console.log("There is no error and try to create seminar");
         //Send Request To Server
         NewSeminar = {
             sessionAdmin: "Null",
