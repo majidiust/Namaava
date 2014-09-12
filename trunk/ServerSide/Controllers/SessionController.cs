@@ -1722,7 +1722,7 @@ namespace Webinar.Controllers
                                       }).ToList()[0];
                         return Json(new { Status = true, Message = "Search done successfully", Result = result }, JsonRequestBehavior.AllowGet);
                     }
-                    else if (tmp.mode == 0)
+                    else if (tmp.mode == null || tmp.mode == 0)
                     {
                         var result = (from p in m_model.Sessions
                                       where p.SessionId == sessionId
