@@ -350,10 +350,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="charisma.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="charisma.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Panels/js/charisma.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.7529411" vertical-offset="34924" max-vertical-offset="77112">
+            <state vertical-scroll-proportion="89.32" vertical-offset="34924" max-vertical-offset="77112">
               <caret line="1923" column="19" selection-start-line="1923" selection-start-column="0" selection-end-line="1924" selection-end-column="0" />
               <folding>
                 <element signature="e#656#726#0" expanded="true" />
@@ -725,6 +725,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.htm" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.9478114" vertical-offset="1530" max-vertical-offset="8806">
+              <caret line="209" column="0" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -806,20 +816,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Panels" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2930,13 +2926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1770244" vertical-offset="2397" max-vertical-offset="9078">
-          <caret line="209" column="0" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/newsinfo.htm">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41619587" vertical-offset="3400" max-vertical-offset="8942">
@@ -3292,7 +3281,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Panels/js/charisma.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7529411" vertical-offset="34924" max-vertical-offset="77112">
+        <state vertical-scroll-proportion="89.32" vertical-offset="34924" max-vertical-offset="77112">
           <caret line="1923" column="19" selection-start-line="1923" selection-start-column="0" selection-end-line="1924" selection-end-column="0" />
           <folding>
             <element signature="e#656#726#0" expanded="true" />
@@ -3660,6 +3649,14 @@
             <marker date="1410546493738" expanded="true" signature="137354:137366" placeholder="..." />
             <marker date="1410546493738" expanded="true" signature="139272:139284" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.9478114" vertical-offset="1530" max-vertical-offset="8806">
+          <caret line="209" column="0" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
