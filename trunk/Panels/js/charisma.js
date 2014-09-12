@@ -2676,6 +2676,62 @@ function GetListOfInvitedSeminars() {
     }
 }
 
+function GetOfflineSeminars() {
+    CustomBlockingPanel('توجه', 'در حال دریافت اطلاعات از سرور ...', -1, null);
+    ShowBox("#OwnedSeminars");
+    ClearTableRows("#OwnedSeminarsTable tbody tr");
+    MySeminars = [];
+    if (!(userName == null || userName == "")) {
+        $.getJSON(ServerURL + "Session/GetOfflineSeminars", {
+            adminName: userName
+        }, function (resultAdmin) {
+            if (resultAdmin.Status == true) {
+                for (var j = 0; j < resultAdmin.Result.length; j++) {
+                    if (IsExistSminarInList(resultAdmin.Result[j].id) == false) {
+                        var _session = {
+                            m_seminarID: resultAdmin.Result[j].id,
+                            m_seminarBeginTime: 'آفلاین',
+                            m_seminarName: resultAdmin.Result[j].name,
+                            m_seminarPresentorName: resultAdmin.Result[j].presentorUserName == userName ? 'خودم' : resultAdmin.Result[j].presentor,
+                            m_seminarDuration: resultAdmin.Result[j].duration,
+                            m_seminarStatus: resultAdmin.Result[j].status,
+                            m_seminarsAdmin: 'خودم'
+                        };
+                        MySeminars.push(_session);
+
+                        var newRow = '<tr><td><center>' + _session.m_seminarID + '</center></td>';
+                        newRow += '<td><center>' + _session.m_seminarName + '</center></td>';
+                        newRow += '<td><center>' + _session.m_seminarsAdmin + '</center></td>';
+                        newRow += '<td><center>' + _session.m_seminarPresentorName + '</center></td>';
+                        newRow += '<td><center>' + _session.m_seminarBeginTime + '</center></td>';
+                        newRow += '<td><center>' + _session.m_seminarDuration + ' ساعت' + '</center></td>';
+                        newRow += '<td><center>' + '<span class="label label-success">در حال اجرا</span>' + '</center></td>';
+                       if (_session.m_seminarStatus.indexOf('Banned') != -1)
+                            newRow += '<td><center>' + '<span class="label label-important">ممنوع شده</span>' + '</center></td>';
+                        newRow += '<td style="width:100px;"><center>' + '<div  title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GetMoreSeminarInformation(' + _session.m_seminarID + ');">اطلاعات بیشتر</div>' + '</center></td>';
+
+                      //  if (_session.m_seminarStatus.indexOf('Open') != -1) {
+                            newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar(' + _session.m_seminarID + ');">مشاهده سمینار</div>' + '</center></td>';
+                      //  } else if (_session.m_seminarStatus.indexOf('Close') != -1) {
+                      //      newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar(' + _session.m_seminarID + ');">ورود به سمینار ضبط شده</div>' + '</center></td>';
+                     //   } else {
+                     //       newRow += "<td></td>";
+                     //   }
+
+                        newRow += '<td style="width:100px;"><center>' + '<div  title="برای حذف سمینار کلیک کنید." data-rel="tooltip" class="btn btn-error" onclick="DeleteSeminar(' + _session.m_seminarID + ');">حذف سمینار</div>' + '</center></td>';
+
+                        newRow += '</tr>';
+                        $('#OwnedSeminarsTable').append(newRow);
+                    }
+                }
+            } else {
+                //TODO : The Server Return False Status With
+                alert(resultAdmin.Message);
+            }
+        });
+    }
+}
+
 function GetMySeminars() {
     CustomBlockingPanel('توجه', 'در حال دریافت اطلاعات از سرور ...', -1, null);
     ShowBox("#OwnedSeminars");

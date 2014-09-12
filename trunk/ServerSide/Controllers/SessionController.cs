@@ -1755,6 +1755,32 @@ namespace Webinar.Controllers
         }
 
         [HttpGet]
+        public ActionResult GetOfflineSeminars()
+        {
+            try
+            {
+                var result = (from p in m_model.Sessions
+                              where p.mode == 0
+                              select new
+                              {
+                                  id = p.SessionId,
+                                  name = p.SessionName,
+                                  presentorUserName = p.aspnet_User.Profile.FirstName + " " + p.aspnet_User.Profile.LastName,
+                                  adminUserName = p.aspnet_User1.UserName,
+                                  capacity = p.Capacity,
+                                  admin = p.aspnet_User1.Profile.FirstName + " " + p.aspnet_User1.Profile.LastName,
+                                  duration = p.WebinarDateTime1.Time.Value.Hours - p.WebinarDateTime.Time.Value.Hours,
+                                  status = p.SessionState.State//"In Progress"// p.SessionStatus == null ? "In Progress" : (p.SessionStatus.Count > 0 ? p.SessionStatus[p.SessionStatus.Count - 1].SessionState.State : "In Progress")
+
+                              }).OrderByDescending(P => P.id).ToList();
+                return Json(new { Status = true, Message = "Search done successfully", Result = result }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Status = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [HttpGet]
         public ActionResult SessionSearchByPresentor(string presentorName)
         {
 
