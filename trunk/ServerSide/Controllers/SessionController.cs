@@ -1626,7 +1626,7 @@ namespace Webinar.Controllers
                 var admin = m_model.aspnet_Users.Single(p => p.UserName.Equals(adminName));
 
                 var result = (from p in m_model.Sessions
-                              where p.SessionAdmin.Equals(admin.UserId)
+                              where p.SessionAdmin.Equals(admin.UserId) && p.mode == 1
                               select new
                               {
                                   id = p.SessionId,
@@ -1826,7 +1826,7 @@ namespace Webinar.Controllers
                 var presentor = m_model.aspnet_Users.Single(p => p.UserName.Equals(presentorName));
 
                 var result = (from p in m_model.Sessions
-                              where p.PresentorId.Equals(presentor.UserId)
+                              where p.PresentorId.Equals(presentor.UserId) && p.mode == 1
                               select new
                               {
                                   id = p.SessionId,

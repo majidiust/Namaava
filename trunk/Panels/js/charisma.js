@@ -2787,9 +2787,9 @@ function GetMySeminars() {
                     newRow += '<td style="width:100px;"><center>' + '<div  title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GetMoreSeminarInformation(' + _session.m_seminarID + ');">اطلاعات بیشتر</div>' + '</center></td>';
 
                     if (_session.m_seminarStatus.indexOf('Open') != -1) {
-                        newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar(' + _session.m_seminarID + ');">ورود به سمینار</div>' + '</center></td>';
+                        newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar(' + _session.m_seminarID + ');">مشاهده سمینار زنده</div>' + '</center></td>';
                     } else if (_session.m_seminarStatus.indexOf('Close') != -1) {
-                        newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar(' + _session.m_seminarID + ');">ورود به سمینار ضبط شده</div>' + '</center></td>';
+                        newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar(' + _session.m_seminarID + ');">مشاهده سمینار آفلاین</div>' + '</center></td>';
                     } else {
                         newRow += "<td></td>";
                     }
@@ -2855,9 +2855,9 @@ function GetMySeminars() {
                             newRow += '<td style="width:100px;"><center>' + '<div  title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip" class="btn btn-info" onclick="GetMoreSeminarInformation(' + _session.m_seminarID + ');">اطلاعات بیشتر</div>' + '</center></td>';
 
                             if (_session.m_seminarStatus.indexOf('Open') != -1) {
-                                newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar(' + _session.m_seminarID + ');">ورود به سمینار</div>' + '</center></td>';
+                                newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success"  onclick="GoToSeminar(' + _session.m_seminarID + ');">مشاهده سمینار زنده</div>' + '</center></td>';
                             } else if (_session.m_seminarStatus.indexOf('Close') != -1) {
-                                newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success" onclick="GoToSeminar(' + _session.m_seminarID + ');">ورود به سمینار ضبط شده</div>' + '</center></td>';
+                                newRow += '<td style="width:100px;"><center>' + '<div title="برای مشاهده جزئیات سمینار کلیک کنید." data-rel="tooltip"  class="btn btn-success"  onclick="GoToSeminar(' + _session.m_seminarID + ');">مشاهده سمینار آفلاین</div>' + '</center></td>';
                             } else {
                                 newRow += "<td></td>";
                             }
