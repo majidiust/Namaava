@@ -2144,7 +2144,7 @@ function GoToSeminar(seminarID) {
             },
             function (response) {
                 if (response.Status == true) {
-                    window.location = "ParticipantRoom/room.html?WebinarID=" + seminarID;
+                    window.location = "SeminarRoom/room.html?WebinarID=" + seminarID;
                 } else {
                     //TODO : Error
                     alert("2" + response.Message);
