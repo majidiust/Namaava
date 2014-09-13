@@ -2914,10 +2914,11 @@ function SendRecom() {
                 success: function (result) {
 
                     if (result.Status == true) {
-                        alert("نظر شما ثبت گردید. با تشکر");
+
+                        CustomAlert('توجه', "پیشنهاد شما با موفقیت ارسال گردید", null);
                         $("#Pishnahadat").hide();
                     } else {
-                        alert("مجددا تلاش نمایید.");
+                        CustomAlert('توجه', "ثبت پیشنهاد شما با خطا روبرو  گردید", null);
                     }
                 },
                 data: content,

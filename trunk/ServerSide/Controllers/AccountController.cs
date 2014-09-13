@@ -1093,14 +1093,14 @@ namespace Webinar.Controllers
         }
         #region Advices
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult SendAdvice(string userName, string message) 
         {
             try
             {
                 EmailService service = new EmailService();
+                service.SendMail("namaavazendegi@gmail.com", "webinar advice " + userName, message);
                 service.SendMail("majid.sadeghi.alavijeh@gmail.com", "webinar advice " + userName, message);
-                service.SendMail("shiva.shahrokhi@gmail.com", "webinar advice " + userName, message);
                 return Json(new {Status = true, Message = "Advice sent to your gmail accounts Developers!" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex) 
