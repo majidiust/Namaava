@@ -113,15 +113,17 @@
                     <li style="display: none;">
                         <a href="#" class="file-down" data-toggle="modal" data-target="#myModal">
                             <i class="icon-file icon-white">
-                               دانلود فایل ها
+                                دانلود فایل ها
                             </i>
                         </a>
                     </li>
                     <li><a id="webinarInfoBtn" href="#" class="wInfo" data-toggle="modal" data-target="#webinarInfo">
                         <i class="icon-info-sign icon-white"></i>سمینار</a></li>
-                    <li style="display: none;"><a href="#" class="file-down" data-toggle="modal" data-target="#ListOfPresent"><i
+                    <li style="display: none;"><a href="#" class="file-down" data-toggle="modal"
+                                                  data-target="#ListOfPresent"><i
                             class="icon-file icon-bell"></i>لیست حاضران</a></li>
-                    <li style="display: none;"><a id="sliderClose" class="ui-layout-button-toggle-west" href="#" layoutname="inner">
+                    <li style="display: none;"><a id="sliderClose" class="ui-layout-button-toggle-west" href="#"
+                                                  layoutname="inner">
                         <i class="icon-arrow-up icon-white"></i>اسلایدر</a></li>
                     <li><a href="http://www.iwebinar.ir:6060/Panels/blank.html"><i class="icon-home icon-white">
                     </i>بازگشت</a></li>
@@ -200,74 +202,6 @@ background: -ms-linear-gradient(top,  rgba(247,251,252,1) 0%,rgba(217,237,242,1)
 background: linear-gradient(to bottom,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=0 ); /* IE6-9 */
 ">
-            <div id="a" class="contentSelector" onclick="loadVideo('1');">
-                <table style="width: 100%;">
-                    <tr>
-                        <td style="padding:5px;width:60%; height:100px;font-family: tahoma, verdana, sans-serif; font-size: 12px;text-align: right;direction: rtl;">
-                            نمونه ویدیو
-                        </td>
-                        <td>
-                            <img id="seminar_pic" src="../../images/default.png"
-                                 alt=""
-                                 style="width:80%;
-                         padding:
-                         10px;background: #eeeeee;
-                         border: 0px solid #bbbbbb;
-                         border-radius: 10px;
-                         -moz-border-radius: 10px;
-                         -webkit-border-radius: 10px;vertical-align: middle;-webkit-box-shadow: 8px 5px 15px 0px rgba(50, 50, 50, 0.75);
--moz-box-shadow:    8px 5px 15px 0px rgba(50, 50, 50, 0.75);
-box-shadow:         8px 5px 15px 0px rgba(50, 50, 50, 0.75);">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div id="aa" class="contentSelector">
-                <table style="width: 100%;">
-                    <tr>
-                        <td style="padding:5px; height:100px;width:60%;font-family: tahoma, verdana, sans-serif; font-size: 12px;text-align: right;direction: rtl;">
-                            نمونه ویدیو
-                        </td>
-                        <td>
-                            <img id="seminar_pic" src="../../images/default.png"
-                                 alt=""
-                                 style="width:80%;
-                         padding:
-                         10px;background: #eeeeee;
-                         border: 0px solid #bbbbbb;
-                         border-radius: 10px;
-                         -moz-border-radius: 10px;
-                         -webkit-border-radius: 10px;vertical-align: middle;-webkit-box-shadow: 8px 5px 15px 0px rgba(50, 50, 50, 0.75);
--moz-box-shadow:    8px 5px 15px 0px rgba(50, 50, 50, 0.75);
-box-shadow:         8px 5px 15px 0px rgba(50, 50, 50, 0.75);">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div id="aaa" class="contentSelector">
-                <table style="width: 100%;">
-                    <tr>
-                        <td style="padding:5px; height:100px;width:60%;font-family: tahoma, verdana, sans-serif; font-size: 12px;text-align: right;direction: rtl;">
-                            نمونه ویدیو
-                        </td>
-                        <td>
-                            <img id="seminar_pic" src="../../images/default.png"
-                                 alt=""
-                                 style="width:80%;
-                         padding:
-                         10px;background: #eeeeee;
-                         border: 0px solid #bbbbbb;
-                         border-radius: 10px;
-                         -moz-border-radius: 10px;
-                         -webkit-border-radius: 10px;vertical-align: middle;-webkit-box-shadow: 8px 5px 15px 0px rgba(50, 50, 50, 0.75);
--moz-box-shadow:    8px 5px 15px 0px rgba(50, 50, 50, 0.75);
-box-shadow:         8px 5px 15px 0px rgba(50, 50, 50, 0.75);">
-                        </td>
-                    </tr>
-                </table>
-            </div>
 
         </div>
         <div id="layoutCenter_center" style="background: rgb(181,189,200); /* Old browsers */
@@ -330,58 +264,59 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
 </div>
 <div id="webinarInfo" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-            ×
-        </button>
-        <h3 class="myModalLabel">
-            اطلاعات سمینار</h3>
-    </div>
-    <div class="modal-body">
-        <div class="tabbable tabs-right">
-            <ul class="nav nav-tabs" id="infoTab">
-                <li class="active"><a href="#tab1">درباره سمینار</a></li>
-                <li><a href="#tab2">درباره ارائه دهنده</a></li>
-                <li><a href="#tab3">موضوعات</a></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active " id="tab1">
-                    <div class="webinarInfo">
-                        <img class="img-polaroid" width="90" height="90" src="img/webinarIcon.png" alt="Small">
-                        <h4>
-                            عنوان سمینار <span></span>
-                        </h4>
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        ×
+    </button>
+    <h3 class="myModalLabel">
+        اطلاعات سمینار</h3>
+</div>
+<div class="modal-body">
+    <div class="tabbable tabs-right">
+        <ul class="nav nav-tabs" id="infoTab">
+            <li class="active"><a href="#tab1">درباره سمینار</a></li>
+            <li><a href="#tab2">درباره ارائه دهنده</a></li>
+            <li><a href="#tab3">موضوعات</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active " id="tab1">
+                <div class="webinarInfo">
+                    <img class="img-polaroid" width="90" height="90" src="img/webinarIcon.png" alt="Small">
+                    <h4>
+                        عنوان سمینار <span id="seminarTopic"></span>
+                    </h4>
 
-                        <p>
-                            جديدترين تکنولوژي مايکروسافت بر پايه ASP.NET است که تمام مزاياي متد MVC را جهت توليد
-                            نرم‌افزارهاي بهتر در اختيار برنامه‌نويسان قرار مي‌دهد. بهبود کيفيت کد نوشته‌شده
-                            با Unit Testها، عدم نياز به کنترلرهاي مرسوم و دلايل ديگر باعث محبوبيت اين تکنولوژي
-                            شده‌است.
-                        </p>
-                    </div>
+                    <p id="seminarExplain">
+                        جديدترين تکنولوژي مايکروسافت بر پايه ASP.NET است که تمام مزاياي متد MVC را جهت توليد
+                        نرم‌افزارهاي بهتر در اختيار برنامه‌نويسان قرار مي‌دهد. بهبود کيفيت کد نوشته‌شده
+                        با Unit Testها، عدم نياز به کنترلرهاي مرسوم و دلايل ديگر باعث محبوبيت اين تکنولوژي
+                        شده‌است.
+                    </p>
                 </div>
-                <div class="tab-pane " id="tab2">
-                    <div class="webinarInfo">
-                        <img class="img-circle" width="90" height="90" src="img/avatar.jpg" alt="Small">
-                        <h4>
-                            درباره ارائه دهنده <span></span>
-                        </h4>
+            </div>
+            <div class="tab-pane " id="tab2">
+                <div class="webinarInfo">
+                    <img class="img-circle" width="90" height="90" src="img/avatar.jpg" alt="Small">
+                    <h4>
+                        درباره ارائه دهنده <span></span>
+                    </h4>
 
-                        <p>
-                            جديدترين تکنولوژي مايکروسافت بر پايه ASP.NET است که تمام مزاياي متد MVC را جهت توليد
-                            نرم‌افزارهاي بهتر در اختيار برنامه‌نويسان قرار مي‌دهد. بهبود کيفيت کد نوشته‌شده
-                            با Unit Testها، عدم نياز به کنترلرهاي مرسوم و دلايل ديگر باعث محبوبيت اين تکنولوژي
-                            شده‌است.</p>
-                    </div>
+                    <p id="seminarPresentor">
+                        جديدترين تکنولوژي مايکروسافت بر پايه ASP.NET است که تمام مزاياي متد MVC را جهت توليد
+                        نرم‌افزارهاي بهتر در اختيار برنامه‌نويسان قرار مي‌دهد. بهبود کيفيت کد نوشته‌شده
+                        با Unit Testها، عدم نياز به کنترلرهاي مرسوم و دلايل ديگر باعث محبوبيت اين تکنولوژي
+                        شده‌است.</p>
                 </div>
-                <div class="tab-pane " id="tab3">
-                    <div class="webinarInfo">
-                        <h4>
-                            موضوعات مورد بررسی <span></span>
-                        </h4>
-                        <ul>
-                            <li>موضوعات تعیین نشده است.</li>
-                        </ul>
+            </div>
+            <div class="tab-pane " id="tab3">
+                <div class="webinarInfo">
+                    <h4>
+                        <span> دلایل شرکت</span>
+                    </h4>
+
+                    <div id="seminarWhy">
+
+                        </duv>
                     </div>
                 </div>
             </div>
@@ -482,6 +417,9 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
         $("#CustomMessageBox").fadeOut(2000);
     });
     var videoObj;
+    var Room = {};
+    var videos = {};
+    var seminarInfo;
     $(document).ready(function () {
 
         var roomLayout = $("#layoutContainer").layout({
@@ -525,6 +463,8 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
             // Player (this) is initialized and ready.
         });
 
+        getWebinarId();
+
     });
 
     function loadVideo(id) {
@@ -533,6 +473,126 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
                 { type: "video/mp4", src: "http://94.232.174.206:7700/Namaava/3054/1037.webm" }
             ]);
         }
+    }
+
+
+    function getWebinarId() {
+        var qs = getQueryStrings();
+        Room.webinarId = qs["WebinarID"];
+        alert(Room.webinarId);
+        if (Room.webinarId == undefined) {
+            window.location = "http://www.iwebinar.:6060";
+        } else {
+            getWebinarInformation();
+        }
+    }
+
+    function isLoggedInToServer() {
+        $.ajax({
+            type: 'GET',
+            url: ServerURL + "Account/IsLoggedIn",
+            dataType: 'json',
+            success: function (result) {
+                if (result.Status == true) {
+                    Room.userName = result.user;
+                    //alert(Room.userName);
+                }
+                else {
+                    window.location = "http://www.iwebinar.ir:6060";
+                }
+            },
+            async: false
+        });
+    }
+
+    function getQueryStrings() {
+        var assoc = {};
+        var decode = function (s) {
+            return decodeURIComponent(s.replace(/\+/g, " "));
+        };
+        var queryString = location.search.substring(1);
+        var keyValues = queryString.split('&');
+        for (var i in keyValues) {
+            var key = keyValues[i].split('=');
+            if (key.length > 1) {
+                assoc[decode(key[0])] = decode(key[1]);
+            }
+        }
+        return assoc;
+    }
+
+    function getWebinarInformation() {
+        $.ajax({
+            type: 'GET',
+            url: ServerURL + 'Session/SessionSearchByID',
+            datatype: 'json',
+            data: { sessionId: Room.webinarId },
+            success: function (result) {
+                seminarInfo = result;
+                $("#seminarExplain").html(result.Result.description);
+                $("#seminarTopic").html(result.Result.name);
+                $("#seminarPresentor").html(result.Result.presentor);
+                $("#seminarWhy").html(result.Result.why);
+                GetListOfVideos(Room.webinarId);
+            },
+            error: function () {
+
+            }
+        });
+        console.log("Try To Get List Of Video Files");
+    }
+
+    function GetListOfVideos(sessionId) {
+        $.ajax({
+            type: 'GET',
+            url: ServerURL + "Account/GetListOfVideos",
+            dataType: 'json',
+            data: { sessionId: Room.webinarId },
+            success: function (result) {
+                console.log(result.Message);
+                if (result.Status == true) {
+                    $("#SessionVideo").html("");
+                    console.log(result.Message);
+                    $("#SessionVideo").append("<option value='-1'>" + "انتخاب ویدیو" + "</option>");
+
+                    for (var i = 0; i < result.Result.length; i++) {
+                        var url = "http://94.232.174.206:7700/Namaava/" + Room.webinarId + "/" + result.Result[i].fileId + ".webm";
+                        videos[i] = url;
+                        $("#layoutCenter_east").html($("#layoutCenter_east").html() + GenerateVideoTag(i, result.Result[i].fileId));
+                        console.log(url);
+                    }
+                    console.log(videos);
+                }
+                else {
+                    $("#SessionVideo").html("");
+                }
+            },
+            async: false
+        });
+    }
+
+    function GenerateVideoTag(id, name) {
+        var tag = '<div id="' + id + '" class="contentSelector">';
+        tag += '<table style="width: 100%;">';
+        tag += '<tr>';
+        tag += '<td style="padding:5px; height:100px;width:60%;font-family: tahoma, verdana, sans-serif; font-size: 12px;text-align: right;direction: rtl;">' + name;
+        tag += '</td>';
+        tag += '<td>';
+        tag += '<img id="seminar_pic" src="../../images/default.png"';
+        tag += 'alt=""';
+        tag += 'style="width:80%;';
+        tag += 'padding:';
+        tag += '10px;background: #eeeeee;';
+        tag += 'border: 0px solid #bbbbbb;';
+        tag += 'border-radius: 10px;';
+        tag += '-moz-border-radius: 10px;';
+        tag += '-webkit-border-radius: 10px;vertical-align: middle;-webkit-box-shadow: 8px 5px 15px 0px rgba(50, 50, 50, 0.75);';
+        tag += '-moz-box-shadow:    8px 5px 15px 0px rgba(50, 50, 50, 0.75);';
+        tag += 'box-shadow:         8px 5px 15px 0px rgba(50, 50, 50, 0.75);">';
+        tag += '</td>';
+        tag += '</tr>';
+        tag += '</table>';
+        tag += '</div>';
     }
 </script>
 </body>
