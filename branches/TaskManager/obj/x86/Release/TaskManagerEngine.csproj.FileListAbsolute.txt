@@ -63,3 +63,6 @@ F:\Projects\namava\branches\TaskManager\bin\Release\System.Xml.Linq.dll
 F:\Projects\namava\branches\TaskManager\bin\Release\Renci.SshNet.pdb
 F:\Projects\namava\branches\TaskManager\bin\Release\Renci.SshNet.xml
 F:\Projects\namava\branches\TaskManager\obj\x86\Release\TaskManagerEngine.csprojResolveAssemblyReference.cache
+D:\Projects\rayanhiva\namava\branches\TaskManager\bin\Release\TaskManagerEngine.exe.config
+D:\Projects\rayanhiva\namava\branches\TaskManager\obj\x86\Release\TaskManagerEngine.exe
+D:\Projects\rayanhiva\namava\branches\TaskManager\obj\x86\Release\TaskManagerEngine.pdb
