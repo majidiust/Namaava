@@ -847,6 +847,8 @@ namespace Webinar.Controllers
                     m_model.SessionServices.DeleteAllOnSubmit(services);
                     var chats = m_model.Chats.Where(P => P.SessionId == sessionId);
                     m_model.Chats.DeleteAllOnSubmit(chats);
+                    var userinSession = m_model.UserInSessions.Where(P=>P.SessionId == sessionId);
+                    m_model.UserInSessions.DeleteAllOnSubmit(userinSession);
                     m_model.Sessions.DeleteOnSubmit(session);
 
                     var dates = m_model.WebinarDateTimes.Where(P => P.id == session.EndTime || P.id == session.BeginTime);
