@@ -310,13 +310,15 @@ $(document).ready(function () {
 
     $('#NewSeminarFileUpload').bind('fileuploadsubmit', function (e, data) {
         data.formData = {
-            sessionId: CurrentSeminarID
+            sessionId : CurrentSeminarID,
+            videoName : $("#sessionVideoName").val()
         };
     });
 
     $('#NewSeminarVideoUpload').bind('fileuploadsubmit', function (e, data) {
         data.formData = {
-            sessionId: CurrentSeminarID
+            sessionId: CurrentSeminarID,
+            videoName : $("#sessionVideoName").val()
         };
     });
 
