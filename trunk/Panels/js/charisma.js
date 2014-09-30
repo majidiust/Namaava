@@ -2507,11 +2507,16 @@ function GetMyRequests() {
             CustomBlockingPanel('توجه', 'اطلاعات دریاف شد.', 1000, null);
             if (result.Status == true) {
                 for (var j = 0; j < result.Result.length; j++) {
+                    var bt;
+                    if(result.Result[j].beginTime == 'آفلاین')
+                        bt= 'آفلاین';
+                    else
+                        bt =  GetPrsianDate(result.Result[j].beginTime);
                     var _session = {
                         m_seminarID: result.Result[j].sessionId,
                         m_seminarName: result.Result[j].sessionName,
                         m_seminarPresentorName: result.Result[j].presentorUserName == userName ? 'خودم' : result.Result[j].presentorLastName,
-                        m_seminarBeginTime: GetPrsianDate(result.Result[j].beginTime),
+                        m_seminarBeginTime : bt,
                         m_seminarDuration: result.Result[j].duration,
                         m_seminarStatus: result.Result[j].status,
                         m_seminarsAdmin: result.Result[j].adminUserName == userName ? 'خودم' : result.Result[j].adminLastName,
@@ -2614,6 +2619,11 @@ function GetListOfInvitedSeminars() {
 
                 //alert(result.Message);
                 for (var j = 0; j < result.Result.length; j++) {
+                    var bt;
+                    if(result.Result[j].beginTime == 'آفلاین')
+                        bt= 'آفلاین';
+                    else
+                        bt =  GetPrsianDate(result.Result[j].beginTime);
                     //alert("GetListOfInvitedSeminars");
                     var presentorName;
                     if (result.Result[j].presentorFirstName == null || result.Result[j].presentorLastName == null) {
@@ -2623,7 +2633,7 @@ function GetListOfInvitedSeminars() {
                         m_seminarID: result.Result[j].sessionId,
                         m_seminarName: result.Result[j].sessionName,
                         m_seminarPresentorName: result.Result[j].presentorUserName == userName ? 'خودم' : presentorName,
-                        m_seminarBeginTime: GetPrsianDate(result.Result[j].beginTime),
+                        m_seminarBeginTime: bt,
                         m_seminarDuration: result.Result[j].duration,
                         m_seminarStatus: result.Result[j].status,
                         m_seminarsAdmin: result.Result[j].adminUserName == userName ? 'خودم' : result.Result[j].adminLastName,
