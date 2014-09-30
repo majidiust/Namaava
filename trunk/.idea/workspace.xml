@@ -26,18 +26,18 @@
       <file leaf-file-name="room.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Panels/SeminarRoom/room.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42938933" vertical-offset="8309" max-vertical-offset="9214">
-              <caret line="569" column="11" selection-start-line="569" selection-start-column="11" selection-end-line="569" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.6889313" vertical-offset="8309" max-vertical-offset="9214">
+              <caret line="577" column="103" selection-start-line="577" selection-start-column="103" selection-end-line="577" selection-end-column="103" />
               <folding>
                 <element signature="e#19077#20503#0" expanded="true" />
                 <element signature="e#20745#21027#0" expanded="true" />
                 <element signature="e#22086#22789#0" expanded="true" />
                 <element signature="e#22306#22667#0" expanded="true" />
+                <element signature="e#22831#23914#0" expanded="true" />
                 <element signature="e#23049#23870#0" expanded="true" />
                 <element signature="e#23945#23978#0" expanded="true" />
-                <element signature="e#24020#25166#0" expanded="true" />
-                <marker date="1412078464203" expanded="true" signature="24167:24179" placeholder="..." />
-                <marker date="1412078464203" expanded="true" signature="24234:24361" placeholder="..." />
+                <marker date="1412078569929" expanded="true" signature="24167:24179" placeholder="..." />
+                <marker date="1412078569929" expanded="true" signature="24234:24361" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -917,18 +917,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Panels/SeminarRoom/room.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42938933" vertical-offset="8309" max-vertical-offset="9214">
-          <caret line="569" column="11" selection-start-line="569" selection-start-column="11" selection-end-line="569" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.6889313" vertical-offset="8309" max-vertical-offset="9214">
+          <caret line="577" column="103" selection-start-line="577" selection-start-column="103" selection-end-line="577" selection-end-column="103" />
           <folding>
             <element signature="e#19077#20503#0" expanded="true" />
             <element signature="e#20745#21027#0" expanded="true" />
             <element signature="e#22086#22789#0" expanded="true" />
             <element signature="e#22306#22667#0" expanded="true" />
+            <element signature="e#22831#23914#0" expanded="true" />
             <element signature="e#23049#23870#0" expanded="true" />
             <element signature="e#23945#23978#0" expanded="true" />
-            <element signature="e#24020#25166#0" expanded="true" />
-            <marker date="1412078464203" expanded="true" signature="24167:24179" placeholder="..." />
-            <marker date="1412078464203" expanded="true" signature="24234:24361" placeholder="..." />
+            <marker date="1412078569929" expanded="true" signature="24167:24179" placeholder="..." />
+            <marker date="1412078569929" expanded="true" signature="24234:24361" placeholder="..." />
           </folding>
         </state>
       </provider>
