@@ -631,7 +631,6 @@ function ForgotPassword(email) {
     var m_email = email; //$("#forgot_password_email").val();
     var m_message = "پست الکترونیکی : " + m_email + "<br/> در حال بازیابی کلمه عبور، لطفا منتظر بمانید ....";
     ShowModalWindow("توجه", m_message);
-
     $.ajax({
         type: 'GET',
         url: ServerURL + "Account/ForgetPassword",
@@ -642,8 +641,8 @@ function ForgotPassword(email) {
         success: function (result) {
             if (result.Status == true) {
 
-                var message = "درخواست شما با موفقیت ثبت گردید و پیامی به پست الکترونیکی شما ارسال شده است. لطفا به پست الکترونیکی خود مراجعه فرمایید. ";
-                ShowModalWindow("توجه", message);
+               // var message = "درخواست شما با موفقیت ثبت گردید و پیامی به پست الکترونیکی شما ارسال شده است. لطفا به پست الکترونیکی خود مراجعه فرمایید. ";
+                ShowModalWindow("توجه", "message");
                 ShowModalCloseButton();
                 ShowRegisterForm(false);
             } else {
