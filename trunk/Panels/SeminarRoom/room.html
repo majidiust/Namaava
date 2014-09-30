@@ -465,7 +465,7 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
             // Player (this) is initialized and ready.
      //   });
 
-        videoObj = $("#example_video_1").jPlayer();
+        //videoObj = $("#example_video_1").jPlayer();
 
         getWebinarId();
 
@@ -577,9 +577,8 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
             try {
                 var vid = document.getElementById("example_video_1");
                 vid.setAttribute("src", 'http://94.232.174.206:7700/Namaava/2048/1035.webm');
-                $('#example_video_1 source').attr('src', 'http://94.232.174.206:7700/Namaava/2048/1035.webm');
                 console.log("Load the video : " + 'http://94.232.174.206:7700/Namaava/2048/1035.webm');
-                $("#example_video_1")[0].load();
+                vid.play();
             }
         catch(ex){
             console.log(ex);

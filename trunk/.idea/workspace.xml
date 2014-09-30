@@ -71,21 +71,20 @@
       <file leaf-file-name="room.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Panels/SeminarRoom/room.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44444445" vertical-offset="6267" max-vertical-offset="9656">
-              <caret line="402" column="6" selection-start-line="402" selection-start-column="6" selection-end-line="402" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.6302368" vertical-offset="8613" max-vertical-offset="9639">
+              <caret line="580" column="27" selection-start-line="580" selection-start-column="27" selection-end-line="580" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#video#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#19084#20567#0" expanded="true" />
-                <element signature="e#20598#20789#0" expanded="true" />
-                <element signature="e#20819#21101#0" expanded="true" />
-                <element signature="e#22160#22863#0" expanded="true" />
-                <element signature="e#22380#22741#0" expanded="true" />
-                <element signature="e#22905#23988#0" expanded="true" />
-                <element signature="e#23123#23944#0" expanded="true" />
-                <element signature="e#24019#24544#0" expanded="true" />
-                <element signature="e#24586#25732#0" expanded="true" />
-                <marker date="1412081987718" expanded="true" signature="24733:24745" placeholder="..." />
-                <marker date="1412081987718" expanded="true" signature="24800:24927" placeholder="..." />
+                <element signature="e#19084#20569#0" expanded="true" />
+                <element signature="e#20600#20791#0" expanded="true" />
+                <element signature="e#20821#21103#0" expanded="true" />
+                <element signature="e#22162#22865#0" expanded="true" />
+                <element signature="e#22382#22743#0" expanded="true" />
+                <element signature="e#22907#23990#0" expanded="true" />
+                <element signature="e#23125#23946#0" expanded="true" />
+                <element signature="e#24456#25602#0" expanded="true" />
+                <marker date="1412082149420" expanded="true" signature="24603:24615" placeholder="..." />
+                <marker date="1412082149420" expanded="true" signature="24670:24797" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -975,21 +974,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Panels/SeminarRoom/room.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44444445" vertical-offset="6267" max-vertical-offset="9656">
-          <caret line="402" column="6" selection-start-line="402" selection-start-column="6" selection-end-line="402" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.6302368" vertical-offset="8613" max-vertical-offset="9639">
+          <caret line="580" column="27" selection-start-line="580" selection-start-column="27" selection-end-line="580" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#video#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#19084#20567#0" expanded="true" />
-            <element signature="e#20598#20789#0" expanded="true" />
-            <element signature="e#20819#21101#0" expanded="true" />
-            <element signature="e#22160#22863#0" expanded="true" />
-            <element signature="e#22380#22741#0" expanded="true" />
-            <element signature="e#22905#23988#0" expanded="true" />
-            <element signature="e#23123#23944#0" expanded="true" />
-            <element signature="e#24019#24544#0" expanded="true" />
-            <element signature="e#24586#25732#0" expanded="true" />
-            <marker date="1412081987718" expanded="true" signature="24733:24745" placeholder="..." />
-            <marker date="1412081987718" expanded="true" signature="24800:24927" placeholder="..." />
+            <element signature="e#19084#20569#0" expanded="true" />
+            <element signature="e#20600#20791#0" expanded="true" />
+            <element signature="e#20821#21103#0" expanded="true" />
+            <element signature="e#22162#22865#0" expanded="true" />
+            <element signature="e#22382#22743#0" expanded="true" />
+            <element signature="e#22907#23990#0" expanded="true" />
+            <element signature="e#23125#23946#0" expanded="true" />
+            <element signature="e#24456#25602#0" expanded="true" />
+            <marker date="1412082149420" expanded="true" signature="24603:24615" placeholder="..." />
+            <marker date="1412082149420" expanded="true" signature="24670:24797" placeholder="..." />
           </folding>
         </state>
       </provider>
