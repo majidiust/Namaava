@@ -2970,7 +2970,7 @@ function GetUserProfile() {
                 $("#ProfileBirthdateMonth option:selected").attr("selected", false);
                 $("#ProfileBirthdateDay option:selected").attr("selected", false);
                 if (result.Result.photo != null && result.Result.photo != "") {
-                    document.getElementById('ProfileImageImage').src = "http://iwebinar.ir:6060/ServerSide/Pics/Users/Originals/" + userName + ".png";
+                    document.getElementById('ProfileImageImage').src = "http://www.iwebinar.ir:6060/ServerSide/Pics/Users/Originals/" + userName + ".png";
                 }
                 var splitedDate = result.Result.birthday.split(":");
                 $("#ProfileBirthdateYear option[value=" + splitedDate[0] + "]").attr("selected", true);
