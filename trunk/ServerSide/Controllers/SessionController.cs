@@ -1248,69 +1248,127 @@ namespace Webinar.Controllers
                 }
                 else
                 {
-                    int count = SpaceLeft(sessionId);
                     var session = m_model.Sessions.Single(p => p.SessionId == sessionId);
-                    if (count >= session.Capacity)
+                    if (session.mode == 0)
                     {
-                        return Json(new { Status = false, Message = "The Seminar is full and has no free space" }, JsonRequestBehavior.AllowGet);
-                    }
-                    var membership = (from p in m_model.aspnet_Memberships where p.Email == email select p).ToList();
-                    SessionRequest request = new SessionRequest();
-                    if (membership.Count > 0)
-                    {
-                        request.UserId = membership[0].UserId;
-                    }
-                    request.RequestEmail = email;
-                    request.RequestMobile = mobile;
-                    request.SessionId = sessionId;
-                    request.Result = "Not Seen";
-
-                    if (UserPeymentSession(sessionId) != "-1")
-                    {
-                        request.IsPayed = false;
-                    }
-
-                    var requestCurrentDate = new System.Globalization.PersianCalendar();
-                    WebinarDateTime requestDateTime = new WebinarDateTime();
-                    requestDateTime.Year = requestCurrentDate.GetYear(DateTime.Now);
-                    requestDateTime.Month = requestCurrentDate.GetMonth(DateTime.Now);
-                    requestDateTime.Day = requestCurrentDate.GetDayOfMonth(DateTime.Now);
-                    m_model.WebinarDateTimes.InsertOnSubmit(requestDateTime);
-                    m_model.SubmitChanges();
-
-                    request.RequestDate = requestDateTime.id;
-                    m_model.SessionRequests.InsertOnSubmit(request);
-                    m_model.SubmitChanges();
-                    int followCode = request.RequestId;
-                    var Result = new
-                    {
-                        Code = followCode,
-                    };
-
-
-
-                    StreamReader reader = new StreamReader(Server.MapPath("~/Templates/EmailRequest.html"));
-                    //string msg = string.Format(reader.ReadToEnd(), email, session.SessionName, DateToString(session.WebinarDateTime), session.Capacity, followCode);
-                    string msg = reader.ReadToEnd();
-                    reader.Close();
-                    msg = msg.Replace("{0}", email);
-                    msg = msg.Replace("{1}", session.SessionName);
-                    msg = msg.Replace("{2}", DateToString(session.WebinarDateTime));
-                    msg = msg.Replace("{3}", session.aspnet_User1.Profile == null ? session.aspnet_User1.UserName : session.aspnet_User1.Profile.FirstName + " " + session.aspnet_User1.Profile.LastName);
-                    msg = msg.Replace("{4}", followCode.ToString());
-                    EmailService service = new EmailService();
-                    string smsText = string.Format(" در خواست شما برای شرکت در سمینار ثبت گردید. شماره پیگیری شما {0} است", followCode);
-                    service.SendMail(request.RequestEmail, "درخواست برای سمینار", msg);
-                    service.SendMail(request.Session.aspnet_User1.aspnet_Membership.Email, "درخواست جدید برای سمینار", "یک درخواست جدید برای سمینار شما ثبت شده است.");
-                    SMS sms = new SMS();
-                    if (session.SMSSend == true)
-                    {
-                        if (request.RequestMobile != null && request.RequestMobile != "-1")
+                        var membership = (from p in m_model.aspnet_Memberships where p.Email == email select p).ToList();
+                        SessionRequest request = new SessionRequest();
+                        if (membership.Count > 0)
                         {
-                            sms.SendSmsEvent(new string[] { request.RequestMobile }, smsText);
+                            request.UserId = membership[0].UserId;
                         }
+                        request.RequestEmail = email;
+                        request.RequestMobile = mobile;
+                        request.SessionId = sessionId;
+                        request.Result = "Not Seen";
+                        if (UserPeymentSession(sessionId) != "-1")
+                        {
+                            request.IsPayed = false;
+                        }
+                        var requestCurrentDate = new System.Globalization.PersianCalendar();
+                        WebinarDateTime requestDateTime = new WebinarDateTime();
+                        requestDateTime.Year = requestCurrentDate.GetYear(DateTime.Now);
+                        requestDateTime.Month = requestCurrentDate.GetMonth(DateTime.Now);
+                        requestDateTime.Day = requestCurrentDate.GetDayOfMonth(DateTime.Now);
+                        m_model.WebinarDateTimes.InsertOnSubmit(requestDateTime);
+                        m_model.SubmitChanges();
+
+                        request.RequestDate = requestDateTime.id;
+                        m_model.SessionRequests.InsertOnSubmit(request);
+                        m_model.SubmitChanges();
+                        int followCode = request.RequestId;
+                        var Result = new
+                        {
+                            Code = followCode,
+                        };
+                        StreamReader reader = new StreamReader(Server.MapPath("~/Templates/EmailRequest.html"));
+                        string msg = reader.ReadToEnd();
+                        reader.Close();
+                        msg = msg.Replace("{0}", email);
+                        msg = msg.Replace("{1}", session.SessionName);
+                        msg = msg.Replace("{2}", DateToString(session.WebinarDateTime));
+                        msg = msg.Replace("{3}", session.aspnet_User1.Profile == null ? session.aspnet_User1.UserName : session.aspnet_User1.Profile.FirstName + " " + session.aspnet_User1.Profile.LastName);
+                        msg = msg.Replace("{4}", followCode.ToString());
+                        EmailService service = new EmailService();
+                        string smsText = string.Format(" در خواست شما برای شرکت در سمینار ثبت گردید. شماره پیگیری شما {0} است", followCode);
+                        service.SendMail(request.RequestEmail, "درخواست برای سمینار", msg);
+                        service.SendMail(request.Session.aspnet_User1.aspnet_Membership.Email, "درخواست جدید برای سمینار", "یک درخواست جدید برای سمینار شما ثبت شده است.");
+                        SMS sms = new SMS();
+                        if (session.SMSSend == true)
+                        {
+                            if (request.RequestMobile != null && request.RequestMobile != "-1")
+                            {
+                                sms.SendSmsEvent(new string[] { request.RequestMobile }, smsText);
+                            }
+                        }
+                        return Json(new { Status = true, Message = "You must wait until your request process", Result }, JsonRequestBehavior.AllowGet);
                     }
-                    return Json(new { Status = true, Message = "You must wait until your request process", Result }, JsonRequestBehavior.AllowGet);
+                    else
+                    {
+                        int count = SpaceLeft(sessionId);
+                        if (count >= session.Capacity)
+                        {
+                            return Json(new { Status = false, Message = "The Seminar is full and has no free space" }, JsonRequestBehavior.AllowGet);
+                        }
+                        var membership = (from p in m_model.aspnet_Memberships where p.Email == email select p).ToList();
+                        SessionRequest request = new SessionRequest();
+                        if (membership.Count > 0)
+                        {
+                            request.UserId = membership[0].UserId;
+                        }
+                        request.RequestEmail = email;
+                        request.RequestMobile = mobile;
+                        request.SessionId = sessionId;
+                        request.Result = "Not Seen";
+
+                        if (UserPeymentSession(sessionId) != "-1")
+                        {
+                            request.IsPayed = false;
+                        }
+
+                        var requestCurrentDate = new System.Globalization.PersianCalendar();
+                        WebinarDateTime requestDateTime = new WebinarDateTime();
+                        requestDateTime.Year = requestCurrentDate.GetYear(DateTime.Now);
+                        requestDateTime.Month = requestCurrentDate.GetMonth(DateTime.Now);
+                        requestDateTime.Day = requestCurrentDate.GetDayOfMonth(DateTime.Now);
+                        m_model.WebinarDateTimes.InsertOnSubmit(requestDateTime);
+                        m_model.SubmitChanges();
+
+                        request.RequestDate = requestDateTime.id;
+                        m_model.SessionRequests.InsertOnSubmit(request);
+                        m_model.SubmitChanges();
+                        int followCode = request.RequestId;
+                        var Result = new
+                        {
+                            Code = followCode,
+                        };
+
+
+
+                        StreamReader reader = new StreamReader(Server.MapPath("~/Templates/EmailRequest.html"));
+                        //string msg = string.Format(reader.ReadToEnd(), email, session.SessionName, DateToString(session.WebinarDateTime), session.Capacity, followCode);
+                        string msg = reader.ReadToEnd();
+                        reader.Close();
+                        msg = msg.Replace("{0}", email);
+                        msg = msg.Replace("{1}", session.SessionName);
+                        msg = msg.Replace("{2}", DateToString(session.WebinarDateTime));
+                        msg = msg.Replace("{3}", session.aspnet_User1.Profile == null ? session.aspnet_User1.UserName : session.aspnet_User1.Profile.FirstName + " " + session.aspnet_User1.Profile.LastName);
+                        msg = msg.Replace("{4}", followCode.ToString());
+                        EmailService service = new EmailService();
+                        string smsText = string.Format(" در خواست شما برای شرکت در سمینار ثبت گردید. شماره پیگیری شما {0} است", followCode);
+                        service.SendMail(request.RequestEmail, "درخواست برای سمینار", msg);
+                        service.SendMail(request.Session.aspnet_User1.aspnet_Membership.Email, "درخواست جدید برای سمینار", "یک درخواست جدید برای سمینار شما ثبت شده است.");
+                        SMS sms = new SMS();
+                        if (session.SMSSend == true)
+                        {
+                            if (request.RequestMobile != null && request.RequestMobile != "-1")
+                            {
+                                sms.SendSmsEvent(new string[] { request.RequestMobile }, smsText);
+                            }
+                        }
+                        return Json(new { Status = true, Message = "You must wait until your request process", Result }, JsonRequestBehavior.AllowGet);
+                    }
+                   
                 }
             }
             catch (Exception ex)
