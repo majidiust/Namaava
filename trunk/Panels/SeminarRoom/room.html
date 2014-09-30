@@ -216,18 +216,10 @@ padding: 20px;
 ">
 
             <!-- Begin Of Video player -->
-            <video id="example_video_1" class="video-js vjs-default-skin"
-                   controls preload="auto" width="80%" height="80%" autoplay="true"
-                   data-setup='{"example_option":true}'
-                   style="margin:0 auto;-webkit-box-shadow: 0px 0px 26px 0px rgba(50, 50, 50, 0.94);
--moz-box-shadow:    0px 0px 26px 0px rgba(50, 50, 50, 0.94);
-box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
-                    border-radius: 8px;
-                    -webkit-border-radius: 8px;
-                    -moz-border-radius: 8px;
-                    ">
-
-            </video>
+            <div id="my_video_1" style="padding-top: 140px; margin-top: 100px;">
+                <div id="mediaContainer">
+                </div>
+            </div>
             <!-- end of video player -->
         </div>
     </div>
@@ -461,7 +453,15 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
             // Player (this) is initialized and ready.
      //   });
 
-        videoObj = $("#example_video_1").jPlayer();
+        videoObj = $("#mediaContainer").jPlayer({
+            solution: "flash, html", // Flash with an HTML5 fallback.
+            supplied: "ogv",
+            swfPath: "http://www.iwebinar.ir:6060/Panels/ParticipantRoom/jPlayer/Jplayer.swf",
+            size: {
+                width: "80%",
+                height: "80%"
+            }
+        });
 
         getWebinarId();
 
@@ -571,9 +571,12 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
 
     function SwitchVideo(url){
             try {
-                $("#example_video_1").jPlayer("setMedia", {
-                    webma: 'http://94.232.174.206:7700/Namaava/3059/1043.webm' // Defines the counterpart ogv url
-                }).jPlayer("play");
+              
+
+                videoObj.jPlayer("setMedia", {
+                    ogv: videos[url] // Defines the counterpart ogv url
+                }).jPlayer("play"); // Attempts to Auto-Play the media
+
             }
         catch(ex){
             console.log(ex);
