@@ -458,8 +458,8 @@ padding: 20px;
             supplied: "ogv",
             swfPath: "http://www.iwebinar.ir:6060/Panels/ParticipantRoom/jPlayer/Jplayer.swf",
             size: {
-                width: "80%",
-                height: "80%"
+                width: "100%",
+                height: "100%"
             }
         });
 
@@ -571,10 +571,10 @@ padding: 20px;
 
     function SwitchVideo(url){
             try {
-              
+
 
                 videoObj.jPlayer("setMedia", {
-                    ogv: videos[url] // Defines the counterpart ogv url
+                    ogv: 'http://94.232.174.206:7700/Namaava/2048/1035.webm'// videos[url] // Defines the counterpart ogv url
                 }).jPlayer("play"); // Attempts to Auto-Play the media
 
             }
