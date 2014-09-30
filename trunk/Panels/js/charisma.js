@@ -324,9 +324,9 @@ $(document).ready(function () {
 
     if (IsFirstLogIn == true) {
         $("#Welcome").append("<p>لطفا قبل از هرکاری Profile  خود را کامل کنید.</p>");
-        $("#UserPicture").prop("src", "http://www.vworld.ir/Pics/Users/default.png");
+        $("#UserPicture").prop("src", "http://www.iwebinar.ir:6060/Pics/Users/default.png");
     } else {
-        $("#UserPicture").prop("src", "http://www.vworld.ir/Pics/Users/Thumbnails/" + userName + "t.png");
+        $("#UserPicture").prop("src", "http://www.iwebinar.ir:6060/Pics/Users/Thumbnails/" + userName + "t.png");
     }
 
 
@@ -1042,7 +1042,7 @@ function OpenWebinar(sessionID) {
 
 function RefreshProfilePicture() {
 
-    var picName = "http://www.vworld.ir/Pics/Users/Thumbnails/" + userName + "t.png";
+    var picName = "http://www.iwebinar.ir:6060/Pics/Users/Thumbnails/" + userName + "t.png";
     //var newImage = "<img src='" + picName + "'/>";
     //$("#UserPictureHolder").html("");
     $("#UserPicture").prop("src", picName);
