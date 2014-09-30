@@ -556,8 +556,8 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
                     for (var i = 0; i < result.Result.length; i++) {
                         var url = "http://94.232.174.206:7700/Namaava/" + Room.webinarId + "/" + result.Result[i].fileId + ".webm";
                         videos[i] = url;
-                        var f = GenerateVideoTag(i, result.Result[i].fileId);
-                        console.log(GenerateVideoTag(i, result.Result[i].fileId));
+                        var f = GenerateVideoTag(i, result.Result[i].fileUrl);
+                        console.log(GenerateVideoTag(i, result.Result[i].fileUrl));
                         $("#layoutCenter_east").html($("#layoutCenter_east").html() + f);
                     }
                     console.log(videos);
@@ -570,8 +570,12 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
         });
     }
 
+    function SwitchVideo(url){
+        console.log(url);
+    }
+
     function GenerateVideoTag(id, name) {
-        var tag = '<div id="' + id + '" class="contentSelector">';
+        var tag = '<div id="' + id + '" class="contentSelector" onclick="SwitchVideo(' + '"' + id +  '"' + ');">';
         tag += '<table style="width: 100%;">';
         tag += '<tr>';
         tag += '<td style="padding:5px; height:100px;width:60%;font-family: tahoma, verdana, sans-serif; font-size: 12px;text-align: right;direction: rtl;">' + name;
