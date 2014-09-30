@@ -1689,7 +1689,7 @@ namespace Webinar.Controllers
                             Utility.FileUtility.UploadToVODServer(sv.ID, savedFileName, sessionId);
                             r.Add(new ViewDataUploadFilesResult()
                             {
-                                Name = hpf.FileName,
+                                Name = sv.VideoName,
                                 Length = hpf.ContentLength,
                                 Type = hpf.ContentType,
                                 Id = sv.ID
