@@ -226,7 +226,6 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
                     -webkit-border-radius: 8px;
                     -moz-border-radius: 8px;
                     ">
-                <source src="http://94.232.174.206:7700/Namaava/3059/1043.webm" type='video/mp4'/>
                 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web
                     browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5
                         video</a></p>
@@ -575,7 +574,7 @@ box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
     function SwitchVideo(url){
             try {
                 $("#example_video_1").jPlayer("setMedia", {
-                    ogv: videos[url] // Defines the counterpart ogv url
+                    ogv: 'http://94.232.174.206:7700/Namaava/3059/1043.webm' // Defines the counterpart ogv url
                 }).jPlayer("play");
             }
         catch(ex){
