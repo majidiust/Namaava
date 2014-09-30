@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Login.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Login.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37454545" vertical-offset="967" max-vertical-offset="5967">
+            <state vertical-scroll-proportion="-8.24" vertical-offset="967" max-vertical-offset="5967">
               <caret line="644" column="49" selection-start-line="644" selection-start-column="49" selection-end-line="644" selection-end-column="49" />
               <folding>
                 <element signature="e#26035#26225#0" expanded="true" />
@@ -66,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="charisma.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="charisma.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Panels/js/charisma.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.32" vertical-offset="9711" max-vertical-offset="11322">
-              <caret line="3510" column="33" selection-start-line="3510" selection-start-column="28" selection-end-line="3510" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.58" vertical-offset="8453" max-vertical-offset="11441">
+              <caret line="2953" column="52" selection-start-line="2953" selection-start-column="46" selection-end-line="2953" selection-end-column="52" />
               <folding>
                 <element signature="e#759#18063#0" expanded="true" />
                 <element signature="e#4285#4384#0" expanded="true" />
@@ -82,8 +82,8 @@
                 <element signature="n#!!block;n#RefreshProfilePicture#0" expanded="true" />
                 <element signature="n#!!block;n#GetListOfSessionFilesForSeminarInfo#0" expanded="true" />
                 <element signature="e#39313#41252#0" expanded="true" />
-                <element signature="n#!!block;n#GetUserProfile#0" expanded="true" />
-                <element signature="e#125736#127878#0" expanded="true" />
+                <element signature="n#!!block;n#sleep#0" expanded="true" />
+                <element signature="n#!!block;n#mp#0" expanded="true" />
                 <marker date="1412085535660" expanded="true" signature="8217:8235" placeholder="..." />
                 <marker date="1412085535660" expanded="true" signature="8305:8323" placeholder="..." />
                 <marker date="1412085535660" expanded="true" signature="8410:8428" placeholder="..." />
@@ -449,8 +449,8 @@
             <element signature="n#!!block;n#RefreshProfilePicture#0" expanded="true" />
             <element signature="n#!!block;n#GetListOfSessionFilesForSeminarInfo#0" expanded="true" />
             <element signature="e#39313#41252#0" expanded="true" />
-            <element signature="n#!!block;n#GetUserProfile#0" expanded="true" />
-            <element signature="e#125736#127878#0" expanded="true" />
+            <element signature="n#!!block;n#sleep#0" expanded="true" />
+            <element signature="n#!!block;n#mp#0" expanded="true" />
             <marker date="1412085535660" expanded="true" signature="8217:8235" placeholder="..." />
             <marker date="1412085535660" expanded="true" signature="8305:8323" placeholder="..." />
             <marker date="1412085535660" expanded="true" signature="8410:8428" placeholder="..." />
@@ -1057,10 +1057,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.24" vertical-offset="967" max-vertical-offset="5967">
+          <caret line="644" column="49" selection-start-line="644" selection-start-column="49" selection-end-line="644" selection-end-column="49" />
+          <folding>
+            <element signature="e#26035#26225#0" expanded="true" />
+            <element signature="n#!!block;n#RegisterToServer2#0" expanded="true" />
+            <element signature="e#29542#33127#0" expanded="true" />
+            <element signature="n#!!block;n#GetSeminarInfo#0" expanded="true" />
+            <element signature="e#40122#43610#0" expanded="true" />
+            <marker date="1412085718362" expanded="false" signature="48265:48278" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="48307:48507" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="48590:48754" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="48824:48887" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="51314:51329" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="57379:57394" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="57862:57877" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="57967:57986" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="58059:58074" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="58487:58502" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="58592:58611" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="60225:60389" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="60536:60551" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="60780:60970" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="61017:61103" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="61351:61360" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="61391:61400" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="61429:61438" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="61466:61475" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="61570:61579" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="61607:61616" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="61661:61825" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="61935:61944" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="61972:61981" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="62101:62110" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="62138:62147" placeholder="..." />
+            <marker date="1412085718362" expanded="false" signature="62184:62199" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Panels/js/charisma.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.32" vertical-offset="9711" max-vertical-offset="11322">
-          <caret line="3510" column="33" selection-start-line="3510" selection-start-column="28" selection-end-line="3510" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.58" vertical-offset="8453" max-vertical-offset="11441">
+          <caret line="2953" column="52" selection-start-line="2953" selection-start-column="46" selection-end-line="2953" selection-end-column="52" />
           <folding>
             <element signature="e#759#18063#0" expanded="true" />
             <element signature="e#4285#4384#0" expanded="true" />
@@ -1072,8 +1113,8 @@
             <element signature="n#!!block;n#RefreshProfilePicture#0" expanded="true" />
             <element signature="n#!!block;n#GetListOfSessionFilesForSeminarInfo#0" expanded="true" />
             <element signature="e#39313#41252#0" expanded="true" />
-            <element signature="n#!!block;n#GetUserProfile#0" expanded="true" />
-            <element signature="e#125736#127878#0" expanded="true" />
+            <element signature="n#!!block;n#sleep#0" expanded="true" />
+            <element signature="n#!!block;n#mp#0" expanded="true" />
             <marker date="1412085535660" expanded="true" signature="8217:8235" placeholder="..." />
             <marker date="1412085535660" expanded="true" signature="8305:8323" placeholder="..." />
             <marker date="1412085535660" expanded="true" signature="8410:8428" placeholder="..." />
@@ -1155,47 +1196,6 @@
             <marker date="1412085535660" expanded="true" signature="123199:123211" placeholder="..." />
             <marker date="1412085535660" expanded="true" signature="137606:137618" placeholder="..." />
             <marker date="1412085535660" expanded="true" signature="139524:139536" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37454545" vertical-offset="967" max-vertical-offset="5967">
-          <caret line="644" column="49" selection-start-line="644" selection-start-column="49" selection-end-line="644" selection-end-column="49" />
-          <folding>
-            <element signature="e#26035#26225#0" expanded="true" />
-            <element signature="n#!!block;n#RegisterToServer2#0" expanded="true" />
-            <element signature="e#29542#33127#0" expanded="true" />
-            <element signature="n#!!block;n#GetSeminarInfo#0" expanded="true" />
-            <element signature="e#40122#43610#0" expanded="true" />
-            <marker date="1412085718362" expanded="false" signature="48265:48278" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="48307:48507" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="48590:48754" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="48824:48887" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="51314:51329" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="57379:57394" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="57862:57877" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="57967:57986" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="58059:58074" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="58487:58502" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="58592:58611" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="60225:60389" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="60536:60551" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="60780:60970" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="61017:61103" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="61351:61360" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="61391:61400" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="61429:61438" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="61466:61475" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="61570:61579" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="61607:61616" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="61661:61825" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="61935:61944" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="61972:61981" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="62101:62110" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="62138:62147" placeholder="..." />
-            <marker date="1412085718362" expanded="false" signature="62184:62199" placeholder="..." />
           </folding>
         </state>
       </provider>

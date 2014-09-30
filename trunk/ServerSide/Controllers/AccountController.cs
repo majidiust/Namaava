@@ -309,32 +309,45 @@ namespace Webinar.Controllers
             {
                // m_logger.Log("CP 10");
                 var user = m_model.aspnet_Users.Single(P => P.UserName.Equals(username));
-                var result = (from p in m_model.Profiles
-                              where p.UserId.Equals(user.UserId)
-                              select new
-                              {
-                                  firstName = p.FirstName,
-                                  lastName = p.LastName,
-                                  photo = p.Photo,
-                                  city = p.CityId,
-                                  country = p.CountryId,
-                                  nationId = p.NationalId,
-                                  birthday = string.Format("{0}:{1}:{2}", p.WebinarDateTime.Year, p.WebinarDateTime.Month, p.WebinarDateTime.Day),
-                                  gender = p.Gender,
-                                  degree = p.DegreeId,
-                                  email = user.aspnet_Membership.Email,
-                                  mobile = user.aspnet_Membership.MobilePIN
-                              }).ToList()[0];
+                if (m_model.Profiles.Count(P => P.UserId == user.UserId) > 0)
+                {
+                    var result = (from p in m_model.Profiles
+                                  where p.UserId.Equals(user.UserId)
+                                  select new
+                                  {
+                                      firstName = p.FirstName,
+                                      lastName = p.LastName,
+                                      photo = p.Photo,
+                                      city = p.CityId,
+                                      country = p.CountryId,
+                                      nationId = p.NationalId,
+                                      birthday = string.Format("{0}:{1}:{2}", p.WebinarDateTime.Year, p.WebinarDateTime.Month, p.WebinarDateTime.Day),
+                                      gender = p.Gender,
+                                      degree = p.DegreeId,
+                                      email = user.aspnet_Membership.Email,
+                                      mobile = user.aspnet_Membership.MobilePIN
+                                  }).ToList()[0];
+                    return Json(new { Status = true, Message = "Profile Sent Correctly", Result = result }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    var result = new 
+                                  {
+                                      firstName = "",
+                                      lastName = "",
+                                      photo = "",
+                                      city = "",
+                                      country = "",
+                                      nationId = "",
+                                      birthday = "",
+                                      gender = "",
+                                      degree = "",
+                                      email = user.aspnet_Membership.Email,
+                                      mobile = user.aspnet_Membership.MobilePIN
+                                  };
+                    return Json(new { Status = true, Message = "Profile Sent Correctly", Result = result }, JsonRequestBehavior.AllowGet);
+                }
 
-                //m_logger.Log(result.birthday);
-                //m_logger.Log(result.lastName);
-                //m_logger.Log(result.firstName);
-                //m_logger.Log(result.city);
-                //m_logger.Log(result.country);
-                //m_logger.Log(result.gender.ToString());
-                //m_logger.Log("CP 20");
-
-                return Json(new { Status = true, Message = "Profile Sent Correctly" , Result = result }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
