@@ -1410,6 +1410,43 @@ namespace Webinar.Controllers
             }
         }
 
+        class RequestViewHelper
+        {
+            public string sessionId;
+            public string sessionName;
+            public string presentorUserName ;
+            public string presentorFirstName;
+            public string presentorLastName;
+            public string adminUserName;
+            public string adminFirstName;
+            public string adminLastName;
+            public string beginTime;
+            public string duration;
+            public string status;
+            public string result;
+            public bool isVod;
+            public string fee;
+            public bool? isPayed ;
+            public string requestID;
+        }
+
+        class InvitedViewHelper
+        {
+            public string sessionId;
+            public string sessionName;
+            public string presentorUserName;
+            public string presentorFirstName;
+            public string presentorLastName;
+            public string adminUserName;
+            public string adminFirstName;
+            public string adminLastName;
+            public string beginTime;
+            public string duration;
+            public string status;
+            public bool isVod;
+            public string inviteIdId;
+        }
+
         [Authorize]
         [HttpGet]
         public ActionResult ViewRequests(string userName)
@@ -1419,9 +1456,9 @@ namespace Webinar.Controllers
                 var user = m_model.aspnet_Users.Single(P => P.UserName.Equals(userName));
                 var requests = (from p in m_model.SessionRequests
                                 where p.UserId == user.UserId
-                                select new
+                                select new RequestViewHelper
                                 {
-                                    sessionId = p.SessionId,
+                                    sessionId = p.SessionId.ToString(),
                                     sessionName = p.Session.SessionName,
                                     presentorUserName = p.Session.aspnet_User.UserName,
                                     presentorFirstName = p.Session.aspnet_User.Profile.FirstName,
@@ -1429,15 +1466,27 @@ namespace Webinar.Controllers
                                     adminUserName = p.Session.aspnet_User1.UserName,
                                     adminFirstName = p.Session.aspnet_User1.Profile.FirstName,
                                     adminLastName = p.Session.aspnet_User1.Profile.LastName,
-                                    beginTime = p.Session.mode == 0 ? "آفلاین" : DateToString(p.WebinarDateTime),
+                                    beginTime = "" + p.Session.mode  ,
                                     duration = p.Session.Duration,
                                     status = p.Session.SessionState.State,
                                     result = p.Result,
                                     isVod = p.Session.StateId > 2 ? true : false,
                                     fee = UserPeymentSession(p.SessionId),
                                     isPayed = p.IsPayed == null ? false : p.IsPayed,
-                                    requestID = p.RequestId
+                                    requestID = p.RequestId.ToString()
                                 }).ToList();
+                foreach (var x in requests)
+                {
+                    if (x.beginTime == "0")
+                    {
+                        x.beginTime = "آفلاین";
+                    }
+                    else
+                    {
+                        var s = m_model.Sessions.Single(P=>P.SessionId == int.Parse( x.sessionId));
+                        x.beginTime = DateToString(s.WebinarDateTime);
+                    }
+                }
                 return Json(new { Status = true, Result = requests, Message = "List of Requests sent" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
@@ -1456,9 +1505,9 @@ namespace Webinar.Controllers
                 var user = m_model.aspnet_Users.Single(P => P.UserName.Equals(userName));
                 var invites = (from p in m_model.SessionInvites
                                where p.UserId == user.UserId
-                               select new
+                               select new InvitedViewHelper
                                {
-                                   sessionId = p.SessionId,
+                                   sessionId = p.SessionId.ToString(),
                                    sessionName = p.Session.SessionName,
                                    presentorUserName = p.Session.aspnet_User.UserName,
                                    presentorFirstName = p.Session.aspnet_User.Profile.FirstName,
@@ -1466,13 +1515,24 @@ namespace Webinar.Controllers
                                    adminUserName = p.Session.aspnet_User1.UserName,
                                    adminFirstName = p.Session.aspnet_User1.Profile.FirstName,
                                    adminLastName = p.Session.aspnet_User1.Profile.LastName,
-                                   beginTime = DateToString(p.Session.WebinarDateTime),
-                                   duration = p.Session.WebinarDateTime1.Time.Value.Hours - p.Session.WebinarDateTime.Time.Value.Hours,
-
+                                   beginTime = "" + p.Session.mode,
+                                   duration = p.Session.Duration,
                                    status = p.Session.SessionState.State,
                                    isVod = p.Session.StateId > 2 ? true : false
 
                                }).ToList();
+                foreach (var x in invites)
+                {
+                    if (x.beginTime == "0")
+                    {
+                        x.beginTime = "آفلاین";
+                    }
+                    else
+                    {
+                        var s = m_model.Sessions.Single(P => P.SessionId == int.Parse(x.sessionId));
+                        x.beginTime = DateToString(s.WebinarDateTime);
+                    }
+                }
                 return Json(new { Status = true, Result = invites, Message = "List of Invites sent" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
