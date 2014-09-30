@@ -267,7 +267,8 @@ $(document).ready(function () {
     $('#NewSeminarVideoUpload').fileupload({
         dataType: 'json',
         formData: {
-            sessionId: CurrentSeminarID
+            sessionId: CurrentSeminarID,
+            videoName : $("#sessionVideoName").val()
         },
         url: ServerURL + 'Account/UploadVideoFiles',
         progressall: function (e, data) {

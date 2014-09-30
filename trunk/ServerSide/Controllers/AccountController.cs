@@ -1643,7 +1643,7 @@ namespace Webinar.Controllers
         }
         [Authorize]
         [HttpPost]
-        public ContentResult UploadVideoFiles(int sessionId)
+        public ContentResult UploadVideoFiles(int sessionId, string videoName)
         {
             try
             {
@@ -1679,7 +1679,9 @@ namespace Webinar.Controllers
                             string savedFileName = Path.Combine(videoPath, Path.GetFileName(hpf.FileName));
                             hpf.SaveAs(savedFileName);
                             SessionVideo sv = new SessionVideo();
-                            sv.VideoName = savedFileName;
+                            if (videoName != "")
+                                sv.VideoName = videoName;
+                            else sv.VideoName = savedFileName;
                             sv.SessionID = sessionId;
                             sv.UploadDate = DateTime.Now;
                             m_model.SessionVideos.InsertOnSubmit(sv);
