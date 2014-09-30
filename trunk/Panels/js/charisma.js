@@ -1110,17 +1110,17 @@ function GetListOfSessionFilesForSeminarInfo(sessionID) {
             for (var i = 0; i < result.Result.length; i++) {
                 //alert(result.Result[i].fileUrl);
                 index = result.Result[i].fileId;
-                var _fileUrl = result.Result[i].fileUrl.split("/");
-                var _extensions = _fileUrl[_fileUrl.length - 1].split(".");
-                var _isPowerPoint = false;
-                if (_extensions.length >= 2) {
-                    if (_extensions[_extensions.length - 1] == "ppt" || _extensions[_extensions.length - 1] == "pptx") {
-                        _isPowerPoint = true;
-                    }
-                }
+                var _fileUrl = result.Result[i].fileUrl;//.split("/");
+                //var _extensions = _fileUrl[_fileUrl.length - 1].split(".");
+                //var _isPowerPoint = false;
+                //if (_extensions.length >= 2) {
+                //    if (_extensions[_extensions.length - 1] == "ppt" || _extensions[_extensions.length - 1] == "pptx") {
+                //        _isPowerPoint = true;
+                //    }
+               // }
                 var newRow = "<tr>";
                 newRow += "<td style='text-align:center;'>" + result.Result[i].fileId + "</td>";
-                newRow += "<td style='text-align:center;'>" + _fileUrl[_fileUrl.length - 1] + "</td>";
+                newRow += "<td style='text-align:center;'>" + _fileUrl +  "</td>";
                 newRow += "<td style='text-align:center;'>" + result.Result[i].fileSize + "</td>";
 
 
