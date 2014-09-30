@@ -216,10 +216,21 @@ padding: 20px;
 ">
 
             <!-- Begin Of Video player -->
-            <div id="my_video_1" style="padding-top: 140px; margin-top: 100px;">
-                <div id="mediaContainer">
-                </div>
-            </div>
+            <video id="example_video_1" class="video-js vjs-default-skin"
+                   controls preload="auto" width="80%" height="80%" autoplay="true"
+                   data-setup='{"example_option":true}'
+                   style="margin:0 auto;-webkit-box-shadow: 0px 0px 26px 0px rgba(50, 50, 50, 0.94);
+-moz-box-shadow:    0px 0px 26px 0px rgba(50, 50, 50, 0.94);
+box-shadow:         0px 0px 26px 0px rgba(50, 50, 50, 0.94);
+                    border-radius: 8px;
+                    -webkit-border-radius: 8px;
+                    -moz-border-radius: 8px;
+                    ">
+                <source src="http://94.232.174.206:7700/Namaava/3059/1043.webm" type='video/mp4'/>
+                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web
+                    browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                        video</a></p>
+            </video>
             <!-- end of video player -->
         </div>
     </div>
@@ -389,6 +400,7 @@ padding: 20px;
         </button>
     </div>
 </div>
+</div>
 
 <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
 <script type="text/javascript" src="js/underscore-min.js"></script>
@@ -453,15 +465,7 @@ padding: 20px;
             // Player (this) is initialized and ready.
      //   });
 
-        videoObj = $("#mediaContainer").jPlayer({
-            solution: "flash, html", // Flash with an HTML5 fallback.
-            supplied: "ogv",
-            swfPath: "http://www.iwebinar.ir:6060/Panels/ParticipantRoom/jPlayer/Jplayer.swf",
-            size: {
-                width: "100%",
-                height: "100%"
-            }
-        });
+        videoObj = $("#example_video_1").jPlayer();
 
         getWebinarId();
 
@@ -571,12 +575,11 @@ padding: 20px;
 
     function SwitchVideo(url){
             try {
-
-
-                videoObj.jPlayer("setMedia", {
-                    ogv: 'http://94.232.174.206:7700/Namaava/2048/1035.webm'// videos[url] // Defines the counterpart ogv url
-                }).jPlayer("play"); // Attempts to Auto-Play the media
-
+                var vid = document.getElementById("example_video_1");
+                vid.setAttribute("src", 'http://94.232.174.206:7700/Namaava/2048/1035.webm');
+                $('#example_video_1 source').attr('src', 'http://94.232.174.206:7700/Namaava/2048/1035.webm');
+                console.log("Load the video : " + 'http://94.232.174.206:7700/Namaava/2048/1035.webm');
+                $("#example_video_1")[0].load();
             }
         catch(ex){
             console.log(ex);
