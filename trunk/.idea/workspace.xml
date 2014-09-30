@@ -26,18 +26,36 @@
       <file leaf-file-name="room.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Panels/SeminarRoom/room.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6889313" vertical-offset="8309" max-vertical-offset="9214">
-              <caret line="577" column="103" selection-start-line="577" selection-start-column="103" selection-end-line="577" selection-end-column="103" />
+            <state vertical-scroll-proportion="0.42938933" vertical-offset="7391" max-vertical-offset="9401">
+              <caret line="475" column="6" selection-start-line="475" selection-start-column="6" selection-end-line="475" selection-end-column="6" />
               <folding>
-                <element signature="e#19077#20503#0" expanded="true" />
-                <element signature="e#20745#21027#0" expanded="true" />
-                <element signature="e#22086#22789#0" expanded="true" />
-                <element signature="e#22306#22667#0" expanded="true" />
-                <element signature="e#22831#23914#0" expanded="true" />
-                <element signature="e#23049#23870#0" expanded="true" />
-                <element signature="e#23945#23978#0" expanded="true" />
-                <marker date="1412078569929" expanded="true" signature="24167:24179" placeholder="..." />
-                <marker date="1412078569929" expanded="true" signature="24234:24361" placeholder="..." />
+                <element signature="e#19077#20507#0" expanded="true" />
+                <element signature="e#20759#21041#0" expanded="true" />
+                <element signature="e#22100#22803#0" expanded="true" />
+                <element signature="e#22320#22681#0" expanded="true" />
+                <element signature="e#22845#23928#0" expanded="true" />
+                <element signature="e#23063#23884#0" expanded="true" />
+                <element signature="e#23959#24142#0" expanded="true" />
+                <element signature="e#24184#25330#0" expanded="true" />
+                <marker date="1412079244367" expanded="true" signature="24331:24343" placeholder="..." />
+                <marker date="1412079244367" expanded="true" signature="24398:24525" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Panels/ParticipantRoom/js/views.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.5" vertical-offset="2987" max-vertical-offset="4743">
+              <caret line="663" column="53" selection-start-line="663" selection-start-column="50" selection-end-line="663" selection-end-column="53" />
+              <folding>
+                <element signature="e#1948#4696#0" expanded="true" />
+                <element signature="e#2184#2420#0" expanded="true" />
+                <element signature="e#2737#4640#0" expanded="true" />
+                <element signature="e#3521#3992#0" expanded="true" />
+                <element signature="e#22745#24514#0" expanded="true" />
+                <element signature="e#23111#24224#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -199,6 +217,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Panels" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ParticipantRoom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Panels" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ParticipantRoom" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -800,13 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Panels/ParticipantRoom/js/views.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3315">
-          <caret line="109" column="10" selection-start-line="54" selection-start-column="7" selection-end-line="109" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Panels/ParticipantRoom/js/backbone-min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7378965" vertical-offset="0" max-vertical-offset="1071">
@@ -915,20 +948,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Panels/ParticipantRoom/js/views.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5" vertical-offset="2987" max-vertical-offset="4743">
+          <caret line="663" column="53" selection-start-line="663" selection-start-column="50" selection-end-line="663" selection-end-column="53" />
+          <folding>
+            <element signature="e#1948#4696#0" expanded="true" />
+            <element signature="e#2184#2420#0" expanded="true" />
+            <element signature="e#2737#4640#0" expanded="true" />
+            <element signature="e#3521#3992#0" expanded="true" />
+            <element signature="e#22745#24514#0" expanded="true" />
+            <element signature="e#23111#24224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Panels/SeminarRoom/room.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6889313" vertical-offset="8309" max-vertical-offset="9214">
-          <caret line="577" column="103" selection-start-line="577" selection-start-column="103" selection-end-line="577" selection-end-column="103" />
+        <state vertical-scroll-proportion="0.42938933" vertical-offset="7391" max-vertical-offset="9401">
+          <caret line="475" column="6" selection-start-line="475" selection-start-column="6" selection-end-line="475" selection-end-column="6" />
           <folding>
-            <element signature="e#19077#20503#0" expanded="true" />
-            <element signature="e#20745#21027#0" expanded="true" />
-            <element signature="e#22086#22789#0" expanded="true" />
-            <element signature="e#22306#22667#0" expanded="true" />
-            <element signature="e#22831#23914#0" expanded="true" />
-            <element signature="e#23049#23870#0" expanded="true" />
-            <element signature="e#23945#23978#0" expanded="true" />
-            <marker date="1412078569929" expanded="true" signature="24167:24179" placeholder="..." />
-            <marker date="1412078569929" expanded="true" signature="24234:24361" placeholder="..." />
+            <element signature="e#19077#20507#0" expanded="true" />
+            <element signature="e#20759#21041#0" expanded="true" />
+            <element signature="e#22100#22803#0" expanded="true" />
+            <element signature="e#22320#22681#0" expanded="true" />
+            <element signature="e#22845#23928#0" expanded="true" />
+            <element signature="e#23063#23884#0" expanded="true" />
+            <element signature="e#23959#24142#0" expanded="true" />
+            <element signature="e#24184#25330#0" expanded="true" />
+            <marker date="1412079244367" expanded="true" signature="24331:24343" placeholder="..." />
+            <marker date="1412079244367" expanded="true" signature="24398:24525" placeholder="..." />
           </folding>
         </state>
       </provider>
