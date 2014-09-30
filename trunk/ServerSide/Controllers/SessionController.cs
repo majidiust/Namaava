@@ -1286,7 +1286,7 @@ namespace Webinar.Controllers
                         reader.Close();
                         msg = msg.Replace("{0}", email);
                         msg = msg.Replace("{1}", session.SessionName);
-                        msg = msg.Replace("{2}", DateToString(session.WebinarDateTime));
+                        msg = msg.Replace("{2}", "----------------------");
                         msg = msg.Replace("{3}", session.aspnet_User1.Profile == null ? session.aspnet_User1.UserName : session.aspnet_User1.Profile.FirstName + " " + session.aspnet_User1.Profile.LastName);
                         msg = msg.Replace("{4}", followCode.ToString());
                         EmailService service = new EmailService();
