@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Namaava" Class="DataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=5.200.78.10\mssqlserver,1433;Initial Catalog=Namaava;User ID=hiva" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NamaavaConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=127.0.0.1\mssqlserver,1433;Initial Catalog=Namaava;User ID=hiva" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NamaavaConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.AccountInfo" Member="AccountInfos">
     <Type Name="AccountInfo">
       <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />

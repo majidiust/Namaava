@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BankTransition" Class="BankDataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=5.200.78.10\MSSQLSERVER,1433;Initial Catalog=BankTransition;User ID=hiva" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BankTransitionConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=127.0.0.1\MSSQLSERVER,1433;Initial Catalog=BankTransition;User ID=hiva" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BankTransitionConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BankInfo" Member="BankInfos">
     <Type Name="BankInfo">
       <Column Name="BankId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
